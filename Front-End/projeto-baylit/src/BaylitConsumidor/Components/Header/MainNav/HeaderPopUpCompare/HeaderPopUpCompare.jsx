@@ -60,7 +60,7 @@ class HeaderPopUpCompare extends Component {
         allProducts.push(
           <div className="productComparePopUp">
             <div className="imageProductComparePopUp">
-              <img src={produtosComparacao[i].fotografia[0]} alt="" />
+              <img src={produtosComparacao[i].fotografia[0]} alt="" loading="lazy" />
             </div>
             <div className="detailsProductComparePopUp">
               <h3>{produtosComparacao[i].nome}</h3>

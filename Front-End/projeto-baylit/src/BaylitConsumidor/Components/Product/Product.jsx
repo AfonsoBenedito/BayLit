@@ -17,8 +17,15 @@ class Product extends Component {
     this.myRefRating = React.createRef();
     this.myRefBlockRating = React.createRef();
 
+    // Check if product image is a placeholder (SVG data URI)
+    const isPlaceholder = this.props.srcProduct && this.props.srcProduct.startsWith('data:image/svg');
+    const initialImage = (isPlaceholder && this.props.subcategoryImage) 
+      ? this.props.subcategoryImage 
+      : (this.props.srcProduct || this.props.subcategoryImage);
+
     this.state = {
-      srcProduct: this.props.srcProduct,
+      srcProduct: initialImage,
+      subcategoryImage: this.props.subcategoryImage,
       nivelSustentabilidade: this.props.nivelSustentabilidade, //1,2,3,4,5
       nivelProducao: this.props.nivelProducao,
       nivelArmazenamento: this.props.nivelArmazenamento,
@@ -31,6 +38,8 @@ class Product extends Component {
 
       atividadeCompare: "Adicionar a"
     };
+
+    this.handleImageError = this.handleImageError.bind(this);
 
     this.displayCompare = this.displayCompare.bind(this)
     this.alterarCompare = this.alterarCompare.bind(this)
@@ -45,7 +54,7 @@ class Product extends Component {
 
     let htmlFavorito = [];
 
-    if (info.tipo == 'Consumidor'){
+    if (info && info.tipo == 'Consumidor'){
 
       let produtos = await getUserFavoriteProducts(info.id, info.token);
 
@@ -90,7 +99,9 @@ class Product extends Component {
 
     let info = JSON.parse(localStorage.getItem('baylitInfo'))
 
-    await adicionarUserFavoriteProduct(info.id, info.token, this.state.idProduto)
+    if (info && info.id && info.token) {
+      await adicionarUserFavoriteProduct(info.id, info.token, this.state.idProduto)
+    }
 
     await this.displayFavorito()
 
@@ -102,7 +113,9 @@ class Product extends Component {
 
     let info = JSON.parse(localStorage.getItem('baylitInfo'))
 
-    await removerUserFavoriteProduct(info.id, info.token, this.state.idProduto)
+    if (info && info.id && info.token) {
+      await removerUserFavoriteProduct(info.id, info.token, this.state.idProduto)
+    }
 
     await this.displayFavorito()
 
@@ -150,6 +163,15 @@ class Product extends Component {
     this.displayCompare()
   }
 
+  handleImageError() {
+    // Fallback to subcategory image if product image fails to load
+    if (this.state.subcategoryImage && this.state.srcProduct !== this.state.subcategoryImage) {
+      this.setState({
+        srcProduct: this.state.subcategoryImage
+      });
+    }
+  }
+
   async componentDidMount(){
     this.displayCompare()
 
@@ -171,7 +193,7 @@ class Product extends Component {
         
           <div className="blockImageProduct">
             <a href={"/Shop/Product/" + this.state.idProduto} className="toLink">
-              <img src={this.state.srcProduct} />
+              <img src={this.state.srcProduct} onError={this.handleImageError} alt={this.state.nomeProduto} loading="lazy" />
             </a>
             <div ref={this.refFavorito}>
               {/* <div className="btnLikeProductCard">

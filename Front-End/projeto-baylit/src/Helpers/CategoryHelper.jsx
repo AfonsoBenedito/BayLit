@@ -45,13 +45,19 @@ async function getSubCategoriasByCategoria(id_categoria) {
 async function getSubCategoria(id) {
   let result = false;
 
-  await fetch(
-    apiInfo.apiLink + "/produto/categoria/subcategoria?subcategoria=" + id
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      result = data.data.subcategoria;
-    });
+  try {
+    await fetch(
+      apiInfo.apiLink + "/produto/categoria/subcategoria?subcategoria=" + id
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.code === 200 && data.data && data.data.subcategoria) {
+          result = data.data.subcategoria;
+        }
+      });
+  } catch (error) {
+    console.error("Error fetching subcategoria:", error);
+  }
 
   return result;
 }
@@ -59,13 +65,19 @@ async function getSubCategoria(id) {
 async function getAtributo(id) {
   let result = false;
 
-  await fetch(
-    apiInfo.apiLink + "/produto/categoria/subcategoria/atributo?atributo=" + id
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      result = data.data.atributo;
-    });
+  try {
+    await fetch(
+      apiInfo.apiLink + "/produto/categoria/subcategoria/atributo?atributo=" + id
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.code === 200 && data.data && data.data.atributo) {
+          result = data.data.atributo;
+        }
+      });
+  } catch (error) {
+    console.error("Error fetching atributo:", error);
+  }
 
   return result;
 }

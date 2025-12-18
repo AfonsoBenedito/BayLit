@@ -32,7 +32,7 @@ class MainSide extends Component {
   async getNotificacoes(){
     let info = JSON.parse(localStorage.getItem('baylitInfo'))
 
-    if (info.logged == "true"){
+    if (info && info.logged == "true"){
 
     
       let res = await getNotificacoesUtilizador(info.id, info.token)

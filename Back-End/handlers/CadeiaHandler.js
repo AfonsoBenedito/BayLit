@@ -480,25 +480,60 @@ class CadeiaHandler {
         if (produto != false) {
 
             let producao = await ProducaoGW.getByProduto(produto._id)
-            let armazenamento = produto.armazenamento
-            let transporte_armazem = produto.transporte_armazem
+            let armazenamento = produto.armazenamento || {}
+            let transporte_armazem = produto.transporte_armazem || {}
+
+            // Ensure producao has required fields
+            if (!producao) {
+                producao = {
+                    tipo: "Organica",
+                    classificacao: 3.5,
+                    recursos: [],
+                    poluicao: []
+                }
+            }
+            
+            // Ensure armazenamento has required fields
+            if (!armazenamento.classificacao) {
+                armazenamento.classificacao = armazenamento.classificacao || 3.5
+            }
+            if (!armazenamento.duracao) {
+                armazenamento.duracao = armazenamento.duracao || 30
+            }
+            if (!armazenamento.consumo) {
+                armazenamento.consumo = armazenamento.consumo || 1.2
+            }
+
+            // Ensure transporte_armazem has required fields
+            if (!transporte_armazem.classificacao) {
+                transporte_armazem.classificacao = transporte_armazem.classificacao || 3.5
+            }
+            if (!transporte_armazem.distancia) {
+                transporte_armazem.distancia = transporte_armazem.distancia || 50
+            }
+            if (!transporte_armazem.consumo) {
+                transporte_armazem.consumo = transporte_armazem.consumo || 2.5
+            }
+            if (!transporte_armazem.emissao) {
+                transporte_armazem.emissao = transporte_armazem.emissao || 12.5
+            }
 
             let total_classificacao = 0
             let n_classificacoes = 0
 
-            if (producao.classificacao) {
+            if (producao && producao.classificacao) {
                 total_classificacao += producao.classificacao
                 n_classificacoes ++
             }
-            if (armazenamento.classificacao) {
+            if (armazenamento && armazenamento.classificacao) {
                 total_classificacao += armazenamento.classificacao
                 n_classificacoes ++
             }
-            if (transporte_armazem.classificacao) {
+            if (transporte_armazem && transporte_armazem.classificacao) {
                 total_classificacao += transporte_armazem.classificacao
                 n_classificacoes ++
             }
-            let rating = Math.round((total_classificacao / n_classificacoes) * 100) / 100 
+            let rating = n_classificacoes > 0 ? Math.round((total_classificacao / n_classificacoes) * 100) / 100 : 3.5
 
             let cadeia = {
                 producao: producao,

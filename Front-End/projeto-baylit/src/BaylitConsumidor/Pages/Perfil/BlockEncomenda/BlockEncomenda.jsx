@@ -155,7 +155,7 @@ class BlockEncomenda extends Component {
       result.push(
         <div class="produtoEncomenda">
           <div class="fotoProductEncomenda">
-            <a href={"/Shop/Product/" + this.state.listaProdutos[i].id}><img src={this.state.listaProdutos[i].src} alt="produto baylit" /></a>
+            <a href={"/Shop/Product/" + this.state.listaProdutos[i].id}><img src={this.state.listaProdutos[i].src} alt="produto baylit" loading="lazy" /></a>
           </div>
           <div class="nomeProductEncomenda">
           <a href={"/Shop/Product/" + this.state.listaProdutos[i].id}><h4>{this.state.listaProdutos[i].nome}</h4></a>

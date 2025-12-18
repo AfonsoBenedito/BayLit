@@ -619,7 +619,7 @@ class ProductPage extends Component {
             this.changeMainFoto(fotos[i]);
           }}
         >
-          <img src={fotos[i]} alt="" />
+          <img src={fotos[i]} alt="" loading="lazy" />
         </div>
       );
     }
@@ -739,25 +739,27 @@ class ProductPage extends Component {
     for (let p = 0; p < atributos.length; p++) {
       let atributo = await getAtributo(atributos[p]);
 
-      atributosNomes.push(atributo.nome);
+      if (atributo && atributo.nome) {
+        atributosNomes.push(atributo.nome);
 
-      let valoresString = JSON.stringify(valores[p]);
+        let valoresString = JSON.stringify(valores[p]);
 
-      valoresString = valoresString.replaceAll('"', "");
-      valoresString = valoresString.replace("[", "");
-      valoresString = valoresString.replace("]", "");
-      valoresString = valoresString.replaceAll(",", ", ")
+        valoresString = valoresString.replaceAll('"', "");
+        valoresString = valoresString.replace("[", "");
+        valoresString = valoresString.replace("]", "");
+        valoresString = valoresString.replaceAll(",", ", ")
 
-      // console.log(valoresString)
+        // console.log(valoresString)
 
-      let caracteristica = (
-        <div className="lineTabelaCaracteristicasPageProduct">
-          <h5>{atributo.nome}</h5>
-          <h6>{valoresString}</h6>
-        </div>
-      );
+        let caracteristica = (
+          <div className="lineTabelaCaracteristicasPageProduct">
+            <h5>{atributo.nome}</h5>
+            <h6>{valoresString}</h6>
+          </div>
+        );
 
-      caracteristicasAppend.push(caracteristica);
+        caracteristicasAppend.push(caracteristica);
+      }
     }
 
     this.setState({
@@ -800,6 +802,8 @@ class ProductPage extends Component {
               ref={this.myRefMainFoto}
               // id="firstDivProduct"
               src={this.state.productInfo.fotografia[0]}
+              alt={this.state.productInfo.nome}
+              loading="eager"
             />
           </div>
           <div ref={this.myRefTodasFotos} id="secondDivProduct"></div>

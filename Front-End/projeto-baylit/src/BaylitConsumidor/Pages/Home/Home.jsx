@@ -10,7 +10,7 @@ import TransportImage from "../../Images/HomeImages/transportHome.jpg";
 
 import "./Home.css";
 import { Component } from "react";
-import { getCategorias, getCategoria } from "../../../Helpers/CategoryHelper";
+import { getCategorias, getCategoria, getSubCategoria } from "../../../Helpers/CategoryHelper";
 import { pesquisa } from "../../../Helpers/ProdutoHelper";
 
 import ReactDOM from "react-dom";
@@ -20,6 +20,7 @@ class Home extends Component {
     super(props);
 
     this.state = {};
+    this.productsLoaded = false;
 
     this.refCategorias = React.createRef();
     this.refProdutosSustentaveis = React.createRef();
@@ -33,10 +34,11 @@ class Home extends Component {
     for (let i = 1; i < 8; i++) {
       resultHtml.push(
         <a
+          key={categorias[i]._id}
           href={"/Shop/" + categorias[i]._id}
           className="categoryInDisplayerHome"
         >
-          <img src={categorias[i].fotografia} alt="" />
+          <img src={categorias[i].fotografia} alt={categorias[i].nome} loading="lazy" />
           <div className="hoverNameCategory">
             <span>{categorias[i].nome}</span>
           </div>
@@ -69,6 +71,8 @@ class Home extends Component {
           let categoriaId = resultados5[resultado5].categoria;
           let categoria = await getCategoria(categoriaId);
           let categoriaProduto = categoria.nome;
+          let subcategoria = await getSubCategoria(resultados5[resultado5].subcategoria);
+          let subcategoryImage = subcategoria ? subcategoria.fotografia : null;
           let preco = resultados5[resultado5].preco;
           let precoProduto = preco + "€";
           listToAdd.push(
@@ -82,6 +86,7 @@ class Home extends Component {
               nivelProducao={nivelProducao}
               nomeProduto={nomeProduto}
               srcProduct={srcProduct}
+              subcategoryImage={subcategoryImage}
             ></Product>
           );
           contagem = contagem + 1;
@@ -107,6 +112,8 @@ class Home extends Component {
             let categoriaId = resultados4[resultado4].categoria;
             let categoria = await getCategoria(categoriaId);
             let categoriaProduto = categoria.nome;
+            let subcategoria = await getSubCategoria(resultados4[resultado4].subcategoria);
+            let subcategoryImage = subcategoria ? subcategoria.fotografia : null;
             let preco = resultados4[resultado4].preco;
             let precoProduto = preco + "€";
             listToAdd.push(
@@ -120,6 +127,7 @@ class Home extends Component {
                 nivelProducao={nivelProducao}
                 nomeProduto={nomeProduto}
                 srcProduct={srcProduct}
+                subcategoryImage={subcategoryImage}
               ></Product>
             );
             contagem = contagem + 1;
@@ -146,6 +154,8 @@ class Home extends Component {
             let categoriaId = resultados3[resultado3].categoria;
             let categoria = await getCategoria(categoriaId);
             let categoriaProduto = categoria.nome;
+            let subcategoria = await getSubCategoria(resultados3[resultado3].subcategoria);
+            let subcategoryImage = subcategoria ? subcategoria.fotografia : null;
             let preco = resultados3[resultado3].preco;
             let precoProduto = preco + "€";
             listToAdd.push(
@@ -159,6 +169,7 @@ class Home extends Component {
                 nivelProducao={nivelProducao}
                 nomeProduto={nomeProduto}
                 srcProduct={srcProduct}
+                subcategoryImage={subcategoryImage}
               ></Product>
             );
             contagem = contagem + 1;
@@ -167,30 +178,72 @@ class Home extends Component {
       }
     }
 
-    ReactDOM.render(listToAdd, this.refProdutosSustentaveis.current);
-
-    // let resultados4 = await pesquisa(null, null, null, 4, null, null);
-    // console.log(resultados4);
-    // if (resultados4 == false || resultados4.length < 5){
-    //   let resultados3 = await pesquisa(null, null, null, 3, null, null);
-    //   console.log(resultados3.length);
-    // } else {
-    //   // Existem 5+ produtos de 4 ou 5 de sustentabilidade
-    // }
+    // Only render if ref is still available (component not unmounted)
+    if (this.refProdutosSustentaveis.current) {
+      ReactDOM.render(listToAdd, this.refProdutosSustentaveis.current);
+    }
   }
 
   async componentDidMount() {
-    await this.getCategoriasImages();
-    await this.displayProdutosSustentaveis();
+    // Priority 1: Load above-the-fold content first (hero section renders immediately)
+    // Priority 2: Load categories (visible section) - use requestIdleCallback if available
+    if (window.requestIdleCallback) {
+      requestIdleCallback(() => {
+        this.getCategoriasImages();
+      }, { timeout: 1000 });
+    } else {
+      // Fallback: load categories after a small delay to allow hero to render
+      setTimeout(() => {
+        this.getCategoriasImages();
+      }, 50);
+    }
+    
+    // Priority 3: Defer loading products until user scrolls or after delay
+    // This improves initial page load performance
+    this.setupIntersectionObserver();
+    
+    // Fallback: load products after 500ms if intersection observer doesn't trigger
+    setTimeout(() => {
+      if (!this.productsLoaded && this.refProdutosSustentaveis.current) {
+        this.productsLoaded = true;
+        this.displayProdutosSustentaveis();
+      }
+    }, 500);
+  }
+
+  setupIntersectionObserver() {
+    // Use Intersection Observer to load products when section becomes visible
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !this.productsLoaded) {
+            this.productsLoaded = true;
+            this.displayProdutosSustentaveis();
+            observer.disconnect();
+          }
+        });
+      }, {
+        rootMargin: '300px' // Start loading 300px before section is visible
+      });
+
+      // Observe the products section container
+      const productsContainer = document.querySelector('.categoriesHomeBox:has(.displayerProductsHome)');
+      if (productsContainer) {
+        observer.observe(productsContainer);
+      } else if (this.refProdutosSustentaveis.current) {
+        // Fallback: observe the products div directly
+        observer.observe(this.refProdutosSustentaveis.current);
+      }
+    }
   }
 
   render() {
     return (
       <div className="mainHome">
-        {/* MAIN IMAGE DIVISION */}
+        {/* MAIN IMAGE DIVISION - Above the fold, loads immediately */}
         <div className="secondaryBox">
           <div className="teamImageHome">
-            <img src={WelcomeImage} />
+            <img src={WelcomeImage} loading="eager" alt="Welcome to BayLit" />
           </div>
           <h1 className="mainTitleHome">MUDA O RUMO DO MUNDO</h1>
           <p className="mainParagraphHome">
@@ -201,7 +254,7 @@ class Home extends Component {
           </a>
         </div>
 
-        {/* CATEGORIES DIVISION */}
+        {/* CATEGORIES DIVISION - Loads after hero section */}
         <div className="categoriesHomeBox">
           <div className="secondaryTitle">
             <h2>Conhece as nossas categorias</h2>
@@ -263,7 +316,7 @@ class Home extends Component {
           </div>
           <div className="displayDoubleSustentabilidadeHome">
             <div className="doubleContainerHome">
-              <img className="doubleImageHome" src={ProductImage} alt="" />
+              <img className="doubleImageHome" src={ProductImage} alt="Sustentabilidade do produto" loading="lazy" />
               <h3>Sustentabilidade do produto</h3>
               <a
                 href="/sustentabilidade"
@@ -273,7 +326,7 @@ class Home extends Component {
               </a>
             </div>
             <div className="doubleContainerHome">
-              <img className="doubleImageHome" src={TransportImage} alt="" />
+              <img className="doubleImageHome" src={TransportImage} alt="Sustentabilidade do transportador" loading="lazy" />
               <h3>Sustentabilidade do transportador</h3>
               <a
                 href="/sustentabilidade"
@@ -285,7 +338,7 @@ class Home extends Component {
           </div>
         </div>
 
-        {/* PRODUCTS DIVISION */}
+        {/* PRODUCTS DIVISION - Loads lazily when visible */}
         <div className="categoriesHomeBox">
           <div className="secondaryTitle">
             <h2>Encontra produtos sustentáveis</h2>
@@ -293,6 +346,11 @@ class Home extends Component {
           <div className="displayerProductsHome">
             <div className="forMarginAlign" />
             <div ref={this.refProdutosSustentaveis} className="theSlider">
+              {!this.productsLoaded && (
+                <div style={{ padding: '20px', textAlign: 'center', color: '#666' }}>
+                  A carregar produtos...
+                </div>
+              )}
               {/* <Product />
               <Product />
               <Product />
@@ -311,7 +369,7 @@ class Home extends Component {
             <h2>Conhece a BayLit</h2>
           </div>
           <div className="teamImageHome">
-            <img className="teamBaylitImage" src={TeamImage} />
+            <img className="teamBaylitImage" src={TeamImage} alt="Equipa BayLit" loading="lazy" />
           </div>
           <p className="mainParagraphHome">Membros BayLit</p>
           <h1 className="mainTitleHome">QUEM SOMOS</h1>
@@ -329,7 +387,8 @@ class Home extends Component {
             <img
               className="sustainabilityImageHome"
               src={SustainabilityImage}
-              alt=""
+              alt="Sustentabilidade"
+              loading="lazy"
             />
             <h1 className="signUpTitleHome">INSCREVE-TE AGORA</h1>
             <h2 className="signUpParagraphHome">

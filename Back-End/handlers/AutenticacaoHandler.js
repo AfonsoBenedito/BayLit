@@ -675,22 +675,16 @@ class HandlerAutenticacao {
     }
 
     async sendEmailVerification(user) {
-
-        var AWS = require('aws-sdk');
-        AWS.config.update({
-            accessKeyId: process.env.EC2_ACCESS_KEY,
-            secretAccessKey: process.env.EC2_SECRET_KEY,
-            region: 'eu-west-3',
-          })
+        const emailService = require('../utils/emailService');
 
         let default_email = require('./MailGenerator/verification')
         let mail_title = "Validação de conta BayLit"
         let mensagem_principal = "Bem-vindo(a) à BayLit "+user.nome+"!"
         let texto = "Para confirmares o teu registo e poderes começar a tomar as melhores decisões sustentáveis,"
         texto += " basta apensas seguires o link: <br>"
-        texto += "<a href='https://www.baylit.store/confirm?code="+user.confirmation+"'>https://www.baylit.store/confirm?code="+user.confirmation+"<\/a> "
+        texto += "<a href='http://localhost:3000/confirm?code="+user.confirmation+"'>http://localhost:3000/confirm?code="+user.confirmation+"<\/a> "
         let nome = user.nome
-        let link = "https://www.baylit.store"
+        let link = "http://localhost:3000"
         let mail_body = await default_email.generate_default(mail_title, mensagem_principal, texto, nome, link)
 
         // Create sendEmail params 
@@ -717,19 +711,13 @@ class HandlerAutenticacao {
         Source: 'confirmation@baylit.store'
         };
 
-
-        // Create the promise and SES service object
-        var sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(params).promise();
-
-        // Handle promise's fulfilled/rejected states
-        sendPromise.then(
-        function(data) {
-            console.log(data.MessageId);
-        }).catch(
-            function(err) {
-            console.error(err, err.stack);
-        });
-  
+        // Use mock email service
+        try {
+            const result = await emailService.sendEmail(params);
+            console.log('Verification email sent (mock):', result.MessageId);
+        } catch (err) {
+            console.error('Error sending verification email:', err);
+        }
     }
 
     encryptPassword(pw) {

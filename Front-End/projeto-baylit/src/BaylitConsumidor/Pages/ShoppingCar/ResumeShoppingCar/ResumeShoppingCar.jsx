@@ -173,7 +173,7 @@ class ResumeShoppingCar extends Component {
         <div className="productResumeSelected">
           <div className="leftBlockProductResumeSelected">
             <div className="blocoImgProductResumeSelected">
-              <img src={cadeia.fotografia[0]} />
+              <img src={cadeia.fotografia[0]} loading="lazy" alt={cadeia.nome} />
             </div>
             <div className="detailsProductResumeSelected">
               <div className="toAlignDetailsProductResumeSelected">

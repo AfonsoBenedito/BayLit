@@ -1,7 +1,7 @@
 fs = require('fs')
+const path = require('path')
 const mkdirp = require('mkdirp');
 const { Client } = require('node-scp')
-const aws = require('aws-sdk')
 const dotenv = require('dotenv').config()
 
 
@@ -239,19 +239,21 @@ class FileHandler {
     }  
 
     async uploadImage(tipo, stream, key, mimetype) {
-        aws.config.setPromisesDependency()
-        aws.config.update({
-            accessKeyId: process.env.EC2_ACCESS_KEY,
-            secretAccessKey: process.env.EC2_SECRET_KEY,
-            region: 'eu-west-3',
-        })
-
-        let s3 = new aws.S3()
+        // Local file storage instead of AWS S3
+        const uploadsDir = path.join(__dirname, '..', 'uploads', tipo);
         
-        let bucket = 'baylit-images/'+tipo
-        var params = {Bucket: bucket, Key: key, ContentType: mimetype, Body: stream};
-        let image = await s3.upload(params).promise()
-        return image.Location
+        // Ensure directory exists
+        if (!fs.existsSync(uploadsDir)) {
+            fs.mkdirSync(uploadsDir, { recursive: true });
+        }
+        
+        const filePath = path.join(uploadsDir, key);
+        
+        // Write file to local storage
+        await fs.promises.writeFile(filePath, stream);
+        
+        // Return local URL path (will be served by backend)
+        return `/uploads/${tipo}/${key}`;
     }
 }
 

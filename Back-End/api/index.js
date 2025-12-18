@@ -45,6 +45,10 @@ app.use("/utilizador", transportador);
 app.use("/utilizador", utilizador);
 app.use("/utilizador", compra);
 
+// Health check endpoint - simple check if server is running
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok", service: "backend" });
+});
 
 const { networkInterfaces } = require('os');
 

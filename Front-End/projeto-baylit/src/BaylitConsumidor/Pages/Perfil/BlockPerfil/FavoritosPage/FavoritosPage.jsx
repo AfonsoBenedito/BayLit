@@ -32,6 +32,7 @@ class FavoritosPage extends Component {
         let produtoTemp = (
           <Product
             srcProduct={produto.fotografia[0]}
+            subcategoryImage={subcategoria.fotografia}
             nivelSustentabilidade={Math.round(produto.cadeia.rating)}
             nivelProducao={produto.cadeia.producao.classificacao}
             nivelArmazenamento={produto.cadeia.armazenamento.classificacao}

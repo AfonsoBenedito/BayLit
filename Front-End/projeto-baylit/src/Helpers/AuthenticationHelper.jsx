@@ -196,7 +196,7 @@ async function AutenticarGoogle(id_nao_autenticado, token, email_utilizador_goog
     console.log(user._id)
     console.log(token)
 
-    await fetch("https://baylit.store:8080" + "/auth/google/carrinho", {
+    await fetch("http://localhost:8080" + "/auth/google/carrinho", {
       method: "POST",
       body: JSON.stringify({
         id_nao_autenticado: id_nao_autenticado,

@@ -32,9 +32,14 @@ class Compare extends Component {
   async displayProductsCompare() {
     let result = [];
 
-    let compareList = JSON.parse(
-      sessionStorage.getItem("baylitCompare")
-    ).compareList;
+    let compareStorage = sessionStorage.getItem("baylitCompare");
+    if (!compareStorage) {
+      // Initialize compare storage if it doesn't exist
+      sessionStorage.setItem("baylitCompare", JSON.stringify({ compareList: [] }));
+      compareStorage = sessionStorage.getItem("baylitCompare");
+    }
+
+    let compareList = JSON.parse(compareStorage).compareList;
 
     if (compareList.length != 0) {
       for (let i = 0; i < compareList.length; i++) {
@@ -42,19 +47,29 @@ class Compare extends Component {
 
         console.log(cadeia);
 
+        if (!cadeia || !cadeia.subcategoria) {
+          console.error("Product data incomplete:", cadeia);
+          continue;
+        }
+
         let subcategoria = await getSubCategoria(cadeia.subcategoria);
+        
+        if (!subcategoria) {
+          console.error("Subcategoria not found for:", cadeia.subcategoria);
+          continue;
+        }
 
         let ratGeral = this.state.ratingGeral
-        ratGeral.push(cadeia.cadeia.rating)
+        ratGeral.push(cadeia.cadeia?.rating || 0)
 
         let ratProducao = this.state.ratingProducao
-        ratProducao.push(cadeia.cadeia.producao.classificacao)
+        ratProducao.push((cadeia.cadeia?.producao?.classificacao || 0))
 
         let ratArmazenamento = this.state.ratingArmazenamento
-        ratArmazenamento.push(cadeia.cadeia.armazenamento.classificacao)
+        ratArmazenamento.push((cadeia.cadeia?.armazenamento?.classificacao || 0))
 
         let ratTransportes = this.state.ratingTransporte
-        ratTransportes.push(cadeia.cadeia.transporte_armazem.classificacao)
+        ratTransportes.push((cadeia.cadeia?.transporte_armazem?.classificacao || 0))
 
         let pre = this.state.precos
         pre.push(cadeia.preco)
@@ -73,7 +88,7 @@ class Compare extends Component {
             <div className="compareCellProduct">
               <a href={"/Shop/Product/" + cadeia._id} className="toLink">
                 <div className="blockImgCompareCell">
-                  <img src={cadeia.fotografia[0]} />
+                  <img src={cadeia.fotografia[0]} loading="lazy" alt={cadeia.nome} />
                 </div>
                 <h3 className="nameProductCompareCell">
                   {cadeia.nome}
@@ -87,23 +102,23 @@ class Compare extends Component {
             {/* Geral */}
             <div className="compareCell compareGeral">
               <h5 className="nivelCompareCell">
-                {Math.round(cadeia.cadeia.rating)}{" "}
+                {Math.round(cadeia.cadeia?.rating || 0)}{" "}
                 <span className="leafCompare">{getLeaf()}</span>
                 <br />
                 <span className="ratingNivelCompare">
-                  {createRankSuntentabilidade(Math.round(cadeia.cadeia.rating))}
+                  {createRankSuntentabilidade(Math.round(cadeia.cadeia?.rating || 0))}
                 </span>
               </h5>
             </div>
             {/* Produção */}
             <div className="compareCell compareProducao">
               <h5 className="nivelCompareCell">
-                {Math.round(cadeia.cadeia.producao.classificacao)}{" "}
+                {Math.round(cadeia.cadeia?.producao?.classificacao || 0)}{" "}
                 <span className="leafCompare">{getLeaf()}</span>
                 <br />
                 <span className="ratingNivelCompare">
                   {createRankSuntentabilidade(
-                    Math.round(cadeia.cadeia.producao.classificacao)
+                    Math.round(cadeia.cadeia?.producao?.classificacao || 0)
                   )}
                 </span>
               </h5>
@@ -111,12 +126,12 @@ class Compare extends Component {
             {/* Armazenamento */}
             <div className="compareCell compareArmazenamento">
               <h5 className="nivelCompareCell">
-                {Math.round(cadeia.cadeia.armazenamento.classificacao)}{" "}
+                {Math.round(cadeia.cadeia?.armazenamento?.classificacao || 0)}{" "}
                 <span className="leafCompare">{getLeaf()}</span>
                 <br />
                 <span className="ratingNivelCompare">
                   {createRankSuntentabilidade(
-                    Math.round(cadeia.cadeia.armazenamento.classificacao)
+                    Math.round(cadeia.cadeia?.armazenamento?.classificacao || 0)
                   )}
                 </span>
               </h5>
@@ -124,12 +139,12 @@ class Compare extends Component {
             {/* Transporte */}
             <div className="compareCell compareTransporte">
               <h5 className="nivelCompareCell">
-                {Math.round(cadeia.cadeia.transporte_armazem.classificacao)}{" "}
+                {Math.round(cadeia.cadeia?.transporte_armazem?.classificacao || 0)}{" "}
                 <span className="leafCompare">{getLeaf()}</span>
                 <br />
                 <span className="ratingNivelCompare">
                   {createRankSuntentabilidade(
-                    Math.round(cadeia.cadeia.transporte_armazem.classificacao)
+                    Math.round(cadeia.cadeia?.transporte_armazem?.classificacao || 0)
                   )}
                 </span>
               </h5>

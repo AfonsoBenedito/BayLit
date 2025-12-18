@@ -35,7 +35,7 @@ class CategoryBlock extends Component {
       <div class="categoryBlock">
         <a href={"/Shop/" + this.state.id}>
           <div class="positionImageCategoryBlock">
-            <img src={this.state.fotografia} />
+            <img src={this.state.fotografia} alt={this.state.name} loading="lazy" />
           </div>
           <h3 class="titleCategoryBlock">{this.state.name}</h3>
         </a>

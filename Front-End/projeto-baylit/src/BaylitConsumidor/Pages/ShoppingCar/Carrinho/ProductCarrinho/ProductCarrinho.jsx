@@ -253,7 +253,7 @@ class ProductStepOne extends Component {
       <div className="mainProductCarrinho">
         <div className="imageProductCarrinho">
           <a href={"/Shop/Product/" + this.state.idProduct}>
-            <img src={this.state.srcProduct} />
+            <img src={this.state.srcProduct} loading="lazy" alt={this.state.nomeProduto} />
           </a>
         </div>
         <div className="infoProductCarrinho">

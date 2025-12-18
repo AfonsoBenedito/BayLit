@@ -7,15 +7,16 @@ const auth_handler = require('../../handlers/AutenticacaoHandler').handler_auth;
 const ConsumidorGW = require('../../gateway/ConsumidorGat')
 const crypto = require("crypto");
 
-// requests
-
+// Google OAuth routes disabled for Docker setup
+// These routes are commented out as they require external Google OAuth service
+/*
 const session = require('express-session');
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID || "", //    GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET || "", // GOOGLE_CLIENT_SECRET,
+    clientID: process.env.GOOGLE_CLIENT_ID || "",
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
     callbackURL: "https://baylit.store:8080/auth/google/callback",
     passReqToCallback   : true
   },
@@ -23,7 +24,6 @@ passport.use(new GoogleStrategy({
     let user = await ConsumidorGW.getByEmail(profile.email)
     if (!user) {
       const created = await ConsumidorGW.createGoogle(profile.displayName, profile.email)
-
       await CarrinhoGW.create(created._id)
     }
     return done(null, profile)
@@ -41,24 +41,34 @@ passport.deserializeUser(function(user, done) {
 router.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
 router.use(passport.initialize());
 router.use(passport.session());
+*/
 
-router.get("/google", 
-  passport.authenticate('google', { scope: ['email', 'profile']}))
+// Disabled Google OAuth routes - return error message
+router.get("/google", async(req, res) => {
+  res.json({
+    code: 503,
+    message: "Google OAuth is not available in this Docker setup. Please use regular registration."
+  });
+})
 
-router.get("/google/callback", 
-  passport.authenticate('google', {
-    successRedirect: "https://baylit.store:8080/auth/google/success",
-    failureRedirect: "https://baylit.store:8080/auth/google/failure"
-  }))
+router.get("/google/callback", async(req, res) => {
+  res.json({
+    code: 503,
+    message: "Google OAuth is not available in this Docker setup."
+  });
+})
 
 router.get("/google/success", async(req, res) => {
-    res.redirect('https://baylit.store/SignUp?email='+req.user.email);
+  res.json({
+    code: 503,
+    message: "Google OAuth is not available in this Docker setup."
+  });
 }) 
 
 router.get("/google/failure", async(req, res) => {
-  res.send({
-    code: 400,
-    message: "Algo correu mal."
+  res.json({
+    code: 503,
+    message: "Google OAuth is not available in this Docker setup."
   });
 }) 
 

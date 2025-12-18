@@ -994,13 +994,7 @@ class CompraHandler {
             localidade, pais, morada, nome_transportador, distancia_transporte, consumo_item_transporte, emissao_item_transporte,
            classificacao_transporte, produtos)
         
-
-        var AWS = require('aws-sdk');
-        AWS.config.update({
-            accessKeyId: process.env.EC2_ACCESS_KEY,
-            secretAccessKey: process.env.EC2_SECRET_KEY,
-            region: 'eu-west-3',
-          })
+        const emailService = require('../utils/emailService');
 
         // Create sendEmail params 
         var params = {
@@ -1026,17 +1020,12 @@ class CompraHandler {
         Source: 'orders@baylit.store'
         };
 
-        // Create the promise and SES service object
-        var sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(params).promise();
-
-        // Handle promise's fulfilled/rejected states
-        sendPromise.then(
-        function(data) {
-            console.log(data.MessageId);
-        }).catch(
-            function(err) {
-            console.error(err, err.stack);
-        });
+        try {
+            const result = await emailService.sendEmail(params);
+            console.log('Order confirmation email sent (mock):', result.MessageId);
+        } catch (err) {
+            console.error('Error sending order confirmation email:', err);
+        }
         
     }
 

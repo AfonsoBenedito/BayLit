@@ -20,7 +20,7 @@ class HeaderPopUpUser extends Component {
   async getNotificacoes(){
     let info = JSON.parse(localStorage.getItem('baylitInfo'))
 
-    if (info.logged == "true"){
+    if (info && info.logged == "true"){
 
     
       let res = await getNotificacoesUtilizador(info.id, info.token)
@@ -53,12 +53,15 @@ class HeaderPopUpUser extends Component {
   async componentDidMount() {
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
-    let user = await getUserById(info.id, info.tipo);
-    let nome = user.nome;
-
-    this.setState({
-      nome: nome,
-    });
+    if (info && info.id && info.tipo) {
+      let user = await getUserById(info.id, info.tipo);
+      if (user && user.nome) {
+        let nome = user.nome;
+        this.setState({
+          nome: nome,
+        });
+      }
+    }
 
     await this.getNotificacoes()
   }

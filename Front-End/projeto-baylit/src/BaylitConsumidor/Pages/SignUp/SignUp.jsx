@@ -131,17 +131,18 @@ class Register extends Component {
           </span>
         </a>
 
-        <div className="separeSignUpsConsumidor"></div>
+        {/* Google OAuth disabled for Docker setup */}
+        {/* <div className="separeSignUpsConsumidor"></div>
 
         <a
           className="blockLoginGoogle"
-          href="https://baylit.store:8080/auth/google"
+          href="http://localhost:8080/auth/google"
         >
           <img src={GoogleLogo} alt="Logotipo Google" />
           <span className="signUpGoogleButton">Registo com Google</span>
         </a>
 
-        <div className="separeSignUpsConsumidor"></div>
+        <div className="separeSignUpsConsumidor"></div> */}
 
         <form id="form_register" onSubmit={this.register}>
           <input

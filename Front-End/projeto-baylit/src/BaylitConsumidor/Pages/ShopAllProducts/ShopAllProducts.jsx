@@ -40,7 +40,18 @@ class ShopAllProducts extends Component {
   }
 
   async componentDidMount() {
-    await this.appendInfo();
+    // Load categories with priority for above-the-fold content
+    // Use requestIdleCallback if available to defer non-critical work
+    if (window.requestIdleCallback) {
+      requestIdleCallback(() => {
+        this.appendInfo();
+      }, { timeout: 2000 });
+    } else {
+      // Fallback: small delay to allow critical content to render first
+      setTimeout(() => {
+        this.appendInfo();
+      }, 50);
+    }
   }
   render() {
     return (

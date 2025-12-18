@@ -61,6 +61,7 @@ class Pesquisa extends Component {
         let produtoTemp = (
           <Product
             srcProduct={produtos[i].fotografia[0]}
+            subcategoryImage={subcategoria.fotografia}
             nivelSustentabilidade={Math.round(produtos[i].cadeia.rating)}
             nivelProducao={produtos[i].cadeia.producao.classificacao}
             nivelArmazenamento={produtos[i].cadeia.armazenamento.classificacao}

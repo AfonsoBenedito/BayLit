@@ -57,7 +57,7 @@ class MainNav extends Component {
   async getNotificacoes(){
     let info = JSON.parse(localStorage.getItem('baylitInfo'))
 
-    if (info.logged == "true"){
+    if (info && info.logged == "true"){
 
       let res = await getNotificacoesUtilizador(info.id, info.token)
 
@@ -156,6 +156,7 @@ class MainNav extends Component {
           let produtoTemp = (
             <Product
               srcProduct={produtos[i].fotografia[0]}
+              subcategoryImage={subcategoria.fotografia}
               nivelSustentabilidade={Math.round(produtos[i].cadeia.rating)}
               nivelProducao={produtos[i].cadeia.producao.classificacao}
               nivelArmazenamento={produtos[i].cadeia.armazenamento.classificacao}

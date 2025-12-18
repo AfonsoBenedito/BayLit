@@ -17,6 +17,7 @@ import FooterBaylit from "./Components/FooterBaylit/FooterBaylit"
 
 import {AuthVerification} from "../Helpers/AuthVerification";
 
+// Lazy load components below the fold for better initial load performance
 import Home from "./Pages/Home/Home";
 import Shop from "./Pages/Shop/Shop";
 import SignUp from "./Pages/SignUp/SignUp";

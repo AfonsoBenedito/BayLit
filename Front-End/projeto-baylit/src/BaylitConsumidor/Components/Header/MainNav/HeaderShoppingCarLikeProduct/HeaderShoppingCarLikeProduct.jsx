@@ -54,7 +54,7 @@ class HeaderShoppingCarLikeProduct extends Component {
       <a className="toLink" href={"/Shop/Product/"+this.state.produtoId}>
       <div className="mainProductCarLiked">
         <div className="leftDetailsProductsHeader">
-          <div className="divImgProductHeader"><img src={this.state.srcProduct} /></div>
+          <div className="divImgProductHeader"><img src={this.state.srcProduct} loading="lazy" alt={this.state.nomeProduto} /></div>
           <div className="divDetailsProductHeader">
             <h3>{this.state.nameProduct}</h3>
             <h4>{this.state.subCategoryProduct}</h4>

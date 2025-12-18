@@ -221,7 +221,7 @@ class CadeiaLogistica extends Component {
             </tr>
             <tr>
               <td>{this.state.cadeia.armazenamento.consumo}</td>
-              <td>{this.state.cadeia.armazenamento.duracao} dias</td>
+              <td>{(this.state.cadeia.armazenamento.duracao || 0)} dias</td>
             </tr>
           </table>
         </div>
@@ -240,13 +240,13 @@ class CadeiaLogistica extends Component {
           <h6>
             Nível de sustentabilidade no transporte para o armazém -{" "}
             <span className="numberNivelDetails">
-              {this.state.cadeia.transporte_armazem.classificacao.toFixed(2)}
+              {(this.state.cadeia.transporte_armazem.classificacao || 0).toFixed(2)}
             </span>
             <span className="iconNivelDetails">{getLeaf()}</span>
           </h6>
           <div className="productLeafSVGDetails">
             {createRankSuntentabilidade(
-              this.state.cadeia.transporte_armazem.classificacao.toFixed(2)
+              (this.state.cadeia.transporte_armazem.classificacao || 0).toFixed(2)
             )}
           </div>
         </div>
@@ -260,7 +260,7 @@ class CadeiaLogistica extends Component {
             </tr>
             <tr>
               <td>
-                {Math.round(this.state.cadeia.transporte_armazem.distancia)} KM
+                {Math.round(this.state.cadeia.transporte_armazem.distancia || 0)} KM
               </td>
               <td>
                 {Math.round(this.state.cadeia.transporte_armazem.consumo)}
@@ -368,23 +368,23 @@ class CadeiaLogistica extends Component {
         <div ref={this.myRefBlockGeral} className="geralBlock">
           <div className="cardGeralBlock">
             <h6>Produção</h6>
-            <h5>{this.state.cadeia.producao.tipo}</h5>
+            <h5>{this.state.cadeia.producao.tipo || "N/A"}</h5>
             <h6>Nível</h6>
             <h5 className="nivelSustainabilityProductValue">
-              {this.state.cadeia.producao.classificacao.toFixed(2)}
+              {(this.state.cadeia.producao.classificacao || 0).toFixed(2)}
             </h5>
             <div className="productLeafSVG">
               {createRankSuntentabilidade(
-                this.state.cadeia.producao.classificacao.toFixed(2)
+                (this.state.cadeia.producao.classificacao || 0).toFixed(2)
               )}
             </div>
           </div>
           <div className="cardGeralBlock">
             <h6>Armazenamento</h6>
-            <h5>{this.state.cadeia.armazenamento.duracao} dias</h5>
+            <h5>{(this.state.cadeia.armazenamento.duracao || 0)} dias</h5>
             <h6>Nível</h6>
             <h5 className="nivelSustainabilityProductValue">
-              {this.state.cadeia.armazenamento.classificacao.toFixed(2)}
+              {(this.state.cadeia.armazenamento.classificacao || 0).toFixed(2)}
             </h5>
             <div className="productLeafSVG">
               {createRankSuntentabilidade(
@@ -399,11 +399,11 @@ class CadeiaLogistica extends Component {
             </h5>
             <h6>Nível</h6>
             <h5 className="nivelSustainabilityProductValue">
-              {Math.round(this.state.cadeia.transporte_armazem.classificacao.toFixed(2))}
+              {Math.round((this.state.cadeia.transporte_armazem.classificacao || 0).toFixed(2))}
             </h5>
             <div className="productLeafSVG">
               {createRankSuntentabilidade(
-                this.state.cadeia.transporte_armazem.classificacao.toFixed(2)
+                (this.state.cadeia.transporte_armazem.classificacao || 0).toFixed(2)
               )}
             </div>
           </div>

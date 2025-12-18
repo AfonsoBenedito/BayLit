@@ -8,7 +8,35 @@ const { isObjectIdOrHexString } = require("mongoose")
 const dotenv = require('dotenv');
 dotenv.config();
 
-const stripe = require('stripe')(process.env.STRIPE_KEY);
+// Stripe disabled for Docker setup - using mock
+// const stripe = require('stripe')(process.env.STRIPE_KEY);
+
+// Mock Stripe for Docker setup
+const stripe = {
+    charges: {
+        create: async (params) => {
+            console.log('Mock Stripe charge:', params);
+            return {
+                id: `ch_mock_${Date.now()}`,
+                status: 'succeeded',
+                amount: params.amount,
+                currency: params.currency || 'eur'
+            };
+        }
+    },
+    paymentIntents: {
+        create: async (params) => {
+            console.log('Mock Stripe payment intent:', params);
+            return {
+                id: `pi_mock_${Date.now()}`,
+                status: 'succeeded',
+                amount: params.amount,
+                currency: params.currency || 'eur',
+                client_secret: `pi_mock_${Date.now()}_secret`
+            };
+        }
+    }
+};
 
 class HandlerPagamento {
 

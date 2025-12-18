@@ -135,7 +135,7 @@ class ShopCategory extends Component {
       let tempHref = "/Shop/" + this.state.categoryId + "/" + subcategoria._id;
       let tempDisplay = (
         <a className="toLink" href={tempHref}>
-          <div class="blockCategoryImageSC"><img src={subcategoria.fotografia} alt="" /></div>
+          <div class="blockCategoryImageSC"><img src={subcategoria.fotografia} alt="" loading="lazy" /></div>
           <h6>{subcategoria.nome}</h6>
         </a>
       );
@@ -244,6 +244,7 @@ class ShopCategory extends Component {
       let produtoTemp = (
         <Product
           srcProduct={produtos[i].fotografia[0]}
+          subcategoryImage={subcategoria.fotografia}
           nivelSustentabilidade={Math.round(produtos[i].cadeia.rating)}
           nivelProducao={Math.round(produtos[i].cadeia.producao.classificacao)}
           nivelArmazenamento={Math.round(produtos[i].cadeia.armazenamento.classificacao)}
@@ -370,6 +371,7 @@ class ShopCategory extends Component {
       let produtoTemp = (
         <Product
           srcProduct={produtos[i].fotografia[0]}
+          subcategoryImage={subcategoria.fotografia}
           nivelSustentabilidade={Math.round(produtos[i].cadeia.rating)}
           nivelProducao={Math.round(produtos[i].cadeia.producao.classificacao)}
           nivelArmazenamento={Math.round(produtos[i].cadeia.armazenamento.classificacao)}
