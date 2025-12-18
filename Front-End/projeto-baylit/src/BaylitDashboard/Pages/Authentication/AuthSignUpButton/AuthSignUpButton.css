@@ -1,0 +1,11 @@
+.authSignUpButton{
+    padding: 7px 14px;
+    /* min-width: 120px; */
+    font-size: 18px;
+    background-color: rgb(89, 179, 94);
+    font-weight: 400;
+    /* text-transform: uppercase; */
+    border: none;
+    border-radius: 5px;
+    color: white;
+}

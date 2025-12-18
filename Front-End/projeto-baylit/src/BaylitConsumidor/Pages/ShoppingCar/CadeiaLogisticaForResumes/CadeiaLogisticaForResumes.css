@@ -1,0 +1,64 @@
+.resumeSustentabilidadeGeral {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+    /* background-color: aqua; */
+}
+
+.blocoResumeSustentabilidadeGeral {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 90px;
+    border: 1px solid var(--secondaryColorConsumidor);
+    border-radius: 4px;
+    /* background-color: pink; */
+    padding: 8px;
+    text-align: center;
+}
+
+.cardTitleBold {
+    font-weight: 600;
+}
+
+.blocoResumeSustentabilidadeGeral h4 {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.blocoResumeSustentabilidadeGeral h5 {
+    font-size: 13px;
+    font-weight: 500;
+    /* background-color: red; */
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3px;
+}
+
+.leaftGeralCard svg {
+    height: 15px;
+    margin-left: 3px;
+}
+
+.leaftRatingGeralCard svg {
+    height: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    .blocoResumeSustentabilidadeGeral {
+        width: 90px;
+        padding: 5px 0px 5px;
+        height: fit-content;
+    }
+
+    .blocoResumeSustentabilidadeGeral h4 {
+        font-size: 10px;
+    }
+
+    .blocoResumeSustentabilidadeGeral h5 {
+        font-size: 11px;
+    }
+}

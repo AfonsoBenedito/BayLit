@@ -1,0 +1,171 @@
+.mainDashboardEmployees{
+    position: absolute;
+    top: 0;
+    float: right;
+    right: 0;
+    height: 100%;
+    width: calc(100% - var(--widthNav));
+    background-color: var(--mainColor);
+    /* overflow-x: auto; */
+    /* padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px; */
+}
+
+.topBlockEmployees{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 0px 0px 12px 12px;
+}
+
+.employeesCardDiv{
+    margin-top: 2%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* Para ser só 1 linha */
+    /* max-height: 200px; */
+    overflow-y: hidden;
+    /* ------------------- */
+    row-gap: 20px;
+    width: 100%;
+    height: fit-content;
+    /* background-color: rgb(99, 85, 38); */
+}
+
+.addEmployee {
+    margin-top: 2%;
+    margin-left: 80%;
+    display: block;
+    padding: 3px 10px;
+    min-width: 50px;
+    font-size: 12px;
+    background-color: rgba(71, 65, 65, 0.3);
+    font-weight: 400;
+    border-radius: 120px;
+    border: none;
+    overflow: hidden;
+    color: white;
+}
+
+.addEmployee:hover{
+    background-color: rgba(71, 65, 65, 0.5);
+}
+
+.addEmployeeDiv{
+  position: relative;
+  display: none;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 50px);
+  max-width: 350px;
+  height: fit-content;
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+  padding-top: 20px;
+}
+
+.addEmployeeInput{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 40px);
+    height: 35px;
+    padding-left: 10px;
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    background-color: #212121;
+    color: white;
+}
+  
+.addEmployeeP{
+    position: relative;
+    display: block;
+    text-align: left;
+    margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+.removeEmployeeDiv{
+    display: none;
+    position: fixed;
+    background-color: var(--secondaryColor);
+    border: 1px solid rgb(61, 61, 61);
+    width: 30%;
+    height: 200px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.removeEmployeeDivOptionYes{
+    border-radius: 10px;
+    margin-left: 20%;
+    text-align: center;
+    display: block;
+    background: rgb(46, 132, 0);
+    border: 1px solid rgb(61, 61, 61);
+    height: 50px;
+    width: 60%;
+    margin-bottom: 5px;
+}
+
+.removeEmployeeDivOptionNo{
+    margin-top: 5px;
+    margin-left: 20%;
+    border-radius: 10px;
+    display: block;
+    background: red;
+    border: 1px solid rgb(61, 61, 61);
+    height: 50px;
+    width: 60%;
+}
+
+.removeEmployeeQuestion{
+    font-size: 15px;
+}
+
+#zeroEmployeeText{
+    position: relative;
+    display: block;
+    font-size: 12px;
+}
+
+#zeroEmployeeTextAdd{
+    position: relative;
+    display: block;
+    font-size: 16px;
+}
+
+.zeroEmployeeDiv{
+    position: relative;
+    /* background: red; */
+    width: 100%;
+    left: 130%;
+}
+
+#addEmployeeFeedbackYes{
+    display: none;
+    color: green;
+    font-size: 13px;
+}
+
+#addEmployeeFeedbackNo{
+    display: none;
+    color: red;
+    font-size: 13px;
+}

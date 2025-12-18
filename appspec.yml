@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+ - source: .
+   destination: /home/ec2-user/BayLit
+hooks:
+  AfterInstall:
+   - location: Scripts/install_app_dependencies
+     timeout: 500
+     runas: ec2-user
+  ApplicationStart:
+   - location: Scripts/start_server
+     timeout: 500
+     runas: ec2-user

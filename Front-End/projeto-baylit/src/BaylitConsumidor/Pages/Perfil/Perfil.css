@@ -1,0 +1,104 @@
+.mainPerfilPage{
+    position: relative;
+    display: grid;
+    width: var(--widthMainContent);
+    max-width: 1400px; /*--maxWidthMainContent*/
+    grid-template-columns: 200px 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 20px;
+    justify-items: center;
+    /* width: 100%; */
+    height: fit-content;
+    min-height: 100%;
+    padding-bottom: 80px;
+    /* height: 500px; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    /* background-color: red; */
+}
+
+.toAlignBtnsPerfilPage{
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    /* background-color: pink; */
+}
+
+.btnPagePerfil{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* background-color: rgb(133, 133, 231); */
+    cursor: pointer;
+    /* border: 1px solid black; */
+}
+
+.btnPagePerfil i{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 50px;
+    -webkit-text-stroke: .2px;
+}
+
+.btnPagePerfil h5 {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 50px;
+    margin-left: 10px;
+}
+
+.btnPagePerfil:hover i {
+    -webkit-text-stroke: .7px !important;
+}
+
+.btnPagePerfil:hover h5{
+    font-weight: 600 !important;
+}
+
+@media only screen and (max-width: 1000px) {
+    .mainPerfilPage {
+        grid-template-columns: 1fr;
+    }
+
+    .toAlignBtnsPerfilPage {
+        display: block;
+        /* justify-content: ; */
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-bottom: 20px;
+        white-space: nowrap;
+    }
+
+    .btnPagePerfil {
+        display: inline-block;
+        width: fit-content;
+        margin-right: 10px;
+        margin-bottom: 0px;
+    }
+
+    .btnPagePerfil:last-child{
+        margin-right: 0;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .btnPagePerfil i {
+        font-size: 13px;
+    }
+
+    .btnPagePerfil h5 {
+        font-size: 12px;
+    }
+
+}

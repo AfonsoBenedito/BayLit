@@ -1,0 +1,55 @@
+.mainFAQComponent{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--secondaryColorConsumidor);
+    background-color: var(--mainColorConsumidor);
+    box-shadow: 0px 3px 8px 0px rgba(143, 143, 143, 0.1);
+    transition: .3s;
+}
+
+.headerFAQComponent{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    /* background-color:peru ; */
+    cursor: pointer;
+}
+
+.headerFAQComponent h4{
+    position: relative;
+    width: 80%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.headerFAQComponent i{
+    position: relative;
+    font-size: 13px;
+}
+
+.mainFAQComponent p{
+    text-align: justify;
+    display: none;
+    font-weight: 500;
+    color: grey;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.headerFAQComponent h4:hover {
+    text-decoration: underline;
+}
+
+.headerFAQComponent i {
+    position: relative;
+    font-size: 13px;
+}
+
+.mainFAQComponent p{
+    font-size: 13px;
+}

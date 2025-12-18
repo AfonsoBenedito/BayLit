@@ -1,0 +1,97 @@
+.main_graphs {
+  position: relative;
+  justify-content: space-evenly;
+  background-color: var(--secundaryColor);
+  margin-left: 2.4%;
+  margin-right: 2.4%;
+  border-radius: 10px;
+}
+
+.graph {
+  position: relative;
+  background-color: var(--corUtilizador);
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 550px;
+  height: 300px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.graph1 {
+  position: relative;
+  background-color: green;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 550px;
+  height: 300px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.infoGraphs {
+  background-color: #292929;
+  color: white;
+  height: 25%;
+
+  overflow: hidden;
+  border-radius: 0px 0px 10px 10px;
+  border: white solid 1px;
+}
+
+.text_infographs {
+  margin-top: 20px;
+  text-align: center;
+  transform: translateY(40%);
+}
+
+.Title_Graphs {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  transform: translateX(0%);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* #div_teste {
+  background-color: aqua;
+  height: 100px;
+  width: 1000px;
+} */
+
+/* Botoes Gráficos */
+.filtro_grafico {
+  height: 55px;
+  width: 100%;
+  justify-content: space-evenly;
+  position: relative;
+  display: inline-block;
+}
+
+.botoesGraficos {
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  min-width: 70px !important;
+  font-size: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.botoesGraficos:hover {
+  background-color: lightgrey;
+}
+
+.botao_info {
+  margin-top: 1px;
+}
+/* BOTAO DE DOWNLOAD DE GRAFICOS  */
+
+#chartsToPDF {
+  background-color: #187fda;
+  border-radius: 10px;
+}

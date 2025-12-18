@@ -1,0 +1,119 @@
+:root{
+    --distancePopUpRedefineBtn: 75px;
+}
+
+.mainAllFilterButtons{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    /* background-color: aqua; */
+    padding-right: 200px;
+    /* overflow: hidden; */
+}
+.filterAndPopUp{
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 12px;
+    /* background-color: rgb(172, 172, 88); */
+    margin-bottom: 12px;
+}
+
+.redefineAllFiltersClosed,
+.expandAllFiltersClosed{
+    position: absolute !important;
+    float: right !important;
+    top: 0 !important;
+}
+.redefineAllFiltersClosed{
+    right: 86px !important;
+}
+
+.expandAllFiltersClosed{
+    right: 0 !important;
+}
+
+.redefineAllFilters, .expandAllFilters{
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 10px;
+    /* background-color: aqua; */
+    /* border: 1px solid var(--secondaryColor); */
+    cursor: pointer;
+    border-radius: 3px;
+    /* background-color: pink; */
+}
+
+.redefineAllFilters i, .expandAllFilters i{
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    color: rgb(74, 74, 74);
+    -webkit-text-stroke: .4px;
+}
+
+.expandAllFilters i{
+    top:-1px;
+    font-size: 8px;
+}
+
+.redefineAllFilters h6,
+.expandAllFilters h6{
+    position: relative;
+    display: inline-block;
+    margin-left: 7px;
+    /* margin-right: 7px; */
+    font-weight: 600;
+    color: rgb(101, 101, 101);
+}
+
+.expandAllFilters h6{
+    margin-left: 0;
+    margin-right: 5px;
+    font-weight: 400;
+}
+
+.redefineButton{
+    position: relative;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid var(--secondaryColorConsumidor);
+    text-align: center;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+.redefineButton i {
+    position: relative;
+    display: inline-block;
+    line-height: 60px;
+    margin-right: 5px;
+    font-size: 14px;
+    -webkit-text-stroke: .6px;
+    cursor: pointer;
+}
+.redefineButton h6 {
+    position: relative;
+    display: inline-block;
+    line-height: 60px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.hideOverflowFilters{
+    position: absolute;
+    top: 100%;
+    height: 300px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}

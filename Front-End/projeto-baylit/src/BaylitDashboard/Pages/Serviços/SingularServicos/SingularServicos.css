@@ -1,0 +1,52 @@
+.SingularServicosMainDiv{
+    height: 50px;
+    width: 100%;
+    /* margin-left: 5%;
+    margin-right: 5%; */
+    /* background: purple; */
+    margin-top: 2px;
+    margin-bottom: 2px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    /* justify-content: space-between; */
+    background: #292929;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+.ServicosTableConcreteInformation{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    /* background: teal; */
+    font-size: 14px;
+    position: relative;
+    line-height: 50px;
+    height: 50px;
+    margin-bottom: 0;
+    /* top: 20px; */
+    /* margin-top: auto;
+    margin-bottom: auto; */
+}
+
+.ServicosTableConcreteInformationProductDiv{
+    position: relative;
+    background:teal;
+    height: 50px;
+    overflow: hidden;
+}
+
+.ServicosTableConcreteInformationProductDivCancelled{
+    position: relative;
+    background:rgb(240, 52, 52);
+    height: 50px;
+    overflow: hidden;
+}
+
+/*
+.ServicosTableConcreteInformationProductDiv:hover{
+    height: fit-content;
+}
+*/

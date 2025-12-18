@@ -1,0 +1,12 @@
+/* body{
+    background-color: pink;
+} */
+:root{
+    --widthContentAuth: calc(100% - 50px);
+    --maxWwidthContentAuth: 1250px;
+}
+
+
+
+
+

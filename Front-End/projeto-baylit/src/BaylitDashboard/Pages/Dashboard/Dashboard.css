@@ -1,0 +1,73 @@
+/* :root{
+    --widthContainers: calc(100% - 60px);
+    --marginBottomContainers: 15px;
+
+    --mainColor: #0B0B0C;
+    --secondaryColor: #212121;
+
+    --widthNav: 230px;
+    --heightNav: 50px;
+} */
+
+.mainDashboard{
+    position: absolute;
+    top: 0;
+    float: right;
+    right: 0;
+    height: 100%;
+    width: calc(100% - var(--widthNav));
+    background-color: var(--mainColor);
+    /* overflow-x: auto; */
+    /* padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px; */
+}
+
+.mainDashboard > *{
+    margin-bottom: var(--marginBottomContainers);
+}
+
+.topBlockDashboard{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 0px 0px 12px 12px;
+}
+
+.topBlockDashboard > *{
+    margin-bottom: var(--marginBottomContainers);
+}
+
+.mainPath{
+    position: relative;
+    display: block;
+    width: var(--widthContainers);
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 600px){
+    .mainDashboard {
+        position: absolute;
+        top: var(--heightNav);
+        float: right;
+        right: 0;
+        height: calc(100% - var(--heightNav));
+        width: 100%;
+        background-color: var(--mainColor);
+        /* overflow-x: auto; */
+        /* padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 30px;
+        padding-right: 30px; */
+    }
+}
+

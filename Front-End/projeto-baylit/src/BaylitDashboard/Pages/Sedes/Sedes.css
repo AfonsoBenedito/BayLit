@@ -1,0 +1,148 @@
+.mainWarehouses{
+    position: absolute;
+    top: 0;
+    float: right;
+    right: 0;
+    height: 100%;
+    width: calc(100% - var(--widthNav));
+    background-color: var(--mainColor);
+    /* overflow-x: auto; */
+    /* padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px; */
+}
+
+.topBlockWarehouses{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 0px 0px 12px 12px;
+}
+
+.warehousesCardDiv{
+    margin-top: 2%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* Para ser só 1 linha */
+    /* max-height: 200px; */
+    overflow-y: hidden;
+    /* ------------------- */
+    row-gap: 20px;
+    width: 100%;
+    height: fit-content;
+    /* background-color: rgb(99, 85, 38); */
+}
+
+.addWarehouse {
+    margin-top: 2%;
+    margin-left: 80%;
+    display: block;
+    padding: 3px 10px;
+    min-width: 50px;
+    font-size: 12px;
+    background-color: rgba(71, 65, 65, 0.3);
+    font-weight: 400;
+    border-radius: 120px;
+    border: none;
+    overflow: hidden;
+    color: white;
+}
+
+.addWarehouse:hover{
+    background-color: rgba(71, 65, 65, 0.5);
+}
+
+.addSedeDiv{
+  position: relative;
+  display: none;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 50px);
+  max-width: 350px;
+  height: fit-content;
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+  padding-top: 20px;
+}
+
+.addSedeInput{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 40px);
+    height: 35px;
+    padding-left: 10px;
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    background-color: #212121;
+    color: white;
+}
+
+.addSedeP{
+    position: relative;
+    display: block;
+    text-align: left;
+    margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+.removeWarehouseDiv{
+    display: none;
+    position: fixed;
+    background-color: var(--secondaryColor);
+    border: 1px solid rgb(61, 61, 61);
+    width: 30%;
+    height: 200px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.removeWarehouseDivOptionYes{
+    border-radius: 10px;
+    margin-left: 20%;
+    text-align: center;
+    display: block;
+    background: rgb(46, 132, 0);
+    border: 1px solid rgb(61, 61, 61);
+    height: 50px;
+    width: 60%;
+    margin-bottom: 5px;
+}
+
+.removeWarehouseDivOptionNo{
+    margin-top: 5px;
+    margin-left: 20%;
+    border-radius: 10px;
+    display: block;
+    background: red;
+    border: 1px solid rgb(61, 61, 61);
+    height: 50px;
+    width: 60%;
+}
+
+.removeWarehouseQuestion{
+    font-size: 15px;
+}
+
+#warehouseInfo{
+    color: green;
+}
+
+#warehouseInfoError{
+    color: red
+}

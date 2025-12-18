@@ -1,0 +1,20 @@
+.messagesChatOwner{
+    position: relative;
+    display: block;
+    margin-top: 15px;
+    background: rgb(188, 188, 188);
+    height: fit-content;
+    max-width: 70%;
+    border-radius: 20px 20px 0px 20px;
+    bottom: 0;
+    left: 29%;
+    border: 2px solid rgb(226, 226, 226);
+}
+
+.messagesChatOwnerMsg{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+}

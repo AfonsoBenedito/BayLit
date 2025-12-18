@@ -1,0 +1,130 @@
+.mainProductCarLiked{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    /* background-color: greenyellow; */
+}
+
+.leftDetailsProductsHeader{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 65%;
+    /* background-color: rgb(240, 158, 158); */
+}
+
+.rightDetailsProductsHeader{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 32%;
+    /* background-color: rgb(231, 155, 155); */
+    /* padding-right: 3px; */
+}
+
+.divImgProductHeader{
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-color: var(--secondaryColorConsumidor);
+    overflow: hidden;
+}
+
+.divImgProductHeader img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
+}
+
+.divDetailsProductHeader{
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 75px);
+    height: fit-content;
+    top: 50%;
+    transform: translateY(-50%);
+    /* background-color: goldenrod; */
+}
+
+.divDetailsProductHeader h3{
+    position: relative;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 500px;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.divDetailsProductHeader h4{
+    position: relative;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 400px;
+    color: rgb(110, 110, 110);
+    margin: 0;
+}
+
+.productHeaderleafSVG {
+    height: fit-content;
+    width: fit-content;
+    /* background-color: rgb(255, 255, 255); */
+}
+
+.productHeaderleafSVG svg{
+    position: relative;
+    display: inline-block;
+    top: 0;
+    /* margin: 0; */
+    height: 15px;
+    /* fill: rgb(206, 58, 21) !important; */
+}
+
+.toAlignPrices{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: fit-content;
+    text-align: right;
+    /* background-color: yellowgreen; */
+    /* padding: 0 !important; */
+}
+
+.mainPriceProductHeader{
+    position: relative;
+    top: 0;
+    /* display: block; */
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 0!important;
+    /* line-height: 8px !important; */
+}
+
+.mainPriceProductHeader span{
+    position: relative;
+    top: -4px;
+    font-size: 13px;
+    font-weight: 500;
+    /* margin-bottom: 0; */
+}
+
+.toAlignPrices h6{
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(135, 135, 135);
+    text-decoration: line-through;
+    /* background-color: rgb(255, 255, 255); */
+    margin-top: -7px !important;
+}

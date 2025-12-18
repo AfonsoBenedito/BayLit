@@ -1,0 +1,114 @@
+.imageBaylitSignUp {
+    position: relative;
+    display: block;
+    margin-top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    width: auto;
+}
+
+.titleSignUp {
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.mainSignUp {
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 50px);
+    max-width: 350px;
+    height: fit-content;
+    border-radius: 8px;
+    background-color: #292929;
+    border: 1px solid rgb(61, 61, 61);
+    padding-top: 20px;
+    margin-bottom: 70px;
+}
+
+.mainSignUp input {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 40px);
+    height: 35px;
+    padding-left: 10px;
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    background-color: #212121;
+}
+
+.mainSignUp h3{
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px !important;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.mainSignUp h3:first-child{
+    margin-top: 0 !important;
+}
+
+.mainSignUp p {
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px !important;
+    font-size: 13px;
+    /* background-color: pink; */
+}
+
+.signUpNameSurname{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 40px);
+    height: fit-content;
+    /* background-color: pink; */
+}
+
+.signUpName, .signUpSurname{
+    position: relative;
+    display: inline-block;
+    width: 49%;
+    height: fit-content;
+    /* background-color: rgb(145, 145, 107); */
+}
+
+.signUpNameSurname input, .signUpNameSurname p{
+    width: 100% !important;
+}
+
+.mainSignUp >* {
+    margin-bottom: 20px;
+}
+
+#btnSignUpAuth {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 40px);
+    height: 35px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: rgb(89, 179, 94);
+    /* padding: 5px 10px; */
+}

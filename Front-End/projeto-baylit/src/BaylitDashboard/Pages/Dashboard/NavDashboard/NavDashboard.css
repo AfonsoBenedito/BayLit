@@ -1,0 +1,64 @@
+.navDashboard {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: var(--widthContainers);
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--mainColor);
+    border-radius: 8px;
+}
+
+.linkNavDashboard {
+    text-decoration: none;
+    list-style: none;
+    position: relative;
+    display: flex;
+    width: calc(33% - 6px);
+    height: calc(100% - 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    /* background-color: rgb(95, 95, 95); */
+}
+
+.linkNavDashboard:hover {
+    background-color: rgba(39, 39, 39, 0.4);
+}
+
+.linkNavDashboard h5 {
+    line-height: 30px;
+}
+
+/* #btnPerfilCompany{
+    background-color: rgba(96, 96, 96, 0.7);
+} */
+
+@media only screen and (max-width: 685px) {
+    .navDashboard{
+        height: 50px;
+    }
+    .linkNavDashboard {
+        flex-direction: column;
+        
+    }
+    .linkNavDashboard h5{
+        position: relative;
+        display: block;
+        align-self: center;
+        margin: 0;
+        font-size: 10px;
+        font-weight: 300;
+    }
+    .linkNavDashboard i {
+        position: relative;
+        display: block;
+        align-self: center;
+        margin: 0;
+        /* font-size: 16px; */
+    }
+}

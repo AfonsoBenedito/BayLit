@@ -1,0 +1,53 @@
+.mainSustentabilidadePage {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  /* background-color: rgb(205, 50, 179); */
+}
+
+.tituloSustentabilidadePage {
+  position: relative;
+  display: block;
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.subTituloSustentabilidadePage {
+  position: relative;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(131, 131, 131);
+}
+
+.tituloSustenbilidadeGraph1 {
+  color: blue;
+  position: relative;
+  display: block;
+  top: 50px;
+  z-index: 1;
+}
+
+.tituloSustenbilidadeGraph2 {
+  color: blue;
+  position: relative;
+  display: block;
+  top: 50px;
+  z-index: 2;
+}
+
+.DataNotAvailable {
+  display: block;
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ErrorDiv {
+  /* background-color: aqua; */
+  position: relative;
+  top: 20px;
+}

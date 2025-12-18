@@ -1,0 +1,287 @@
+.mainDefinitions {
+  position: absolute;
+  top: 0;
+  float: right;
+  right: 0;
+  height: 100%;
+  width: calc(100% - var(--widthNav));
+  background-color: var(--mainColor);
+  /* overflow-x: auto; */
+  /* padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px; */
+}
+
+.topBlockDefinitions {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  padding-top: 18px;
+  padding-bottom: 15px;
+  text-align: center;
+  align-items: center;
+  background-color: var(--secondaryColor);
+  border-radius: 0px 0px 12px 12px;
+  z-index: 10;
+}
+
+.mainDivOfDefinitions {
+  position: relative;
+  justify-content: space-between;
+  background-color: var(--secundaryColor);
+  margin-left: 1%;
+  margin-right: 2.4%;
+  border-radius: 10px;
+  /* background-color: aqua; */
+  width: 250px;
+  margin-top: 3%;
+  display: inline;
+}
+
+.options_Definitions {
+  position: relative;
+  /* background-color: var(--corUtilizador); */
+  margin-top: 5%;
+  margin-bottom: 1%;
+  margin-left: 0%;
+  margin-right: 0%;
+  text-align: center;
+  width: 200px;
+  /* height: fit-content; */
+  height: 35px;
+  display: inline-block;
+  border-radius: 10px;
+  border-color: white;
+  border-style: solid;
+  border-width: thin;
+  /* background-color: red; */
+  transform: translateX(50%);
+  cursor: pointer;
+}
+
+.mainDivOfDefinitions :hover {
+  background-color: black;
+  border-radius: 10px;
+}
+
+.title_Definitions {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  transform: translateX(40%);
+
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.plusDefinitionsIcon {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.definitionsChangePasswordDiv {
+  background: teal;
+  height: fit-content;
+  width: 100%;
+  display: none;
+}
+
+.definitionsDivConstant {
+  height: fit-content;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.definitionsDeleteAccountDiv {
+  background: teal;
+  height: fit-content;
+  width: 100%;
+  display: none;
+}
+
+.definitionsChangeThemeDiv {
+  background: teal;
+  height: fit-content;
+  width: 100%;
+}
+
+.definitionsThermsDiv {
+  background: teal;
+  height: fit-content;
+  width: 100%;
+  display: none;
+}
+
+.title_DefinitionsTheme {
+  text-align: center;
+}
+
+/* Divs que ABREM COMPONENTES */
+
+#divOpcaoMudarPass {
+  background-color: var(--secondaryColor);
+  height: 400px;
+  display: none;
+  margin-top: -10px;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+#divOpcaoEliminarConta {
+  background-color: var(--secondaryColor);
+  height: 400px;
+  display: none;
+  margin-top: -10px;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+}
+#divOpcaoTermos {
+  background-color: var(--secondaryColor);
+  height: 400px;
+  display: none;
+  margin-top: -10px;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+}
+#divOpcaoMudarTema {
+  background-color: var(--secondaryColor);
+  height: 400px;
+  display: none;
+  margin-top: -10px;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+/*                                      Opção de abrir "mudar palavra-passe"                                       */
+
+#div_changepassword_dashboard {
+  position: relative;
+  /* background-color: red; */
+  transform: translateX(10%);
+  width: 450px;
+  height: 375px;
+  left: 30%;
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+}
+
+#titulo_mudarPass {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#titulo_inputs_pass {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.inputsChangePWD {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-color: #212121;
+  /* color: rgb(121, 121, 121); */
+  color: white;
+}
+
+#btnDefinitionsPass {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  left: -5%;
+  width: auto;
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(89, 179, 94);
+  bottom: 3%;
+  transform: translateX(13%);
+  text-align: center;
+  bottom: 10px;
+}
+
+/*                                      Opção de abrir "Termos de Utilização"                                       */
+
+/* div_geral disto */
+
+#div_geral_defenicaoT {
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+  z-index: 100;
+}
+
+/* #divOpcaoTermos {
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+  z-index: 100;
+} */
+
+/* titulo  */
+
+#relatorio_termos_titloA {
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+}
+
+#relatorio_termos_textoA {
+  position: relative;
+  text-align: justify;
+  font-size: 14px;
+}
+
+/* aba parte do eliminar conta */
+
+#btnDefinitionsDelete {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  left: -5%;
+  width: auto;
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  /* background-color: red; */
+  background-color: #e4605e;
+  transform: translateX(13%);
+  text-align: center;
+}
+
+#div_changepassword_deleteAcc {
+  position: relative;
+  /* background-color: red; */
+  transform: translateX(10%);
+  width: 450px;
+  height: 325px;
+  left: 30%;
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+}
+
+#passA {
+  position: relative;
+  /* left: 30%; */
+  color: white !important;
+  /* border-radius: 5px; */
+}
+/* random */

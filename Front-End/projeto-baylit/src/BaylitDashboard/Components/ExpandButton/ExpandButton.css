@@ -1,0 +1,14 @@
+.expandButton {
+    padding: 3px 10px;
+    min-width: 50px;
+    font-size: 10px;
+    background-color: rgba(71, 65, 65, 0.3);
+    font-weight: 400;
+    border-radius: 120px;
+    border: none;
+    overflow: hidden;
+}
+
+.expandButton:hover{
+    background-color: rgba(71, 65, 65, 0.5);
+}

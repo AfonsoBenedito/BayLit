@@ -1,0 +1,265 @@
+.mainResumeShoppingCar{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    min-height: 447px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 3px 2px rgba(164, 164, 164, 0.1);
+    border: 1px solid var(--secondaryColorConsumidor);
+    text-align: center;
+    padding: 15px;
+}
+
+.lineTwoArguments{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* background-color: rgb(255, 229, 229); */
+}
+
+.lineTwoArguments:last-child{
+    margin-top: 15px;
+}
+
+
+.lineSubtotal h5{
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    color: rgb(105, 105, 105);
+}
+
+.lineTwoArguments h5{
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.lastPrice{
+    font-size: 10px;
+    margin-right: 10px;
+    text-decoration: line-through;
+    color: rgb(147, 147, 147);
+}
+
+.totalExtension{
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.divLineResume{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondaryColorConsumidor);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.lineOneArgument {
+    position: relative;
+    display: block;
+    text-align: center;
+    height: fit-content;
+    width: 100%;
+    /* background-color: rgb(222, 173, 173); */
+}
+
+.lineOneArgument p{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.escalaResumo{
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.blocoTransportesResume{
+    margin-top: 10px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    max-height: 422px;
+    /* background-color: pink; */
+    overflow-y: auto;
+}
+
+
+
+
+.finalizarCompraResume{
+    position: relative;
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: var(--thirdColorConsumidor);
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.finalizarCompraResume span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+}
+
+
+
+/* produtos no resumos */
+
+.displayProductsResumeSelected {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    /* background-color: greenyellow; */
+}
+
+.productResumeSelected {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    /* background-color: pink; */
+    border: 1px solid var(--secondaryColorConsumidor);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.productResumeSelected:last-child {
+    margin-bottom: 0;
+}
+
+.leftBlockProductResumeSelected {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: fit-content;
+    /* background-color: green; */
+}
+
+.blocoImgProductResumeSelected {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    background-color: var(--secondaryColorConsumidor);
+}
+
+.blocoImgProductResumeSelected img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
+}
+
+.detailsProductResumeSelected {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: 80px;
+    /* background-color: aqua; */
+    margin-left: 10px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.toAlignDetailsProductResumeSelected {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    width: fit-content;
+    max-width: 200px;
+    /* background-color: yellow; */
+}
+
+.toAlignDetailsProductResumeSelected h3 {
+    position: relative;
+    width: 100%;
+    /* height: 20px; */
+    margin-bottom: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* background-color: red; */
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.toAlignDetailsProductResumeSelected h4 {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.toAlignDetailsProductResumeSelected h4 span {
+    margin-right: 5px;
+}
+
+.toAlignDetailsProductResumeSelected h4 span:last-child {
+    margin-right: 0px;
+}
+
+.ratingProductResumeSelected {
+    position: relative;
+    /* top: -3px; */
+}
+
+.ratingProductResumeSelected svg {
+    height: 15px;
+}
+
+
+.rightBlockProductResumeSelected {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    width: fit-content;
+    text-align: right;
+    /* background-color: green; */
+}
+
+.editarProductResumeSelected {
+    position: relative;
+    font-size: 10px;
+    font-weight: 400;
+    text-decoration: underline;
+    color: grey;
+}
+
+.rightBlockProductResumeSelected h5 {
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.rightBlockProductResumeSelected h5 span {
+    font-size: 10px;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: rgb(170, 170, 170);
+}

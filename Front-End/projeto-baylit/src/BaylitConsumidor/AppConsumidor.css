@@ -1,0 +1,8 @@
+.AppConsumidor {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--mainColorConsumidor);
+    overflow-y: auto;
+    overflow-x: hidden;
+}

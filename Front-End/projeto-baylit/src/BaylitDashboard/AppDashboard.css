@@ -1,0 +1,17 @@
+:root {
+    --widthContainers: calc(100% - 60px);
+    --marginBottomContainers: 15px;
+
+    --mainColor: #0B0B0C;
+    --secondaryColor: #212121;
+    --fontColor: white;
+
+    --widthNav: 230px;
+    --heightNav: 60px;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #212121;
+}

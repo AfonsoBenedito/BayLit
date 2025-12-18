@@ -1,0 +1,42 @@
+footer{
+    background: #1d2538;    
+    position: absolute;
+    top: 75%;
+    height: 45%;
+    width: 100%;
+    z-index: 0;
+}
+
+.categoriaFooter{
+    z-index: 1;
+    background-color: #1d2538;
+    position: relative;
+    display: inline-block;
+    margin-left: 12%;
+    width: 10%;
+    margin-top: 2%;
+    vertical-align: top;
+}
+
+.categoriaTituloFooter{
+    color: white;
+    position: relative;
+    display: block;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.categoriaTextFooter{
+    color: white;
+    position: relative;
+    display: block;
+    text-align: left;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    font-size: 17px;
+    cursor: pointer;
+}

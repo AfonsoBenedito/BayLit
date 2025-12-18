@@ -1,0 +1,5303 @@
+openapi: 3.0.0
+info:
+  title: BayLitAPI
+  description: A BayLitAPI destina-se a fornecer uma interface de interação com a aplicação web BayLit.
+  version: 2.0.0
+
+tags:
+  - name: Autenticação
+    description: Tudo sobre login e registos.
+  - name: Produto
+    description: Tudo sobre produtos, categorias e especificidades.
+  - name: Cadeia Logística
+    description: Tudo sobre a cadeia logística de um produto e as suas etapas.
+  - name: Compra
+    description: Tudo sobre as compras efectuadas na aplicação.
+  - name: Utilizador
+    description: Tudo sobre utilizadores gerais e as suas encomendas.
+  - name: Consumidor
+    description: Tudo sobre consumidores.
+  - name: Fornecedor
+    description: Tudo sobre fornecedores, armazéns e funcionários.
+  - name: Transportador
+    description: Tudo sobre transportadores, meios de transporte e condutores.
+
+paths:
+
+  /auth/register/consumidor:
+    description: Registo de consumidor
+    post:
+      description: Registo de um consumidor novo
+      tags:
+        - Autenticação
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: Manuel Cardoso
+                      description: Nome do Consumidor
+                    email:
+                      type: string
+                      example: manel@gmail.com
+                      description: Email do Consumidor
+                    password:
+                      type: string
+                      example: pwd12_T1
+                      description: Password do Consumidor
+                  required:
+                    - nome
+                    - email
+                    - password
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          tipo:
+                            type: string
+                            example: Consumidor
+                          id:
+                            type: string
+                            example: abcdEFGH1234
+                      auth_token:
+                        type: string
+                        example: abcdEFGH1234
+                      expires:
+                        type: string
+                        example: 120m
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /auth/register/nao_autenticado:
+    description: Registo de não autenticado
+    post:
+      description: Registo de um utlizador não autenticado
+      tags:
+        - Autenticação
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  code:
+                    type: integer
+                    example: 201
+                  title:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          tipo:
+                            type: string
+                            example: NaoAutenticado
+                          id:
+                            type: string
+                            example: 6534BHrf32
+                      auth_token:
+                        type: string
+                        example: abcdEFGH1234
+                      expires:
+                        type: string
+                        example: 120m
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /auth/register/fornecedor:
+    description: Registo de fornecedor
+    post:
+      description: Registo de um fornecedor novo
+      tags:
+        - Autenticação
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: Brinquedos Lda.
+                      description: Nome do Fornecedor
+                    email:
+                      type: string
+                      example: brinquedos@gmail.com
+                      description: Email do Fornecedor
+                    password:
+                      type: string
+                      example: pwd12_T1
+                      description: Password do Fornecedor
+                    morada:
+                      type: string
+                      example: Rua das Aventuras, nº 14
+                      description: Morada do Fornecedor
+                    nif:
+                      type: integer
+                      example: 82351423
+                      description: NIF do Fornecedor
+                    telemovel:
+                      type: integer
+                      example: 933333333
+                      description: Telemovel do Fornecedor
+                  required:
+                    - nome
+                    - email
+                    - password
+                    - morada
+                    - nif
+                    - telemovel
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  code:
+                    type: integer
+                    example: 201
+                  title:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          tipo:
+                            type: string
+                            example: Fornecedor
+                          id:
+                            type: string
+                            example: 6534BHrf32
+                      auth_token:
+                        type: string
+                        example: abcdEFGH1234
+                      expires:
+                        type: string
+                        example: 120m
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /auth/register/transportador:
+    description: Registo de transportador
+    post:
+      description: Registo de um transportador novo
+      tags:
+        - Autenticação
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: Transportes Lda.
+                      description: Nome do Transportador
+                    email:
+                      type: string
+                      example: transportes@gmail.com
+                      description: Email do Transportador
+                    password:
+                      type: string
+                      example: pwd12_T1
+                      description: Password do Transportador
+                    morada:
+                      type: string
+                      example: Rua das Aventuras, nº 14
+                      description: Morada do Transportador
+                    nif:
+                      type: integer
+                      example: 82351423
+                      description: NIF do Transportador
+                    telemovel:
+                      type: integer
+                      example: 933333333
+                      description: Telemovel do Transportador
+                    portes_encomenda:
+                      type: integer
+                      example: 4
+                      description: Portes a cobrar por cada encomenda transportada
+                  required:
+                    - nome
+                    - email
+                    - password
+                    - morada
+                    - nif
+                    - telemovel
+                    - portes_encomenda
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  code:
+                    type: integer
+                    example: 201
+                  title:
+                    type: string
+                    example: Success
+                  message:
+                    type: string
+                    example: O registo foi efetuado com sucesso 
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          tipo:
+                            type: string
+                            example: Transportador
+                          id:
+                            type: string
+                            example: 6534BHrf32
+                      auth_token:
+                        type: string
+                        example: abcdEFGH1234
+                      expires:
+                        type: string
+                        example: 120m
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /auth/register/administrador:
+    description: Registo de administrador
+    post:
+      security:
+        - bearerAuth: []
+      description: Registo de um administrador novo. Apenas autorizado a administradores autenticados pelo seu token.
+      tags:
+        - Autenticação
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: admin
+                      description: Nome do Administrador
+                    password:
+                      type: string
+                      example: Admin.123
+                      description: Password do Administrador
+                  required:
+                    - nome
+                    - password
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  code:
+                    type: integer
+                    example: 201
+                  title:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          tipo:
+                            type: string
+                            example: Administrador
+                          id:
+                            type: string
+                            example: 6534BHrf32
+                      auth_token:
+                        type: string
+                        example: abcdEFGH1234
+                      expires:
+                        type: string
+                        example: 120m
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /auth/login:
+    description: Login de utilizadores
+    post:
+      description: Login de utilizadores
+      tags:
+        - Autenticação
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      example: manel
+                      description: Email do Utilizador
+                    password:
+                      type: string
+                      example: Manel.123
+                      description: Password do Utilizador
+                    id_nao_autenticado:
+                      type: string
+                      example: 6534BHrf32
+                      description: ID do utilizador não autenticado, de forma a transportar os produtos no seu carrinho para a plataforma
+                  required:
+                    - nome
+                    - password
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  code:
+                    type: integer
+                    example: 200
+                  title:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            example: 6543aH321
+                          tipo:
+                            type: string
+                            example: Consumidor
+                      auth_token:
+                        type: string
+                        example: abcdEFGH1234
+                      expires:
+                        type: string
+                        example: 120m
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /auth/login/administrador:
+    description: Login de administradores
+    post:
+      description: Login de administradores
+      tags:
+        - Autenticação
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: admin
+                      description: Nome do Administrador
+                    password:
+                      type: string
+                      example: Admin.123
+                      description: Password do Administrador
+                  required:
+                    - nome
+                    - password
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      user:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: 6543aH321
+                            tipo:
+                              type: string
+                              example: Administrador
+                      auth_token:
+                        type: string
+                        example: abcdEFGH1234
+                      expires:
+                        type: string
+                        example: 120m
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /auth/login/verify_token:
+    description: Verifica a validade de um token de autenticação
+    post:
+      security:
+        - bearerAuth: []
+      description: Verifica a validade de um token de autenticação
+      tags:
+        - Autenticação
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: admin
+                      description: Nome do Administrador
+                    password:
+                      type: string
+                      example: Admin.123
+                      description: Password do Administrador
+                  required:
+                    - nome
+                    - password
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      user:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: 6543aH321
+                            tipo:
+                              type: string
+                              example: Administrador
+                      auth_token:
+                        type: string
+                        example: abcdEFGH1234
+                      expires:
+                        type: string
+                        example: 120m
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /produto:
+    description: Produto
+    get:
+      description: Obter os produtos registados na plataforma
+      tags:
+        - Produto
+      parameters:
+        - in: query
+          name: id
+          required: false
+          description: Apenas o produto com o id especificado
+          schema:
+            type: integer
+            example: 123456789
+        - in: query
+          name: fornecedor
+          required: false
+          description: Apenas produtos pertencentes ao catalogo do fornecedor com o id fornecido
+          schema:
+            type: integer
+            example: 123456789
+        - in: query
+          name: categoria
+          required: false
+          description: Apenas produtos pertencentes à categoria com o id fornecido
+          schema:
+            type: integer
+            example: 123456789
+        - in: query
+          name: subcategoria
+          required: false
+          description: Apenas produtos pertencentes à subcategoria com o id fornecido
+          schema:
+            type: integer
+            example: 123456789
+        - in: query
+          name: cadeia
+          required: false
+          description: Junta a cadeia de cada produto ao corpo da resposta
+          schema:
+            type: boolean
+            example: true
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:   
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:    
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Produto"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    post:
+      description: Um fornecedor insere um novo produto
+      tags:
+        - Produto
+      requestBody:
+        required: true
+        content: 
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                fornecedor:
+                  type: integer
+                  example: 123456789
+                  description: Fornecedor que produz o produto
+                nome:
+                  description: Nome do novo produto
+                  type: string
+                  example: Danoninho
+                categoria:
+                  description: Categoria do produto
+                  type: string
+                subcategoria:
+                  description: SubCategoria do produto
+                  type: string
+                fotografias:
+                  description: Fotografias do produto
+                  type: string
+                  format: binary
+                informacao adicional:
+                  description: Informação adicional sobre o produto
+                  type: string
+                  example: "Manter em local fresco e arejado"
+              required:
+                - fornecedor
+                - nome
+                - categoria
+                - subcategoria
+                - fotografias
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 201
+                    message:
+                      type: string
+                      example: Created
+                    data:    
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/Produto"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    put:
+      description: Um fornecedor edita um produto
+      tags:
+        - Produto
+      requestBody:
+        required: true
+        content: 
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                produto:
+                  type: string
+                  example: 12ab34de56
+                  description: Produto a editar
+                nome:
+                  description: Nome do novo produto
+                  type: string
+                  example: Danoninho
+                categoria:
+                  description: Categoria do produto
+                  type: string
+                fotografias:
+                  description: Fotografias do produto
+                  type: string
+                  format: binary
+                informacao adicional:
+                  description: Informação adicional sobre o produto
+                  type: string
+                  example: "Manter em local fresco e arejado"
+
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Produto atualizado com sucesso
+                    data:    
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/Produto"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    
+    delete:
+      description: Um fornecedor elimina um produto
+      tags:
+        - Produto
+      parameters:
+        - in: query
+          name: produto
+          required: false
+          description: Apenas o produto com o id especificado
+          schema:
+            type: integer
+            example: 123456789
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Produto eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /produto/pesquisa:
+    get:
+      description: Pesquisa personalizada de produtos
+      tags:
+        - Produto
+      parameters:
+        - in: query
+          name: categoria
+          required: false
+          description: Pesquisa produto por categoria
+          schema:
+            type: string
+            example: 12ab34cd56
+        - in: query
+          name: subcategoria
+          required: false
+          description: Pesquisa produto por subcategoria
+          schema:
+            type: string
+            example: 12ab34cd56
+        - in: query
+          name: preco
+          required: false
+          description: Pesquisa produto por preço
+          schema:
+            type: object
+            properties:
+              valormenor:
+                type: integer
+                example: 20
+              valormaio:
+                type: integer
+                example: 40
+        - in: query
+          name: ratingEcologico
+          required: false
+          description: Pesquisa produto por rating ecológico minimo
+          schema:
+            type: integer
+            example: 3
+        - in: query
+          name: nome
+          required: false
+          description: Pesquisa produto por nome
+          schema:
+            type: string
+            example: Headphones XPTO
+        - in: query
+          name: filtros
+          required: false
+          description: Pesquisa produto por filtros de atributos e valores
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                atributo:
+                  type: string
+                  example: 12ab34cd
+                valor:
+                  type: string
+                  example: vermelho
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Success
+                    data:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/Produto"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+          
+  /produto/categoria:
+    get:
+      description: Todas as categorias de produtos da plataforma
+      tags:
+        - Produto
+      parameters:
+        - in: query
+          name: categoria
+          required: false
+          description: ID de uma categoria especifica
+          schema:
+            type: string
+            example: 12ab34cd56eh
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success 
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Categoria"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    
+    post:
+      description: Um fornecedor insere uma nova categoria de produto (que terá de ser aprovada pelo administrador para ser inserida)
+      tags:
+        - Produto
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  example: Chuteiras
+                  description: Nome da nova categoria de produto
+                fotografia:
+                  type: string
+                  format: binary
+                  description: Fotografia da nova categoria de produto
+              required:
+                - nome
+                - fotografia
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success 
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Categoria"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+  
+  /produto/categoria/subcategoria:
+    get:
+      description: Todas as subcategorias de produtos da categoria fornecida
+      tags:
+        - Produto
+      parameters:
+        - in: query
+          name: categoria
+          required: false
+          description: Subcategorias de produtos da categoria fornecida
+          schema:
+            type: string
+            example: 12ab34cd56eh789
+        - in: query
+          name: subcategoria
+          required: false
+          description: ID de uma subcategoria especifica
+          schema:
+            type: string
+            example: 12ab34lu56is789
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 201
+                    message:
+                      type: string
+                      example: Success 
+                    data:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/Subcategoria"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    
+    post:
+      description: Um fornecedor insere uma nova subcategoria de produto
+      tags:
+        - Produto
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  example: Chuteiras Adidas
+                  description: Nome da nova subcategoria de produto
+                categoria:
+                  type: integer
+                  example: 123456789
+                  description: Nome da categoria a que a subcategoria deverá pertencer
+              required:
+                - nome
+                - categoria
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 201
+                    message:
+                      type: string
+                      example: Success 
+                    data:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/Subcategoria"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /produto/categoria/subcategoria/atributo:
+    get:
+      description: Todos os atributos de uma subcategoria de produtos da plataforma
+      tags:
+        - Produto
+      parameters:
+        - in: query
+          name: subcategoria
+          required: false
+          description: Apenas os atributos da subcategoria com id especificado
+          schema:
+            type: string
+            example: 12ab34ja5789
+        - in: query
+          name: atributo
+          required: false
+          description: ID de atributo especifico
+          schema:
+            type: string
+            example: 123am4ya56789
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Success 
+                    data:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/Atributo"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    
+    post:
+      description: Um fornecedor insere um novo atributo numa subcategoria de produto
+      tags:
+        - Produto
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                atributo:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: Cor
+                    descricao:
+                      type: string
+                      example: Cor das chuteiras
+                    valores:
+                      type: array
+                      items:
+                        type: string
+                      example: ["vermelho","branco","amarelo","verde"]
+              required:
+                - atributo
+      responses:
+        201:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success 
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Atributo"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /produto/categoria/subcategoria/atributo/valor:
+    
+    post:
+      description: Um fornecedor insere um novo valor para um atributo que considera em falta (precisa de autorização do administrador para ser adicionado)
+      tags:
+        - Produto
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                atributo:
+                  type: string
+                  example: 12ab34ra54
+                valor:
+                  type: string
+                  example: amarelo
+              required:
+                - atributo
+                - valor
+      responses:
+        201:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success 
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+  
+  /produto/especifico:
+    get:
+      description: Todas as especificidades diferentes de um produto da plataforma
+      tags:
+        - Produto
+      parameters:
+        - in: query
+          name: produto
+          required: false
+          description: Apenas especificidades do produto com o id especificado
+          schema:
+            type: string
+            example: 12ab34cd56
+        - in: query
+          name: especifico
+          required: false
+          description: Apenas o produto especifico com o id fornecido
+          schema:
+            type: integer
+            example: 134as6fr79
+        
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success 
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/ProdutoEspecifico"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    
+    post:
+      description: Um fornecedor insere um novo produto especifico
+      tags:
+        - Produto
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                fornecedor:
+                  type: string
+                  example: 12ao34gs56o9
+                  description: Fornecedor que produz o produto
+                produto:
+                  type: string
+                  example: 12sf34au56
+                  description: Produto geral a produzir
+                preco:
+                  type: integer
+                  example: 20
+                  description: Preço do novo produto especifico
+                caracteristicas:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      atributo:
+                        type: string
+                        example: 1au23io45u6
+                      valor:
+                        type: string
+                        example: amarelo
+              required:
+                - fornecedor
+                - produto
+                - preco
+                - caracteristicas
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success 
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/ProdutoEspecifico"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+    put:
+      description: Um fornecedor altera um produto especifico
+      tags:
+        - Produto
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                preco:
+                  type: integer
+                  example: 20
+                  description: Preço do novo produto especifico
+                caracteristicas:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      atributo:
+                        type: string
+                        example: 1au23io45u6
+                      valor:
+                        type: string
+                        example: amarelo
+              required:
+                - fornecedor
+                - produto
+                - preco
+                - caracteristicas
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Produto especifico atualizado com sucesso 
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/ProdutoEspecifico"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    delete:
+      description: Apagar um produto especifico da plataforma
+      tags:
+        - Produto
+      parameters:
+        - in: query
+          name: especifico
+          required: true
+          description: Apenas o produto com o id especificado
+          schema:
+            type: string
+            example: 12aw345od6
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Produto eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /produto/especifico/desconto:
+    post:
+      description: Um fornecedor insere um novo desconto num produto especifico
+      tags:
+        - Produto
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                fornecedor:
+                  type: string
+                  example: 12ao34gs56o9
+                  description: Fornecedor que produz o produto
+                produto_especifico:
+                  type: string
+                  example: 12sf34au56
+                  description: Produto especifico a inserir desconto
+                desconto:
+                  type: integer
+                  example: 20
+                  description: Percentagem de desconto a aplicar
+                data_fim:
+                  type: string
+                  example: 04/10/2022
+                  description: Data em que o desconto deixa de ser aplicável
+              required:
+                - fornecedor
+                - produto_especifico
+                - desconto
+                - data_fim
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success 
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/ProdutoEspecifico"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+          
+
+  /produto/armazenamento:
+    get:
+      description: Armazenamento do produto
+      tags:
+        - Cadeia Logística
+      parameters:
+        - in: query
+          name: produto
+          required: true
+          description: Armazenamento do produto com id fornecido
+          schema:
+            type: string
+            example: 12aw3er45
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Armazenamento"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+            
+  /produto/cadeia_logistica:
+    get:
+      description: Cadeia logistica do produto
+      tags:
+        - Cadeia Logística
+      parameters:
+        - in: query
+          name: produto
+          required: false
+          description: Cadeia logistica do produto com id fornecido
+          schema:
+            type: string
+            example: 12ab34er56
+        - in: query
+          name: item
+          required: false
+          description: Cadeia logistica do item com id fornecido
+          schema:
+            type: string
+            example: 12ad345us6
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/CadeiaLogistica"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /produto/cadeia_logistica/sumario:
+    get:
+      description: Sumário da cadeia logistica do produto
+      tags:
+        - Cadeia Logística
+      parameters:
+        - in: query
+          name: produto
+          required: true
+          description: Cadeia logistica do produto com id fornecido
+          schema:
+            type: string
+            example: 12ab34er56
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/CadeiaLogisticaSumario"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+  
+  /produto/producao:
+    get:
+      description: Produção do produto com id fornecido
+      tags:
+        - Cadeia Logística
+      parameters:
+        - in: query
+          name: produto
+          required: true
+          description: Produção do produto com id fornecido
+          schema:
+            type: string
+            example: 12as34sw5
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/Producao"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+    post:
+      description: Um fornecedor insere os detalhes da produção de um produto
+      tags:
+        - Cadeia Logística
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                produto:
+                  type: string
+                  example: 12as34us5
+                  description: Id do produto produzido
+                local:
+                  type: string
+                  example: 13a5s47s5
+                  description: ID do Local de produção onde o produto é produzido
+                tipo:
+                  type: string
+                  example: Orgânica
+                  description: Tipo de produção efectuada (pode ser Biológica, Orgânica ou Sintética)
+                poluicao:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nome:
+                        type: string
+                        example: Poluição aérea
+                      quantidade:
+                        type: string
+                        example: severa
+                recursos:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: Areia
+                    quantidade:
+                      type: integer
+                      example: 15
+                    unidade_medida:
+                      type: string
+                      example: g
+              required:
+                - produto
+                - local
+                - tipo
+                - poluicao 
+                - recursos
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/Producao"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+            
+  /produto/producao/recursos:
+    get:
+      description: Recursos disponibilizados pela plataforma para registar uma produção
+      tags:
+        - Cadeia Logística
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      Tipo Recurso:
+                        type: object
+                        properties:
+                          Recurso:
+                            description: medida
+                            example: g
+                          
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /produto/producao/poluicao:
+    get:
+      description: Tipos de Poluição disponibilizados pela plataforma para registar uma produção
+      tags:
+        - Cadeia Logística
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    example: "{Poluição aérea, Desperdícios, Poluição de plásticos}"
+                          
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /produto/transporte:
+    get:
+      description: Transporte registado na plataforma
+      tags:
+        - Cadeia Logística
+      parameters:
+        - in: query
+          name: transportador
+          required: false
+          description: ID do transportador que realizou o transporte
+          schema:
+            type: string
+            example: 12wq34is59
+        - in: query
+          name: transporte
+          required: false
+          description: ID do transporte
+          schema:
+            type: string
+            example: 12wq34is59
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:    
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Transporte"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    
+    put:
+      description: Um transportador altera o estado de um transporte
+      tags:
+        - Cadeia Logística
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 12aw34re5i6
+                  description: Id do transporte a atualizar
+                novo_estado:
+                  type: string
+                  example: Em movimento
+                  description: Novo estado do transporte (pode ser 'Em movimento' ou 'Terminado')
+              required:
+                - id
+                - novo_estado
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Transporte"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+    delete:
+      description: Transportador cancela um dos seus transportes
+      tags:
+        - Cadeia Logística
+      parameters:
+        - in: query
+          name: transporte
+          required: true
+          description: Apenas o transporte com o id especificado
+          schema:
+            type: string
+            example: 12sw345os69
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Transporte cancelado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+  
+  /produto/transporte/localizacao:
+    put:
+      description: Um transportador altera a localização de um transporte
+      tags:
+        - Cadeia Logística
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 12aw34re5i6
+                  description: Id do transporte a atualizar
+                local:
+                  type: string
+                  example: 12ae34rs
+                  description: Local onde o transporte está a chegar ou a abalar
+                estado_local:
+                  type: string
+                  example: A chegar
+                  description: Estado de um local na rota do transportador
+              required:
+                - id
+                - local
+                - estado_local
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Transporte"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /produto/transporte_armazem:
+    get:
+      description: Transporte para armazém do produto (valores médios)
+      tags:
+        - Cadeia Logística
+      parameters:
+        - in: query
+          name: produto
+          required: true
+          description: Transporte para armazém do produto com id fornecido
+          schema:
+            type: string
+            example: 12aw34ei56
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/TransporteArmazem"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+  
+
+  /utilizador:
+    get:
+      description: Todos os utilizadores da plataforma
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: id
+          required: false
+          description: Apenas o utilizador com o id especificado
+          schema:
+            type: string
+            example: 12aw34tr56
+        - in: query
+          name: email
+          required: false
+          description: Apenas o utilizador com o email especificado
+          schema:
+            type: string
+            example: manel@gmail.com
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Utilizador"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+            
+    delete:
+      description: Apagar um utilizador da plataforma
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: id
+          required: true
+          description: Apenas o utilizador com o id especificado
+          schema:
+            type: integer
+            example: 123456789
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Utilizador eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+  
+  /utilizador/notificacoes:
+    get:
+      description: Notificações do utilizador
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: ID do utilizador que pretende consultar as notificações
+          schema:
+            type: string
+            example: 12aw34tr56
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Notificacao"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/local:
+    get:
+      description: Locais registados pelo utilizador
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: ID do utilizador que registou os locais
+          schema:
+            type: string
+            example: 12aw34tr56
+        - in: query
+          name: local
+          required: true
+          description: ID do local que pretende consultar
+          schema:
+            type: string
+            example: 12aw34tr56
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Local"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+    post:
+      description: Um utilizador insere um novo local
+      tags:
+        - Utilizador
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties:
+                tipo:
+                  type: string
+                  example: [local_entrega, sede, armazem, local_producao]
+                  description: Tipo de local
+                utilizador:
+                  type: string
+                  example: 12ua4dse7
+                  description: ID do utilizador que regista o local
+                morada:
+                  type: string
+                  example: Rua das Flores, nº 7D
+                  description: Morada do local a inserir
+                codigo_postal:
+                  type: string
+                  example: 1000-200
+                  description: Código postal do local a inserir
+                localidade:
+                  type: string
+                  example: Loures
+                  description: Localidade do local a inserir
+                pais:
+                  type: string
+                  example: Portugal
+                  description: País do local a inserir
+              required:
+                - tipo
+                - utilizador
+                - morada
+                - localidade
+                - pais
+                - codigo_postal
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success 
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/Local"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    delete:
+      description: Eliminar um local registado na plataforma
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: ID do utilizador que pretende remover o seu local
+          schema:
+            type: string
+            example: 12aw34re56i
+        - in: query
+          name: local
+          required: true
+          description: ID da do local a eliminar
+          schema:
+            type: string
+            example: 121iss66iw
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Local eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /utilizador/administrador/relatorio:
+    get:
+      description: Obtém o relatório do administrador
+      tags:
+        - Utilizador
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      tipo_producao:
+                        type: object
+                      produtos_categoria:
+                        type: object
+                      vendas_categoria:
+                        type: object
+                      classificacao_producao_categoria:
+                        type: object
+                      classificacao_transporte_armazem_categoria:
+                        type: object
+                      classificacao_armazenamento_categoria:
+                        type: object
+                      classificacao_categoria:
+                        type: object
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+  
+  /utilizador/administrador/congelamento:
+      post:
+        description: Administrador "congela" uma conta de um utilizador
+        tags:
+          - Utilizador
+        requestBody:
+          required: true
+          content: 
+            application/json:
+                  schema:
+                    type: object
+                    properties:
+                      utilizador:
+                        type: string
+                        example: 12abd534
+                        description: ID do utilizador a congelar
+                    required:
+                      - utilizador
+        responses:
+          200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Utilizador congelado com sucesso
+          400:
+            $ref: "#/components/responses/400"
+          403:
+            $ref: "#/components/responses/403"
+
+      delete:
+        description: Administrador "descongela" uma conta de um utilizador
+        tags:
+          - Utilizador
+        requestBody:
+          required: true
+          content: 
+            application/json:
+                  schema:
+                    type: object
+                    properties:
+                      utilizador:
+                        type: string
+                        example: 12abd534
+                        description: ID do utilizador a descongelar
+                    required:
+                      - utilizador
+        responses:
+          200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Utilizador descongelado com sucesso
+          400:
+            $ref: "#/components/responses/400"
+          403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/consumidor:
+    get:
+      description: Todos os consumidores da plataforma
+      tags:
+        - Consumidor
+      parameters:
+        - in: query
+          name: id
+          required: false
+          description: Apenas o consumidor com o id especificado
+          schema:
+            type: string
+            example: 12aw34ew5
+        - in: query
+          name: email
+          required: false
+          description: Apenas o consumidor com o email especificado
+          schema:
+            type: string
+            example: manel@gmail.com
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Consumidor"
+                  
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+            
+    
+    put:
+      description: Alteração do registo de um consumidor
+      tags:
+        - Consumidor
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: Manuel Cardoso
+                      description: Nome do Consumidor
+                    email:
+                      type: string
+                      example: manel@gmail.com
+                      description: Email do Consumidor
+                    password_nova:
+                      type: string
+                      example: pwd12_T
+                      description: Nova password do Consumidor
+                    password_antiga:
+                      type: string
+                      example: pwqz12_I
+                      description: Antiga password do Consumidor
+                    morada:
+                      type: string
+                      example: 12ew43tr5
+                      description: ID do local a definir como morada
+                    nif:
+                      type: integer
+                      example: 82351423
+                      description: NIF do Consumidor
+                    telemovel:
+                      type: integer
+                      example: 933333333
+                      description: Telemovel do Consumidor
+
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Consumidor atualizado com sucesso
+                    data:
+                      type: object
+                      $ref: "#/components/schemas/Consumidor"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /utilizador/consumidor/encomenda:
+    get:
+      description: Encomendas efectuadas na plataforma
+      tags:
+        - Consumidor
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: Encomendas do utilizador com id especificado
+          schema:
+            type: string
+            example: 12aw34ew5
+        - in: query
+          name: encomenda
+          required: false
+          description: Apenas a encomenda com id especificado
+          schema:
+            type: string
+            example: 12com346
+        - in: query
+          name: filetype
+          required: false
+          description: Exporta um relatório de encomendas no tipo de ficheiro especificado
+          schema:
+            type: string
+            example: csv
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Encomenda"
+                  
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    delete:
+      description: Cancelar uma encomenda de um consumidor
+      tags:
+        - Consumidor
+      parameters:
+        - in: query
+          name: consumidor
+          required: true
+          description: ID do consumidor que pretende cancelar a encomenda
+          schema:
+            type: string
+            example: 12aw34re56i
+        - in: query
+          name: encomenda
+          required: true
+          description: ID da encomenda a cancelar
+          schema:
+            type: string
+            example: 121iss66iw
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Success
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /utilizador/consumidor/encomenda/cadeia_logistica:
+    get:
+      description: Cadeia logistica da encomenda
+      tags:
+        - Consumidor
+      parameters:
+        - in: query
+          name: encomenda
+          required: false
+          description: Encomenda da qual se pretende consultar a cadeia logistica
+          schema:
+            type: string
+            example: 12com346
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/CadeiaLogistica"
+                  
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/consumidor/encomenda/cadeia_logistica/sumario:
+    get:
+      description: Sumário da cadeia logistica da encomenda
+      tags:
+        - Consumidor
+      parameters:
+        - in: query
+          name: encomenda
+          required: false
+          description: Encomenda da qual se pretende consultar o sumário cadeia logistica
+          schema:
+            type: string
+            example: 12com346
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/CadeiaLogisticaSumario"
+                  
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+          
+  /utilizador/favoritos:
+    get:
+      description: Os utilizadores e produtos favoritos de um utilizador
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: Apenas os favoritos do utilizador com o id especificado
+          schema:
+            type: string
+            example: 12ab34we5
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      utilizadores:
+                        type: array
+                        items: 
+                          type: string
+                          example: 12ab34we5
+                      produtos:
+                        type: array
+                        items:
+                          type: string
+                          example: 12ab34we5
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/favoritos/utilizador:
+    get:
+      description: Os utilizadores favoritos de um utilizador
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: Apenas os favoritos do utilizador com o id especificado
+          schema:
+            type: string
+            example: 12ab34we5
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      utilizadores:
+                        type: array
+                        items: 
+                          type: string
+                          example: 12ab34we5
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+    post:
+      description: Registo de um novo utilizador favorito
+      tags:
+        - Utilizador
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    utilizador:
+                      type: string
+                      example: 12abd534
+                      description: ID do utilizador que pretende adicionar um favorito
+                    favorito:
+                      type: string
+                      example: 83trw54s
+                      description: ID do novo favorito
+                  required:
+                    - utilizador
+                    - favorito
+                    
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Novo favorito adicionado com sucesso
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    
+    delete:
+      description: Apagar um favorito de um utilizador
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: ID do utilizador que pretende remover um favorito
+          schema:
+            type: string
+            example: 12aw34ys56
+        - in: query
+          name: favorito
+          required: true
+          description: ID do favorito a eliminar
+          schema:
+            type: string
+            example: 12r3er54w
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 201
+                    message:
+                      type: string
+                      example: Utilizador favorito eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /utilizador/favoritos/produto:
+    get:
+      description: Os produtos favoritos de um utilizador
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: Apenas os favoritos do utilizador com o id especificado
+          schema:
+            type: string
+            example: 12ab34we5
+        
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      produtos:
+                        type: array
+                        items:
+                          type: string
+                          example: 12ab34we5
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+    post:
+      description: Registo de um novo produto favorito
+      tags:
+        - Utilizador
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    utilizador:
+                      type: string
+                      example: 12abd534
+                      description: ID do utilizador que pretende adicionar um favorito
+                    favorito:
+                      type: string
+                      example: 83trw54s
+                      description: ID do novo favorito
+                  required:
+                    - utilizador
+                    - favorito
+                    
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Novo favorito adicionado com sucesso
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    
+    delete:
+      description: Apagar um produto favorito de um utilizador
+      tags:
+        - Utilizador
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: ID do utilizador que pretende remover um produto favorito
+          schema:
+            type: string
+            example: 12aw34ys56
+        - in: query
+          name: favorito
+          required: true
+          description: ID do favorito a eliminar
+          schema:
+            type: string
+            example: 12r3er54w
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 201
+                    message:
+                      type: string
+                      example: Produto favorito eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /utilizador/fornecedor:
+    get:
+      description: Todas os fornecedores da plataforma
+      tags:
+        - Fornecedor
+      parameters:
+        - in: query
+          name: id
+          required: false
+          description: Apenas o fornecedor com o id especificado
+          schema:
+            type: integer
+            example: 123456789
+        - in: query
+          name: email
+          required: false
+          description: Apenas o fornecedor com o email especificado
+          schema:
+            type: string
+            example: brinquedos@gmail.com
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Fornecedor"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    
+    put:
+      description: Alteração do registo de um fornecedor
+      tags:
+        - Fornecedor
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      example: Brinquedos Lda.
+                      description: Nome do Fornecedor
+                    email:
+                      type: string
+                      example: brinquedos@gmail.com
+                      description: Email do Fornecedor
+                    password_antiga:
+                      type: string
+                      example: pwd12_T
+                      description: Password antiga do Fornecedor
+                    password_nova:
+                      type: string
+                      example: pwd12_T
+                      description: Password nova do Fornecedor
+                    morada:
+                      type: string
+                      example: Rua das Aventuras, nº 14
+                      description: Morada do Fornecedor
+                    nif:
+                      type: integer
+                      example: 82351423
+                      description: NIF do Fornecedor
+                    telemovel:
+                      type: integer
+                      example: 933333333
+                      description: Telemovel do Fornecedor
+
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Success
+                    data:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/Fornecedor"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+          
+  /utilizador/fornecedor/venda:
+    get:
+      description: Todas as vendas de um fornecedor na plataforma
+      tags:
+        - Fornecedor
+      parameters:
+        - in: query
+          name: fornecedor
+          required: true
+          description: Apenas o fornecedor com o id especificado
+          schema:
+            type: string
+            example: 12ag562l
+        - in: query
+          name: venda
+          required: false
+          description: Apenas a venda com o id especificado
+          schema:
+            type: string
+            example: 12e8l62l
+        - in: query
+          name: filetype
+          required: false
+          description: Gera um relatório de vendas com o formato especificado (json ou csv)
+          schema:
+            type: string
+            example: json
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Venda"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/fornecedor/armazem:
+    get:
+      description: Todos os armazens do fornecedor
+      tags:
+        - Fornecedor
+      parameters:
+        - in: query
+          name: fornecedor
+          required: true
+          description: Armazens do fornecedor com o id especificado
+          schema:
+            type: string
+            example: 12ad34ys5
+        - in: query
+          name: armazem
+          required: false
+          description: Armazem com o id especificado
+          schema:
+            type: string
+            example: 12aw34us56
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Armazem"
+                  
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+            
+    post:
+      description: Um fornecedor insere um novo armazém
+      tags:
+        - Fornecedor
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    fornecedor:
+                      type: string
+                      example: 12sa34ef59
+                      description: Fornecedor a registar o armazém
+                    local:
+                      type: string
+                      example: 3438shdhg7
+                      description: ID do Local do novo armazém
+                    tamanho:
+                      type: integer
+                      example: 2000
+                      description: Tamanho do novo armazém em metros quadrados
+                    gasto_diario:
+                      type: integer
+                      example: 20
+                      description: Gasto diário do armazém, em kWh
+                  required:
+                    - fornecedor
+                    - local
+                    - tamanho
+                    - gasto_diario
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Armazem"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    put:
+      description: Um fornecedor edita um armazém
+      tags:
+        - Fornecedor
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    armazem:
+                      type: string
+                      example: 12sa34ef59
+                      description: ID do armazém a editar
+                    gasto_diario:
+                      type: integer
+                      example: 20
+                      description: Gasto diário do armazém, em kWh
+                  required:
+                    - armazem
+                    - gasto_diario
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Armazem"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    delete:
+      description: Apagar um armazem da plataforma
+      tags:
+        - Fornecedor
+      parameters:
+        - in: query
+          name: armazem
+          required: true
+          description: Apenas o armazem com o id especificado
+          schema:
+            type: string
+            example: 12wq34i79
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 201
+                    message:
+                      type: string
+                      example: Armazém eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+          
+  /utilizador/fornecedor/inventario:
+    post:
+      description: Um fornecedor insere produtos em inventário
+      tags:
+        - Fornecedor
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    armazem:
+                      type: string
+                      example: 12sa34ef59
+                      description: Armazém onde vão ser adicionados os produtos
+                    produtos:
+                      type: object
+                      properties:
+                        produto_especifico:
+                          type: string
+                          example: 3438shdhg7
+                          description: ID do Produto Especifico a adicionar
+                        quantidade:
+                          type: integer
+                          example: 34
+                          description: Quantidade de itens a adicionar
+                        prazo_validade:
+                          type: string
+                          example: 04/10/2022
+                          description: Validade dos itens a adicionar
+                    meio_transporte:
+                      type: object
+                      properties:
+                        marca:
+                          type: string
+                          example: VOLVO
+                          description: Marca do meio de transporte
+                        modelo:
+                          type: string
+                          example: V50
+                          description: Modelo do meio de transporte
+                        tipo:
+                          type: string
+                          example: SEMI-TRUCK
+                          description: Tipo do meio de transporte
+                      description: Meio de transporte utilizado para fazer o transporte desde o local de produção até ao armazém (serve para calcular gastos ambientais neste transporte)
+                    desperdicio:
+                      type: integer
+                      example: 2
+                      description: Número de itens desperdiçados no transporte para armazém
+                  required:
+                    - armazem
+                    - produtos
+                    - meio_transporte
+                    - desperdicio
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Armazem"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+            
+  /utilizador/fornecedor/inventario/stock:
+    get:
+      description: Verifica se um produto tem ou já teve stock em inventário
+      tags:
+        - Fornecedor
+      parameters:
+        - in: query
+          name: produto_especifico
+          required: true
+          description: ID do produto especifico a verificar inventário
+          schema:
+            type: string
+            example: 12ad34ys5
+        - in: query
+          name: time
+          required: true
+          description: Define se a procura é por ter stock (nesse caso o valor é "now") ou por já ter tido stock ("ever")
+          schema:
+            type: string
+            example: now
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: integer
+                    example: 2
+                  
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+  
+  /utilizador/fornecedor/funcionario:
+    get:
+      description: Todos os funcionarios empregados pelo fornecedor
+      tags:
+        - Fornecedor
+      parameters:
+        - in: query
+          name: fornecedor
+          required: true
+          description: Funcionarios empregados pelo fornecedor com id fornecido
+          schema:
+            type: string
+            example: 12as34us56
+        - in: query
+          name: armazem
+          required: false
+          description: Funcionario pertencente ao armazem fornecido
+          schema:
+            type: string
+            example: 12aw34s5d6
+        - in: query
+          name: nome
+          required: false
+          description: Funcionario com o nome fornecido
+          schema:
+            type: string
+            example: Manuel
+        - in: query
+          name: id
+          required: false
+          description: Funcionario com o id fornecido
+          schema:
+            type: string
+            example: 12aw34s5d6
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Armazem"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    
+    post:
+      description: Um fornecedor insere um novo funcionário
+      tags:
+        - Fornecedor
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    fornecedor:
+                      type: string
+                      example: 12aw34xs56
+                      description: Fornecedor a empregar o funcionario
+                    armazem:
+                      type: string
+                      example: dwh7227s
+                      description: Armazem do novo funcionário
+                    nome:
+                      type: string
+                      example: Alberto Martins
+                      description: Nome do novo funcionário
+                    idade:
+                      type: integer
+                      example: 26
+                      description: Idade do novo funcionário
+                    
+                  required:
+                    - fornecedor
+                    - nome
+                    - idade
+                    - armazem
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Armazem"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    
+    delete:
+      description: Apagar um funcionario da plataforma
+      tags:
+        - Fornecedor
+      parameters:
+        - in: query
+          name: fornecedor
+          required: true
+          description: Fornecedor do funcionario
+          schema:
+            type: string
+            example: 12aw34rw56
+        - in: query
+          name: id
+          required: true
+          description: Apenas o funcionario com o id especificado
+          schema:
+            type: string
+            example: 123dcd45
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Funcionário eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+  
+  /utilizador/transportador:
+    get:
+      description: Todas os transportadores da plataforma
+      tags:
+        - Transportador
+      parameters:
+        - in: query
+          name: id
+          required: false
+          description: Apenas o transportador com o id especificado
+          schema:
+            type: string
+            example: 12aw34dw5
+        - in: query
+          name: email
+          required: false
+          description: Apenas o transportador com o email especificado
+          schema:
+            type: string
+            example: transportes@gmail.com
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Transportador"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+            
+    
+    put:
+      description: Alteração do registo de um transportador
+      tags:
+        - Transportador
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: af4225sgt
+                      description: ID do Transportador
+                    nome:
+                      type: string
+                      example: Transportes Lda.
+                      description: Nome do Transportador
+                    email:
+                      type: string
+                      example: transportes@gmail.com
+                      description: Email do Transportador
+                    password_antiga:
+                      type: string
+                      example: pwd12_T
+                      description: Password antiga do Transportador
+                    password_nova:
+                      type: string
+                      example: pwd12_E
+                      description: Password nova do Transportador
+                    morada:
+                      type: string
+                      example: Rua das Aventuras, nº 14
+                      description: Morada do Transportador
+                    nif:
+                      type: integer
+                      example: 82351423
+                      description: NIF do Transportador
+                    telemovel:
+                      type: integer
+                      example: 933333333
+                      description: Telemovel do Transportador
+                    portes_encomenda:
+                      type: integer
+                      example: 4
+                      description: Portes de cada encomenda adicionada a um dos seus transportes
+
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Success
+                    data:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/Transportador"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+  
+  /utilizador/transportador/relatorio:
+    get:
+      description: Recebe o relatório dos transportes de um transportador
+      tags:
+        - Transportador
+      parameters:
+        - in: query
+          name: transportador
+          required: true
+          description: Apenas o relatório transportador com o id especificado
+          schema:
+            type: string
+            example: 12aw34dw5
+        - in: query
+          name: espaco_temporal
+          required: true
+          description: Espaço temporal dos dados do relatório, pode ser 'semana', 'mes', 'ano' ou '5 anos'
+          schema:
+            type: string
+            example: ano
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      transportes/dia:
+                        type: array
+                      consumo/dia:
+                        type: array
+                      emissao/dia: 
+                        type: array
+                      classificacao/veiculo:
+                        type: array
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+          
+  /utilizador/transportador/veiculo:
+    get:
+      description: Recebe todos os veiculos que podem ser utilizados na plataforma
+      tags:
+        - Transportador
+      parameters:
+        - in: query
+          name: marca
+          required: false
+          description: Apenas veiculos da marca
+          schema:
+            type: string
+            example: VOLVO
+        - in: query
+          name: modelo
+          required: false
+          description: Apenas veiculos do modelo
+          schema:
+            type: string
+            example: V50
+        - in: query
+          name: tipo
+          required: false
+          description: Apenas veiculos do tipo
+          schema:
+            type: string
+            example: SEMI-TRUCK
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      marca:
+                        type: array
+                      modelo:
+                        type: array
+                      tipo: 
+                        type: array
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/transportador/meio_transporte:
+    get:
+      description: Todos os meios de transporte registados pelo transportador
+      tags:
+        - Transportador
+      parameters:
+        - in: query
+          name: transportador
+          required: false
+          description: Meios de transporte registados pelo transportador com o id especificado
+          schema:
+            type: string
+            example: 12qema15
+        - in: query
+          name: meio_transporte
+          required: false
+          description: Meio de transporte com o id especificado
+          schema:
+            type: string
+            example: 12qema15
+        - in: query
+          name: sede
+          required: false
+          description: Meio de transporte pertencente à sede com o id especificado
+          schema:
+            type: string
+            example: 12qema15
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/MeioDeTransporte"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+            
+    post:
+      description: Um transportador insere um novo meio de transporte
+      tags:
+        - Transportador
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    transportador:
+                      type: string
+                      example: 12de34sus9
+                      description: Transportador a registar o meio de transporte
+                    tipo:
+                      type: string
+                      example: Camião
+                      description: Tipo do novo meio de transporte
+                    marca:
+                      type: string
+                      example: Ford
+                      description: Marca do novo meio de transporte
+                    modelo:
+                      type: string
+                      example: Transit
+                      description: Modelo do novo meio de transporte
+                    sede:
+                      type: string
+                      example: 12stds5243
+                      description: Sede onde irá ser registado o meio de transporte
+                    
+                  required:
+                    - transportador
+                    - tipo
+                    - marca
+                    - modelo
+                    - sede
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/MeioDeTransporte"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+    put:
+      description: Um transportador edita um meio de transporte
+      tags:
+        - Transportador
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    meio_transporte:
+                      type: string
+                      example: 12de34sus9
+                      description: ID do meio de transporte a editar
+                    sede:
+                      type: string
+                      example: 12stds5243
+                      description: Noda sede do meio de transporte
+                    
+                  required:
+                    - meio_transporte
+                    - sede
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/MeioDeTransporte"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    delete:
+      description: Apagar um meio de transporte da plataforma
+      tags:
+        - Transportador
+      parameters:
+        - in: query
+          name: meio_transporte
+          required: true
+          description: Apenas o meio de transporte com o id especificado
+          schema:
+            type: string
+            example: 12sw345os69
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Meio de transporte eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /utilizador/transportador/condutor:
+    get:
+      description: Todos os condutores empregados pelo transportador
+      tags:
+        - Transportador
+      parameters:
+        - in: query
+          name: transportador
+          required: true
+          description: Condutores empregados pelo transportador com id fornecido
+          schema:
+            type: string
+            example: 12aw34wd5
+        - in: query
+          name: id
+          required: false
+          description: Condutor com id fornecido
+          schema:
+            type: string
+            example: 12aw34rw5
+        - in: query
+          name: nome
+          required: false
+          description: Condutor com nome fornecido
+          schema:
+            type: string
+            example: João José
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Condutor"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    
+    post:
+      description: Um transportador insere um novo condutor
+      tags:
+        - Transportador
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    transportador:
+                      type: string
+                      example: 12w34de5
+                      description: Transportador a registar o condutor
+                    nome:
+                      type: string
+                      example: Alberto Martins
+                      description: Nome do novo condutor
+                    idade:
+                      type: integer
+                      example: 26
+                      description: Idade do novo condutor
+ 
+                  required:
+                    - transportador
+                    - nome
+                    - idade
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/Condutor"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+    
+    delete:
+      description: Apagar um condutor da plataforma
+      tags:
+        - Transportador
+      parameters:
+        - in: query
+          name: transportador
+          required: true
+          description: Transportador do condutor a eliminar
+          schema:
+            type: string
+            example: 12qw34sd5
+        - in: query
+          name: condutor
+          required: true
+          description: Apenas o condutor com o id especificado
+          schema:
+            type: string
+            example: 12qw3sd49
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Condutor eliminado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /utilizador/carrinho:
+    get:
+      description: O carrinho do utilizador
+      tags:
+        - Compra
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: O utilizador que pretende obter o seu carrinho
+          schema:
+            type: string
+            example: 12aw34wd5
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Carrinho"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+    
+    delete:
+      description: Limpa o carrinho de produtos do utilizador
+      tags:
+        - Compra
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: O utilizador que pretende limpar o carrinho
+          schema:
+            type: string
+            example: 12qw34sd5
+      responses:
+        200:
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      example: 200
+                    message:
+                      type: string
+                      example: Carrinho esvaziado com sucesso
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+  /utilizador/carrinho/cadeia_logistica:
+    get:
+      description: A cadeia logistica ponderada dos produtos no carrinho do utilizador
+      tags:
+        - Compra
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: O utilizador que pretende obter a cadeia logistica do seu carrinho
+          schema:
+            type: string
+            example: 12aw34wd5
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/CadeiaLogistica"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/carrinho/cadeia_logistica/sumario:
+    get:
+      description: O sumário da cadeia logistica ponderada dos produtos no carrinho do utilizador
+      tags:
+        - Compra
+      parameters:
+        - in: query
+          name: utilizador
+          required: true
+          description: O utilizador que pretende obter o sumário da cadeia logistica do seu carrinho
+          schema:
+            type: string
+            example: 12aw34wd5
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/CadeiaLogisticaSumario"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/carrinho/produto:
+    post:
+      description: Um consumidor adiciona um produto ao carrinho
+      tags:
+        - Compra
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    utilizador:
+                      type: string
+                      example: 12w34de5
+                      description: Utilizador a adicionar produto ao carrinho
+                    produto_especifico:
+                      type: string
+                      example: 12w34de5
+                      description: O produto especifico a ser adicionado ao carrinho
+                    quantidade:
+                      type: integer
+                      example: 6
+                      description: O número de itens que o utilizador pretende adicionar ao carrinho
+ 
+                  required:
+                    - utilizador
+                    - produto_especifico
+                    - quantidade
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/Carrinho"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+    put:
+      description: Um consumidor altera a quantidade de um produto no carrinho
+      tags:
+        - Compra
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    utilizador:
+                      type: string
+                      example: 12w34de5
+                      description: Utilizador a alterar quantidade de produto no carrinho
+                    produto_especifico:
+                      type: string
+                      example: 12w34de5
+                      description: O produto especifico a ser alterada a quantidade no carrinho
+                    quantidade:
+                      type: integer
+                      example: 6
+                      description: A nova quantidade de itens no carrinho (deve ser > 0)
+ 
+                  required:
+                    - utilizador
+                    - produto_especifico
+                    - quantidade
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/Carrinho"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+
+    delete:
+      description: Um consumidor remove um produto do carrinho
+      tags:
+        - Compra
+      requestBody:
+        required: true
+        content: 
+          application/json:
+                schema:
+                  type: object
+                  properties:
+                    utilizador:
+                      type: string
+                      example: 12w34de5
+                      description: Utilizador a remover o produto do carrinho
+                    produto_especifico:
+                      type: string
+                      example: 12w34de5
+                      description: O produto especifico a ser removido do carrinho
+ 
+                  required:
+                    - utilizador
+                    - produto_especifico
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Carrinho atualizado com sucesso
+                  data:
+                    type: object
+                    $ref: "#/components/schemas/Carrinho"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+          $ref: "#/components/responses/403"
+  
+  /utilizador/carrinho/transportes_possiveis:
+    get:
+      description: O consumidor consulta os transportes possiveis para transportarem a sua encomenda, de forma a poder tomar a decisão mais informada
+      tags:
+        - Compra
+      parameters:
+        - in: query
+          name: consumidor
+          required: true
+          description: O consumidor que pretende consultar os transportes possiveis para transportarem o seu carrinho
+          schema:
+            type: string
+            example: 12aw34wd5
+        - in: query
+          name: local_entrega
+          required: true
+          description: O local de entrega onde o consumidor pretende receber as suas compras. Utilizado no cálculo do transporte.
+          schema:
+            type: string
+            example: 12aw34wd5
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Transporte"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/carrinho/compra:
+    get:
+      description: O consumidor efectua a compra de um carrinho de produtos
+      tags:
+        - Compra
+      parameters:
+        - in: query
+          name: consumidor
+          required: true
+          description: O consumidor que pretende comprar os produtos
+          schema:
+            type: string
+            example: 12aw34wd5
+        - in: query
+          name: local_entrega
+          required: true
+          description: O local de entrega onde o consumidor pretende receber as suas compras.
+          schema:
+            type: string
+            example: 12aw34wd5
+        - in: query
+          name: transporte
+          required: true
+          description: O transporte selecionado pelo consumidor para fazer a recolha e a entrega das suas encomendas.
+          schema:
+            type: string
+            example: 12aw34wd5
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Encomenda"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+  /utilizador/carrinho/compra/confirmar:
+    get:
+      description: O consumidor confirma a compra de um carrinho de produtos. O pedido apenas será válido se o pagamento tiver sido efectuado.
+      tags:
+        - Compra
+      parameters:
+        - in: query
+          name: consumidor
+          required: true
+          description: O consumidor que pretende comprar os produtos
+          schema:
+            type: string
+            example: 12aw34wd5
+        - in: query
+          name: encomenda
+          required: true
+          description: O ID da encomenda por confirmar.
+          schema:
+            type: string
+            example: 12aw34wd5
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Encomenda"
+        204:
+          $ref: "#/components/responses/204"
+        400:
+          $ref: "#/components/responses/400"
+        403:
+            $ref: "#/components/responses/403"
+
+components:
+
+  securitySchemes:
+    bearerAuth:    
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+  
+    Armazem:
+      type: object
+      properties:
+        _id:
+          type: integer
+          example: 12ah34sdc5
+        fornecedor:
+          type: string
+          example: 34er92lw2
+        localizacao:
+          type: string
+          example: 82rs42ta
+          description: ID do local do armazém
+        tamanho:
+          type: integer
+          example: 2000
+        gasto_diario:
+          type: integer
+          description: valor em metros kWh
+          example: 100
+        inventario:
+          type: array
+          items:
+            type: object
+            properties:
+              produto:
+                type: string
+                example: 15sc4352
+              quantidade:
+                type: integer
+                example: 15
+              itens:
+                type: array
+                items:
+                  type: string
+                  example: 15sc4352
+        
+    Armazenamento:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12wa34js5
+        armazem:
+          type: string
+          example: 12wa34js5
+        produto:
+          type: string
+          example: 12wa34js5
+        item:
+          type: string
+          example: 12wa34js5
+        data_inicio:
+          type: string
+          example: 03/07/2020
+        data_fim:
+          type: string
+          example: 07/07/2020
+        consumo_total:
+          type: integer
+          example: 20
+        classificacao:
+          type: integer
+          example: 3
+        updated:
+          type: string
+          example: 07/07/2020
+            
+    Atributo:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: ab24ra512
+        nome:
+          type: string
+          example: Cor
+        descricao:
+          type: string
+          example: Cor das chuteiras
+        valido:
+          type: boolean
+          example: true
+        valores:
+          type: array
+          items:
+            type: string
+            example: vermelho
+        valoresPorValidar:
+          type: array
+          items:
+            type: string
+            example: vermelho
+
+    CadeiaLogistica:
+      type: object
+      properties:
+        producao:
+          $ref: "#/components/schemas/Producao"
+        transporte_armazem:
+          $ref: "#/components/schemas/TransporteArmazem"
+        armazenamento:
+          $ref: "#/components/schemas/Armazenamento"
+        classificacao:
+          type: integer
+          example: 4
+
+    CadeiaLogisticaSumario:
+      type: object
+      properties:
+        producao:
+          type: object
+          properties:
+            tipo: 
+              type: string
+              example: Biológica
+            classificacao:
+              type: integer
+              example: 3
+        transporte_armazem:
+          type: object
+          properties:
+            distancia: 
+              type: integer
+              example: 200
+            classificacao:
+              type: integer
+              example: 3
+        armazenamento:
+          type: object
+          properties:
+            duracao: 
+              type: integer
+              example: 2
+            classificacao:
+              type: integer
+              example: 3
+            
+    Carrinho:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12dgeygw523
+        utilizador:
+          type: string
+          example: 12dgeygw523
+        produtos:
+          type: array
+          items:
+            type: object
+            properties:
+              produto:
+                type: string
+                example: 12ma54es
+              quantidade:
+                type: integer
+                example: 3
+        valor:
+          type: object
+          properties:
+            total:
+              type: integer
+              example: 20
+            sem_desconto:
+              type: integer
+              example: 25
+            desconto:
+              type: integer
+              example: 5
+            
+    Categoria:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12as34us5
+        nome:
+          type: string
+          example: Desporto
+        fotografia:
+          type: string
+          example: https://baylit-images.s3.eu-west-3.amazonaws.com/categoria/algo.jpg
+        validado:
+          type: boolean
+          example: true
+
+    Subcategoria:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12as34us5
+        nome:
+          type: string
+          example: Roupa Desportiva
+        fotografia:
+          type: string
+          example: https://baylit-images.s3.eu-west-3.amazonaws.com/subcategoria/algo.jpg
+        categoria:
+          type: string
+          example: 12as34us5
+        atributos:
+          type: array
+          items:
+            type: string
+            example: 12as34us5
+        validado:
+          type: boolean
+          example: true
+            
+    Condutor:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12as34us5
+        transportador:
+          type: string
+          example: 12as34us5
+        nome:
+          type: string
+          example: Alberta Menezes
+        idade:
+          type: integer
+          example: 20
+          
+    Consumidor:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw34la5
+        nome:
+          type: string
+          example: Manuel Carvalho
+        email:
+          type: string
+          example: mcarvalho@gmail.com
+        password:
+          type: string
+          example: mc213a.Lla
+        morada:
+          type: string
+          example: Rua das Flores, nº 2
+        nif:
+          type: integer
+          example: 93332333
+        telemovel:
+          type: integer
+          example: 933333333
+            
+    Encomenda:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12as34dw5
+        comprador:
+          type: string
+          example: 12as34dw5
+        transportador:
+          type: string
+          example: 12as34dw5
+        valor:
+          type: object
+          properties:
+            total:
+              type: integer
+              example: 20
+            compra:
+              type: integer
+              example: 17
+            portes:
+              type: integer
+              example: 3
+            desconto:
+              type: integer
+              example: 5
+        transporte:
+          type: string
+          example: 12as34dw5
+        prazo_cancelamento:
+          type: string
+          example: 06/11/2021
+        data_encomenda:
+          type: string
+          example: 05/11/2021
+        data_entrega:
+          type: string
+          example: 07/11/2021
+        local_entrega:
+          type: string
+          example: 07/11/2021
+        estado:
+          type: string
+          example: Confirmada
+        produtos:
+          type: array
+          items:
+            type: object
+            properties:
+              produto:
+                type: string
+                example: 12as34dw5
+              quantidade:
+                type: integer
+                example: 15
+              itens:
+                type: array
+                items:
+                  type: string
+                  example: 12as34dw5
+
+    Fornecedor:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw34la5
+        nome:
+          type: string
+          example: Nike
+        email:
+          type: string
+          example: nike@gmail.com
+        password:
+          type: string
+          example: mc213a.Lla
+        morada:
+          type: string
+          example: Rua das Flores, nº 2
+        nif:
+          type: integer
+          example: 93332333
+        telemovel:
+          type: integer
+          example: 933333333 
+
+    Local:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw34yu56
+        tipo:
+          type: string
+          example: [local_entrega, sede, armazem, local_producao]
+        utilizador:
+          type: string
+          example: 12ua4dse7
+        morada:
+          type: string
+          example: Rua das Flores, nº 7D
+        cod_postal:
+          type: string
+          example: 1000-200
+        localidade:
+          type: string
+          example: Loures
+        pais:
+          type: string
+          example: Portugal
+        lon:
+          type: integer
+          example: 30.73
+        lat:
+          type: integer
+          example: -8.934
+
+    MeioDeTransporte:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12ua4dse7
+        transportador:
+          type: string
+          example: 12ua4dse7
+        sede:
+          type: string
+          example: 12ua4dse7
+        tipo:
+          type: string
+          example: camião
+        marca:
+          type: string
+          example: Ford
+        modelo:
+          type: string
+          example: Transit
+        consumo:
+          type: integer
+          description: valor km/l
+          example: 10
+        emissao:
+          type: integer
+          description: valor co2/km
+          example: 100
+          
+    Notificacao:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw34ua56
+        utilizador:
+          type: string
+          example: 12aw34ua56
+        tema:
+          type: string
+          example: EntregaConsumidor
+        mensagem:
+          type: string
+          example: O seu produto foi entregue.
+        link:
+          type: string
+          example: www.baylit.store/notificacao
+        vista:
+          type: boolean
+          example: true
+    
+    Producao:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw34ua56
+        produto:
+          type: string
+          example: 12aw34ua56
+        local:
+          type: string
+          example: 12aw34ua56
+        tipo:
+          type: string
+          example: [Biologica, Organica, Intensiva]
+        recursos:
+          type: array
+          items:
+            type: object
+            properties:
+              nome: 
+                type: string
+                example: Areia
+              quantidade: 
+                type: integer
+                example: 13
+              unidade_medida: 
+                type: string
+                example: g
+        poluicao:
+          type: array
+          items:
+            type: object
+            properties:
+              nome: 
+                type: string
+                example: Poluição Aérea
+              quantidade: 
+                type: string
+                example: [Residual, Marginal, Moderada, Severa, Critica]
+        classificacao:
+          type: integer
+          example: 3.5
+            
+    Produto:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12as34is8
+        nome:
+          type: string
+          example: Chuteiras Adidas copa 1.9
+        fornecedor:
+          type: string
+          example: 12as34is8
+        categoria:
+          type: string
+          example: 12as34is8
+        subcategoria:
+          type: string
+          example: 12as34is8
+        fotografia:
+          type: string
+          example: https://baylit-images.s3.eu-west-3.amazonaws.com/produto/algo.jpg
+        informacao_adicional:
+          type: string
+          example: Manter em lugar fresco e arejado
+          
+    ProdutoEspecifico:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12as34is8
+        fornecedor:
+          type: string
+          example: 12as34is8
+        produto:
+          type: string
+          example: 12as34is8
+        especificidade:
+          type: array
+          items:
+            type: object
+            properties:
+              atributo:
+                type: string
+                example: 12as34is8
+              valor:
+                type: string
+                example: vermelho
+        preco:
+          type: integer
+          example: 12
+        desconto:
+          type: string
+          example: 2
+        data_desconto:
+          type: string
+          example: 20/06/2022
+  
+    Transportador:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw34la5
+        nome:
+          type: string
+          example: Nike
+        email:
+          type: string
+          example: nike@gmail.com
+        password:
+          type: string
+          example: mc213a.Lla
+        morada:
+          type: string
+          example: Rua das Flores, nº 2
+        nif:
+          type: integer
+          example: 93332333
+        telemovel:
+          type: integer
+          example: 933333333 
+        portes_encomenda:
+          type: integer
+          example: 3 
+            
+    Transporte:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw34la5
+        transportador:
+          type: string
+          example: 12aw34la5
+        meio_transporte:
+          type: string
+          example: 12aw34la5
+        data_inicio:
+          type: string
+          example: 12/06/2022 09:00
+        data_fim:
+          type: string
+          example: 12/06/2022 16:00
+        distancia: 
+          type: integer
+          example: 234
+        custo:
+          type: integer
+          example: 3
+        estado:
+          type: string
+          example: Por iniciar
+        mercadoria:
+          type: array
+          items:
+            type: object
+            properties:
+              produto_especifico:
+                type: string
+                example: 12aw34la5
+              item:
+                type: string
+                example: 12aw34la5
+              local_recolha:
+                type: string
+                example: 12aw34la5
+              local_entrega:
+                type: string
+                example: 12aw34la5
+        rota:
+          type: array
+          items:
+            type: string
+            example: 12aw34la5
+        consumo:
+          type: integer
+          example: 123
+        emissao:
+          type: integer
+          example: 13
+        classificacao:
+          type: integer
+          example: 2
+        estado_transporte:
+          type: array
+          items:
+            type: object
+            properties:
+              local:
+                type: string
+                example: 12aw34la5
+              estado:
+                type: string
+                example: [Por passar, A chegar, Concluido]
+  
+    TransporteArmazem:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw34la5
+        item:
+          type: string
+          example: 12aw34la5
+        distancia:
+          type: integer
+          example: 200
+        consumo:
+          type: integer
+          example: 17
+        emissao:
+          type: integer
+          example: 117
+        classificacao:
+          type: integer
+          example: 4
+        desperdicio:
+          type: integer
+          example: 1
+            
+    Utilizador:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw345sa6
+        tipo:
+          type: string
+          example: [Consumidor, Fornecedor, Transportador, NaoAutenticado]
+        email:
+          type: string
+          example: mcarvalho@gmail.com
+        isCongelado:
+          type: boolean
+          example: false
+
+    Venda:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 12aw34ye56i
+        fornecedor:
+          type: string
+          example: 12aw34ye56i
+        comprador:
+          type: string
+          example: 12aw34ye56i
+        produto:
+          type: string
+          example: 12aw34ye56i
+        quantidade:
+          type: integer
+          example: 21
+        itens:
+          type: array
+          items:
+            type: string
+            example: 12aw34ye56i
+        data:
+          type: string
+          example: 06/11/2021
+        valor:
+          type: integer
+          example: 22.46
+        estado:
+          type: string
+          example: Confirmada
+
+  
+  responses:
+    201:
+      description: Created
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:   
+              code:
+                type: integer
+                example: 201
+              title:
+                type: string
+                example: Created
+              message:
+                type: string
+                example: O registo foi efetuado com sucesso 
+              data:
+                type: object
+                
+    204:
+      description: No content
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:   
+              code:
+                type: integer
+                example: 204
+              title:
+                type: string
+                example: No content
+              message:
+                type: string
+                example: Nenhuma resposta para o pedido efetuado
+   
+    400:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:   
+              code:
+                type: integer
+                example: 400
+              title:
+                type: string
+                example: Invalid request
+              message:
+                type: string
+                example: O pedido efectuado não é válido 
+                
+    403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:   
+              code:
+                type: integer
+                example: 403
+              title:
+                type: string
+                example: Forbidden
+              message:
+                type: string
+                example: Não possui as autorizações para efectuar este pedido 

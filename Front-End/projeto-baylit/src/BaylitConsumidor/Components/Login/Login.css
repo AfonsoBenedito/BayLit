@@ -1,0 +1,188 @@
+#mainLogin {
+  display: none;
+}
+
+#backgroundLogin {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 27, 27, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 90;
+}
+
+.closeLogin{
+  cursor: pointer;
+}
+
+#mensagem_erro{
+  color: red;
+}
+
+.mainBox {
+  background: White;
+  position: fixed;
+  top: 50%;
+  width: 90%;
+  max-width: 435px;
+  height: fit-content;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 3px;
+  z-index: 100;
+}
+
+.mainBox > * {
+  margin-bottom: 15px;
+}
+
+.mainBox i {
+  position: absolute;
+  float: right;
+  top: 15px;
+  right: 20px;
+  color: black;
+  font-size: 20px;
+}
+
+.loginLogoBaylit {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 25px;
+  /*background-color: pink;*/
+}
+
+.loginLogoBaylit img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: auto;
+}
+
+.loginTitle {
+  /* top: 5%; */
+  width: 70%;
+  font-size: 23px;
+  font-weight: 800;
+  /* color: Black; */
+  position: relative;
+  /* font-weight: bold; */
+  text-align: center;
+  display: block;
+  /* margin-top: -25px; */
+  /* margin-bottom: 15%; */
+  margin-left: auto;
+  margin-right: auto;
+  /*background-color: red;*/
+  margin-bottom: 35px;
+}
+
+.mainBox input {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 40px;
+  padding-left: 10px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.aboutLogin {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  width: 70%;
+  height: 40px;
+  margin-bottom: 35px;
+  /*background-color: antiquewhite;*/
+}
+
+.forgetPass {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+  height: 30px;
+  margin-top: -15px;
+  /* background-color: yellowgreen; */
+}
+
+.forgetPass span {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  height: fit-content;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+  /* text-align: center; */
+  vertical-align: center;
+  color: rgb(108, 108, 108);
+}
+
+.keepSession p {
+  width: 80%;
+  text-align: left;
+  /*background-color: red;*/
+}
+
+.forgetPass p {
+  width: 100%;
+  text-align: right;
+  /*background-color: rgb(236, 100, 100);*/
+}
+
+.keepSession input {
+  width: 20%;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.privacyPolicy,
+.registeSection {
+  position: relative;
+  display: block;
+  width: 70%;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+  color: rgb(108, 108, 108);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registeSection span {
+  font-weight: 500;
+  color: black !important;
+}
+
+.mainBox button {
+  position: relative;
+  display: block;
+  width: 70%;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}

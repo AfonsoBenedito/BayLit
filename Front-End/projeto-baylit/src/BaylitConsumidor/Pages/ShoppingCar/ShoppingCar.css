@@ -1,0 +1,78 @@
+.mainContentShoppingCar{
+    position: relative;
+    display: block;
+    width: calc(100% - 100px);
+    max-width: 1750px;
+    height: fit-content;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: red; */
+}
+
+/* .blocoGeralAllCarrinho{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    grid-auto-rows: auto;
+    grid-gap: 20px;
+    justify-items: center;
+    width: 100%;
+    height: fit-content;
+    margin-top: 30px;
+} */
+
+#blockResume {
+    /* grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2; */
+    height: fit-content;
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+#blockResume>*:first-child {
+    margin-bottom: 15px;
+}
+
+.blockCarAllSections {
+    height: fit-content;
+    width: 100%;
+    overflow: hidden;
+    /* max-width: calc(100vw -20px); */
+    /* background-color: aqua; */
+}
+
+.blockCarAllSections>* {
+    margin-bottom: 15px;
+}
+
+.blockCarAllSections>*:last-child {
+    margin-bottom: 0;
+}
+
+.titleBlockGridShoppingCar {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+
+@media only screen and (max-width: 1150px) {
+    .blocoGeralAllCarrinho {
+            grid-template-columns: 1fr;
+        }
+    #blockResume {
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .mainContentShoppingCar {
+        width: calc(100% - 20px);
+    }
+}

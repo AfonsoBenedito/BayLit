@@ -1,0 +1,54 @@
+.AppConsumidor h1,
+.AppConsumidor h2,
+.AppConsumidor h3,
+.AppConsumidor h4,
+.AppConsumidor h5,
+.AppConsumidor h6,
+.AppConsumidor p {
+  /* color: black; */
+}
+
+.AppConsumidor h1 {
+  font-weight: 900;
+}
+
+/* .AppConsumidor h2 {
+  font-weight: 500;
+  font-size: 24px;
+} */
+
+.AppConsumidor h4 {
+  /* font-size: 16px;
+  font-weight: 500; */
+}
+
+.AppConsumidor h5 {
+  /* font-size: 18px;
+  font-weight: 400; */
+}
+
+.AppConsumidor h6 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.AppConsumidor a{
+  text-decoration: none;
+  /* color: black !important; */
+}
+
+.toLink{
+  text-decoration: none;
+  color: black;
+}
+
+.toLink:hover{
+  color: black;
+}
+
+@media only screen and (max-width: 500px) {
+  .AppConsumidor h1 {
+      /* font-size: 45px;
+      font-weight: 900; */
+    }
+}

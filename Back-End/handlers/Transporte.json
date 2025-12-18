@@ -1,0 +1,14 @@
+{
+    "transporte":{
+        "transportador":{
+            "email": "transportamostudolda@gmail.com"
+        },
+        "condutor": "Pedro Maricas",
+        "meio_transporte":{
+            "sede": "Oriente",
+            "tipo":  "Abião",
+            "marca": "VolksWagen",
+            "modelo": "Abiao dos bons"
+        }
+    }
+}

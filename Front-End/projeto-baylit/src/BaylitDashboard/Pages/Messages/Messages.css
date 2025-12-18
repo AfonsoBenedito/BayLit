@@ -1,0 +1,128 @@
+.mainMessages{
+    position: absolute;
+    top: 0;
+    float: right;
+    right: 0;
+    height: 100%;
+    width: calc(100% - var(--widthNav));
+    background-color: var(--mainColor);
+    /* overflow-x: auto; */
+    /* padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px; */
+}
+
+.topBlockMessages{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 0px 0px 12px 12px;
+    overflow:auto;
+}
+
+.messagesSearch{
+    position: relative;
+    background: var(--secondaryColor);
+    border: 3px solid #626675;
+    border-radius: 15px;
+    margin-right: 70%;
+    margin-top: 4%;
+    width: 22%;
+    color: white;
+}
+
+.messagesSearch::placeholder{
+    text-align: center;
+    color: rgb(172, 172, 172);
+}
+
+.messageDivision{
+    position: relative;
+    display: block;
+    height: 1.5px;
+    width: 100%;
+    background-color: #626675;
+    top: 19px;
+}
+
+.messageChat{
+    background-color: #626675;
+    height: 80px;
+    width: 90%;
+    border-radius: 25px;
+    position: relative;
+    display: block;
+    left: 6%;
+    margin-top: 2%;
+}
+
+.messageChat:first-child{
+    margin-top:3%;
+}
+
+.messagesDiv{
+    max-height: calc(100%- 50px);
+    width: 100%;
+}
+
+.messagePersonName{
+    position: relative;
+    text-align: left;
+    margin-left: 100px;
+    bottom: 70%;
+    font-size: 18px;
+}
+
+.messagePersonmessage{
+    font-size: 16px;
+    position: relative;
+    text-align: left;
+    margin-left: 100px;
+    bottom: 90%;
+    color: #9fa7c6;
+}
+
+.messagePersonPhoto{
+    background-color: rgb(160, 0, 157);
+    border-radius: 50%;
+    position: relative;
+    height: 70px;
+    width: 70px;
+    top: 5px;
+    margin-left: 20px;
+}
+
+.messageDate{
+    position: relative;
+    display: inline-block;
+    bottom: 180%;
+    text-align: right;
+    left: 40%;
+    font-size: 13px;
+}
+
+/* .messagesDiv{
+    position: relative;
+    display: block;
+    background-color: red;
+    height: fit-content;
+    width: 20%;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-top: 2%;
+    overflow-y: scroll;
+}
+
+.messageChat{
+    position: relative;
+    display: block;
+    background: rgb(169, 0, 203);
+    height: 80px;
+} */

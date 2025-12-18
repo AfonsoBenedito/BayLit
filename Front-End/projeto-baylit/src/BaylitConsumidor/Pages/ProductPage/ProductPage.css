@@ -1,0 +1,466 @@
+.mainProductContent{
+    position: relative;
+    display: grid;
+    grid-template-columns: min(36vw, 550px) min(4.6vw, 70px) 1fr;
+    grid-auto-rows: auto;
+    /* grid-auto-rows: calc(12vw - 20px); */
+    grid-gap: 20px;
+    justify-items: center;
+    width: 100%;
+    /* background-color: red; */
+}
+
+/* .teste_grid{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: gold;
+} */
+
+/* FOTO PRINCIPAL */
+
+#firstDivProduct{
+    position: relative;
+    width: 100%;
+    height: min(36vw, 550px);
+    /* background-color: gold; */
+    overflow: hidden;
+}
+
+#firstDivProduct img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
+}
+
+/* FOTOS TODAS */
+
+#secondDivProduct {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 100%;
+    height: min(36vw, 550px);
+    /* background-color: rgb(91, 130, 222); */
+}
+
+.miniaturaFoto{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+    height: auto;
+    margin-top: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    /* background-color: pink; */
+}
+
+.miniaturaFoto:first-child{
+    margin-top: 0;
+}
+
+.titleSectionShop{
+    font-weight: 600 !important;
+    font-size: 20px !important;
+}
+
+.miniaturaFoto img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
+}
+
+/* ------------------ */
+
+#thirdDivProduct{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: gold; */
+}
+
+.descricaoProduto{
+    color: grey;
+}
+
+.blockCadeiaLogistica{
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+.blocoRatingSustentabilidadeGeral{
+    position: relative;
+    display: block;
+    height: fit-content;
+    width: 100%;
+    /* background-color: rgb(255, 252, 243); */
+    margin-bottom: 15px;
+}
+
+.leafsRatingSVG{
+    position: relative;
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    /* background-color: aqua; */
+}
+.leafsRatingSVG svg{
+    height: 20px;
+}
+
+.blocoRatingSustentabilidadeGeral p{
+    position: relative;
+    display: inline-block;
+    line-height: 20px;
+    margin: 0;
+    margin-left: 5px;
+    font-size: 12px;
+    color: rgb(126, 126, 126);
+}
+
+.blocoPricePageProduto{
+    position: relative;
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    /* background-color: rgb(255, 255, 255); */
+    margin-bottom: 15px;
+}
+
+.blocoPricePageProduto h6 {
+    position: relative;
+    display: block;
+    /* height: fit-content; */
+    margin: 0;
+    font-size: 10px;
+    text-decoration: line-through;
+    color: rgb(151, 151, 151);
+}
+
+.blocoPricePageProduto h4 {
+    font-size: 17px;
+    margin-bottom: 0;
+}
+.blocoPricePageProduto h4 span {
+    position: relative;
+    top: -3px;
+    font-size: 13px;
+}
+
+.blocoBtnsProduto{
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    /* background-color: pink; */
+}
+
+.addCarrinhoPageProduct{
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 250px;
+    background-color: var(--thirdColorConsumidor);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addCarrinhoPageProduct span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.addFavoritesPageProduct, .addComparePageProduct{
+    position: relative;
+    display: inline-block;
+    /* margin-top: 2px; */
+    height: 40px;
+    width: 75px;
+    /* background-color: rgb(54, 155, 175); */
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.addFavoritesPageProduct i, .addComparePageProduct i{
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    -webkit-text-stroke-width: 1px;
+    transition: .2s;
+}
+.addFavoritesPageProduct:hover i{
+    font-size: 13px;
+}
+.addComparePageProduct:hover i{
+    font-size: 13px;
+}
+
+.addFavoritesPageProduct span, .addComparePageProduct span{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 10px;
+}
+
+.caracteristicasPageProduct{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    /* background-color: pink; */
+    margin-top: 35px;
+}
+
+.caracteristicasPageProduct nav{
+    position: relative;
+    display: block;
+    width: 100%;
+    /* height: 30px; */
+    /* background-color: aqua; */
+}
+
+.btnDetalhesProduto{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 2px solid var(--thirdColorConsumidor);
+    /* background-color: cadetblue; */
+}
+
+.btnDetalhesProduto{
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tabelaCaracteristicasPageProduct{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    max-height: 125px;
+    /* background-color: bisque; */
+    overflow: hidden;
+}
+
+.lineTabelaCaracteristicasPageProduct{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.lineTabelaCaracteristicasPageProduct:nth-child(2n + 1){
+    background-color: rgba(240, 240, 240, 0.6);
+}
+
+.lineTabelaCaracteristicasPageProduct:nth-child(2n) {
+    background-color: rgba(205, 205, 205, 0.6);
+}
+
+.lineTabelaCaracteristicasPageProduct h5{
+    position: relative;
+    display: inline-block;
+    line-height: 25px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.lineTabelaCaracteristicasPageProduct h6 {
+    position: relative;
+    display: inline-block;
+    line-height: 25px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.expandTableCaracteristicasPageProduct{
+    position: relative;
+    display: block;
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    /* background-color: yellow; */
+}
+
+.expandTableCaracteristicasPageProduct span{
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(144, 144, 144);
+    cursor: pointer;
+}
+
+.blocoSelectAtributosProduct{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 10px;
+    /* background-color: pink; */
+}
+
+.lineOfAtributes{
+    position: relative;
+    width: 100%;
+    text-align: left;
+    height: fit-content;
+    margin-bottom: 10px;
+    /* background-color: rgb(117, 117, 212); */
+}
+
+.lineOfAtributes h4{
+    position: relative;
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.containerAtributoEscolha {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.containerAtributoEscolha:last-child {
+    margin-right: 0;
+}
+
+.containerAtributoEscolha h5 {
+    z-index: 20;
+}
+
+/* .numberProcuctsSelectTamanho {
+    padding: 1px 8px;
+    font-size: 10px;
+    font-weight: 400;
+    margin-left: 10px;
+    background-color: var(--secondaryColor);
+    border-radius: 50px;
+} */
+
+/* Hide the browser's default checkbox */
+.containerAtributoEscolha input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmarkAtributoEscolha {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: fit-content;
+    width: fit-content;
+    /* padding: 10px 13px; */
+    background-color: rgb(238, 238, 238);
+    border-radius: 3px;
+    /* margin: ; */
+}
+
+.checkmarkAtributoEscolha h5 {
+    margin: 0;
+    line-height: 14px;
+    font-size: 14px;
+    padding: 10px 15px;
+}
+
+/* On mouse-over, add a grey background color */
+.containerAtributoEscolha:hover input~.checkmarkAtributoEscolha {
+    opacity: .8;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerAtributoEscolha input:checked~.checkmarkAtributoEscolha {
+    background-color: rgba(126, 126, 126, 0.3);
+    border: 1px solid rgb(58, 103, 97);
+}
+
+.containerAtributoEscolha input:disabled~.checkmarkAtributoEscolha {
+    background-color: rgba(241, 241, 241, 0.3);
+    cursor: default;
+}
+
+.containerAtributoEscolha input:disabled~.checkmarkAtributoEscolha h5 {
+    color:rgb(215, 215, 215);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmarkAtributoEscolha:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerAtributoEscolha input:checked~.checkmarkAtributoEscolha:after {
+    display: block;
+}
+
+#adicionarAoCarrinhoAnimação{
+    margin-left: 0;
+    height: 40px;
+    width: 250px;
+    border-radius: 50%;
+    background: black;
+    display: none;
+}
+
+#erroAoAdicionarDiv{
+    display: none;
+}
+
+.resetFiltersButton{
+    cursor: pointer;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 4px;
+    width: 140px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+}

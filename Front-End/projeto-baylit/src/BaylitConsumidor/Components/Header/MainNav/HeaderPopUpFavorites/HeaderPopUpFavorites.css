@@ -1,0 +1,141 @@
+.mainPopUpFavorites {
+    position: absolute;
+    display: none;
+    top: 115%;
+    float: right;
+    right: 0;
+    height: fit-content;
+    width: 270px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(146, 146, 146, 0.4);
+    padding: 20px 5px 20px;
+    cursor: default;
+}
+
+.mainPopUpFavorites h5 {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    cursor: default;
+}
+
+.toAlignProductsFavoritesHeader {
+    position: relative;
+    height: fit-content;
+    max-height: 260px;
+    width: 100%;
+    /* background-color: aqua; */
+    overflow-y: auto;
+    cursor: default;
+}
+
+.emptyFavoritesMsg {
+    position: relative;
+    height: fit-content;
+    /* max-height: 260px; */
+    width: 100%;
+    /* background-color: rgb(163, 174, 42); */
+    text-align: center;
+    color: rgb(172, 172, 172);
+    font-size: 12px;
+    /* overflow-y: auto; */
+    /* cursor: default; */
+}
+
+.emptyFavoritesMsg span {
+    position: relative;
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+    color: rgb(67, 67, 67);
+    cursor: pointer;
+}
+
+.emptyFavoritesMsg span a {
+    color: rgb(67, 67, 67) !important;
+}
+
+.emptyBtnLogin{
+    position: relative;
+    display: block;
+    width: 96%;
+    margin-top: -5px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    background-color: rgb(41, 136, 87);
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.emptyBtnLogin span{
+    color: white;
+    font-size: 12px;
+    line-height: 40px;
+}
+
+.toAlignOneProductFavoritesHeader {
+    position: relative;
+    cursor: pointer;
+}
+
+.divLineFavoritesHeader {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(216, 216, 216, 0.6);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: default;
+}
+
+.divLineFavoritesHeader:first-child {
+    margin-top: 0;
+}
+
+.divHeaderFavoritesToPage {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: -65px;
+    left: 0px;
+    background-color: var(--mainColorConsumidor);
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(146, 146, 146, 0.4);
+    padding: 10px;
+    cursor: default;
+}
+
+.connectionHoverBottomFavorites {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    /* background-color: red; */
+}
+
+.btnHeaderFavoritesToPage {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: var(--thirdColorConsumidor);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btnHeaderFavoritesToPageText {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+}

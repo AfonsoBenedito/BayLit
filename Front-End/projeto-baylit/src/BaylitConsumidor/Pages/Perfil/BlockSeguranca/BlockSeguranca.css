@@ -1,0 +1,121 @@
+.mainBlockSeguranca {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /* background-color: pink; */
+    text-align: left;
+    /* padding-left: 20px; */
+}
+
+.titlePageBlockSeguranca {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.alignAllBlocksSeguranca {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    justify-content: center;
+}
+
+.blocoSegurancaAlterar {
+    position: relative;
+    display: block;
+    width: 100%;
+    /* max-width: 500px; */
+    height: fit-content;
+    border: 1px solid var(--secondaryColorConsumidor);
+    border-radius: 4px;
+    /* background-color: rgb(141, 32, 32); */
+    padding: 15px;
+}
+
+.titleBlocoSeguranca {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: fit-content;
+    /* background-color: aqua; */
+    margin-bottom: 15px;
+}
+
+.titleBlocoSeguranca i {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    -webkit-text-stroke: .7px;
+    margin-right: 5px;
+}
+
+.titleBlocoSeguranca h3 {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.blocoInputsBlockSeguranca {
+    position: relative;
+    display: block;
+    width: 100%;
+    /* background-color: yellowgreen; */
+}
+
+.blocoInputsBlockSeguranca h6 {
+    position: relative;
+    line-height: 12px;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.blocoInputsBlockSeguranca input {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    /* line-height: 11px; */
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    padding-left: 10px;
+    border: 1px solid var(--secondaryColorConsumidor);
+    border-radius: 3px;
+}
+
+.blocoInputsBlockSeguranca input:focus {
+    outline: 1px solid black;
+}
+
+.btnSubmitChangesSeguranca {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: black !important;
+    margin-top: 15px;
+    margin-bottom: 0 !important;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@media screen and (max-width:1000px) {
+    .mainBlockSeguranca {
+        padding-left: 0px;
+    }
+
+    .alignAllBlocksSeguranca {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .blocoSegurancaAlterar {
+        max-width: 500px;
+    }
+}

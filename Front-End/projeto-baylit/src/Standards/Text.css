@@ -1,0 +1,56 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  color: black;
+}
+
+h1 {
+  font-size: 65px;
+  font-weight: 900;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 24px;
+  /* line-height: 40px; */
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 14px;
+}
+
+.toLink{
+  text-decoration: none;
+  color: black;
+}
+
+.toLink:hover{
+  color: black;
+}
+
+@media only screen and (max-width: 500px) {
+  h1 {
+      font-size: 45px;
+      font-weight: 900;
+    }
+}

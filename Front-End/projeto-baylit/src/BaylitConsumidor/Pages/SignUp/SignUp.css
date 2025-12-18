@@ -1,0 +1,174 @@
+.mainContentSignUp {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 380px;
+  height: fit-content;
+  /* background-color: rgb(250, 208, 208); */
+  text-align: center;
+}
+
+.mainContentSignUp > *{
+  margin-bottom: 15px;
+}
+
+.mainContentSignUp img{
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 16px;
+  width: auto;
+}
+
+.mainContentSignUp h1 {
+  font-size: 25px;
+  font-weight: 800;
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  display: block;
+}
+
+.mainContentSignUp p{
+  font-size: 13px ;
+  color: rgb(119, 119, 119);
+  position: relative;
+  text-align: center;
+  display: block;
+}
+
+.mainContentSignUp input{
+  font-size: 15px;
+  text-align: center;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 40px;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 4px;
+}
+
+#buttonSignUp {
+  background-color: #101218;
+  border: none;
+  position: relative;
+  display: block;
+  color: white;
+  width: 90%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+  font-size: 13px;
+  /* padding: 10px 60px; */
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.blockLoginGoogle{
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  height: 50px;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid rgb(227, 227, 227);
+  /* background-color: pink; */
+}
+
+.blockLoginGoogle img{
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  height: 25px;
+  width: auto;
+  /* background-color: aquamarine; */
+}
+
+.signUpGoogleButton{
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  margin-left: 8px;
+  height: fit-content;
+  width: fit-content;
+  color: black;
+  /* background-color: aquamarine; */
+}
+
+.blockLoginOutroTipo {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  height: 50px;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid rgb(227, 227, 227);
+  /* background-color: pink; */
+}
+
+.blockLoginOutroTipo img {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  height: 22px;
+  width: auto;
+  /* background-color: aquamarine; */
+}
+
+.signUpOutroTipoButton {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  margin-left: 8px;
+  height: fit-content;
+  width: fit-content;
+  color: black;
+  /* background-color: aquamarine; */
+}
+
+.separeSignUpsConsumidor{
+  position: relative;
+  display: block;
+  height: 1px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(227, 227, 227);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#mensagemFeedbackSignUpIC{
+  color: red;
+  font-size: 16px;
+  display: none;
+}
+
+#mensagemFeedbackSignUpCE{
+  color: green;
+  font-size: 16px;
+  display: none;
+}
+
+#mensagemFeedbackSignUpCT{
+  color: red;
+  font-size: 16px;
+  display: none;
+}

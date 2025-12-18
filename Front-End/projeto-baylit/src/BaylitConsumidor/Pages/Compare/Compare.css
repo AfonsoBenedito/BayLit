@@ -1,0 +1,287 @@
+.mainCompare{
+    position: relative;
+    width: var(--widthMainContent);
+    max-width: var(--maxWidthMainContent);
+    height: fit-content;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding-bottom: 80px;
+    /* background-color: red; */
+}
+
+.mainTitleCompare{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    text-align: left;
+    /* background-color: rgb(193, 163, 141); */
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.compareBlock{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: fit-content;
+    width: 100%;
+    height: var(--heightGrid);
+
+    height: fit-content;
+    /* background-color: pink; */
+    grid-gap: 15px;
+    justify-items: center;
+    margin-bottom: 30px;
+}
+
+.headerCompare, .lineCompare{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-auto-rows: fit-content;
+    width: 100%;
+    grid-gap: 0px;
+    justify-items: center;
+    /* background-color: rgb(56, 189, 136); */
+    
+}
+
+.headerCompare{
+    text-align: center;
+    height: 45px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--secondaryColorConsumidor);
+}
+
+.lineCompare{
+    height: 155px;
+    margin-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 3px 2px rgba(164, 164, 164, 0.1);
+}
+
+.displayProductsCompare{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /* background-color: rgb(53, 124, 98); */
+}
+
+.compareCellHeader{
+    position: relative;
+    display:flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    /* background-color: rgba(163, 233, 198, 0.5); */
+}
+
+.compareCellHeader:first-child{
+    padding-left: 10px;
+    text-align: left;
+}
+
+.compareCellHeader:nth-child(2n){
+    /* background-color: rgb(245, 245, 245); */
+}
+
+.compareCell:nth-child(2n){
+    background-color: rgba(245, 245, 245, 0.5);
+}
+
+.compareCellHeader h2 {
+    position: relative;
+    font-size: 13px;
+    line-height: 13px;
+    margin: 0;
+    /* white-space: nowrap; */
+}
+
+.compareCellProduct, .compareCell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    /* background-color: palevioletred; */
+}
+
+.compareCellProduct{
+    justify-content: space-between;
+}
+
+.compareCell{
+    justify-content: center;
+    text-align: center;
+}
+
+.blockImgCompareCell{
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(235, 235, 235);
+}
+
+.blockImgCompareCell img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: auto;
+}
+
+.nameProductCompareCell{
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 13px;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.categoryProductCompareCell{
+    position: relative;
+    display: block;
+    text-transform: capitalize;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 11px;
+    margin: 0;
+    color: grey;
+}
+
+.nivelCompareCell{
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 15px;
+    /* background-color: red; */
+    text-align: center;
+}
+
+
+.leafCompare svg{
+    position: relative;
+    top: -1px;
+    height: 16px;
+    /* background-color: yellowgreen; */
+}
+
+.ratingNivelCompare{
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    /* background-color: pink; */
+}
+
+.ratingNivelCompare svg{
+    position: relative;
+    margin-top: 5px;
+    height: 16px;
+}
+
+.lastPriceCompareCell{
+    position: relative;
+    display: block;
+    font-size: 10px;
+    text-decoration: line-through;
+    color: rgb(129, 129, 129);
+}
+
+.removeCompareCell{
+    color: grey;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.zeroCompareImageDiv{
+    position: relative;
+    height: 10%;
+    width: 10%;
+    left: 45%;
+    margin-top: 100px;
+    /* background: red; */
+}
+
+.zeroCompareImage{
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.zeroCompareText{
+    margin-top: 15px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .compareBlock {
+        grid-template-columns: 100px 1fr;
+        grid-gap: 8px;
+    }
+
+    .headerCompare {
+        grid-template-columns: 100px;
+        grid-template-rows: 160px repeat(5, 90px);
+        grid-gap: 0px;
+        height: fit-content;
+        padding-bottom: 0px;
+        border-bottom: none;
+        border-right: 1px solid var(--secondaryColorConsumidor);
+        /* background-color: green; */
+    }
+
+    .compareCellHeader {
+        text-align: left;
+        padding-left: 0px !important;
+        justify-content: center;
+    }
+
+    .compareCellHeader h2 {
+        font-size: 11px;
+    }
+
+    .displayProductsCompare {
+        justify-content: flex-start;
+        height: fit-content;
+        overflow-x: auto;
+        /* background-color: rgb(53, 124, 98); */
+        white-space: nowrap;
+    }
+
+    .lineCompare {
+        position: relative;
+        display: inline-block;
+        margin-right: 5px;
+        width: 120px;
+        height: fit-content;
+
+    }
+
+    .lineCompare:last-child{
+    margin-right: 0;
+    }
+
+    .compareCell {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 90px;
+    }
+
+    .compareCellProduct {
+        height: 160px;
+    }
+
+
+}

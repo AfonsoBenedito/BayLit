@@ -1,0 +1,60 @@
+.mainProductsInserir {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    /* background-color: yellowgreen; */
+    margin-top: 10px;
+}
+
+.pathInserirProductFornecedor{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 500px;
+    height: fit-content;
+    /* background-color: pink; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.circlePathInserir{
+    position: relative;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(55, 55, 55);
+    border: 1px solid rgb(212, 212, 212, 0.5);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.circlePathInserir h6{
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+}
+
+.rightLinePathInserir,
+.leftLinePathInserir{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 1px;
+    background-color: rgba(212, 212, 212, 0.5);
+}
+
+.rightLinePathInserir{
+    float: right;
+    right: 0;
+}
+.leftLinePathInserir {
+    left: 0;
+}

@@ -1,0 +1,43 @@
+.filterButton {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 10px;
+    /* background-color: aqua; */
+    border: 1px solid var(--secondaryColorConsumidor);
+    cursor: pointer;
+    border-radius: 3px;
+    /* margin-bottom: 10px; */
+}
+
+.filterButton i {
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    color: rgb(74, 74, 74);
+    -webkit-text-stroke: .3px;
+}
+
+.smallIcon{
+    top: 0px !important;
+    font-size: 8px;
+    margin-left: 10px;
+}
+
+.filterButton h6 {
+    position: relative;
+    display: inline-block;
+    margin-left: 7px;
+    /* margin-right: 7px; */
+    font-weight: 500;
+    color: rgb(101, 101, 101);
+}
+
+.filterButton:hover i{
+    color: rgb(40, 40, 40);
+    -webkit-text-stroke: .4px;
+}
+.filterButton:hover h6{
+    color: rgb(40, 40, 40);
+}

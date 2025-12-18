@@ -1,0 +1,138 @@
+.mainPromotionCard{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    justify-self: center;
+    max-width: 300px;
+    height: 190px;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+}
+
+.promotionAtive{
+    background-image: linear-gradient(to right bottom, #165537, #1f6743, #28794f, #328c5c, #3d9f68);
+}
+.promotionNext{
+    background-image: linear-gradient(to right bottom, #165055, #236469, #2f797e, #3c8e93, #4aa4a8);
+}
+.promotionFinished{
+    background-image: linear-gradient(to right bottom, #7e1e18, #87231c, #91281f, #9a2d23, #a43227);
+}
+.promotionCanceled{
+    background-image: linear-gradient(to right bottom, #292b2c, #373b3c, #454b4c, #545c5c, #646d6c);
+}
+
+.mainPromotionCard hr{
+    position: relative;
+    display: block;
+    color: rgb(145, 145, 145);
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.detailsProductDiscountCard{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+.photoNameProductDiscount{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    height: 100%;
+    width: fit-content;
+    max-width: calc(100% - 38px);
+    /* background-color: yellow; */
+  
+}
+
+.photoProductDiscount{
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 6px;
+    margin-right: 8px;
+    background-color: rgba(216, 216, 216, 0.768);
+}
+
+.nameProductDiscount{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 50px;
+    font-weight: 400;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: calc(100% - 80px);
+}
+
+.detailsProductDiscountCard i{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    color: rgb(181, 181, 181);
+}
+
+.aboutPromotion{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    height: 105px;
+    width: 100%;
+    /* background-color: pink; */
+}
+
+.blockDatesPromotions, .blockPricePromotions{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    height: 100%;
+    width: 100px;
+    /* background-color: aquamarine; */
+}
+
+.blockDatesPromotions p, .blockPricePromotions p{
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgb(204, 204, 204);
+}
+
+.blockDatesPromotions h6, .blockPricePromotions h6{
+    margin: 0;
+    margin-bottom: 3px;
+    font-size: 11px;
+}
+
+.remainingTime{
+    position: relative;
+    display: flex;
+    text-align: left;
+    width: 100%;
+    height: 25px;
+    /* background-color: brown; */
+}
+
+.remainingTime h5{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.remainingTime i{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 3px;
+}

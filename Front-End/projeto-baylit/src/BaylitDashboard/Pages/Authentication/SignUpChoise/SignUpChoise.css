@@ -1,0 +1,119 @@
+.imageBaylitSignIn {
+  position: relative;
+  display: block;
+  margin-top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  width: auto;
+}
+
+.titleSignIn {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.mainSignIn {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 50px);
+  max-width: 350px;
+  height: fit-content;
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+  padding-top: 20px;
+}
+
+#btnChoice {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(89, 179, 94);
+  /* padding: 5px 10px; */
+}
+
+/*.iconeTransportador {
+  color: red;
+  font-size: 55px;
+}
+*/
+
+#fornecedorInfo {
+  position: relative;
+  display: block;
+  margin-top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 50px);
+  max-width: 350px;
+  height: fit-content;
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+  padding-top: 20px;
+  background-color: var(--corUtilizador);
+}
+#fornecedorInfo h4 {
+  text-align: center;
+  font-size: large;
+  display: inline-block;
+  /*transform: translateX(105%);*/
+  transform: translateY(-30%);
+  left: 35%;
+  position: relative;
+}
+
+#transportadorInfo h4 {
+  text-align: center;
+  font-size: large;
+  display: inline-block;
+  /*transform: translateX(200%);*/
+  transform: translateY(-30%);
+  left: 30%;
+  position: relative;
+}
+
+#transportadorInfo {
+  position: relative;
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 50px);
+  max-width: 350px;
+  height: fit-content;
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+  padding-top: 20px;
+  background-color: rgb(89, 179, 94);
+}
+
+.iconeTransportador {
+  color: white;
+  font-size: large;
+  position: relative;
+  display: inline-block;
+}
+
+.iconeFornecedor {
+  color: white;
+  display: inline-block;
+}

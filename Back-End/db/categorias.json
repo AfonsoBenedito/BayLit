@@ -1,0 +1,196 @@
+[
+    {
+        "nome": "Eletrónicos",
+        "validado": true,
+        "subcategorias": [
+            {
+                "nome": "Acessórios e Suplementos",
+                "validado": true
+            },
+            {
+                "nome": "Câmara e Fotos",
+                "validado": true
+            },
+            {
+                "nome": "Eletrónicos para veículos",
+                "validado": true
+            },
+            {
+                "nome": "Telemóveis e Acessórios",
+                "validado": true
+            },
+            {
+                "nome": "Computadores e Acessórios",
+                "validado": true
+            },
+            {
+                "nome": "GPS e Navegação",
+                "validado": true
+            },
+            {
+                "nome": "Fones de Ouvido",
+                "validado": true
+            },
+            {
+                "nome": "Audio Home",
+                "validado": true
+            },
+            {
+                "nome": "Electrónicos para escritório",
+                "validado": true
+            },
+            {
+                "nome": "Áudio e vídeos portáteis",
+                "validado": true
+            },
+            {
+                "nome": "Segurança e vigilância",
+                "validado": true
+            },
+            {
+                "nome": "Televisão e Vídeo",
+                "validado": true
+            },
+            {
+                "nome": "Acessórios e Comandos para Videojogos",
+                "validado": true
+            },
+            {
+                "nome": "Projetores de Vídeo",
+                "validado": true
+            }
+        ]
+    },
+    {
+        "nome": "Computadores",
+        "validado": true,
+        "subcategorias": [
+            {
+                "nome": "Acessórios de Computador e Periféricos",
+                "validado": true
+            },
+            {
+                "nome": "Componentes de Computadores",
+                "validado": true
+            },
+            {
+                "nome": "Computadores e Tablets",
+                "validado": true
+            },
+            {
+                "nome": "Armazenamento",
+                "validado": true
+            },
+            {
+                "nome": "Monitores",
+                "validado": true
+            },
+            {
+                "nome": "Impressoras",
+                "validado": true
+            },
+            {
+                "nome": "Scanners",
+                "validado": true
+            }
+        ]
+    },
+    {
+        "nome": "Artes e artesanato",
+        "validado": true,
+        "subcategorias": [
+            {
+                "nome": "Produtos para Carros",
+                "validado": true
+            },
+            {
+                "nome": "Acessórios de Exterior",
+                "validado": true
+            },
+            {
+                "nome": "Acessórios de Interiores",
+                "validado": true
+            },
+            {
+                "nome": "Motos e Desportos Motorizados",
+                "validado": true
+            },
+            {
+                "nome": "Óleos e Fluídos",
+                "validado": true
+            }
+        ]
+    },
+    {
+        "nome": "Automotivos",
+        "validado": true 
+    },
+    {
+        "nome": "Bébé",
+        "validado": true 
+    },
+    {
+        "nome": "Beleza e Higiene Pessoal",
+        "validado": true 
+    },
+    {
+        "nome": "Moda Feminina",
+        "validado": true 
+    },
+    {
+        "nome": "Moda Masculina",
+        "validado": true 
+    },
+    {
+        "nome": "Moda Infantil Feminina",
+        "validado": true 
+    },
+    {
+        "nome": "Moda Infantil Masculina",
+        "validado": true 
+    },
+    {
+        "nome": "Saúde e Domicílio",
+        "validado": true 
+    },
+    {
+        "nome": "Casa e Cozinha",
+        "validado": true 
+    },
+    {
+        "nome": "Industrial e Científico",
+        "validado": true 
+    },
+    {
+        "nome": "Bagagem",
+        "validado": true 
+    },
+    {
+        "nome": "Filmes e TV",
+        "validado": true 
+    },
+    {
+        "nome": "Artigos para Animais de Estimação",
+        "validado": true 
+    },
+    {
+        "nome": "Programas",
+        "validado": true 
+    },
+    {
+        "nome": "Desporto e Atividades ao Ar Livre",
+        "validado": true 
+    },
+    {
+        "nome": "Feramentas e utensilios",
+        "validado": true 
+    },
+    {
+        "nome": "Jogos e Brinquedos",
+        "validado": true 
+    },
+    {
+        "nome": "Videojogos",
+        "validado": true 
+    }
+]

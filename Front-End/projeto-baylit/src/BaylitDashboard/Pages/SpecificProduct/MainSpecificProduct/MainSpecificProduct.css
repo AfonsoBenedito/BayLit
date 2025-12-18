@@ -1,0 +1,35 @@
+.mainSpecificProductDiv{
+    position: relative;
+    display: inline-block;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    justify-self: center;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+}
+
+.mainSpecificProductImage{
+    position: relative;
+    height: 70%;
+    width: 80%;
+    border-radius: 10px;
+    background: red;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+}
+
+.mainSpecificProductImageSrc{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.mainSpecificProductName{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: -8px;
+}

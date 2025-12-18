@@ -1,0 +1,282 @@
+.mainCompanyPerfil {
+  position: relative;
+  display: block;
+  width: var(--widthContainers);
+  height: fit-content;
+  /* background-color: pink; */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+.companyPerfilEdit {
+  display: none;
+  position: relative;
+  /* background: blue; */
+
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  margin-right: 20%;
+  margin-left: 20%;
+  border-radius: 5%;
+  margin-top: -20%;
+  border-color: white;
+}
+
+.mainCompanyPerfil2 {
+  position: relative;
+  display: block;
+  width: var(--widthContainers);
+  height: fit-content;
+  background-color: pink;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+/* .mainCompanyPerfil > *{
+    margin-top: 15px;
+} */
+
+.navImagePerfilCompany {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgb(164, 164, 164);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  z-index: 0;
+}
+
+.mainCompanyPerfil h4 {
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.mainCompanyPerfil p {
+  margin-top: 3px;
+  color: rgb(164, 164, 164);
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.navPerfilCompanyDescription {
+  text-align: justify !important;
+  text-align-last: center !important;
+  color: white !important;
+}
+
+.editButton {
+  margin-bottom: 10px;
+}
+
+.expandButton {
+  position: absolute;
+  float: right;
+  bottom: -10px;
+  right: -5px;
+}
+
+.expandBox {
+  display: none;
+  width: 100%;
+}
+
+.mainCompanyMostSold {
+  display: inline-block;
+  position: relative;
+  font-family: bold;
+  right: 40%;
+  text-align: justify !important;
+  color: white !important;
+  font-size: 17px;
+}
+
+.iconSetaBaixo {
+  position: relative;
+  display: inline-block;
+  right: 40%;
+  top: 12px;
+  text-align: justify !important;
+  color: white;
+}
+
+.mostSoldProductsDiv {
+  position: relative;
+  /* background: red; */
+  width: 100%;
+  height: 200px;
+  /* overflow-x: auto; */
+  /* background-color: red; */
+  transform: translateX(0%);
+}
+
+.mainCompanyMSProduct {
+  position: relative;
+  background: yellow;
+  height: 90%;
+  width: 15%;
+  display: inline-block;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.mainCompanyFeedback {
+  display: inline-block;
+  position: relative;
+  font-family: bold;
+  right: 45%;
+  text-align: justify !important;
+  color: white !important;
+  font-size: 17px;
+  top: 10px;
+}
+
+.ratingsTable {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ratingsTableRow {
+  height: 40px;
+}
+
+.ratingStarFive {
+  position: relative;
+  top: 2px;
+  color: rgb(46, 132, 0);
+}
+
+.ratingStarFour {
+  position: relative;
+  color: rgb(78, 213, 0);
+}
+
+.ratingStarThree {
+  position: relative;
+  color: yellow;
+}
+
+.ratingStarTwo {
+  position: relative;
+  color: orange;
+}
+
+.ratingStarOne {
+  position: relative;
+  color: red;
+}
+
+/*----------------------------------Inputs de Edit profile--------------------------------*/
+
+.input_editProfile_mail {
+  height: 30px;
+  width: 40px;
+  color: rgb(123, 123, 123);;
+}
+.editProfileInputColor{
+  color: white;;
+}
+
+.editProfile_Inputs {
+  margin-top: 30px;
+  position: relative;
+  display: none;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.div_do_pessoal {
+  position: relative;
+  display: block;
+  /* width: fit-content; */
+  left: 25%;
+  width: 50%;
+  height: fit-content;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+  margin-top: 2%;
+}
+
+.div_do_pessoal input {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-color: #212121;
+}
+
+.btnUpdate1 {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: fit-content;
+  width: fit-content;
+  background-color: #297b50;
+  padding: 5px 35px;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid rgb(61, 61, 61);
+}
+
+/*----------------------------------------------------------------*/
+
+#erro {
+  color: Red;
+  font-size: small;
+  text-align: center;
+}
+
+#erroB {
+  color: #297b50;
+  font-size: small;
+  text-align: center;
+}
+
+/*-------Resolução de Bugs go go go go go--------------*/
+#name2,
+#email2,
+#morada2,
+#nif2,
+#telemovel2 {
+  color: white;
+}
+
+#name2,
+#email2,
+#morada2,
+#nif2,
+#telemovel2 > input {
+  width: 225px;
+}
+
+#telemovel2 {
+  width: 225px;
+}

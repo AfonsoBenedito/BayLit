@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo chmod -R 777 /home/ec2-user/BayLit
+source ~/.nvm/nvm.sh > /dev/null 2> /dev/null < /dev/null &
+cd /home/ec2-user/BayLit/Back-End
+/home/ec2-user/.nvm/versions/node/v16.15.0/bin/npm install --force > /dev/null 2> /dev/null < /dev/null &
+cd /home/ec2-user/BayLit/Front-End/projeto-baylit
+/home/ec2-user/.nvm/versions/node/v16.15.0/bin/npm install --force > /dev/null 2> /dev/null < /dev/null &

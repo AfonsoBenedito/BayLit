@@ -1,0 +1,31 @@
+.mainProductsPage{
+    padding: 20px 20px;
+    /* background-color: rgb(81, 23, 23); */
+
+    position: absolute;
+    top: 0;
+    float: right;
+    right: 0;
+    height: fit-content;
+    width: calc(100% - var(--widthNav));
+}
+
+.pathProducts{
+    position: relative;
+    display: block;
+    height: 20px;
+    width: fit-content;
+}
+
+.pathProducts a{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-right: 6px;
+}
+
+.pathProducts a:last-child {
+    margin-right: 0px;
+}

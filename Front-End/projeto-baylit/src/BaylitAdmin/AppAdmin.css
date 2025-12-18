@@ -1,0 +1,106 @@
+:root {
+    --widthPagesAdmin: 95%;
+    --maxWidthPagesAdmin: 1550px;
+}
+
+.AppAdmin {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+.mainUtilizadoresPage {
+    position: relative;
+    width: var(--widthPagesAdmin);
+    max-width: var(--maxWidthPagesAdmin);
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: aquamarine; */
+}
+
+.btnsUtilizadores {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /* background-color: red; */
+}
+
+.btnUtilizadorEspecifico {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    /* background-color: bisque; */
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.btnUtilizadorEspecifico:last-child {
+    margin-bottom: 0;
+}
+
+.btnUtilizadorEspecifico:hover {
+    border: 1px solid rgb(230, 230, 230) !important;
+}
+
+.btnUtilizadorEspecifico i {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-text-stroke: .3px;
+    line-height: 40px;
+    vertical-align: top;
+}
+
+.btnUtilizadorEspecifico h5 {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 40px;
+    vertical-align: top;
+    margin-left: 5px;
+}
+
+
+.pageUtilizadoresContent {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    /* background-color: rgb(170, 66, 66); */
+}
+
+@media screen and (max-width: 950px) {
+    .mainUtilizadoresPage {
+        grid-template-columns: 1fr;
+    }
+
+    .btnsUtilizadores {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .btnUtilizadorEspecifico {
+        display: inline-block;
+        width: fit-content;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .btnUtilizadorEspecifico:last-child {
+        margin-right: 0;
+    }
+}

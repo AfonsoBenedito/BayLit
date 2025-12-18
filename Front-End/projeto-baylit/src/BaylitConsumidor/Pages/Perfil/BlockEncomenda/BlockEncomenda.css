@@ -1,0 +1,409 @@
+.mainBlockEncomenda{
+    position: relative;
+    display: block;
+    /* top: 10px; */
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: rgb(89, 89, 206); */
+}
+
+.pathEncomendas{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.backPathEncomendas a{
+    color: black;
+}
+
+.backPathEncomendas:hover a{
+    text-decoration: underline;
+}
+
+.divisaoPath{
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.bodyEncomendaMail {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+}
+
+.estadoEncomendaPage{
+    position: relative;
+    margin-right: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(165, 165, 165);
+    font-size: 14px;
+}
+
+.tituloEncomendaMail {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600 !important;
+    vertical-align: top;
+    margin-bottom: 30px;
+}
+
+.tituloEncomendaMail i {
+    position: relative;
+    vertical-align: top;
+    /* top: -2px; */
+    margin-right: 5px;
+    -webkit-text-stroke: .6px;
+}
+
+.upperTitulo {
+    text-transform: uppercase;
+}
+
+.idEncomenda{
+    position: relative;
+    margin-left: 8px;
+    color: rgb(162, 162, 162);
+}
+
+.datasEncomenda {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px rgba(148, 148, 148, 0.4);
+    border-radius: 3px;
+    /* background-color: aqua; */
+}
+
+.dataEspecificaEncomenda {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    /* background-color: red; */
+}
+
+.toAlignDatasEncomenda{
+    position: relative;
+    display: block;
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    padding: 0px 15px 0px;
+}
+
+.toAlignDatasEncomenda i {
+    position: relative;
+    display: inline-block;
+    line-height: 20px;
+    font-size: 14px;
+    /* top: 1px; */
+    margin-right: 4px;
+    -webkit-text-stroke: .4px;
+    color: rgb(155, 155, 155);
+}
+
+.toAlignDatasEncomenda h5 {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    margin-right: 8px;
+    color: rgb(155, 155, 155);
+}
+
+.toAlignDatasEncomenda h4 {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+}
+
+.paddingEncomenda {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px rgba(148, 148, 148, 0.4);
+    border-radius: 3px;
+    margin-top: 15px;
+    /* padding: 15px; */
+}
+
+.detailsGeralEncomenda {
+    position: relative;
+    width: calc(100% - 30px);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detailsGeralEncomenda h6 {
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(145, 145, 145);
+    /* margin-top: 15px; */
+}
+
+.detailsGeralEncomenda h5 {
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.detailsTransporteEncomenda {
+    position: relative;
+    display: grid;
+    width: calc(100% - 20px);
+    height: fit-content;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: auto;
+    margin-right: auto;
+    grid-gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* background-color: pink; */
+}
+
+.detailTransporte {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+
+.detailTransporte h6 {
+    position: relative;
+    font-size: 11px;
+    font-weight: 600;
+    margin: 0;
+    color: rgb(145, 145, 145);
+}
+
+.detailTransporte h5 {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 3px;
+}
+
+.detailTransporte h5 svg{
+    position: relative;
+    top: -1px;
+    height: 14px;
+}
+
+
+/* PRODUTOS */
+
+.displayerProdutosEncomendas {
+    position: relative;
+    display: block;
+    width: calc(100% - 30px);
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.produtoEncomenda {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100px;
+    grid-template-columns: 100px auto 1fr 93px 90px 90px;
+    grid-gap: 10px;
+    margin-bottom: 25px;
+}
+
+.produtoEncomenda:last-child {
+    margin-bottom: 8px;
+}
+
+.fotoProductEncomenda,
+.nomeProductEncomenda,
+.atributosProductEncomenda,
+.nivelProductEncomenda,
+.quantidadeProductEncomenda,
+.precoProductEncomenda {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fotoProductEncomenda {
+    background-color: rgba(219, 219, 219, 0.5);
+}
+
+.fotoProductEncomenda img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
+}
+
+.nomeProductEncomenda h4 {
+    position: relative;
+    display: block;
+    margin: 0;
+    margin-bottom: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 120px;
+}
+
+.nomeProductEncomenda h5 {
+    position: relative;
+    display: block;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgb(145, 145, 145);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 120px;
+}
+
+.atributosProductEncomenda h4 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.nivelProductEncomenda,
+.quantidadeProductEncomenda,
+.precoProductEncomenda {
+    text-align: center;
+}
+
+.nivelProductEncomenda h5,
+.quantidadeProductEncomenda h5,
+.precoProductEncomenda h5 {
+    position: relative;
+    display: block;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgb(145, 145, 145);
+}
+
+.nivelProductEncomenda h4,
+.quantidadeProductEncomenda h4,
+.precoProductEncomenda h4 {
+    position: relative;
+    display: block;
+    margin: 0;
+    margin-top: 3px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#cancelarEncomendaButton{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+    .datasEncomendaMail {
+        grid-template-columns: 1fr;
+    }
+
+    .detailsTransporteEncomendaMail {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .produtoEncomenda {
+        height: fit-content;
+        grid-template-rows: 80px;
+        grid-template-columns: 80px auto 1fr;
+    }
+
+    .datasEncomenda {
+        grid-template-columns: 1fr;
+    }
+
+    .dataEspecificaEncomenda {
+        height: 50px;
+    }
+
+    .toAlignDatasEncomenda i {
+        line-height: 15px;
+    }
+
+    .toAlignDatasEncomenda h5 {
+        line-height: 15px;
+        margin-right: 0;
+    }
+
+    .toAlignDatasEncomenda h4 {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 18px;
+        margin: 0;
+    }
+
+   
+    .atributosProductEncomenda h4 {
+        text-align: center;
+    }
+}

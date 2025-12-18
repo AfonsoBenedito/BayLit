@@ -1,0 +1,215 @@
+.mainPopUpCompare {
+    position: absolute;
+    display: none;
+    top: 115%;
+    float: right;
+    right: 0;
+    height: fit-content;
+    width: 270px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(146, 146, 146, 0.4);
+    padding: 20px 5px 20px;
+    cursor: default;
+}
+
+.mainPopUpCompare h5 {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    cursor: default;
+}
+
+
+.divLineCompareHeader {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(216, 216, 216, 0.6);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: default;
+}
+
+.divLineCompareHeader:first-child {
+    margin-top: 0;
+}
+
+.divHeaderCompareToPage {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: -65px;
+    left: 0px;
+    background-color: var(--mainColorConsumidor);
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(146, 146, 146, 0.4);
+    padding: 10px;
+    cursor: default;
+}
+
+.connectionHoverBottomCompare {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    /* background-color: red; */
+}
+
+.btnHeaderCompareToPage {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: var(--thirdColorConsumidor);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btnHeaderCompareToPageText {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+}
+
+.toAlignProductsCompareHeader {
+    position: relative;
+    height: fit-content;
+    max-height: 260px;
+    width: 100%;
+    /* background-color: aqua; */
+    overflow-y: auto;
+    cursor: default;
+}
+
+.emptyCompareMsg {
+    position: relative;
+    height: fit-content;
+    /* max-height: 260px; */
+    width: 100%;
+    /* background-color: rgb(163, 174, 42); */
+    text-align: center;
+    color: rgb(172, 172, 172);
+    font-size: 12px;
+    /* overflow-y: auto; */
+    /* cursor: default; */
+}
+
+.emptyCompareMsg span {
+    position: relative;
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+    color: rgb(67, 67, 67);
+    cursor: pointer;
+}
+
+.emptyCompareMsg span a {
+    color: rgb(67, 67, 67) !important;
+}
+
+.productComparePopUp{
+    position: relative;
+    display: grid;
+    /* justify-content: space-between; */
+    grid-template-columns: 60px 1fr 60px;
+    /* grid-template-: ; */
+    grid-gap: 5px;
+    width: 100%;
+    height: 60px;
+    /* background-color: red; */
+    margin-bottom: 10px;
+}
+
+.productComparePopUp:last-child{
+    margin-bottom: 0;
+}
+
+.imageProductComparePopUp,
+.detailsProductComparePopUp,
+.removeProductComparePopUp{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: pink; */
+}
+
+.imageProductComparePopUp{
+    overflow: hidden;
+    background-color: rgb(228, 228, 228);
+}
+
+.imageProductComparePopUp img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: auto;
+}
+
+.detailsProductComparePopUp{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.detailsProductComparePopUp h3{
+    position: relative;
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+    width: 120px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+    /* line-height: 12px; */
+}
+
+.detailsProductComparePopUp h4 {
+    position: relative;
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgb(144, 144, 144);
+    margin: 0;
+    width: 120px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.detailsProductComparePopUp span svg{
+    height: 15px;
+
+}
+
+.removeProductComparePopUp{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.removeProductComparePopUp h4 {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgb(144, 144, 144);
+    margin: 0;
+    cursor: pointer;
+}
+
+.removeProductComparePopUp h4:hover{
+    text-decoration: underline;
+}

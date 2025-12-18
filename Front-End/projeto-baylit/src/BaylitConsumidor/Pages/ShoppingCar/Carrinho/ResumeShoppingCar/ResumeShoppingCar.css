@@ -1,0 +1,245 @@
+.mainResumeShoppingCar{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    min-height: 447px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 3px 2px rgba(164, 164, 164, 0.1);
+    border: 1px solid var(--secondaryColor);
+    text-align: center;
+    padding: 15px;
+}
+
+.lineTwoArguments{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* background-color: rgb(255, 229, 229); */
+}
+
+.lineTwoArguments:last-child{
+    margin-top: 15px;
+}
+
+.lineDescontos{
+    background-color: rgba(255, 243, 134, 0.5) !important;
+    border-radius: 3px;
+}
+
+.lineDescontos h5{
+    color: rgb(194, 194, 18) !important;
+    font-weight: 600 !important;
+}
+
+.lineTwoArguments h5{
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.lastPrice{
+    font-size: 10px;
+    margin-right: 10px;
+    text-decoration: line-through;
+    color: rgb(147, 147, 147);
+}
+
+.totalExtension{
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.divLineResume{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondaryColor);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.lineOneArgument {
+    position: relative;
+    display: block;
+    text-align: center;
+    height: fit-content;
+    width: 100%;
+    /* background-color: rgb(222, 173, 173); */
+}
+
+.lineOneArgument p{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.escalaResumo{
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.blocoTransportesResume{
+    margin-top: 10px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    max-height: 422px;
+    /* background-color: pink; */
+    overflow-y: auto;
+}
+
+.containerTransporteResume {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 14px;
+    font-weight: 500;
+    /* margin-right: 10px; */
+    margin-bottom: 10px;
+}
+
+.containerTransporteResume:last-child {
+    margin-bottom: 0;
+}
+
+.containerTransporteResume h5 {
+    z-index: 20;
+}
+
+/* .numberProcuctsSelectTamanho {
+    padding: 1px 8px;
+    font-size: 10px;
+    font-weight: 400;
+    margin-left: 10px;
+    background-color: var(--secondaryColor);
+    border-radius: 50px;
+} */
+
+/* Hide the browser's default checkbox */
+.containerTransporteResume input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmarkTransporteResume {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: fit-content;
+    width: 100%;
+    /* padding: 10px 13px; */
+    border: 1px solid var(--secondaryColor);
+    border-radius: 3px;
+    /* margin: ; */
+    padding: 10px;
+}
+
+.radioLine{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 1px;
+    /* background-color: red; */
+}
+
+.radioLine:last-child{
+    margin-bottom: 0;
+}
+
+.radioLine h3 {
+    margin: 0;
+    /* line-height: 20px; */
+    font-size: 12px;
+}
+
+.radioLine h4{
+    margin: 0;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgb(135, 135, 135);
+}
+
+.nivelSustentabilidadeTransporte svg{
+    height: 15px;
+}
+
+.tempoEntregaTransporteResume h6{
+    margin: 0;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgb(135, 135, 135);
+}
+
+.tempoEntregaTransporteResume h5 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/* On mouse-over, add a grey background color */
+.containerTransporteResume:hover input~.checkmarkTransporteResume {
+    /* opacity: .8; */
+    background-color: rgba(249, 249, 249, 0.8);
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerTransporteResume input:checked~.checkmarkTransporteResume {
+    background-color: var(--secondaryColor);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.containerTransporteResume:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerTransporteResume input:checked~.checkmarkTransporteResume:after {
+    display: block;
+}
+
+.finalizarCompraResume{
+    position: relative;
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: var(--thirdColor);
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.finalizarCompraResume span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+}

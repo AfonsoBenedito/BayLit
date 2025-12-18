@@ -1,0 +1,86 @@
+.imageBaylitSignIn {
+  position: relative;
+  display: block;
+  margin-top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  width: auto;
+}
+
+.titleSignIn {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.mainSignIn {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 50px);
+  max-width: 350px;
+  height: fit-content;
+  border-radius: 8px;
+  background-color: #292929;
+  border: 1px solid rgb(61, 61, 61);
+  padding-top: 20px;
+}
+
+.mainSignIn input {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-color: #212121;
+}
+
+.mainSignIn p {
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px !important;
+  font-size: 13px;
+  /* background-color: pink; */
+}
+
+.mainSignIn > * {
+  margin-bottom: 20px;
+}
+
+#btnSignInAuth {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(89, 179, 94);
+  /* padding: 5px 10px; */
+}
+
+#erro {
+  color: red;
+  text-align: center;
+}
+
+#inputLOGIN {
+  color: white;
+}

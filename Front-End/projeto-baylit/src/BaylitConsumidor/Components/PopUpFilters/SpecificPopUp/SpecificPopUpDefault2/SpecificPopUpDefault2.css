@@ -1,0 +1,107 @@
+.mainSpecificPopUpDefault2 {
+    position: relative;
+    width: 350px;
+    height: fit-content;
+    border-radius: 4px;
+    /* padding: 15px; */
+    /* padding-bottom: var(--distancePopUpRedefineBtn); */
+    background-color: var(--mainColorConsumidor);
+}
+
+.divForFiltersDefault2 {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding: 15px;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.containerDefault2 {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.containerDefault2:last-child {
+    margin-right: 0;
+}
+
+.containerDefault2 h5 {
+    z-index: 20;
+}
+
+/* .numberProcuctsSelectTamanho {
+    padding: 1px 8px;
+    font-size: 10px;
+    font-weight: 400;
+    margin-left: 10px;
+    background-color: var(--secondaryColor);
+    border-radius: 50px;
+} */
+
+/* Hide the browser's default checkbox */
+.containerDefault2 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmarkDefault2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: fit-content;
+    width: fit-content;
+    /* padding: 10px 13px; */
+    background-color: rgb(238, 238, 238);
+    border-radius: 3px;
+    /* margin: ; */
+}
+
+.checkmarkDefault2 h5 {
+    margin: 0;
+    line-height: 14px;
+    font-size: 14px;
+    padding: 10px 15px;
+}
+
+/* On mouse-over, add a grey background color */
+.containerDefault2:hover input~.checkmarkDefault2 {
+    opacity: .8;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerDefault2 input:checked~.checkmarkDefault2 {
+    background-color: rgba(126, 126, 126, 0.3);
+    border: 1px solid rgb(58, 103, 97);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmarkDefault2:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerDefault2 input:checked~.checkmarkDefault2:after {
+    display: block;
+}

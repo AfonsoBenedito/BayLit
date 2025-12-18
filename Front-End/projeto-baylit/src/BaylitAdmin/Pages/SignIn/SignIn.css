@@ -1,0 +1,170 @@
+.signInComponentDivAdmin {
+  /* background-color: red; */
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 50%;
+}
+
+.imageBaylitSignIn {
+  position: relative;
+  display: block;
+  margin-top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  width: auto;
+}
+
+.titleSignIn {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.mainSignInAdmin {
+  /* background-color: red; */
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 50px);
+  max-width: 350px;
+  /* height: fit-content; */
+  height: fit-content;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(137, 137, 137);
+  padding: 15px;
+}
+
+.mainSignInAdmin span{
+  position: relative;
+  margin: 0;
+  display: block;
+  font-size: 13px;
+  color: black;
+}
+
+.mainSignInAdmin input{
+  position: relative;
+  width: 87%;
+  height: 30px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mainSignInAdmin input[type="text"] {
+  color: black;
+  /* -webkit-transition: 0.5s; */
+  /* transition: 0.5s; */
+  border: 1px solid rgb(61, 61, 61);
+}
+
+.mainSignInAdmin input[type="password"] {
+  color: black;
+  border: 1px solid rgb(61, 61, 61);
+}
+
+/* #inputPassAdmin {
+  position: relative;
+  top: 7px;
+} */
+/* .mainSignIn input {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-color: #212121;
+  color: black;
+}
+
+.mainSignIn p {
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px !important;
+  font-size: 13px;
+  color: black;
+  /* background-color: pink; 
+} */
+
+.mainSignIn > * {
+  margin-bottom: 20px;
+}
+
+#btnSignInAuth {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(89, 179, 94);
+  /* padding: 5px 10px; */
+  top: 10px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#erro {
+  color: red;
+  text-align: center;
+  position: relative;
+  margin: 0;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* #inputLOGIN {
+  color: white;
+} */
+
+.btnVisitarSiteCons, .btnVisitarSiteForn{
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  max-width: 350px;
+  height: fit-content;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  color: rgb(255, 255, 255) !important;
+}
+
+.btnVisitarSiteCons{
+margin-top: 30px !important;
+
+background-color:  rgb(198, 89, 26);
+}
+.btnVisitarSiteForn {
+  margin-top: 10px !important;
+  background-color: rgb(0, 0, 0);
+}

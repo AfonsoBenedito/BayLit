@@ -1,0 +1,60 @@
+.mainServicos{
+    position: absolute;
+    top: 0;
+    float: right;
+    right: 0;
+    height: 100%;
+    width: calc(100% - var(--widthNav));
+    background-color: var(--mainColor);
+    /* overflow-x: auto; */
+    /* padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px; */
+}
+
+.topBlockServicos{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 0px 0px 12px 12px;
+}
+
+.allServicosDiv{
+    width: 100%;
+    height: fit-content;
+    /* background-color: green; */
+    /* margin-top: 65px; */
+}
+
+.allServicosInfoDiv{
+    display: grid;
+    /* justify-content: space-between; */
+    grid-template-columns: repeat(8, 1fr);
+    width: 100%;
+    height: 30px;
+    /* background-color: pink; */
+    margin-top: 65px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ServicosTableInformation{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hr{
+    position: relative;
+    display: block;
+    color: rgb(145, 145, 145);
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}

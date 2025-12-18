@@ -1,0 +1,234 @@
+.mainTransportadorCard {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    border: 1px solid rgb(180, 180, 180);
+    box-shadow: 0px 0px 8px 0px rgba(161, 161, 161, 0.3);
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.headerTransportadorCard {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    /* background-color: brown; */
+}
+
+.headerTransportadorCard i {
+    position: relative;
+    display: inline-block;
+    line-height: 60px;
+    font-size: 15px;
+    -webkit-text-stroke: 0.5px;
+    cursor: pointer;
+}
+
+.mainDeatails {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: fit-content;
+    text-align: left;
+    /* background-color: yellow; */
+}
+
+.nomeTransportadorCard {
+    position: relative;
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nomeTransportadorCard span {
+    position: relative;
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    /* margin-top: 3px; */
+    color: rgb(130, 130, 130);
+}
+
+.idTransportadorCard {
+    position: relative;
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(130, 130, 130);
+    vertical-align: top;
+    margin-left: 30px;
+}
+
+.idTransportadorCard span {
+    position: relative;
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    padding: 2px 10px;
+    font-size: 10px;
+    font-weight: 400;
+    background-color: rgba(255, 25, 0, 0.4);
+    border-radius: 500px;
+    vertical-align: top;
+    margin-left: 30px;
+}
+
+.bodyTransportadorCard {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: fit-content;
+    /* background-color: rgb(42, 85, 165); */
+}
+
+.displayerMoradas {
+    position: relative;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    height: fit-content;
+    /* background-color: goldenrod; */
+    margin-bottom: 15px;
+}
+
+.moradaTransportadorCard {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    text-align: left;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(180, 180, 180);
+    /* background-color: rgb(112, 42, 165); */
+}
+
+.btnEliminarMorada {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    float: right;
+    right: 10px;
+    border-radius: 50%;
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
+}
+
+.btnEliminarMorada i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9px;
+    -webkit-text-stroke: 0.5px;
+}
+
+.moradaTransportadorCard h5 {
+    font-size: 11px;
+    color: rgb(120, 120, 120);
+    margin-bottom: 6px;
+}
+
+.moradaTransportadorCard h3 {
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 3px;
+}
+
+.dadosTransportadorCard {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    height: fit-content;
+    /* background-color: aqua; */
+}
+
+.dadosTransportadorCard h5 {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgb(120, 120, 120);
+    margin-bottom: 6px;
+}
+
+.dadosTransportadorCard h6 {
+    position: relative;
+    display: block;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.dadosTransportadorCard input {
+    position: relative;
+    display: block;
+    height: 30px;
+    width: 100%;
+    max-width: 500px;
+    font-size: 12px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(220, 220, 220);
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.btnAlterarTransportadorCard {
+    position: relative;
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    background-color: rgb(0, 0, 0) !important;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* paragrafo de boas noticias por parte do sucesso das alteracoes no perfil */
+#Feedback {
+    color: green;
+}
+
+@media screen and (max-width: 900px) {
+    .displayerMoradas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .idTransportadorCard span {
+        display: block;
+        margin-top: 5px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .displayerMoradas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .displayerMoradas {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

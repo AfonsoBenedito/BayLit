@@ -1,0 +1,140 @@
+
+
+.blocoDadosEntrega, .blocoDadosEntrega {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0px 0px 3px 2px rgba(164, 164, 164, 0.1);
+}
+
+
+.containerTransporteResume {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 14px;
+    font-weight: 500;
+    /* margin-right: 10px; */
+    margin-bottom: 10px;
+}
+
+.containerTransporteResume:last-child {
+    margin-bottom: 0;
+}
+
+.containerTransporteResume h5 {
+    z-index: 20;
+}
+
+/* .numberProcuctsSelectTamanho {
+    padding: 1px 8px;
+    font-size: 10px;
+    font-weight: 400;
+    margin-left: 10px;
+    background-color: var(--secondaryColor);
+    border-radius: 50px;
+} */
+
+/* Hide the browser's default checkbox */
+.containerTransporteResume input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmarkTransporteResume {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: fit-content;
+    width: 100%;
+    /* padding: 10px 13px; */
+    border: 1px solid var(--secondaryColorConsumidor);
+    border-radius: 3px;
+    /* margin: ; */
+    padding: 10px;
+}
+
+.radioLine {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 1px;
+    /* background-color: red; */
+}
+
+.radioLine:last-child {
+    margin-bottom: 0;
+}
+
+.radioLine h3 {
+    margin: 0;
+    /* line-height: 20px; */
+    font-size: 12px;
+}
+
+.radioLine h4 {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgb(135, 135, 135);
+}
+
+.nivelSustentabilidadeTransporte svg {
+    height: 15px;
+}
+
+.tempoEntregaTransporteResume{
+    text-align: right;
+}
+
+.tempoEntregaTransporteResume h6 {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgb(135, 135, 135);
+}
+
+.tempoEntregaTransporteResume h5 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/* On mouse-over, add a grey background color */
+.containerTransporteResume:hover input~.checkmarkTransporteResume {
+    /* opacity: .8; */
+    background-color: rgba(249, 249, 249, 0.4);
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerTransporteResume input:checked~.checkmarkTransporteResume {
+    border: 1px solid black;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.containerTransporteResume:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerTransporteResume input:checked~.checkmarkTransporteResume:after {
+    display: block;
+}

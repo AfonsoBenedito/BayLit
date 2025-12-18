@@ -1,0 +1,226 @@
+:root{
+    --heightGrid: 112px;
+}
+.gridSubcategories{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-auto-rows: fit-content;
+    width: 100%;
+    height: var(--heightGrid);
+    
+    /* height: 100px; */
+    /* background-color: pink; */
+    grid-gap: 5px;
+    row-gap: 15px;
+    justify-items: center;
+    overflow-y: hidden;
+}
+
+.gridSubcategories a{
+    list-style: none;
+    position: relative;
+    height: 0;
+    width: 90%;
+    padding-top: 90%;
+    /* background-color: red; */
+    border-radius: 4px;
+    border: 1px solid var(--secondaryColorConsumidor);
+    text-decoration: none;
+}
+
+.blockCategoryImageSC{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 60%;
+    height: 50%;
+    /* background-color: rgb(112, 112, 84); */
+}
+
+.blockCategoryImageSC img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
+}
+
+.gridSubcategories h6{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.separateLine{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: var(--secondaryColorConsumidor);
+}
+
+#showAllSubCategories{
+    display: inline-block;
+}
+
+#hiddenAllSubCategories{
+    display: none;
+}
+
+.toAlignShowHide{
+    text-align: right;
+}
+
+.toActiveFunction{
+    position: relative;
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+}
+
+.toAlignFilters{
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    /* background-color: pink; */
+}
+
+.toSpace{
+    margin-right: 15px;
+}
+
+.toSpace:last-child{
+    margin-right: 0;
+}
+
+.productsDisplayer{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: fit-content;
+    width: 100%;
+    height: fit-content;
+
+    /* height: 100px; */
+    /* background-color: pink; */
+    /* grid-gap: 5px; */
+    column-gap: 5px;
+    row-gap: 20px;
+    justify-items: center;
+    /* overflow-y: hidden; */
+}
+
+.mainProduct{
+    margin-right: 0 !important;
+}
+
+
+@media only screen and (max-width: 1650px) {
+    .gridSubcategories {
+            grid-template-columns: repeat(12, 1fr);
+        }
+    :root {
+        --heightGrid: 7.5vw;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .gridSubcategories {
+        grid-template-columns: repeat(10, 1fr);
+    }
+    :root {
+        --heightGrid: 9vw;
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    .productsDisplayer {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .gridSubcategories {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    :root {
+        --heightGrid: 11vw;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .productsDisplayer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .gridSubcategories {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    :root {
+        --heightGrid: 12.5vw;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .productsDisplayer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .gridSubcategories {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    :root {
+        --heightGrid: 14vw;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .gridSubcategories {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    :root {
+        --heightGrid: 16.5vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .gridSubcategories {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    :root {
+        --heightGrid: 23vw;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .productsDisplayer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .gridSubcategories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    :root {
+        --heightGrid: 31vw;
+    }
+}

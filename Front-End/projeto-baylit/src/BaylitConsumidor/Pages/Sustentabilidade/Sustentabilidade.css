@@ -1,0 +1,135 @@
+.mainSustentabilidade {
+    position: relative;
+    display: block;
+    width: var(--widthMainContent);
+    max-width: var(--maxWidthMainContent);
+    height: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: rgb(248, 174, 174); */
+    margin-top: 30px;
+    padding-bottom: 100px;
+}
+
+.titleSustentabilidade {
+    position: relative;
+    /* margin-top: 2%; */
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 25px;
+    /* background-color: rgb(0, 234, 255); */
+    line-height: 30px;
+    display: block;
+    margin-bottom: 20px;
+    /* font-weight: bold; */
+}
+
+.blockSustentabilidadeProduto{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    /* background-color: red; */
+    padding: 15px;
+    border: 1px solid var(--secondaryColorConsumidor);
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.titleBlockHistoria{
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.titleBlockHistoria:last-child {
+    margin-top: 10px;
+}
+
+.paragraphSustentabilidade{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 15px;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    /* background-color: aquamarine; */
+}
+
+.paragraphSustentabilidade h2{
+    position: relative;
+    width: 100%;
+    /* background-color: red; */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 20px;
+}
+
+.paragraphSustentabilidade p{
+    font-size: 16px;
+    text-align: justify;
+}
+
+.blocoImageSustentabilidade{
+    position: relative;
+    height: 20vw;
+    width: 20vw;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: bisque;
+}
+
+.blocoImageSustentabilidade img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* -webkit-filter: brightness(90%); */
+}
+
+
+.titulosIsoldadosSustentabilidade {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .titulosIsoldadosSustentabilidade {
+        font-size: 17px;
+    }
+
+    .paragraphSustentabilidade h2 {
+        font-size: 17px;
+    }
+
+    .paragraphSustentabilidade p {
+        font-size: 14px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    /* .paragraphSustentabilidade {
+        grid-template-columns: 1fr;
+    } */
+
+    .blocoImageSustentabilidade {
+        height: 91vw;
+        width: 91vw;
+        max-width: none;
+        max-height: none;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    
+}

@@ -1,0 +1,76 @@
+.blockPathShoppingCar {
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: rgb(88, 88, 182); */
+}
+
+
+.pathShoppingCar {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: 100%;
+    /* background-color: burlywood; */
+}
+
+.circlePath {
+    position: relative;
+    height: 15px;
+    width: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: var(--secondaryColorConsumidor);
+}
+
+.linePath {
+    position: relative;
+    height: 1px;
+    width: 23vw;
+    max-width: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--secondaryColorConsumidor);
+}
+
+
+.pathShoppingCar .linePath {
+    left: 0;
+}
+
+.pathShoppingCar .circlePath{
+    float: right;
+    right: 0;
+}
+
+
+.pathShoppingCar h5 {
+    text-align: center;
+    width: 100%;
+    line-height: 55px;
+    font-size: 14px;
+    /* background-color: rgb(161, 104, 104); */
+}
+
+
+.pathShoppingCar h6 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    text-align: center;
+    width: fit-content;
+    margin: 0;
+    font-size: 11px;
+    color: rgb(96, 96, 96);
+    /* background-color: rgb(161, 104, 104); */
+    white-space: nowrap;
+}
+
+/* .toBlackPath{
+    background-color: black;
+} */

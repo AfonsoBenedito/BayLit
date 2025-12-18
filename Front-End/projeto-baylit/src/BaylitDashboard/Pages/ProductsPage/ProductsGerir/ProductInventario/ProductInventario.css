@@ -1,0 +1,520 @@
+.mainProductInventario{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 80px;
+    /* background-color: pink; */
+}
+
+.allBlockProdutoEspecifico{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(68, 68, 68);
+    border: 1px solid rgb(137, 137, 137);
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.produtoEspecificoInventario{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 100px;
+    grid-gap: 10px;
+    width: 100%;
+    height: fit-content;
+    /* border: 1px solid rgb(137, 137, 137); */
+    /* border-radius: 4px; */
+    /* background-color: rgb(68, 68, 68); */
+    padding: 10px;
+    padding-right: 90px;
+}
+
+.cellProdutoEspecificoInventario{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    /* background-color: rgb(87, 47, 54); */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.priceEspecificoInventario{
+    grid-row: 1;
+    grid-column: 5;
+}
+
+.alterarPrecoBtnGerir {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(76, 199, 111);
+    border-radius: 100px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    grid-row: 1;
+    grid-column: 6;
+    padding: 5px 10px;
+    font-size: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.cellProdutoEspecificoInventario h4{
+    position: relative;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px;
+}
+
+.cellProdutoEspecificoInventario select {
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    width: 90%;
+    height: 25px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cellProdutoEspecificoInventario input[type=number] {
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    font-size: 12px;
+    width: 90%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cellProdutoEspecificoInventario input[type=number]::-webkit-inner-spin-button,
+.cellProdutoEspecificoInventario input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.cellProdutoEspecificoInventario input::placeholder {
+    color: white !important;
+}
+
+
+
+.cellInventarioStock{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    top: 10px;
+    float: right;
+    right: 10px;
+    width: 70px;
+    height: 60px;
+    /* background-color: pink; */
+}
+
+.cellInventarioStock h3{
+    cursor: pointer;
+    position: relative;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cellInventarioStock h3:hover{
+    text-decoration: underline;
+}
+
+.produtoEspecificoArmazens{
+    position: relative;
+    display: none;
+    width: 100%;
+    height: fit-content;
+    /* background-color: red; */
+    padding: 10px;
+}
+
+.armazemProdutoInventario{
+    position: relative;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 5px;
+    /* background-color: yellowgreen; */
+}
+
+.armazemProdutoInventario h4{
+    position: relative;
+    display: inline-block;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.armazemProdutoInventario input[type=number] {
+    position: relative;
+    display: inline-block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    font-size: 12px;
+    width: 90%;
+    max-width: 70px;
+    margin: 0;
+    margin-left:10px;
+    /* margin-right: auto; */
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.armazemProdutoInventario input[type=number]::-webkit-inner-spin-button,
+.armazemProdutoInventario input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.armazemProdutoInventario input::placeholder {
+    color: white !important;
+}
+
+.closeArmazens{
+    display: none;
+}
+
+.addArmazemProduto{
+    position: relative;
+    display: inline-block;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: white;
+    cursor: pointer;
+}
+
+.closeArmazemProduto {
+    position: relative;
+    display: none;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: white;
+    cursor: pointer;
+}
+
+.addArmazemProduto:hover{
+    text-decoration: underline;
+    color: rgb(219, 255, 234);
+}
+
+
+/* POP UP ARMAZEM */
+.popUpInventarioAdd{
+    position: relative;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 5px;
+    width: 100%;
+    height: fit-content;
+    /* top: 0; */
+    /* left: 0; */
+    z-index: 100;
+    /* background-color: yellow; */
+}
+
+.cellPopUpInventario{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /* background-color: orangered; */
+}
+
+.cellPopUpInventario h5{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 20px;
+    background-color: rgb(76, 199, 111);
+    color: white;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    border-radius: 100px;
+    margin-left: 0px;
+    margin-right: auto;
+    /* margin-bottom: 0; */
+    cursor: pointer;
+}
+
+.cellPopUpInventario h6{
+    margin: 0;
+}
+
+.cellPopUpInventario select {
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 600px;
+    height: 30px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+.cellPopUpInventario input[type=number] {
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 100% !important;
+    max-width: 600px;
+}
+
+.cellPopUpInventario input::-webkit-input-placeholder {
+    color: white !important;
+}
+
+.cellPopUpInventario input[type=number]::-webkit-inner-spin-button,
+.cellPopUpInventario input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.addProdutoEspecificoInventario{
+    position: relative;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 20px;
+    background-color: rgb(76, 199, 111);
+    color: white;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    border-radius: 100px;
+    margin-left: 0px;
+    margin-right: auto;
+    margin-bottom: 10px !important;
+    cursor: pointer;
+}
+
+.allBlockProdutoEspecifico{
+    margin-top: 10px !important;
+}
+
+.popUpAddProductEspecificoInventario{
+    position: fixed;
+    display: none;
+    top:0;
+    float: right;
+    right: 0;
+    width: calc(100% - var(--widthNav));
+    height: 100%;
+    z-index: 100;
+}
+
+.backgroundPopUpAddProductEspecificoInventario {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(3px);
+    background-color: rgba(111, 111, 111, 0.366);
+}
+
+.frentePopUpAddProductEspecificoInventario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-rows: 20px 1fr 40px;
+    grid-gap: 5px;
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    background-color: rgb(45, 45, 45);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0px 0px 8px 0px rgba(21, 21, 21, 0.6);
+}
+
+.frentePopUpAddProductEspecificoInventario h3 {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.cellFrentePopUpEspecifico{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: goldenrod; */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.saveProdutoEspecifico{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 20px;
+    background-color: rgb(76, 199, 111);
+    color: white;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    border-radius: 100px;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 10px !important;
+    cursor: pointer;
+}
+
+
+.cellFrentePopUpEspecifico select {
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    width: 90%;
+    max-width: 600px;
+    height: 35px;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.cellFrentePopUpEspecifico input[type=number] {
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.cellFrentePopUpEspecifico input::-webkit-input-placeholder {
+    color: white !important;
+}
+
+.cellFrentePopUpEspecifico input[type=number]::-webkit-inner-spin-button,
+.cellFrentePopUpEspecifico input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
+
+.inputBlockProductEspecificoCell {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 15px;
+}
+
+.inputBlockProductEspecificoCell h6 {
+    margin: 0;
+    position: relative;
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(211, 211, 211);
+    margin-bottom: 4px;
+}
+
+.inputBlockProductEspecificoCell select {
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 600px;
+    height: 35px;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.inputBlockProductEspecificoCell input[type=number] {
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.inputBlockProductEspecificoCell input::-webkit-input-placeholder {
+    color: white !important;
+}
+
+.inputBlockProductEspecificoCell input[type=number]::-webkit-inner-spin-button,
+.inputBlockProductEspecificoCell input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}

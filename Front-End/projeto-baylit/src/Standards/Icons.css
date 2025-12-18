@@ -1,0 +1,23 @@
+/* .icon_position {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 28px;
+  width: 28px;
+  border-radius: 100px;
+} */
+
+/* .icon_position i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-text-stroke: .5px;
+} */

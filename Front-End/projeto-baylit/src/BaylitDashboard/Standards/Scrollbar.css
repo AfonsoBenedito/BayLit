@@ -1,0 +1,17 @@
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: unset;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(42, 42, 42);
+  /* border: 1px solid rgb(145, 145, 145); */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(103, 103, 103);
+}

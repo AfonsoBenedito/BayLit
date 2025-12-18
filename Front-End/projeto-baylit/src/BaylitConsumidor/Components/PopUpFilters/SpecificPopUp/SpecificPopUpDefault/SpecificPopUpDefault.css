@@ -1,0 +1,104 @@
+.mainSpecificPopUpDefault{
+    position: relative;
+    width: 350px;
+    height: fit-content;
+    border-radius: 4px;
+    background-color: var(--mainColorConsumidor);
+}
+
+.divForFiltersDefault{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding: 15px;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: fit-content;
+    grid-gap: 5px;
+    margin-bottom: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* The container */
+.containerDefault {
+    /* display: block; */
+    /* height: 20px; */
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.numberProcuctsSelectDefault{
+    padding: 1px 8px;
+    font-size: 10px;
+    font-weight: 400;
+    margin-left: 10px;
+    background-color: var(--secondaryColorConsumidor);
+    border-radius: 50px;
+}
+
+/* Hide the browser's default checkbox */
+.containerDefault input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmarkDefault {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.containerDefault:hover input~.checkmarkDefault {
+    opacity: .8;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerDefault input:checked~.checkmarkDefault {
+    background-color: var(--thirdColorConsumidor);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmarkDefault:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerDefault input:checked~.checkmarkDefault:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerDefault .checkmarkDefault:after {
+    left: 8px;
+    top: 5px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

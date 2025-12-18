@@ -1,0 +1,69 @@
+.mainBlockPerfil{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /* background-color: pink; */
+    text-align: center;
+}
+
+.blocoInfoUserPerfil{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: greenyellow; */
+}
+
+.blocoInfoUserPerfil h2{
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.blocoInfoUserPerfil h5 {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(132, 132, 132);
+}
+
+.blocoBtnUserPerfil{
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 40px;
+    width: 100%;
+    border-top: 1px solid var(--secondaryColorConsumidor);
+    /* background-color: yellow; */
+}
+
+.btnUserPrefil{
+    position: relative;
+    display: inline-block;
+    width: 33%;
+    vertical-align: top;
+    max-width: 250px;
+    height: 100%;
+    /* border-top: 2px solid black; */
+    /* background-color: aquamarine; */
+    cursor: pointer;
+}
+
+.btnUserPrefil i {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 40px;
+    -webkit-text-stroke: .2px;
+}
+
+.btnUserPrefil h4 {
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-left: 10px;
+}

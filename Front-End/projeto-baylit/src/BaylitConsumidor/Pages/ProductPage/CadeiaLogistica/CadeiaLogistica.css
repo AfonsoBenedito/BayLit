@@ -1,0 +1,301 @@
+.mainCadeiaLogistica{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /* padding-bottom: 10px; */
+    background-color: rgb(255, 255, 255);
+}
+
+.mainCadeiaLogistica nav{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--secondaryColorConsumidor);
+    /* background-color: greenyellow; */
+}
+
+.btnCadeiaLogisticaDetail{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* background-color: rgb(54, 132, 106); */
+    cursor: pointer;
+    border: none;
+}
+
+.btnCadeiaLogisticaDetail:first-child {
+    border-bottom: 3px solid var(--thirdColorConsumidor);
+}
+
+.btnCadeiaLogisticaDetail:hover{
+    border-bottom: 2px solid var(--secondaryColorConsumidor) !important;
+}
+
+.btnCadeiaLogisticaDetail span{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.geralBlock{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: fit-content;
+    /* background-color: aquamarine; */
+}
+
+.cardGeralBlock{
+    position: relative;
+    display: inline-block;
+    height: 110px;
+    width: 110px;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid var(--secondaryColorConsumidor);
+    /* background-color: red; */
+    margin-right: 10px;
+}
+
+.cardGeralBlock:last-child{
+    margin-right: 0px;
+}
+
+.cardGeralBlock h6{
+    font-size: 11px;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.cardGeralBlock h5 {
+    font-size: 13px;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+.nivelSustainabilityProductValue{
+    margin-bottom: 0px;
+}
+
+.productLeafSVG {
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    /* background-color: blueviolet; */
+    margin-top: 0;
+}
+
+.productLeafSVG svg {
+    position: relative;
+    display: inline-block;
+    top: 0;
+    height: 15px;
+}
+
+.producaoBlock {
+    position: relative;
+    display: none;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    /* background-color: rgb(255, 255, 255); */
+}
+
+.blockNivelDetails{
+    position: relative;
+    display: block;
+    height: fit-content;
+    width: 100%;
+    /* background-color: rgb(223, 154, 165); */
+    margin-bottom: 15px;
+}
+
+.blockNivelDetails h6{
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgb(124, 124, 124);
+    margin-bottom: 0px;
+}
+
+.numberNivelDetails{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.iconNivelDetails svg{
+    position: relative;
+    top: -3px;
+    margin-left: 3px;
+    height: 14px;
+    fill: rgb(124, 124, 124);
+}
+
+.productLeafSVGDetails {
+    height: fit-content;
+    width: fit-content;
+    /* text-align: center; */
+    /* background-color: blueviolet; */
+    margin-top: -5px;
+    /* background-color: aquamarine; */
+}
+
+.productLeafSVGDetails svg {
+    position: relative;
+    display: inline-block;
+    /* top: 0; */
+    height: 20px;
+}
+
+.localizacaoProducao{
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 100%;
+    /* background-color: pink; */
+}
+
+.localizacaoProducao i{
+    position: relative;
+    display: inline-block;
+    line-height: 20px;
+    font-size: 12px;
+    color: rgb(238, 103, 103); /*PARA FICAR*/
+}
+
+.localizacaoProducao h6{
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgb(124, 124, 124);
+}
+
+.producaoBlock h4{
+    position: relative;
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 10px;
+    width: 100%;
+    height: fit-content;
+    /* background-color: rgb(34, 167, 200); */
+    margin-bottom: 5px;
+}
+
+.producaoBtnTable {
+    position: relative;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 13px;
+    width: fit-content;
+    height: fit-content;
+    /* background-color: rgb(34, 167, 200); */
+    cursor: pointer;
+}
+
+.producaoBtnTable span{
+    position: relative;
+    top: -1px;
+    font-size: 8px;
+    font-weight: 400;
+}
+
+.producaoBlockTable{
+    position: relative;
+    display: none;
+    width: fit-content;
+    height: fit-content;
+}
+
+.producaoTable{
+    border-spacing: 2px 5px;
+    border-collapse: separate;
+}
+
+.producaoTable th, .producaoTable td{
+    padding: 5px 10px 5px;
+    /* background-color: greenyellow; */
+    font-size: 12px;
+}
+
+.producaoTable tr:nth-child(2n + 1){
+    background-color: rgba(243, 243, 243, 0.3);
+}
+
+.producaoTable tr:nth-child(2n) {
+    background-color: rgba(214, 214, 214, 0.2);
+}
+
+.producaoTable td:nth-child(n+2){
+    /* background-color: yellow; */
+    text-align: center;
+}
+
+.armazenamentoBlock {
+    position: relative;
+    display: none;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    /* background-color: aquamarine; */
+}
+
+.topicoBlockTable {
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+
+.topicoTable {
+    border-spacing: 2px 5px;
+    border-collapse: separate;
+}
+
+.topicoTable th,
+.topicoTable td {
+    padding: 5px 10px 5px;
+    font-size: 12px;
+}
+
+.topicoTable tr:nth-child(2n + 1) {
+    background-color: rgba(243, 243, 243, 0.3);
+}
+
+.topicoTable tr:nth-child(2n) {
+    background-color: rgba(214, 214, 214, 0.2);
+}
+
+.topicoTable td {
+    /* background-color: yellow; */
+    text-align: center;
+}
+
+.transporteBlock {
+    position: relative;
+    display: none;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    /* background-color: aquamarine; */
+}

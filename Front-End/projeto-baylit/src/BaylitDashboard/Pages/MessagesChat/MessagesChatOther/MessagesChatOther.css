@@ -1,0 +1,21 @@
+.messagesChatOther{
+    position: relative;
+    display: block;
+    margin-top: 15px;
+    background: var(--secondaryColor);;
+    height: fit-content;
+    max-width: 70%;
+    border-radius: 20px 20px 20px 0px;
+    bottom: 0;
+    left: 1%;
+    border: 2px solid rgb(226, 226, 226);
+    /* margin-bottom: 5px; */
+}
+
+.messagesChatOtherMsg{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+}

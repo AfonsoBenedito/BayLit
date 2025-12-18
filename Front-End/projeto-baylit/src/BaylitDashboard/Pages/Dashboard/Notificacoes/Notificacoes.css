@@ -1,0 +1,17 @@
+.zeroNotificationsImageDiv{
+    position: relative;
+    height: 7.5%;
+    width: 7.5%;
+    left: 46.25%;
+    margin-top: 100px;
+}
+
+.zeroNotificationsImage{
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+#zeroNotificationText{
+    margin-top: 20px;
+}

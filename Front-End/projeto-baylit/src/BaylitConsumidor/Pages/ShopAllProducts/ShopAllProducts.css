@@ -1,0 +1,36 @@
+.gridCategoryBlocks {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: fit-content;
+    width: 100%;
+    height: fit-content;
+    /* background-color: green; */
+    grid-gap: 25px;
+    justify-items: center;
+}
+
+
+@media only screen and (max-width: 1550px) {
+    .gridCategoryBlocks {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .gridCategoryBlocks {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .gridCategoryBlocks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .gridCategoryBlocks {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

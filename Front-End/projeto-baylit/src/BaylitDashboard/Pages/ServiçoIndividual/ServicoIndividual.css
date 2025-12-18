@@ -1,0 +1,177 @@
+.mainServicosIndividual{
+    position: absolute;
+    top: 0;
+    float: right;
+    right: 0;
+    height: 100%;
+    width: calc(100% - var(--widthNav));
+    background-color: var(--mainColor);
+    /* overflow-x: auto; */
+    /* padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px; */
+}
+
+.topBlockServicosIndividual{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 0px 0px 12px 12px;
+}
+
+#changeStateSelect{
+    /* display: block; */
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 4px;
+    background-color: #212121;
+    color: white;
+    /* float: right; */
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.mainServicosOptionsDiv{
+    background-color: #292929;
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 10px;
+    width: 80%;
+    left: 10%;
+    position: relative;
+    margin-top: 65px;
+    height: 40px;
+    display: block;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#servicoIndividualModelo{
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    font-size: 15px;
+    margin-top: 10px;
+    display: block;
+}
+
+.mainServicosOptions{
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+}
+
+#mainServicosOptionCancelarBtn{
+    margin-top: 5px;
+    background: red;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    /* float: right; */
+}
+
+#mainServicosOptionAlterarBtn{
+    margin-top: 5px;
+    background: rgb(46, 132, 0);
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    /* float: right; */
+    margin-right: 20px;
+}
+
+.mainServicosLocalizacoes{
+    display: block;
+    width: 90%;
+    height: fit-content;
+    position: relative;
+    background-color: #292929;
+    border: 1px solid rgb(61, 61, 61);
+    left: 5%;
+    border-radius: 10px;
+}
+
+.servicoLocalizacaoEspecifica{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.servicoTraco{
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: rgb(61, 61, 61);
+}
+
+.localizacaoEspecificaInformacao{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(61, 61, 61);
+    background-color: #212121;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+
+.localizacaoEspecificaInformacao h4{
+    display: inline-block;
+    position: relative;
+    vertical-align: center;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.localizacaoEspecificaInformacao h5{
+    display: inline-block;
+    position: relative;
+    line-height: 11px;
+    font-size: 11px;
+    padding: 5px 10px;
+    background-color: teal;
+    border-radius: 100px;
+    height: fit-content;
+    margin-left: 15px;
+    vertical-align: center;
+}
+
+.servicoTraco span{
+    position: absolute;
+    left: -10px;
+    height: 20px;
+    width: 20px;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+}
+
+.servicoIndividualSelect{
+    border-radius: 10px;
+    background-color: #292929;
+    border: 1px solid rgb(61, 61, 61);
+    color: white;
+    position: relative;
+    float: right;
+}
+
+.servicoIndividualFeedback{
+    text-align: center !important;
+    font-size: 15px !important;
+    margin-top: 50px !important;
+    margin-bottom: -50px;
+    display: none;
+}

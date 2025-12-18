@@ -1,0 +1,537 @@
+{
+    "categories":{
+        "Crianças":{
+            "Sapatos": {
+                "atributos": ["Cor", "Tamanho do Calçado","Idade"],
+                "fotografia": ["./Fotografias/Subcategorias/crianca/sapatos.png"]
+            },
+            "Disfarces": {
+                "atributos": ["Idade","Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/crianca/disfarce.png"]
+            },
+            "Roupa": {
+                "atributos": ["Cor","Tamanho da Roupa","Idade"],
+                "fotografia": ["./Fotografias/Subcategorias/crianca/roupa.png"]
+            },
+            "Brinquedos": {
+                "atributos": ["Idade"],
+                "fotografia": ["./Fotografias/Subcategorias/crianca/brinquedos.png"]
+            },
+            "Acessórios": {
+                "atributos": ["Cor","Idade"],
+                "fotografia": ["./Fotografias/Subcategorias/crianca/acessorios.png"]
+            },
+            "Mobilia": {
+                "atributos": ["Cor","Idade"],
+                "fotografia": ["./Fotografias/Subcategorias/crianca/mobilia.png"]
+            },
+            "LinkFotografia": ["./Fotografias/Categorias/criancas.jpg"]
+        },
+        "Roupa": {
+            "Sapatos": {
+                "atributos": ["Cor", "Tamanho do Calçado","Sexo"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/sapatos.png"]
+            },
+            "Calças": {
+                "atributos": ["Cor", "Tamanho da Roupa","Sexo"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/calcas.png"]
+            },
+            "Calções": {
+                "atributos": ["Cor", "Tamanho da Roupa","Sexo"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/calcoes.png"]
+            },
+            "T-Shirts": {
+                "atributos": ["Cor", "Tamanho da Roupa","Sexo"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/tshirts.png"]
+            },
+            "Camisas": {
+                "atributos": ["Cor", "Tamanho da Roupa","Sexo"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/camisas.png"]
+            },
+            "Sweat-Shirts": {
+                "atributos": ["Cor", "Tamanho da Roupa","Sexo"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/sweatshirts.png"]
+            },
+            "Roupa Interior": {
+                "atributos": ["Cor", "Tamanho da Roupa","Sexo"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/roupaInterior.png"]
+            },
+            "Chapéus": {
+                "atributos": ["Cor","Sexo"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/chapeus.png"]
+            },
+            "Óculos": {
+                "atributos": ["Cor","Sexo", "de Sol"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/oculos.png"]
+            },
+            "Vestidos": {
+                "atributos": ["Cor", "Tamanho da Roupa","Estação"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/vestidos.png"]
+            },
+            "Tops": {
+                "atributos": ["Cor", "Tamanho da Roupa","Estação"],
+                "fotografia": ["./Fotografias/Subcategorias/roupa/tops.png"]
+            },
+            "LinkFotografia": ["./Fotografias/Categorias/roupa.jpg"]
+        },
+        "Desporto": {
+            "Roupa Desportiva": {
+                "atributos": ["Cor", "Tamanho da Roupa","Sexo","Desporto"],
+                "fotografia": ["./Fotografias/Subcategorias/desporto/roupaDesportiva.png"]
+            },
+            "Material": {
+                "atributos": ["Desporto"],
+                "fotografia": ["./Fotografias/Subcategorias/desporto/material.png"]
+            },
+            "Acessórios": {
+                "atributos": ["Desporto"],
+                "fotografia": ["./Fotografias/Subcategorias/desporto/acessorios.png"]
+            },
+            "LinkFotografia": ["./Fotografias/Categorias/desporto.jpg"]
+        },
+        "Computadores": {
+            "Portáteis": {
+                "atributos": ["Cor","Peso do Computador", "RAM", "Sistema Operativo", "tem Camera"],
+                "fotografia": ["./Fotografias/Subcategorias/computadores/portateis.png"]
+            },
+            "Computadores Fixos": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/computadores/fixos.png"]
+            },
+            "Acessórios": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/computadores/acessorios.png"]
+            },
+            "Periféricos": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/computadores/perifericos.png"]
+            },
+            "LinkFotografia": ["./Fotografias/Categorias/computadores.jpg"]
+        },
+        "Eletrónicos": {
+            "Consolas": {
+                "atributos": ["Tipo"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/consola.png"]
+            },
+            "Vídeo Jogos": {
+                "atributos": ["Consola","Idade", "Género do Vídeo Jogo"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/videojogos.png"]
+            },
+            "Televisões": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/televisoes.png"]
+            },
+            "Camêras": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/cameras.png"]
+            },
+            "Impressoras": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/impressoras.png"]
+            },
+            "Relógios Eletrónicos": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/relogios.png"]
+            },
+            "Telemóveis": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/telemoveis.png"]
+            },
+            "Acessórios para Telemóvel": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/acessoriosTelemoveis.png"]
+            },
+            "Eletrónicos para o Carro": {
+                "atributos": ["Cor","Marca do Carro"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/carro.png"]
+            },
+            "Leitores de Música": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/leitorMusica.png"]
+            },
+            "LEDs": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/leds.png"]
+            },
+            "Micro-ondas": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/microondas.png"]
+            },
+            "Frigorificos": {
+                "atributos": ["Cor","tem Congelador"],
+                "fotografia": ["./Fotografias/Subcategorias/eletronicos/frigorificos.png"]
+            },
+            "LinkFotografia": ["./Fotografias/Categorias/eletronicos.jpg"]
+        },
+        "Entretenimento e Arte": {
+            "Jogos": {
+                "atributos": ["Idade","de Bebida","Tipo de Jogo"], 
+                "fotografia": ["./Fotografias/Subcategorias/entretenimento/jogos.png"]
+            },
+            "Festas": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/entretenimento/festas.png"]
+            },
+            "Instrumentos Musicais": {
+                "atributos": ["Cor","Tipo de Instrumento Musical"],
+                "fotografia": ["./Fotografias/Subcategorias/entretenimento/instrumentos.png"]
+            },
+            "Colecionáveis" : {
+                "atributos": [],
+                "fotografia": ["./Fotografias/Subcategorias/entretenimento/colecionaveis.png"]
+            },
+            "Quadros": {
+                "atributos": [],
+                "fotografia": ["./Fotografias/Subcategorias/entretenimento/quadros.png"]
+            },
+            "LinkFotografia": ["./Fotografias/Categorias/entretenimento.jpg"]
+        },
+        "Comidas e Bedidas": {
+            "Carnes": {
+                "atributos" : [],
+                "fotografia": ["./Fotografias/Subcategorias/comidas/carne.png"]
+            },
+            "Peixe": {
+                "atributos": [],
+                "fotografia": ["./Fotografias/Subcategorias/comidas/peixe.png"]
+            },
+            "Marisco": {
+                "atributos": [],
+                "fotografia": ["./Fotografias/Subcategorias/comidas/marisco.png"]
+            },
+            "Sumos": {
+                "atributos": [],
+                "fotografia": ["./Fotografias/Subcategorias/comidas/sumos.png"]
+            },
+            "Queijos": {
+                "atributos": [],
+                "fotografia": ["./Fotografias/Subcategorias/comidas/queijo.png"]
+            },
+            "Frutas": {
+                "atributos": [],
+                "fotografia": ["./Fotografias/Subcategorias/comidas/frutas.png"]
+            },
+            "LinkFotografia": ["./Fotografias/Categorias/comida.jpg"]
+        },
+        "Saúde e Cosméticos": {
+            "Pele": {
+                "atributos": ["Quantidade de Produto"],
+                "fotografia": ["./Fotografias/Subcategorias/saude/pele.png"]
+            },
+            "Cabelo": {
+                "atributos": ["Quantidade de Produto"],
+                "fotografia": ["./Fotografias/Subcategorias/saude/pele.png"]
+            },
+            "Dentes": {
+                "atributos": ["Quantidade de Produto"],
+                "fotografia": ["./Fotografias/Subcategorias/saude/dentes.png"]
+            },
+            "Olhos": {
+                "atributos": ["Quantidade de Produto"],
+                "fotografia": ["./Fotografias/Subcategorias/saude/olhos.png"]
+            },
+            "Suplementos": {
+                "atributos": ["Quantidade de Produto"],
+                "fotografia": ["./Fotografias/Subcategorias/saude/suplementos.png"]
+            },
+            "Produtos Sexuais": {
+                "atributos": ["Quantidade de Produto"],
+                "fotografia": ["./Fotografias/Subcategorias/saude/sexual.png"]
+            },
+            "LinkFotografia": ["./Fotografias/Categorias/saude.jpg"]
+        },
+        "Casa e Jardim": {
+            "Camas": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/cama.png"]
+            },
+            "Arrumação e Organização": {
+                "atributos": ["Cor", "Material da Mobília"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/arrumacao.png"]
+            },
+            "Mesas": {
+                "atributos": ["Cor", "Material da Mobília"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/mesa.png"]
+            },
+            "Candeeiros": {
+                "atributos": ["Cor", "Material da Mobília"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/candeeiro.png"]
+            },
+            "Almofadas": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/almofada.png"]
+            },
+            "Colchões": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/colchoes.png"]
+            },
+            "Cadeiras": {
+                "atributos": ["Cor", "Material da Mobília"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/cadeiras.png"]
+            },
+            "Casa de Banho": {
+                "atributos": ["Cor", "Material da Mobília"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/wc.png"]
+            },
+            "Mobília Exterior": {
+                "atributos": ["Cor", "Material da Mobília"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/exterior.png"]
+            },
+            "Jardinagem": {
+                "atributos": ["Cor"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/jardinagem.png"]
+            },
+            "Piscina": {
+                "atributos": ["Cor", "Material da Mobília"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/piscina.png"]
+            },
+            "Produtos de Limpeza": {
+                "atributos": [],
+                "fotografia": ["./Fotografias/Subcategorias/casa/limpeza.png"]
+            },
+            "Material de Escritório": {
+                "atributos": ["Cor", "Material da Mobília"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/escritorio.png"]
+            },
+            "Cozinha": {
+                "atributos": ["Cor", "Tipo de Produto de Cozinha"],
+                "fotografia": ["./Fotografias/Subcategorias/casa/cozinha.png"]
+            },
+            "LinkFotografia": ["./Fotografias/Categorias/casa.jpg"]
+        }
+    },
+    "atributos": {
+        "Estação":[
+            "Primavera",
+            "Verão",
+            "Outono",
+            "Inverno",
+            "Multi-Estação"
+        ],
+
+        "Cor":[
+            "Verde",
+            "Azul",
+            "Amarelo",
+            "Vermelho",
+            "Preto",
+            "Branco",
+            "Roxo",
+            "Laranja",
+            "Cinzento",
+            "Rosa",
+            "Beje",
+            "Dourado",
+            "Prateado"
+        ],
+
+        "Idade":[
+            "1 Anos",
+            "2 Anos",
+            "3 Anos",
+            "4 Anos",
+            "5 Anos",
+            "6 Anos",
+            "7 Anos",
+            "8+ Anos",
+            "12+ Anos",
+            "16+ Anos",
+            "18+ Anos"
+        ],
+
+        "Tamanho do Calçado":[
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46"
+        ],
+
+        "Tamanho da Roupa":[
+            "XXS",
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+
+        "Peso do Computador":[
+            "Até 0,9 kg",
+            "1 - 1,4 kg",
+            "1,5 - 1,9 kg",
+            "2 - 2,4 kg",
+            "2,5 kg ou Mais"
+        ],
+
+        "Sexo":[
+            "Masculino",
+            "Feminino",
+            "Unisexo"
+        ],
+
+        "Desporto":[
+            "Ciclismo",
+            "Basquet",
+            "Volley",
+            "Futebol",
+            "Artes Marciais",
+            "Remo",
+            "Canoagem",
+            "Natação",
+            "Andebol",
+            "Dança",
+            "Golf",
+            "Multi-Desporto"
+        ],
+
+        "RAM":[
+            "2 GB",
+            "4 GB",
+            "8 GB",
+            "16 GB",
+            "32 GB",
+            "64 GB"
+        ],
+
+        "Sistema Operativo":[
+            "Windows 11 Home",
+            "Windows 11 Pro",
+            "Windows 10 Home",
+            "Windows 10 Pro",
+            "Chrome",
+            "Linux",
+            "iOS",
+            "Outro"
+        ],
+
+        "tem Camera":[
+            "Sim",
+            "Não"
+        ],
+
+        "Consola":[
+            "PS5",
+            "PS4",
+            "PS3",
+            "XBox One",
+            "Xbox 360"
+        ],
+
+        "Género do Vídeo Jogo":[
+            "Aventura",
+            "Ação",
+            "Desporto",
+            "Karaoke",
+            "Carros",
+            "RPG",
+            "Luta",
+            "FPS",
+            "Sobrevivência",
+            "Simulação",
+            "Outro"
+        ],
+
+        "Marca do Carro":[
+            "Mercedes",
+            "BMW",
+            "Fiat",
+            "Ferrari",
+            "Porche",
+            "Volkswaggen",
+            "Volvo",
+            "Seat",
+            "Kia",
+            "Audi",
+            "Nissan",
+            "Citroen",
+            "Outro"
+        ],
+
+        "tem Congelador":[
+            "Sim",
+            "Não"
+        ],
+
+        "de Bebida":[
+            "Sim",
+            "Não"
+        ],
+
+        "de Sol":[
+            "Sim",
+            "Não"
+        ],
+
+        "Tipo de Jogo":[
+            "Tabuleiro",
+            "Cartas",
+            "Outro"
+        ],
+
+        "Tipo de Instrumento Musical":[
+            "Corda",
+            "Sopro",
+            "Percussão",
+            "Eletrónicos",
+            "Outro"
+        ],
+
+        "Quantidade de Produto":[
+            "0 - 0,2 L",
+            "0,3 - 0,5 L",
+            "0,6 - 1 L",
+            "1,1 - 2 L ",
+            "2,1L ou Mais"
+        ],
+
+        "Material da Mobília": [
+            "Madeira",
+            "Aço",
+            "Ferro",
+            "Titânio",
+            "Porcelana",
+            "Plástico",
+            "Outro"
+        ],
+
+        "Tipo de Produto de Cozinha": [
+            "Talheres",
+            "Pratos",
+            "Copos",
+            "Guardanapos",
+            "Panelas",
+            "Frigideiras",
+            "Utensílios",
+            "Outro"
+        ]
+    }
+
+}

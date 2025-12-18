@@ -1,0 +1,145 @@
+.mainBlockDados {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /* background-color: pink; */
+    text-align: left;
+    /* padding-left: 20px; */
+}
+
+.titlePageBlockDados {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.alignAllBlocksDados{
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    justify-content: center;
+}
+
+.blocoDadosAlterar{
+    position: relative;
+    display: block;
+    width: 100%;
+    /* max-width: 500px; */
+    height: fit-content;
+    border: 1px solid var(--secondaryColorConsumidor);
+    border-radius: 4px;
+    /* background-color: rgb(141, 32, 32); */
+    padding: 15px;
+}
+
+.titleBlocoDados{
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: fit-content;
+    /* background-color: aqua; */
+    margin-bottom: 15px;
+}
+
+.titleBlocoDados i{
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    -webkit-text-stroke: .7px;
+    margin-right: 5px;
+}
+.titleBlocoDados h3 {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.blocoInputsBlockDados{
+    position: relative;
+    display: block;
+    width: 100%;
+    /* background-color: yellowgreen; */
+}
+
+.blocoInputsBlockDados h6{
+    position: relative;
+    line-height: 12px;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.blocoInputsBlockDados input {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    /* line-height: 11px; */
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    padding-left: 10px;
+    border: 1px solid var(--secondaryColorConsumidor);
+    border-radius: 3px;
+}
+
+.blocoInputsBlockDados input:focus{
+    outline: 1px solid black;
+}
+
+.btnSubmitChangesDados{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: black !important;
+    margin-top: 15px;
+    margin-bottom: 0 !important;
+    color: white ;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+}
+
+.removeLocalBlockDados{
+    position: absolute;
+    top: 15px;
+    float: right;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    /* background-color: red; */
+}
+
+.removeLocalBlockDados i{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    cursor: pointer;
+    -webkit-text-stroke: .3px;
+}
+
+.removeLocalBlockDados:hover i{
+    font-size: 17px;
+}
+
+@media screen and (max-width:1000px) {
+    .mainBlockDados {
+        padding-left: 0px;
+    }
+
+    .alignAllBlocksDados {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .blocoDadosAlterar {
+        max-width: 500px;
+    }
+}

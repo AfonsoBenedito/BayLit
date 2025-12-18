@@ -1,0 +1,294 @@
+.mainProductsGerir {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    /* background-color: yellowgreen; */
+    margin-top: 10px;
+}
+
+.mainProductsGerir h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.lineOfGerirProducts {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 30px;
+    /* background-color: pink; */
+    margin-bottom: 15px;
+}
+
+.bodyGerirProduct{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    /* background-color: red; */
+}
+
+.detailsGerirProductBlock{
+    position: relative;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-gap: 25px;
+    height: fit-content;
+    width: 100%;
+    /* background-color: rgb(75, 147, 219); */
+}
+
+.fotosGerirProducts{
+    position: relative;
+    width: 100%;
+    height: 340px;
+    /* background-color: aquamarine; */
+}
+
+.boxFotosProductFornecedor{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 300px;
+    /* background-color: rgb(160, 91, 91); */
+}
+
+.btnAlterarFotosProductFornecedor{
+    position: relative;
+    display: block;
+    height: 40px;
+    width: 100%;
+    /* background-color: green; */
+}
+
+.fotoProductFornecedor{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: blueviolet; */
+    overflow: hidden;
+}
+
+.fotoProductFornecedor img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
+}
+
+.fotoProductFornecedorMore {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(167, 167, 167);
+}
+
+.fotoProductFornecedorMore span{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+}
+
+.btnAlterarFotos{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* display: inline-block; */
+    height: fit-content;
+    width: fit-content;
+    background-color: rgba(103, 103, 103, 0.505);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    margin: 0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnAlterarFotos:hover{
+    background-color: rgba(103, 103, 103, 0.731);
+}
+
+.detailsProductGeral{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /* background-color: red; */
+}
+
+.inputBlockProductFornecedor{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 15px;
+}
+
+.inputBlockProductFornecedor h6{
+    margin: 0;
+    position: relative;
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(211, 211, 211);
+    margin-bottom: 4px;
+}
+
+.inputBlockProductFornecedor input::placeholder{
+    color:white;
+}
+
+.inputBlockProductFornecedor input[type=text]{
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.inputBlockProductFornecedor textarea{
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    width: 90%;
+    max-width: 600px;
+    height: 100px;
+    resize: none;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.inputBlockProductFornecedor select{
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    width: 90%;
+    max-width: 600px;
+    height: 35px;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.inputBlockProductFornecedor input[type=number] {
+    position: relative;
+    display: block;
+    background-color: rgba(99, 99, 99, 0.8);
+    color: white;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(148, 148, 148, 0.686);
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.inputBlockProductFornecedor input::-webkit-input-placeholder{
+    color: white !important;
+}
+
+.inputBlockProductFornecedor input[type=number]::-webkit-inner-spin-button,
+.inputBlockProductFornecedor input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+.blockProdutosEspecificos{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    /* background-color: greenyellow; */
+    margin-top: 35px;
+}
+
+.blockBtnsStockCadeia{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 30px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid rgb(150, 150, 150);
+    /* background-color: pink; */
+    text-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.blockBtnsStockCadeia h6{
+    position: relative;
+    width: 100%;
+    line-height: 30px;
+    /* background-color: rgb(86, 88, 87); */
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    /* background-color: rgba(31, 149, 82, 0.6); */
+}
+
+.salvarAlteracoesProdutoGerir {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 20px;
+    background-color: rgb(76, 199, 111);
+    color: rgb(243, 243, 243);
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    /* text-transform: uppercase; */
+    border-radius: 100px;
+    margin-left: 30px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.salvarAlteracoesProdutoGerirReturn{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 20px;
+    /* background-color: rgb(76, 199, 111); */
+    color: rgb(76, 199, 111);
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    border-radius: 100px;
+    margin-left: 0px;
+    margin-right: auto;
+    cursor: default;
+}

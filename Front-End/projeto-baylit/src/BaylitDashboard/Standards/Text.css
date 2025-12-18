@@ -1,0 +1,53 @@
+.AppDashboard h1,
+.AppDashboard h2,
+.AppDashboard h3,
+.AppDashboard h4,
+.AppDashboard h5,
+.AppDashboard h6,
+.AppDashboard p {
+  margin-top: 0;
+  color: white;
+}
+
+.AppDashboard h1 {
+  font-size: 65px;
+  font-weight: 900;
+}
+
+.AppDashboard h2 {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.AppDashboard h3{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.AppDashboard h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.AppDashboard h5 {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.AppDashboard h6 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.AppDashboard p {
+  font-size: 12px;
+}
+
+.toLink{
+  text-decoration: none;
+  color: black;
+}
+
+.toLink:hover{
+  color: black;
+}

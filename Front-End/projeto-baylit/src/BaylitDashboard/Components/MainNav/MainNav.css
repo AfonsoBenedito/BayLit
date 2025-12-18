@@ -1,0 +1,318 @@
+.AppDashboard nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 230px;
+  background-color: var(--mainColor);
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  color: white;
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.upDiv,
+.downDiv {
+  height: fit-content;
+  width: 100%;
+}
+
+.upDiv {
+  margin-bottom: 30px;
+}
+
+nav > * {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#navLogoBaylit,
+#navPerfil,
+.navButton {
+  position: relative;
+  display: flex;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  /* background-color: rgb(59, 86, 77); */
+}
+
+.navButton:hover {
+  background-color: rgba(39, 39, 39, 0.4);
+}
+
+hr {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  color: rgba(180, 180, 180, 0.6);
+}
+
+#navLogoBaylit {
+  height: 40px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#navLogoBaylit img {
+  position: relative;
+  display: inline-block;
+  height: 70%;
+  width: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#navPerfil {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 55px;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #212121;
+}
+
+#navPerfil:hover {
+  background-color: #2a2a2a;
+}
+
+.navPerfilSettings {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 80%;
+  width: fit-content;
+  top: 50%;
+  transform: translateY(-50%);
+  /* background-color: yellowgreen; */
+}
+
+.navPerfilPhoto {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--corUtilizador);
+  border-radius: 50%;
+}
+
+.navPerfilText {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  max-width: 103px;
+  text-align: left;
+  height: fit-content;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navPerfilText h6 {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.navPerfilText p {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 300;
+  color: rgb(183, 183, 183);
+  height: fit-content;
+  margin-bottom: -3px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#navPerfil i::before {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  /* background-color: red; */
+  font-size: 20px;
+  /* width: 12px; */
+}
+
+#navPerfil i {
+  height: 100% !important;
+  display: inline-block;
+}
+
+.navButton {
+  position: relative;
+  height: 35px;
+  justify-content: flex-start;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.navButton img {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.AppDashboard i {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  height: fit-content;
+  width: fit-content;
+  color: rgb(184, 184, 184);
+  /* background-color: red; */
+  font-size: 15px;
+  margin-right: 10px;
+  /* border-radius: 100px; */
+}
+
+.navButton h5 {
+  margin-top: auto;
+  margin-bottom: auto;
+  /* align-items: center; */
+  transform: translateY(55%);
+  text-decoration: none !important;
+}
+
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#closeNavIcon,
+#openNavIcon,
+#closeMobileNavIcon {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid rgb(72, 72, 72);
+  cursor: pointer;
+}
+
+#closeNavIcon i,
+#openNavIcon i,
+#closeMobileNavIcon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: white;
+}
+
+#openNavIcon,
+#closeMobileNavIcon {
+  display: none;
+}
+
+.barLink {
+  text-decoration: none;
+}
+
+.dropdown_menu {
+  display: none;
+  background-color: var(--secondaryColor);
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -2px;
+  max-width: 80%;
+  height: fit-content;
+}
+
+#editar_perfil {
+  position: relative;
+  margin-top: 2px;
+  height: 35px;
+  /* background-color: aqua; */
+  /* justify-content: flex-start; */
+}
+
+#end_session {
+  position: relative;
+  margin-bottom: 2px;
+  height: 35px;
+  text-align: inline;
+  left: 0%;
+}
+
+#edit {
+  position: relative;
+  top: 4px;
+  text-align: left;
+  display: inline-block;
+  /* color: yellow; */
+}
+
+#end {
+  position: relative;
+  top: 4px;
+  text-align: left;
+  display: inline-block;
+  /* color: red; */
+}
+
+#editar_perfil:hover {
+  background-color: #2a2a2a;
+}
+
+#end_session:hover {
+  background-color: #2a2a2a;
+}
+#icone_perfil {
+  transform: translateY(-50%, -50%);
+  top: 50%;
+  right: 20%;
+  position: relative;
+}
+
+#icone_end {
+  transform: translateY(-50%, -50%);
+  top: 50%;
+  right: 12%;
+  position: relative;
+}
+
+.transportesIcon {
+  display: none;
+}
+
+.navButtonText1 {
+  justify-content: flex-start;
+  position: relative;
+  right: 10%;
+}
+
+@media only screen and (max-width: 600px) {
+  .mainNav {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+    display: none;
+  }
+
+  #closeMobileNavIcon {
+    display: inline-block;
+  }
+
+  #closeNavIcon {
+    display: none;
+  }
+}

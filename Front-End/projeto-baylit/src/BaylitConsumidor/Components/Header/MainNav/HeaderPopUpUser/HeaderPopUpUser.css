@@ -1,0 +1,73 @@
+.mainPopUpUser{
+    position: absolute;
+    display: none;
+    top: 115%;
+    float: right;
+    right: 0;
+    height: fit-content;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(146, 146, 146, 0.4);
+    padding: 20px;
+}
+
+.mainPopUpUser h5{
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    cursor: default;
+}
+
+.mainPopUpUser a {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(136, 136, 136);
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.mainPopUpUser a:hover{
+    color: rgb(73, 73, 73);
+}
+
+.mainPopUpUser a:last-child {
+    margin-bottom: 0;
+}
+
+.mainPopUpUser a:last-child:hover {
+    color: rgb(101, 18, 18);
+}
+
+#notificacaoPopUpText{
+    position: relative;
+    display: inline-block;
+
+}
+#notificacaoPopUp{
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(255, 43, 106);
+    vertical-align: middle;
+    margin-left: 8px;
+    border-radius: 100px;
+    top: -1px;
+}
+
+#notificacaoPopUp h6{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9px;
+    font-weight: 700;
+    color: white;
+}

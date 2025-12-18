@@ -1,0 +1,53 @@
+.categoryBlock {
+    position: relative;
+    /* background-color: rgb(92, 37, 37); */
+    width: 100%;
+    height: fit-content;
+}
+
+.positionImageCategoryBlock {
+    background-color: rgb(186, 186, 186);
+    position: relative;
+    display: block;
+    padding-top: 70%;
+    /* ASPECT RADIO - para mante proporção */
+    Width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.positionImageCategoryBlock img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
+}
+
+.titleCategoryBlock {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0;
+    margin-top: 10px;
+    color: black;
+}
+
+.subCategoryBlock {
+    position: relative;
+    display: block;
+    margin: 0;
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(97, 97, 97) !important;
+    cursor: pointer;
+}
+
+.subCategoryBlock:hover{
+    color: rgb(51, 51, 51) !important;
+}

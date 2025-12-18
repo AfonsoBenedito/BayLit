@@ -1,0 +1,211 @@
+#sideMenu{
+  display: none;
+}
+
+#backgroundSideBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* filter: blur(4px); */
+  background-color: rgba(27, 27, 27, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 49;
+}
+
+#mainSideBarMenu {
+  position: fixed;
+  top: 0;
+  float: right;
+  right: 0;
+  width: 80%;
+  max-width: 350px;
+  height: 100%;
+  z-index: 50;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.mainDisplaySideBarMenu {
+  position: absolute;
+  top:30px;
+  /* left: 0px; */
+  width: 100%;
+  height: fit-content;
+  /* background-color: blue; */
+  padding-bottom: 20px;
+  transition: .2s;
+  transition-timing-function: ease-in-out;
+}
+
+#mainContentSideBar{
+  left: 0;
+}
+
+#perfilContentSideBar,
+#shopContentSideBar,
+#promotionContentSideBar {
+  left: 100%;
+}
+
+.mainDisplaySideBarMenu li {
+  position: relative;
+  display: flex;
+  list-style: none;
+  width: 80%;
+  height: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: rgb(224, 185, 224); */
+  margin-top: 10px;
+}
+
+.mainDisplaySideBarMenu li:first-child {
+  margin-top: 10px;
+}
+
+.mainDisplaySideBarMenu hr {
+  background-color: rgba(255, 255, 255, 0);
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.userSideBar {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: fit-content;
+  /* background-color: aqua; */
+}
+
+.userSideBar i{
+  font-size: 25px !important;
+  margin-right: 10px;
+  -webkit-text-stroke: .5px;
+}
+
+.userSideBar h5 {
+  position: relative;
+  display: inline-block;
+  /* background-color: orange; */
+  vertical-align: top;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#mainSideBarMenu h5,
+#mainSideBarMenu h2 {
+  line-height: 40px;
+}
+
+#mainSideBarMenu h5{
+  font-size: 18px;
+}
+
+#mainSideBarMenu h2 {
+  font-size: 24px;
+}
+
+.perfilSideBar i,
+.mainButtonsSideBar i {
+  line-height: 40px;
+  font-size: 16px;
+}
+
+.perfilSideBar,
+.mainButtonsSideBar {
+  justify-content: space-between;
+}
+
+.secondaryButtonsSideBar {
+  justify-content: flex-start;
+}
+
+.secondaryButtonsSideBar i {
+  line-height: 40px;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.backIcon {
+  font-size: 14px !important;
+}
+
+.secondaryButtonsSideBar img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.blockLoginSideBar{
+  /* position: relative; */
+    display: block !important;
+    /* list-style: none; */
+    /* width: 80% ; */
+    height: fit-content !important;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    /* background-color: rgb(224, 185, 224); */
+    /* margin-top: 10px; */
+}
+
+.blockLoginSideBar p{
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  margin: 0;
+}
+
+.btnLoginSideMenu{
+  display: block;
+  position: relative;
+  width: 100% !important;
+  height: 40px;
+  color: var(--mainColorConsumidor);
+  background-color: var(--thirdColorConsumidor);
+  border: none;
+  border-radius: 3px !important;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.SignUpSideMenu{
+  font-weight: 500;
+}
+
+.notificacaoMainSide{
+  position: relative;
+  display: inline-block;
+  /* float: right; */
+  /* right: -15px; */
+  top: 3px;
+  margin-left: 8px;
+  height: 18px;
+  width: 18px;
+  border-radius: 100px;
+  background-color: rgb(255, 43, 106);
+}
+  
+.notificacaoMainSide span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-height: 900px){
+  #mainSideBarMenu {
+      height: 100%;
+      overflow-y: auto;
+    }
+}

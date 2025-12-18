@@ -1,0 +1,137 @@
+.historiaProdutoSustabilidade {
+    position: relative;
+    display: grid;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    height: fit-content;
+    /* background-color: rgb(92, 92, 244); */
+}
+
+.middleLineSustentabilidade {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondaryColorConsumidor);
+}
+
+
+
+.cellHistoriaProduto {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    min-height: 40px;
+    /* background-color: pink; */
+}
+
+.blockExtensaoCellHistoria {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    height: fit-content;
+    width: 100%;
+    text-align: right;
+    /* background-color: peru; */
+}
+
+.cellHistoriaProduto:nth-child(2n) .blockExtensaoCellHistoria {
+    grid-template-columns: auto 1fr;
+}
+
+.blockLineHistoria {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(255, 4, 184); */
+}
+
+.lineHistoria {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondaryColorConsumidor);
+}
+
+
+.extensaoCellHistoria {
+    position: relative;
+    display: block;
+    width: fit-content;
+    min-width: 150px;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid var(--secondaryColorConsumidor);
+    background-color: var(--mainColorConsumidor);
+}
+
+.extensaoCellHistoria h5 {
+    position: relative;
+    text-align: center;
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    margin: 0;
+    cursor: pointer;
+}
+
+.extensaoCellHistoria h5 i {
+    position: relative;
+    top: -1px;
+    margin-left: 5px;
+    font-size: 8px;
+}
+
+.extensaoCellHistoria span {
+    position: relative;
+    display: none;
+    max-width: 300px;
+    margin-top: 15px;
+    font-size: 12px;
+    text-align: justify;
+}
+
+
+@media only screen and (max-width: 1050px) {
+    .historiaProdutoSustabilidade {
+        width: 95%;
+        grid-template-columns: 1fr;
+        /* background-color: rgb(92, 92, 244); */
+    }
+    .cellHistoriaProduto {
+        /* background-color: rgba(86, 133, 86, 0.68); */
+        margin-bottom: 10px;
+    }
+
+    .nullDivHistoria{
+        display: none;
+    }
+
+    .blockExtensaoCellHistoria {
+        grid-template-columns: 1fr;
+    }
+
+    .cellHistoriaProduto:nth-child(2n) .blockExtensaoCellHistoria {
+        grid-template-columns: 1fr;
+    }
+
+    .blockLineHistoria {
+        display: none;
+    }
+
+    .extensaoCellHistoria {
+        width: 100%;
+    }
+
+    .extensaoCellHistoria h5 {
+        text-align: left;
+    }
+}

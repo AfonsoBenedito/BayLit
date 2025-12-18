@@ -1,0 +1,9 @@
+.addSaveButtonSpecificProduct{
+    position: relative;
+    background: #297b50;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 35%;
+}

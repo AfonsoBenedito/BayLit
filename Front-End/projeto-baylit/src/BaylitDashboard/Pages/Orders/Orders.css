@@ -1,0 +1,88 @@
+.mainOrders{
+    position: absolute;
+    top: 0;
+    float: right;
+    right: 0;
+    height: 100%;
+    width: calc(100% - var(--widthNav));
+    background-color: var(--mainColor);
+    /* overflow-x: auto; */
+    /* padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px; */
+}
+
+.topBlockOrders{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 0px 0px 12px 12px;
+}
+
+.allOrdersDiv{
+    width: 100%;
+    height: fit-content;
+    /* background-color: green; */
+    /* margin-top: 65px; */
+}
+
+.allOrdersInfoDiv{
+    display: grid;
+    /* justify-content: space-between; */
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    height: 30px;
+    /* background-color: pink; */
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.OrderTableInformation{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hr{
+    position: relative;
+    display: block;
+    color: rgb(145, 145, 145);
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.ordersDownload{
+    left: 25%;
+    margin-top: 50px;
+    /* margin-bottom: -30px; */
+    margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    /* background: red; */
+    width: 120px;
+    height: 30px;
+}
+
+.ordersBotoesDownload{
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: 75%;
+    padding: 6px 6px;
+    min-width: 120px;
+    font-size: 11px;
+    background-color: rgba(255, 255, 255, 0);
+    font-weight: 400;
+    border: solid 1px white;
+    color: white;
+    text-transform: uppercase;
+    z-index: 1;
+}
