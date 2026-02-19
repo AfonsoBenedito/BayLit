@@ -1,79 +1,227 @@
+<div align="center">
+
+<img src="./Front-End/projeto-baylit/src/BaylitConsumidor/Images/logo_baylit_black.svg" alt="BayLit Logo" width="160"/>
+
 # BayLit
 
-![BayLit_logo](https://user-images.githubusercontent.com/78313327/161591852-d87685d7-109e-4269-944b-f7d8c6707a84.jpeg)
+### The Green E-Commerce Platform
 
-[PT]
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg?style=for-the-badge)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-17-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-6.0-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Express](https://img.shields.io/badge/Express-4.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-BayLit é um projeto que pretende desenvolver uma plataforma de comércio online (como a Amazon ou o Ebay) amiga do ambiente.
+[About](#-about) &nbsp;·&nbsp; [Goals](#-goals) &nbsp;·&nbsp; [Features](#-features) &nbsp;·&nbsp; [Tech Stack](#-tech-stack) &nbsp;·&nbsp; [Getting Started](#-getting-started) &nbsp;·&nbsp; [Architecture](#-architecture) &nbsp;·&nbsp; [API Docs](#-api-documentation) &nbsp;·&nbsp; [Team](#-team) &nbsp;·&nbsp; [Contributing](#-contributing)
 
-O objetivo do projeto é dar informação ao consumidor sobre os recursos gastos e poluição gerada na produção, transporte e armazenamento dos produtos que está a adquirir. Com recurso a esta informação a plataforma tentará ajudar os consumidores a tomarem a decisão mais ecológica, ao mesmo tempo que encoraja as empresas a reduzirem as suas emissões de forma a tornarem-se mais atractivas para os consumidores da plataforma.
+</div>
 
-O projeto está a ser desenvolvido no âmbito de um projeto final de licenciatura por um grupo de 6 alunos da Licenciatura em Tecnologias de Informação da Faculdade de Ciências da Universidade de Lisboa, estes são:
-* Afonso Coelho
-* Afonso Silva
-* Gonçalo Cruz
-* Renato Ramires
-* Tiago Teodoro
-* Tomás Ndlate
+---
 
-O projeto foi desenvolvido com a stack MERN, sendo que toda a sua informação flui em objetos JSON.
+## 🌱 About
 
-Um diagrama descritivo da arquitetura do sistema pode ser observado em baixo:
+**BayLit** is an eco-conscious e-commerce platform that empowers consumers to make environmentally informed purchasing decisions. Think Amazon or eBay — but with a green twist.
 
-![Diagrama de Implementação](https://user-images.githubusercontent.com/78313327/161817862-9bf6117a-e9e6-42ca-b1de-2f2cf51d95a9.jpg)
+Every product listing on BayLit includes detailed sustainability data covering **production resources**, **transportation emissions**, and **storage costs**. Shoppers get the full picture before they buy, and businesses are incentivised to clean up their supply chains.
 
-O repositório está dividido em duas pastas principais, que correspondem à divisão entre o front-end da aplicação e o seu back-end.
+> *"Shop smarter. Shop greener."*
 
-Na pasta de front-end encontram-se as páginas da aplicação, desenhadas com recurso à framework ReactJS.
+---
 
-Na pasta de back-end existem 3 pastas principais que representam 3 camadas diferentes da aplicação:
-* API: onde se encontra o código da API escrito utilizando a framework ExpressJS e a especificação da mesma num ficheiro .yaml
-* Camada Lógica: onde se encontra a camada lógica da aplicação, distribuída em vários handlers que lidam com diferentes funcionalidades 
-* Camada de Dados: onde se encontram os scripts relacionados com a BD, incluindo os models descritos com a framework mongoose e as gateways que abstraem o acesso aos dados
+## 🎯 Goals
 
-A documentação da API pode ser consultada em: https://app.swaggerhub.com/apis-docs/tiaguu/bay-lit_api/2.0.0#/
+BayLit was built around three core principles:
 
-Qualquer developer interessado em contribuir para o projeto poderá fazê-lo ao resolver um dos open issues do projeto, fazendo depois um pull request da sua solução para o repositório. Esta proposta de solução será analisada pela equipa autora do projeto, podendo vir a ser aceite.
+| | Goal | Description |
+|:---:|---|---|
+| 🔍 | **Transparency** | Surface the real environmental cost of every product — resources consumed, pollution generated during production, transport, and storage |
+| 💡 | **Empowerment** | Give consumers the data they need to make the most ecologically sound choice at the moment of purchase |
+| 📈 | **Incentive** | Drive businesses to reduce their emissions by making sustainability a direct competitive advantage on the platform |
 
-O projeto é licenseado por uma MIT License.
+---
 
+## ✨ Features
 
+- 🛒 &nbsp;**Full e-commerce experience** — Browse, search, filter, and purchase products across multiple categories
+- 🌍 &nbsp;**Sustainability scores** — Each product displays its environmental footprint in clear, digestible metrics
+- ⚖️ &nbsp;**Side-by-side comparison** — Compare products including their eco metrics before deciding
+- 👤 &nbsp;**User accounts** — Full profile management with order history and preferences
+- 🔒 &nbsp;**Secure authentication** — JWT-based auth with bcrypt password hashing
+- 💳 &nbsp;**Integrated payments** — Stripe-powered checkout flow
+- 📊 &nbsp;**Admin dashboard** — Data visualizations and platform analytics via Google Charts
+- 🐳 &nbsp;**Docker ready** — Fully containerized setup for quick local development
 
+---
 
+## 🛠 Tech Stack
 
-[EN]
+| Layer | Technology |
+|---|---|
+| **Frontend** | React 17 · React Router v6 · Bootstrap 5 · Bootstrap Icons · Axios |
+| **Backend** | Node.js · Express 4 · JWT · Bcrypt · Multer · Nodemailer |
+| **Database** | MongoDB 6 · Mongoose ODM |
+| **Payments** | Stripe |
+| **DevOps** | Docker · Docker Compose · Nginx |
+| **Testing** | Jest |
+| **API Spec** | OpenAPI / Swagger |
 
-BayLit is a project that aims to develop a green e-commerce platform (like Amazon or Ebay).
+---
 
-The purpose of this project is to give information to the consumer about the resources used and the generated polution in the production, transportation and storage of the product he is purchasing. By making use of this information the platform will try to help consumers making the best ecological decision at the same time it drives companies to take action and reduce their emissions, in order to make themselves more atractive to BayLit users.
+## 🏗 Architecture
 
-This project is being developed by 6 students at Faculdade de Ciências da Universidade de Lisboa in their Bachelors final project. The authors:
-* Afonso Coelho
-* Afonso Silva
-* Gonçalo Cruz
-* Renato Ramires
-* Tiago Teodoro
-* Tomás Ndlate
+BayLit follows a clean **three-layer architecture** on the backend, fully decoupled from the React frontend via a RESTful API.
 
-The project was developed using the MERN stack, with all its information flowing in JSON objects.
+![System Architecture](https://user-images.githubusercontent.com/78313327/161817899-e45ce96e-e413-4fac-b284-293d81cceb9c.jpg)
 
-The system architecture diagram:
+### Backend Layers
 
-![Diagrama de Implementação](https://user-images.githubusercontent.com/78313327/161817899-e45ce96e-e413-4fac-b284-293d81cceb9c.jpg)
+| Layer | Location | Description |
+|---|---|---|
+| **API Layer** | `Back-End/api/` | ExpressJS routes, request validation, and OpenAPI specification |
+| **Logic Layer** | `Back-End/handlers/` | Business logic distributed across feature-specific handlers |
+| **Data Layer** | `Back-End/gateway/` + `models/` | Mongoose models and gateways that abstract all database access |
 
-The repository has two main folders, one for front-end related code and another for back-end related code.
+### Repository Structure
 
-In the front-end folder you can find the application pages written with ReactJS.
+```
+BayLit/
+├── Front-End/
+│   └── projeto-baylit/
+│       ├── src/
+│       │   ├── BaylitConsumidor/    # Consumer-facing pages & components
+│       │   ├── BaylitAdmin/         # Admin dashboard
+│       │   └── BaylitDashboard/     # Analytics dashboard
+│       └── public/
+│           └── favicon.ico
+├── Back-End/
+│   ├── api/                         # Express routes & OpenAPI spec
+│   ├── handlers/                    # Business logic layer
+│   ├── gateway/                     # Data access abstraction
+│   ├── models/                      # Mongoose schemas
+│   └── db/                          # Database initialization scripts
+├── docker-compose.yml
+└── Scripts/
+```
 
-In the back-end folder there are 3 main folders that represent 3 different application layers:
-* API: where you can find the ExpressJS API and an .yaml filme with its specification
-* Logic Layer: the logic layer of the application is divided between multiple handlers that deal with different functionalities
-* Data Layer: contains the database related scripts, including mongoose models and the gateways that create an abstraction to interact with the data layer
+---
 
-API documentation can be consulted at: https://app.swaggerhub.com/apis-docs/tiaguu/bay-lit_api/2.0.0#/
+## 🚀 Getting Started
 
-Any developer interested in contributing to the project can do so by solving any project open issue and making a pull request with bis solution. This solution proposal will be evaluated by the authors of the project, and they’ll deliber whether to implement it or not.
+### Prerequisites
 
-This project has an MIT License.
+- [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/)
 
+### Quick Start
 
+```bash
+# 1. Clone the repository
+git clone <repository-url>
+cd BayLit
+
+# 2. Start all services — MongoDB, Backend API, and Frontend
+docker-compose up -d
+
+# 3. Initialize the database (categories, subcategories, attributes, products)
+docker-compose exec backend node db/init-all.js
+```
+
+Once running, access the application at:
+
+| Service | URL |
+|---|---|
+| 🖥️ Frontend | http://localhost:3000 |
+| ⚙️ Backend API | http://localhost:8080 |
+| 🗄️ MongoDB | `localhost:27017` |
+
+### Default Credentials
+
+| Service | Username | Password |
+|---|---|---|
+| MongoDB | `admin` | `admin123` |
+| Admin User | `admin` | `admin123` |
+
+> ⚠️ **Production note:** Change all default credentials before deploying.
+
+### Useful Commands
+
+```bash
+# View live logs from all services
+docker-compose logs -f
+
+# Rebuild containers after code changes
+docker-compose up -d --build
+
+# Stop all services
+docker-compose down
+
+# Reset everything, including the database
+docker-compose down -v
+```
+
+<details>
+<summary>Manual database initialization</summary>
+
+If products don't appear after startup, you can initialize each layer separately:
+
+```bash
+# Initialize admin user
+docker-compose exec backend node db/init-db.js
+
+# Initialize categories with images
+docker-compose exec backend node db/init-categories.js
+
+# Initialize mock products
+docker-compose exec backend node db/init-products.js
+```
+
+> After `docker compose down -v`, the database is wiped. Re-run `init-all.js` to repopulate.
+</details>
+
+---
+
+## 📖 API Documentation
+
+The full REST API specification is available on SwaggerHub:
+
+**[📋 View API Documentation →](https://app.swaggerhub.com/apis-docs/tiaguu/bay-lit_api/2.0.0#/)**
+
+---
+
+## 👥 Team
+
+BayLit was developed as a **Bachelor's Final Project** by 6 students from the Information Technologies degree at [Faculdade de Ciências da Universidade de Lisboa](https://ciencias.ulisboa.pt/).
+
+| Name |
+|---|
+| Afonso Coelho |
+| Afonso Silva |
+| Gonçalo Cruz |
+| Renato Ramires |
+| Tiago Teodoro |
+| Tomás Ndlate |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To get involved:
+
+1. Browse the [open issues](../../issues) and pick one to work on
+2. Fork the repository and create your feature branch
+3. Implement your fix or feature
+4. Open a **Pull Request** — the team will review and deliberate on whether to merge it
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [`LICENSE`](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+Built with 💚 for a greener planet &nbsp;·&nbsp; [Faculdade de Ciências da Universidade de Lisboa](https://ciencias.ulisboa.pt/)
+
+</div>
