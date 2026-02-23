@@ -20,12 +20,9 @@ class Orders extends Component {
 
   async descarregarRelatorio(filetype){
 
-    console.log("na primeira merda logo")
     let info = JSON.parse(localStorage.getItem('baylitInfo'))
 
     let res = await getRelatorioVendasFornecedor(info.id, info.token, filetype)
-    console.log("resposta")
-    console.log(res)
 
   }
 
@@ -37,11 +34,9 @@ class Orders extends Component {
 
     let vendasResultado = await getVendasByFornecedor(fornecedorID, token);
     let listaToAdd = [];
-    console.log(vendasResultado);
     if(vendasResultado != false){
       
       for(let venda in vendasResultado){
-        console.log("ASUHDUAHS");
         let orderId = vendasResultado[venda]._id;
         let comprador = vendasResultado[venda].comprador.nome;
         let transportador;
@@ -53,7 +48,6 @@ class Orders extends Component {
         let estado = vendasResultado[venda].estado;
         let produto = vendasResultado[venda].produto;
         let itens = vendasResultado[venda].itens;
-        console.log(produto);
         // console.log(itens);
         listaToAdd.push(<SingularOrder orderId={orderId} produto = {produto} itens = {itens} comprador={comprador} transportador = {transportador} data={data} destino={destino} valor={valor} estado={estado}></SingularOrder>)
       }

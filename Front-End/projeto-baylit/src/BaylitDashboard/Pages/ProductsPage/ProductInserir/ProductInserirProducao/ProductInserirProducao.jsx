@@ -140,7 +140,6 @@ class ProductInserirProducao extends Component {
       this.setState({
         redirect: true
       })
-      console.log("Valido")
     }
   }
 

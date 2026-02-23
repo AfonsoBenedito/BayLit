@@ -83,12 +83,10 @@ class BlockDados extends Component {
       this.state.info.token
     );
 
-    console.log(res);
 
     if (res != false) {
       window.location.href = "/perfil/dados";
     } else {
-      console.log("Erro ao alterar utilizador");
     }
   }
 
@@ -181,7 +179,6 @@ class BlockDados extends Component {
     let codigo = this.refCodigo.current.value;
 
     if (pais != "" && localidade != "" && morada != "" && codigo != "") {
-      console.log(pais);
 
       let res = await adicionarLocal(
         info.id,
@@ -194,13 +191,10 @@ class BlockDados extends Component {
       );
 
       if (res) {
-        console.log("Adicionado com sucesso");
         window.location.href = "/perfil/dados";
       } else {
-        console.log("Erro ao adicionar Local");
       }
     } else {
-      console.log("Tem de preencher todos os campos");
     }
   }
 
@@ -210,10 +204,8 @@ class BlockDados extends Component {
     let res = await deleteLocalUtilizador(info.id, info.token, id_local)
 
     if (res){
-      console.log("Apagado com sucesso")
       window.location.href = "/perfil/dados";
     } else {
-      console.log("Erro ao apagar Local");
     }
 
   }

@@ -112,7 +112,6 @@ class Products extends Component {
       let listOfTipos = [];
       for (let tipo in tiposRecurso) {
         let nome = tipo;
-        console.log(nome)
         listOfTipos.push(
           <option
             className="optionColor"
@@ -310,16 +309,8 @@ class Products extends Component {
 
       let adicionalInfo = form.get("addProdutoInputAdicionalInfo");
       let foto = document.getElementById("addProdutoInputFoto").files[0];
-      console.log(document.getElementById("addProdutoInputFoto").files)
       // let foto = form.get("photo_from_user");
 
-      console.log(fornecedorID);
-      console.log(fornecedorToken);
-      console.log(nome);
-      console.log(categoriaID);
-      console.log(subcategoriaID);
-      console.log(adicionalInfo);
-      console.log(foto);
 
       let res = await adicionarProduto(
         fornecedorID,
@@ -371,7 +362,6 @@ class Products extends Component {
   }
 
   async removerProdutoDefinitivo() {
-    console.log("AAA");
     let data = JSON.parse(localStorage.getItem("baylitInfo"));
     // let produto = document.getElementById("removeProductDivOptionYes");
     let idProduto = this.state.deleteId;

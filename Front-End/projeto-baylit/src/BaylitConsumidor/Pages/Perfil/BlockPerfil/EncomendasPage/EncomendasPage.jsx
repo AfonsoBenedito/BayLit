@@ -37,10 +37,6 @@ class EncomendasPage extends Component {
       typeDevice = "mobile";
     }
 
-    console.log(device)
-    console.log(typeDevice)
-    console.log("oi")
-    console.log(sizeWindow)
     // let sizeWindow = window.screen.width;
     if (typeDevice == "mobile") {
       this.setState({ maxImages: 1 });
@@ -93,7 +89,6 @@ class EncomendasPage extends Component {
 
     let res = await getRelatorioEncomendasConsumidor(info.id, info.token, filetype)
 
-    console.log(res)
 
   }
 
@@ -106,7 +101,6 @@ class EncomendasPage extends Component {
 
     let encomendas = await getEncomendasByConsumidor(info.id, info.token);
 
-    console.log(encomendas)
 
     if (encomendas != false) {
 
@@ -125,7 +119,6 @@ class EncomendasPage extends Component {
           fotografias.push( produto.fotografia[0] );
         }
 
-        console.log(encomenda)
 
         if (
           encomenda.estado == "Confirmada" ||
@@ -165,11 +158,9 @@ class EncomendasPage extends Component {
         }
       }
     } else {
-      console.log("Erro a buscar encomendas");
     }
 
     if (result.length == 0) {
-      console.log("Pagina Encomendas Vazia");
 
       let toAdd = [
         <h5 className="emptyEcomendaPage">

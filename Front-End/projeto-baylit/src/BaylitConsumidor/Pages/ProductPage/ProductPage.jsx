@@ -141,7 +141,6 @@ class ProductPage extends Component {
   async displayFavorito(){
 
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
-    console.log(info.tipo);
 
     if(info.tipo == "Consumidor"){
 
@@ -186,7 +185,6 @@ class ProductPage extends Component {
         );
       }
 
-      console.log(pertence);
     }
 
     ReactDOM.render(htmlFavorito, this.refFavorito.current);
@@ -200,7 +198,6 @@ class ProductPage extends Component {
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
     if (info.tipo != "Consumidor"){
-      console.log("TEM DE SER CONSUMIDOR PARA TER FAVORITOS")
     } else {
 
       await adicionarUserFavoriteProduct(
@@ -222,7 +219,6 @@ class ProductPage extends Component {
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
     if (info.tipo != "Consumidor"){
-      console.log("TEM DE SER CONSUMIDOR PARA TER FAVORITOS")
     } else {
 
       await removerUserFavoriteProduct(info.id, info.token, this.state.productId);
@@ -295,11 +291,9 @@ class ProductPage extends Component {
     
 
     if (this.state.produtosEspecificosDisponiveis.length == 1){
-      console.log(this.state.produtosEspecificosDisponiveis[0])
 
       let res = await adicionarProdutoAoCarrinho(info.id,info.token, this.state.produtosEspecificosDisponiveis[0]._id ,1)
 
-      console.log(res)
 
       if (res != false){
 
@@ -321,7 +315,6 @@ class ProductPage extends Component {
         botaoAdicionar.animate({
           backgroundColor: "Red"
         }, 1500);
-        console.log("Erro ao adicionar produto ao carrinho!")
       }
 
     } else {
@@ -335,7 +328,6 @@ class ProductPage extends Component {
       divInfo.style.display = "block";
       textInfo.innerHTML = "Erro! Por favor, selecione as opções do produto!"
       //FAZER DISPLAY DE TER QUE SELECIONAR MAIS ATRIBUTOS
-      console.log("Mais do que um especifico")
     }
     
   }
@@ -395,7 +387,6 @@ class ProductPage extends Component {
 
     }
 
-    console.log(filtrosAplicados)
     // console.log(atributosSelecionados)
 
     this.setState({
@@ -492,7 +483,6 @@ class ProductPage extends Component {
 
     }
 
-    console.log(novosEspecificos)
     // console.log(produtosEspecificosDisponiveis)
     // console.log(valoresDisponiveis)
 
@@ -500,7 +490,6 @@ class ProductPage extends Component {
       produtosEspecificosDisponiveis: novosEspecificos
     }, () => {this.alterarBotoesDisponiveis()})
 
-    console.log(novosEspecificos)
 
     let infoProduto = this.state.productInfo
 
@@ -524,7 +513,6 @@ class ProductPage extends Component {
 
     }
 
-    console.log(produtosEspecificosDisponiveis)
 
     for (let k = 0; k < produtosEspecificosDisponiveis.length; k++){
       for (let j = 0; j < produtosEspecificosDisponiveis[k].especificidade.length; j++){
@@ -539,7 +527,6 @@ class ProductPage extends Component {
 
     }
 
-    console.log(valoresDisplay)
 
     for (let i = 0; i < todosAtributos.length; i++){
 
@@ -564,7 +551,6 @@ class ProductPage extends Component {
   async getProductInfo() {
     let cadeia = await getCadeiaByProduto(this.state.productId);
 
-    console.log(cadeia)
 
     this.setState({
       productInfo: cadeia,

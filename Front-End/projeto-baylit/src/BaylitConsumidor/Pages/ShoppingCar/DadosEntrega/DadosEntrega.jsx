@@ -147,7 +147,6 @@ class DadosEntrega extends Component {
   changeLocalValue(e) {
     let { value } = e.target;
 
-    console.log(value);
 
     this.setState({
       localValue: value,
@@ -183,10 +182,8 @@ class DadosEntrega extends Component {
 
           isValid = true;
         } else {
-          console.log("Erro ao adicionar local");
         }
       } else {
-        console.log("Erro ao adicionar local");
       }
     } else {
       idLocalEntrega = this.state.localValue;

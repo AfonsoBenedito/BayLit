@@ -52,7 +52,6 @@ class FavoritosPage extends Component {
 
       ReactDOM.render(produtosAppend, this.refFavoritos.current);
     } else {
-      console.log("Favoritos Vazios");
       let toAdd = [
         <h5 className="emptyFavoritesPage">
           Ainda não efetuas-te nenhuma encomenda.

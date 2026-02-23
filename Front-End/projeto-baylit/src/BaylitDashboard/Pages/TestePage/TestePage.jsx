@@ -27,7 +27,6 @@ class TestePage extends Component {
       "432123456",
       "919161346"
     );
-    console.log(res);
   }
 
   async testeRegistoTransportador() {
@@ -42,37 +41,30 @@ class TestePage extends Component {
       12,
       12
     );
-    console.log(res);
   }
 
   async testeLoginFornecedor() {
     let res = await Login("testeTelles@gmail.com", "badPwd2.");
-    console.log(res);
   }
 
   async testeLoginTransportador() {
     let res = await Login("testeTellesTranspor@gmail.com", "badPwd2.");
-    console.log(res);
   }
 
   async testeGetFornecedor() {
     let res = await getFornecedor("6287c62f374dd8165fe22201");
-    console.log(res);
   }
 
   async testeGetTransportador() {
     let res = await getTransportador("6287c643374dd8165fe22209");
-    console.log(res);
   }
 
   async testeGetProduto() {
     let res = await getProduto("6287ed147d1f370bdd68a760");
-    console.log(res);
   }
 
   async testeGetProdutoByFornecedor() {
     let res = await getProdutosByFornecedor("62abe01ed7ced5ae4bd15826");
-    console.log(res);
   }
 
   async testeAdicionarProduto() {
@@ -89,20 +81,16 @@ class TestePage extends Component {
         "Bola de grande dimensao, novinha",
         fotografia
       );
-      console.log(res);
     } else {
-      console.log("Tem de ser do tipo Fornecedor");
     }
   }
 
   async testeGetArmazemByFornecedor() {
     let res = await getArmazensByFornecedor("6287c62f374dd8165fe22201");
-    console.log(res);
   }
 
   async testeGetArmazemById() {
     let res = await getArmazemById("629e7f328b19e275f7aeca14");
-    console.log(res);
   }
 
   //Problema com o Local
@@ -111,14 +99,11 @@ class TestePage extends Component {
 
     if (info.tipo == "Fornecedor") {
       let res = await adicionarArmazem(info.id, info.token, "Lisboa", 20, 30);
-      console.log(res);
     } else {
-      console.log("Tem de ser do tipo Fornecedor");
     }
   }
 
   async componentDidMount() {
-    console.log("teste");
     //await this.testeAdicionarProduto()
     // await this.testeGetArmazemById()
   }

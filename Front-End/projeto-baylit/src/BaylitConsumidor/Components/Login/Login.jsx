@@ -26,7 +26,6 @@ class Login extends Component {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
 
           if (data.code == 200) {
             localStorage.clear();
@@ -46,7 +45,6 @@ class Login extends Component {
           }
         });
     } catch (err) {
-      console.log(err);
     }
   }
 

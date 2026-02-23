@@ -123,8 +123,6 @@ class ServicoIndividual extends Component {
     let listaToAdd = [];
     let rotaId;
     let estadoTransporte = transporteObjeto.estado_transporte
-    console.log(estadoTransporte);
-    console.log(transporteObjeto);
     for (let rotaId in rota){
         let valorAdicional;
         if(parseInt(rotaId)+1 == rota.length){

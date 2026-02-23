@@ -55,8 +55,6 @@ class SingularServicos extends Component {
     let meioDeTransporte = await getMeioTransporteById(this.state.meio_transporte);
     let marca = meioDeTransporte[0].marca;
     let modelo = meioDeTransporte[0].modelo;
-    console.log(marca);
-    console.log(modelo);
     this.setState({
       marca: marca,
       modelo: modelo

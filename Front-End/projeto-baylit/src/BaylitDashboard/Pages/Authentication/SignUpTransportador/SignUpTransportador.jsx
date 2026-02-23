@@ -66,8 +66,7 @@ class SignUpTransportador extends Component {
       );
 
       if (res == true) {
-        document.getElementById("erro").innerHTML = "Por favor confirme o seu email";
-        // window.location = "/Dashboard/PerfilCompany";
+        window.location = "/Dashboard/PerfilCompany";
       } else {
         let msg_erro = res;
         document.getElementById("erro").innerHTML = msg_erro;

@@ -22,7 +22,6 @@ class Notificacoes extends Component {
 
     let notificacoes = await getNotificacoesUtilizador(info.id, info.token)
 
-    console.log(notificacoes)
 
     let htmlAppend = []
 

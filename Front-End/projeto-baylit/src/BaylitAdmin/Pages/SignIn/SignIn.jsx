@@ -46,7 +46,6 @@ class SignIn extends Component {
 
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
-    console.log("ahhhhh", info);
     if (info.tipo != "Administrador") {
       document.getElementById("terminarAdmin").style.display = "none";
     }

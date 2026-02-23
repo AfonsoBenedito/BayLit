@@ -97,12 +97,9 @@ class ProductInventario extends Component {
 
     let armazensBuscados = await getArmazensByFornecedor(info.id, info.token);
 
-    console.log(armazensBuscados);
 
     // let atributos = await getAtributoBySubcategoria(this.state.subcategoria)
 
-    console.log(especificos);
-    console.log(atributosBuscados);
 
     // PRODUTOS
     for (let i = 0; i < especificos.length; i++) {
@@ -297,7 +294,6 @@ class ProductInventario extends Component {
   async alterarPreco(id_especifico, nameInput) {
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
-    console.log(nameInput);
 
     let preco = document.getElementsByName(nameInput)[0].value;
 
@@ -308,20 +304,16 @@ class ProductInventario extends Component {
     }
 
     if (res != false) {
-      console.log("Preço Trocado com sucesso");
     } else {
-      console.log("Erro ao alterar Preço");
     }
   }
 
   async createAtributosInputs() {
 
-    console.log("oi")
 
     let produto = await getProduto(this.state.productId)
     let subcategoria = await getSubCategoria(produto.subcategoria)
 
-    console.log(subcategoria)
     let result = [];
 
     result.push(
@@ -381,11 +373,9 @@ class ProductInventario extends Component {
 
     let res = await adicionarProdutoEspecifico(info.id, info.token, this.state.productId, preco, caracteristicas)
 
-    console.log(res)
     if (res != false){
       window.location.reload()
     } else {
-      console.log("Deu erro ao Adicionar Produto Especifico")
     }
 
   }

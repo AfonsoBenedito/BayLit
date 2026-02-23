@@ -57,21 +57,14 @@ class ProductInserirLocal extends Component {
           let producaoRes = await adicionarProducao(info.token, produtoRes._id, localRes._id, producao.tipo, producao.recursos, producao.poluicao)
 
           if (producaoRes != false){
-            console.log("Correu top")
-            console.log(produtoRes)
-            console.log(localRes)
-            console.log(producaoRes)
 
             window.location.href = "/Dashboard/Products/" + produtoRes._id
           } else {
-            console.log("Correu mal producao")
           }
         } else {
-          console.log("Correu mal local")
         }
 
       } else {
-        console.log("Correu mal produto")
       }
 
     }

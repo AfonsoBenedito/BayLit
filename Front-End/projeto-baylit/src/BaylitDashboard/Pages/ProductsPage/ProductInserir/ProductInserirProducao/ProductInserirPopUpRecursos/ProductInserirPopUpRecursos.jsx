@@ -79,7 +79,6 @@ class ProductInserirPopUpRecursos extends Component {
     // console.log(this.refTipoRecurso.current.value)
     // console.log(this.refRecurso.current.value)
 
-    console.log(unit)
 
     this.setState({
       unidade: unit
@@ -105,7 +104,6 @@ class ProductInserirPopUpRecursos extends Component {
       this.closePopUp()
 
     } else {
-      console.log("Falta Quantidade")
     }
 
     

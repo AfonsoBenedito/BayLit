@@ -25,7 +25,6 @@ class HeaderPopUpFavorites extends Component {
       let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
       let produtos = await getUserFavoriteProducts(info.id, info.token);
-      console.log(produtos)
       let allProducts = [];
 
       if (produtos != false) {
@@ -68,7 +67,6 @@ class HeaderPopUpFavorites extends Component {
 
         ReactDOM.render(allProducts, this.myRef.current);
       } else {
-        console.log("Favoritos Vazios");
         let toAdd = [
           <h5 className="emptyFavoritesMsg">
             Não existem produtos nos favoritos
@@ -80,7 +78,6 @@ class HeaderPopUpFavorites extends Component {
         ReactDOM.render(toAdd, this.myRef.current);
       }
     } else {
-      console.log("Não é Consumidor/Logado");
       let toAdd = [
         <h5 className="emptyFavoritesMsg">
           Apenas para utilizadores autenticados

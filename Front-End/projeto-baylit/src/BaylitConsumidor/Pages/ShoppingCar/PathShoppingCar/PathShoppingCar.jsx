@@ -20,7 +20,6 @@ class PathShoppingCar extends Component {
 
     let numEstado;
 
-    console.log(estadoPath);
 
     if (estadoPath == 2) {
       numEstado = 1;
@@ -78,10 +77,8 @@ class PathShoppingCar extends Component {
 
     let nomeEstado = window.location.pathname.split("/");
 
-    console.log(nomeEstado)
 
     for(let i=2; i<this.state.estado+1; i++){
-      console.log(i);
       if (i==2){
         this.setState({
           dados: this.state.dados + nomeEstado[i] + "/"
@@ -101,7 +98,6 @@ class PathShoppingCar extends Component {
       }
       
     }
-    console.log(this.state.dados)
   }
 
   render() {

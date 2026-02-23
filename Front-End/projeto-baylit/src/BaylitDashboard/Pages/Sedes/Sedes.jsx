@@ -34,12 +34,10 @@ class Sedes extends Component {
     let id_transportador = baylitInfo.id;
     let token = baylitInfo.token;
     let armazensResultado = await getSedesByTransportador(id_transportador, token);
-    console.log(armazensResultado.locais);
     armazensResultado = armazensResultado.locais;
     if (armazensResultado != false) {
       let listOfArmazens = [];
       for (let armazem in armazensResultado) {
-        console.log(armazensResultado[armazem]);
         let localidade = armazensResultado[armazem].localidade;
         let pais = armazensResultado[armazem].pais;
         let morada = armazensResultado[armazem].morada;
@@ -71,7 +69,6 @@ class Sedes extends Component {
 
   async closeAWDivButton() {
     var addSedeDiv = document.getElementById("addSedeDiv");
-    console.log(addSedeDiv);
 
     if (addSedeDiv.style.display === "none") {
       addSedeDiv.style.display = "block";
@@ -92,10 +89,6 @@ class Sedes extends Component {
       let codigo = form.get("SedeInputCodigo");
 
 
-      console.log(localidade);
-      console.log(pais);
-      console.log(morada);
-      console.log(codigo);
       let res = await adicionarSede(
         id_transportador,
         token,
@@ -105,7 +98,6 @@ class Sedes extends Component {
         pais
       );
 
-      console.log(res);
       
       if (res != false) {
         document.getElementById("warehouseInfo").innerHTML =
@@ -158,8 +150,6 @@ class Sedes extends Component {
 
     if (data != null) {
       let fornecedorToken = data.token;
-      console.log(fornecedorToken);
-      console.log(idArmazem);
       let a = await deleteArmazem(fornecedorToken, idArmazem);
       // console.log(a);
       // window.location.href = "/dashboard/Warehouses";

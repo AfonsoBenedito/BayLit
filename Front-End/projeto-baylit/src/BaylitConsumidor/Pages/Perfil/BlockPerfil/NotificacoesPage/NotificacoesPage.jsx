@@ -83,7 +83,6 @@ class NotificacoesPage extends Component {
         </h5>,
       ];
       ReactDOM.render(toAdd, this.myNotificacoes.current);
-      console.log("Não tem notificações")
     }
     
   }

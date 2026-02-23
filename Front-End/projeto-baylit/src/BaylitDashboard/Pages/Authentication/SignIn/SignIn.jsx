@@ -25,7 +25,6 @@ class SignIn extends Component {
       document.getElementById("erro").innerHTML = msg_erro;
     }
 
-    console.log("entrei");
   }
 
   render() {

@@ -54,7 +54,6 @@ class ResumeShoppingCar extends Component {
 
     let cadeia = await getUsersShoppingCartCadeia(info.id, info.token);
 
-    console.log(cadeia);
 
     //FALTA RATING GERAL A RECEBER A CADEIA
     this.setState({
@@ -111,8 +110,6 @@ class ResumeShoppingCar extends Component {
 
     let transportador = await getTransportador(transporte.transportador);
 
-    console.log(transporte);
-    console.log(transportador);
 
     this.setState({
       portesFinais: transportador.portes_encomenda,

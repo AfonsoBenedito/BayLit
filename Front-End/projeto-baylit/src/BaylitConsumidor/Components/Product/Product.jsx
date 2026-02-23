@@ -6,7 +6,7 @@ import ReactDOM from "react-dom"
 
 import { verificarCompare, adicionarProdutoCompare, removeProdutoCompare } from "../../../Helpers/ProdutoHelper";
 
-import {getUserFavoriteProducts, adicionarUserFavoriteProduct, removerUserFavoriteProduct} from "../../../Helpers/UserHelper"
+import {getFavoriteIds, invalidateFavoritesCache, adicionarUserFavoriteProduct, removerUserFavoriteProduct} from "../../../Helpers/UserHelper"
 
 import { createRankSuntentabilidade, getLeaf } from "../LeafSVG";
 
@@ -17,14 +17,8 @@ class Product extends Component {
     this.myRefRating = React.createRef();
     this.myRefBlockRating = React.createRef();
 
-    // Check if product image is a placeholder (SVG data URI)
-    const isPlaceholder = this.props.srcProduct && this.props.srcProduct.startsWith('data:image/svg');
-    const initialImage = (isPlaceholder && this.props.subcategoryImage) 
-      ? this.props.subcategoryImage 
-      : (this.props.srcProduct || this.props.subcategoryImage);
-
     this.state = {
-      srcProduct: initialImage,
+      srcProduct: this.props.srcProduct || this.props.subcategoryImage,
       subcategoryImage: this.props.subcategoryImage,
       nivelSustentabilidade: this.props.nivelSustentabilidade, //1,2,3,4,5
       nivelProducao: this.props.nivelProducao,
@@ -49,76 +43,43 @@ class Product extends Component {
   }
 
   async displayFavorito(){
-
     let info = JSON.parse(localStorage.getItem('baylitInfo'))
-
     let htmlFavorito = [];
 
     if (info && info.tipo == 'Consumidor'){
-
-      let produtos = await getUserFavoriteProducts(info.id, info.token);
-
-      let pertence = false
-
-      for (let i = 0; i < produtos.length; i++){
-
-        let produto = produtos[i]
-
-        if (produto._id == this.state.idProduto){
-          pertence = true
-        }
-      }
+      const ids = await getFavoriteIds(info.id, info.token);
+      const pertence = ids.includes(this.state.idProduto);
 
       if (pertence){
-
         htmlFavorito = <div onClick={async () => {await this.removerProdutoFavoritos()}} className="btnLikeProductCard">
                             <i class="bi bi-heart-fill"></i>
                           </div>
-        
-
       } else {
-
         htmlFavorito = <div onClick={async () => {await this.adicionarProdutoFavoritos()}} className="btnLikeProductCard">
                             <i class="bi bi-heart"></i>
                           </div>
-
       }
-
     }
 
-
-
     ReactDOM.render(htmlFavorito, this.refFavorito.current)
-
-
   }
 
   async adicionarProdutoFavoritos(){
-
-    console.log("adicionar aos favs")
-
     let info = JSON.parse(localStorage.getItem('baylitInfo'))
-
     if (info && info.id && info.token) {
       await adicionarUserFavoriteProduct(info.id, info.token, this.state.idProduto)
+      invalidateFavoritesCache()
     }
-
     await this.displayFavorito()
-
   }
 
   async removerProdutoFavoritos(){
-
-    console.log("remover dos favs")
-
     let info = JSON.parse(localStorage.getItem('baylitInfo'))
-
     if (info && info.id && info.token) {
       await removerUserFavoriteProduct(info.id, info.token, this.state.idProduto)
+      invalidateFavoritesCache()
     }
-
     await this.displayFavorito()
-
   }
 
 
@@ -193,7 +154,7 @@ class Product extends Component {
         
           <div className="blockImageProduct">
             <a href={"/Shop/Product/" + this.state.idProduto} className="toLink">
-              <img src={this.state.srcProduct} onError={this.handleImageError} alt={this.state.nomeProduto} loading="lazy" />
+              <img src={this.state.srcProduct} onError={this.handleImageError} alt={this.state.nomeProduto} />
             </a>
             <div ref={this.refFavorito}>
               {/* <div className="btnLikeProductCard">

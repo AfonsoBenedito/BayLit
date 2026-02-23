@@ -13,7 +13,6 @@ class WarehouseProductsCard extends Component {
       especificidade: this.props.especificidade,
     };
 
-    console.log(this.state.foto[0]);
     this.refAtributosCard = React.createRef();
   }
 

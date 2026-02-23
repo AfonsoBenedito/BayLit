@@ -25,13 +25,10 @@ class StepOneShoppingCar extends Component {
   async displayProducts() {
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
-    console.log("PEDIU");
     //GET CARRINHO
     let carrinho = await getUsersShoppingCart(info.id, info.token);
 
-    console.log("VOLTOU");
 
-    console.log(carrinho);
 
     this.setState({
       idCarrinho: carrinho._id,
@@ -44,7 +41,6 @@ class StepOneShoppingCar extends Component {
         carrinho.produtos[i].produto.produto
       );
 
-      console.log(carrinho.produtos);
 
       let nome = cadeia.nome;
       let precoSingular = carrinho.produtos[i].produto.preco.toFixed(2);
@@ -84,7 +80,6 @@ class StepOneShoppingCar extends Component {
       window.location.href = "/ShoppingCar/" + this.state.idCarrinho;
     } else {
       //Adicionar display de precisar de fazer Login ou abrir o popUp do Login
-      console.log("Precisa de fazer Login")
     }
 
     

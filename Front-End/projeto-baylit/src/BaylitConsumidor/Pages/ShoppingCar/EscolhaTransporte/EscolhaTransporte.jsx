@@ -60,7 +60,6 @@ class EscolhaTransporte extends Component {
   async displayTransportes() {
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
-    console.log(this.state.idLocal);
 
     let transportes = await getTransportesPossiveis(
       info.id,
@@ -70,7 +69,6 @@ class EscolhaTransporte extends Component {
 
     let htmlAppend = [];
 
-    console.log(transportes);
 
     if (transportes != false) {
       for (let i = 0; i < transportes.length; i++) {
@@ -130,7 +128,6 @@ class EscolhaTransporte extends Component {
 
       ReactDOM.render(htmlAppend, this.refTransportes.current);
     } else {
-      console.log("Erro no calculo dos transportes");
     }
   }
 
@@ -170,7 +167,6 @@ class EscolhaTransporte extends Component {
         encomendaId;
     } else {
       //DISPLAY DE ERRO AO CRIAR A ENCOMENDA
-      console.log("Erro ao criar encomenda");
     }
   }
 

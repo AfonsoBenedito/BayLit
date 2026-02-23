@@ -24,11 +24,9 @@ class confirmEmail extends Component {
 
         let info = JSON.parse(localStorage.getItem('baylitInfo'))
 
-        console.log("Fui chamado")
 
         let result = false
 
-        console.log(this.state.code)
 
         if (info){
 
@@ -39,7 +37,6 @@ class confirmEmail extends Component {
                     id_nao_autenticado: info.id
                 }
                 
-                console.log(info.id)
     
                 await fetch(
                     apiInfo.apiLink + "/auth/register/verificar",
@@ -52,7 +49,6 @@ class confirmEmail extends Component {
                     }
                 ).then((response) => response.json())
                 .then((data) => {
-                    console.log(data)
                     if (data.code == 201){
     
                         localStorage.removeItem('baylitInfo');
@@ -92,7 +88,6 @@ class confirmEmail extends Component {
                 
     
             } else {
-                console.log("Já está autenticado")
                 window.location.href = "/"
     
             }
@@ -115,7 +110,6 @@ class confirmEmail extends Component {
                 }
             ).then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 if (data.code == 201){
 
                     localStorage.removeItem('baylitInfo');

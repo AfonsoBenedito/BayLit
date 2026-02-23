@@ -42,8 +42,6 @@ class WelcomeAuth extends Component {
     });
 
     let c = await getAllTransportadores();
-    console.log(c);
-    console.log(c.length);
     let transportadoresSize = c.length;
     this.setState({
       transportadoresS: transportadoresSize,

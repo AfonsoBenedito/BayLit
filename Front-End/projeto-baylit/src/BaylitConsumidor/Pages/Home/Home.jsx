@@ -53,9 +53,7 @@ class Home extends Component {
     let listToAdd = [];
     let contagem = 0;
     let resultados5 = await pesquisa(null, null, null, 5, null, null);
-    console.log(resultados5);
     if (resultados5) {
-      console.log("Entrei!");
       for (let resultado5 in resultados5) {
         if (contagem < 7) {
           let srcProduct = resultados5[resultado5].fotografia[0];

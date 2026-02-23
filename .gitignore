@@ -1,0 +1,29 @@
+# IDEs
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# React build output
+Front-End/projeto-baylit/build/
+
+# Go build artifact
+api-go/baylit
+
+# SQLite databases
+*.db
+
+# Environment & credentials
+.env
+conn.js
+
+# Logs
+*.log

@@ -39,7 +39,6 @@ class ProductCadeia extends Component {
       local: "Local",
     };
 
-    console.log(this.state.cadeia);
   }
 
   async getLocal() {

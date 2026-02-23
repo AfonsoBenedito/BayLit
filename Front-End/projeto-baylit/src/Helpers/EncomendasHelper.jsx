@@ -65,7 +65,6 @@ async function getVendasByFornecedor(id_fornecedor, token){
     )
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             if (data.code == 200){
                 result = data.data;
             }
@@ -123,7 +122,6 @@ async function getTransportesPossiveis(id_consumidor, token, id_local){
     )
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
             if (data.code == 200){
                 result = data.data.transportes;
             }
@@ -143,7 +141,6 @@ async function getTransporteById(id_transporte){
     )
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
             if (data.code == 200){
                 result = data.data;
             }
@@ -172,7 +169,6 @@ async function criarEncomenda(token, id_consumidor, id_local, id_transporte){
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             if (data.code == 200) {
                 result = data.data;
             }
@@ -200,7 +196,6 @@ async function mudarEstadoTransporte(token, id_transporte, novo_estado){
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             if (data.code == 200) {
                 result = data.data;
             }
@@ -228,7 +223,6 @@ async function mudarEstadoLocalizacaoTransporte(token, id_transporte, id_local, 
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             if (data.code == 200) {
                 result = data.data;
             }
@@ -254,7 +248,6 @@ async function cancelarTransporte(token, id_transporte){
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             if (data.code == 200) {
                 result = data.data;
             }
@@ -281,7 +274,6 @@ async function cancelarEncomenda(id_consumidor, token, id_encomenda){
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             if (data.code == 200) {
                 result = true
             }

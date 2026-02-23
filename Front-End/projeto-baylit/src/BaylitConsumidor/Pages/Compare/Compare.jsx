@@ -45,17 +45,14 @@ class Compare extends Component {
       for (let i = 0; i < compareList.length; i++) {
         let cadeia = await getCadeiaByProduto(compareList[i]);
 
-        console.log(cadeia);
 
         if (!cadeia || !cadeia.subcategoria) {
-          console.error("Product data incomplete:", cadeia);
           continue;
         }
 
         let subcategoria = await getSubCategoria(cadeia.subcategoria);
         
         if (!subcategoria) {
-          console.error("Subcategoria not found for:", cadeia.subcategoria);
           continue;
         }
 
@@ -175,7 +172,6 @@ class Compare extends Component {
 
       this.verificarMelhor();
     } else {
-      console.log("Página compare vazia");
       let listToAdd = []
       listToAdd.push(<div className="zeroCompareImageDiv"><img className="zeroCompareImage" src={SadSmile}></img></div>)
       listToAdd.push(<h5 className="zeroCompareText">Não tem produtos para comparar, tente adicionar!!</h5>)
@@ -232,9 +228,6 @@ class Compare extends Component {
       }
     }
 
-    console.log(
-      document.getElementsByClassName("compareGeral")[indexRatingGeral]
-    );
 
     document.getElementsByClassName("compareGeral")[
       indexRatingGeral

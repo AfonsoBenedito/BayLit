@@ -27,8 +27,6 @@ class confirmPagamento extends Component {
         // let info = JSON.parse(localStorage.getItem('baylitInfo'))
 
         // console.log("Fui chamado")
-        console.log(this.state.session)
-        console.log(this.state.encomenda)
 
         let result = false
         let info = JSON.parse(localStorage.getItem('baylitInfo'))
@@ -67,7 +65,6 @@ class confirmPagamento extends Component {
             }
         ).then((resp) => resp.json())
         .then((dat) => {
-            console.log(dat);
             if (dat.code == 200) {
                 //Página de Confirmação de encomenda
                 window.location.href = "/Perfil"
@@ -76,7 +73,6 @@ class confirmPagamento extends Component {
             }
         });
 
-        console.log(result)
 
             
 

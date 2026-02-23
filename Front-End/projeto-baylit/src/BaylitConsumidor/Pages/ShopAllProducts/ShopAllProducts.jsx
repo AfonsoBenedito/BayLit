@@ -18,20 +18,20 @@ class ShopAllProducts extends Component {
   async appendInfo() {
     let categorias = await getCategorias();
 
-    let info = [];
+    // Fetch all subcategories in parallel instead of sequentially
+    const subcategoriasAll = await Promise.all(
+      categorias.map((cat) => getSubCategoriasByCategoria(cat._id))
+    );
 
-    for (var i = 0; i < categorias.length; i++) {
-      let subcategorias = await getSubCategoriasByCategoria(categorias[i]._id);
-
-      info.push(
-        <CategoryBlock
-          name={categorias[i].nome}
-          id={categorias[i]._id}
-          subcategorias={subcategorias}
-          fotografia={categorias[i].fotografia}
-        />
-      );
-    }
+    let info = categorias.map((cat, i) => (
+      <CategoryBlock
+        key={cat._id}
+        name={cat.nome}
+        id={cat._id}
+        subcategorias={subcategoriasAll[i]}
+        fotografia={cat.fotografia}
+      />
+    ));
 
     ReactDOM.render(
       info,
@@ -39,19 +39,8 @@ class ShopAllProducts extends Component {
     );
   }
 
-  async componentDidMount() {
-    // Load categories with priority for above-the-fold content
-    // Use requestIdleCallback if available to defer non-critical work
-    if (window.requestIdleCallback) {
-      requestIdleCallback(() => {
-        this.appendInfo();
-      }, { timeout: 2000 });
-    } else {
-      // Fallback: small delay to allow critical content to render first
-      setTimeout(() => {
-        this.appendInfo();
-      }, 50);
-    }
+  componentDidMount() {
+    this.appendInfo();
   }
   render() {
     return (

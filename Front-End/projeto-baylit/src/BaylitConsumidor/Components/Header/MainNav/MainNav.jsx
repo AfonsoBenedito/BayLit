@@ -139,11 +139,9 @@ class MainNav extends Component {
 
     //Função de Pesquisa
 
-    console.log(valor);
 
     let produtos = await pesquisa(null, null, null, null, valor, null);
 
-    console.log(produtos);
 
     let produtosAppend = [];
 
@@ -213,13 +211,11 @@ class MainNav extends Component {
   }
 
   async displayPopUpCompare(){
-    console.log("HOVER Compare")
     ReactDOM.unmountComponentAtNode(this.refPopUpCompare.current)
     ReactDOM.render(<HeaderPopUpCompare/>, this.refPopUpCompare.current)
   }
 
   async displayPopUpFavoritos(){
-    console.log("HOVER Favoritos")
     ReactDOM.unmountComponentAtNode(this.refPopUpFavoritos.current)
     ReactDOM.render(<HeaderPopUpFavorites
       listaProdutos={this.listaProdutosCarrinho}
@@ -230,7 +226,6 @@ class MainNav extends Component {
   }
 
   async displayPopUpCarrinho(){
-    console.log("HOVER Favoritos")
     ReactDOM.unmountComponentAtNode(this.refPopUpCarrinho.current)
     ReactDOM.render(<HeaderPopUpShoppingCar
       listaProdutos={this.listaProdutosCarrinho}

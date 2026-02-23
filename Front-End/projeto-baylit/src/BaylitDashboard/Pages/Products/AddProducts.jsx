@@ -139,7 +139,6 @@ class AddProducts extends Component {
 
     changeTipoRecurso(){
 
-        console.log(this.refTipoRecurso.current.value)
 
         ReactDOM.render(this.state.recursoHtml[this.refTipoRecurso.current.value], this.refRecurso.current)
 
@@ -171,7 +170,6 @@ class AddProducts extends Component {
             quantidadeAtual: this.state.quantidadeRecurso[this.refRecurso.current.value]
         })
 
-        console.log(novosRecursos)
     }
 
 

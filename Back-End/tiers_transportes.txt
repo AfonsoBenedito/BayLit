@@ -1,5 +1,0 @@
-// tier 1: 50 km, 11 l/100km, 300 gco2/km, >20 itens – TOTAL 50*(11+300) / 20 = 778
-// tier 2: 100 km, 19 l/100km, 504 gco2/km, 20 itens – TOTAL 100*(19+504) / 20 = 2615
-// tier 3: 200 km, 26 l/100km, 708 gco2/km, 10 itens – TOTAL 200*(26+708) / 10 = 14680
-// tier 4: 500 km, 34 l/100km, 912 gco2/km, 5 itens – TOTAL 500*(34+912) / 5 = 94600
-// tier 5: >500 km, >34 l/100km, >912 gco2/km, <5 itens

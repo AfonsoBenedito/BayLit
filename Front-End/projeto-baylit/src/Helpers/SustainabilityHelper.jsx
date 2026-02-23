@@ -18,7 +18,6 @@ async function getGraphsTransportador(id, espaco_temporal, token) {
       if (data.code == 200) {
         relatorio = data.data;
       } else {
-        console.log("Erro na conexão");
       }
     });
 
@@ -44,7 +43,6 @@ async function getGraphsFornecedor(id, espaco_temporal, token) {
       if (data.code == 200) {
         relatorio = data.data;
       } else {
-        console.log("Erro na conexão");
       }
     });
 
@@ -61,7 +59,6 @@ async function getGraphsAdministrador(token) {
       if (data.code == 200) {
         relatorio = data.data;
       } else {
-        console.log("Erro na conexão");
       }
     });
 

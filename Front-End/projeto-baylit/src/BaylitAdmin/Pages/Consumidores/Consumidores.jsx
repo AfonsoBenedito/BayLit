@@ -24,7 +24,6 @@ class Consumidores extends Component {
   }
 
   showNaoBloqueados() {
-    console.log("Nao bloqueados");
 
     let allBloqueados = document.getElementsByClassName("consumidorBloqueado");
     for (let i = 0; i < allBloqueados.length; i++) {
@@ -40,7 +39,6 @@ class Consumidores extends Component {
   }
 
   showBloqueados() {
-    console.log("Bloqueados");
 
     let allBloqueados = document.getElementsByClassName("consumidorBloqueado");
     for (let i = 0; i < allBloqueados.length; i++) {
@@ -50,15 +48,12 @@ class Consumidores extends Component {
     let allNaoBloqueados = document.getElementsByClassName(
       "consumidorNaoBloqueado"
     );
-    console.log(allBloqueados);
-    console.log(allNaoBloqueados);
     for (let i = 0; i < allNaoBloqueados.length; i++) {
       allNaoBloqueados[i].style.display = "none";
     }
   }
 
   showAll() {
-    console.log("Todos");
 
     let allBloqueados = document.getElementsByClassName("consumidorBloqueado");
     for (let i = 0; i < allBloqueados.length; i++) {

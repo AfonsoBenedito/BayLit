@@ -6,7 +6,6 @@ async function getProduto(id) {
   await fetch(apiInfo.apiLink + "/produto?id=" + id)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       result = data.data[0];
     });
 
@@ -165,7 +164,6 @@ async function adicionarProduto(
 
   if (fotografias != null && fotografias != []){
     for (let i = 0; i < fotografias.length; i++){
-      console.log(fotografias[i])
       data.append('fotografias', fotografias[i])
     }
   }
@@ -179,7 +177,6 @@ async function adicionarProduto(
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 201) {
         result = data.data;
       }
@@ -214,7 +211,6 @@ async function adicionarProdutoEspecifico(
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200 || data.code == 200) {
         result = data.data;
       }
@@ -299,7 +295,6 @@ async function getArmazemById(id_utilizador, token, id_armazem) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = data.data;
       }
@@ -355,11 +350,9 @@ async function adicionarArmazem(
         if (data.code == 200 || data.code == 201) {
           result = data.data;
         } else {
-          console.log("Erro ao adicionar Armazem");
         }
       });
   } else {
-    console.log("Erro ao adicionar Local");
   }
 
   return result;
@@ -393,7 +386,6 @@ async function adicionarLocal(
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = data.data;
       }
@@ -469,7 +461,6 @@ async function adicionarFuncionario(
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = data.data;
       }
@@ -493,7 +484,6 @@ async function deleteProduto(token, id_produto) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = data.data;
       }
@@ -529,8 +519,6 @@ async function getVendasJson(id_fornecedor, token, filetype) {
 
 async function deleteArmazem(token, id_armazem) {
   let result = false;
-  console.log(token);
-  console.log(id_armazem);
   await fetch(apiInfo.apiLink + "/utilizador/fornecedor/armazem", {
     method: "DELETE",
     headers: {
@@ -543,7 +531,6 @@ async function deleteArmazem(token, id_armazem) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = data.data;
       }
@@ -568,7 +555,6 @@ async function deleteFuncionario(id_fornecedor, token, id_funcionario) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = data.data;
       }
@@ -631,7 +617,6 @@ async function adicionarProducao(token, id_produto, id_local, tipo, recursos, po
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = data.data;
       }

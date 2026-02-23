@@ -59,7 +59,6 @@ class Employees extends Component {
       fornecedorToken
     );
 
-    console.log(employeesResultado);
     if (employeesResultado != false) {
       let listOfEmployees = [];
       for (let employee in employeesResultado) {
@@ -68,7 +67,6 @@ class Employees extends Component {
         let armazemID = employeesResultado[employee].armazem;
         let employeeID = employeesResultado[employee]._id;
         // console.log(armazemID);
-        console.log(employeesResultado[employee]);
         let armazemTotal = await getArmazemById(
           fornecedorID,
           fornecedorToken,
@@ -149,7 +147,6 @@ class Employees extends Component {
 
   removeEmployee(e) {
     var removeEmployeeDiv = document.getElementById("removeEmployeeDiv");
-    console.log(e);
     this.setState({
       condutorId: e.nativeEvent.srcElement.id,
     });
@@ -163,15 +160,11 @@ class Employees extends Component {
 
   async deleteEmployeeDefinitivo(){
     let data = JSON.parse(localStorage.getItem("baylitInfo"));
-    console.log(this.state.condutorId);
 
     if (data != null) {
       let id_fornecedor = data.id;
       let token = data.token;
       let id_condutor = this.state.condutorId;
-      console.log(id_fornecedor);
-      console.log(token);
-      console.log(id_condutor);
       await deleteFuncionario(id_fornecedor, token, id_condutor);
     }
     window.location.href = "/dashboard/Employees";

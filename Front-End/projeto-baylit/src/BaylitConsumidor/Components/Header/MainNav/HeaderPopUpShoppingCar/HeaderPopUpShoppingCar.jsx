@@ -66,7 +66,6 @@ class HeaderPopUpShoppingCar extends Component {
       ReactDOM.render(allProducts, this.myRef.current);
     } else {
       //Adicionar Default de Carrinho
-      console.log("Carrinho Vazio");
       let toAdd = [
         <h5 className="emptyCarMsg">
           Não existem produtos no carrinho

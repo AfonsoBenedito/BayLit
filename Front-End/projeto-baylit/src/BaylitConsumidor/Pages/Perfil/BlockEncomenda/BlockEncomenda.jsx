@@ -292,19 +292,15 @@ class BlockEncomenda extends Component {
     let res = await cancelarEncomenda(info.id, info.token, this.state.idEncomenda)
 
     if (res){
-      console.log("Encomenda Cancelada com sucesso")
       window.location.href = "/Perfil/Encomendas/" + this.state.idEncomenda
     } else {
-      console.log("Erro ao cancelar Encomenda")
     }
   }
 
   cancelarEncomendaDisapear(){
     let cancelarEncomendaButton = document.getElementById("cancelarEncomendaButton");
     let estado = this.state.estadoEncomenda;
-    console.log(estado);
     if(this.state.estadoEncomenda == "Cancelada"){
-      console.log("Entrei!!!!");
       cancelarEncomendaButton.style.display = "none";
     }
   }

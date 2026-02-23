@@ -28,7 +28,6 @@ class ProductsGerir extends Component {
     this.myRefFotosDisplayer = React.createRef();
 
     let { id } = this.props.params;
-    console.log(id);
 
     this.state = {
       productId: id,
@@ -65,7 +64,6 @@ class ProductsGerir extends Component {
     let categoria = await getCategoria(produto.categoria);
     let subcategoria = await getSubCategoria(produto.subcategoria);
 
-    console.log(produto);
 
     let novoProductInfo = this.state.productInfo;
 
@@ -154,10 +152,8 @@ class ProductsGerir extends Component {
   }
 
   async getProductInfoCadeia() {
-    console.log("Cadeia ->");
     let cadeia = await getCadeiaByProduto(this.state.productId);
 
-    console.log("Cadeia ->", cadeia);
 
     this.setState({
       productCadeia: cadeia,
@@ -218,7 +214,6 @@ class ProductsGerir extends Component {
 
     await this.createFotos();
 
-    console.log("ewee");
     await this.getProductInfoCadeia();
   }
 

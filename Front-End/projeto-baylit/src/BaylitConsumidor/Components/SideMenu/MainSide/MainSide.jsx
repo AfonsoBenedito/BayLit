@@ -75,11 +75,8 @@ class MainSide extends Component {
             userName: user.nome,
           });
         } else if (verify.tipo == "Transportador") {
-          console.log("transportador");
         } else if (verify.tipo == "Fornecedor") {
-          console.log("fornecedor");
         } else if (verify.tipo == "Administrador") {
-          console.log("admin");
         }
       } else {
         // this.state.userType = "NaoAutenticado";

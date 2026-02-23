@@ -31,7 +31,6 @@ class CompanyPerfil extends Component {
     let produtosResultado = await getProdutosByFornecedor(fornecedorID);
     if (produtosResultado != false) {
       let listOfProducts = [];
-      console.log(produtosResultado);
       for (let produto in produtosResultado) {
         listOfProducts.push(<div className="mainCompanyMSProduct"></div>);
       }
@@ -201,8 +200,6 @@ class CompanyPerfil extends Component {
           </div>
         ];
       }
-      console.log("AAA");
-      console.log(a);
       ReactDOM.render(a, this.refEditProfile.current);
     }
   }
@@ -210,7 +207,6 @@ class CompanyPerfil extends Component {
   functionEditProfile() {
     var editProfileDiv = document.getElementById("editProfile_Inputs");
 
-    console.log(editProfileDiv);
     if (editProfileDiv.style.display === "block") {
       editProfileDiv.style.display = "none";
     } else {
@@ -221,7 +217,6 @@ class CompanyPerfil extends Component {
 
   closeDivButton() {
     var editProfileDiv = document.getElementById("companyPerfilEdit");
-    console.log(editProfileDiv.style.display);
 
     if (editProfileDiv.style.display === "none") {
       editProfileDiv.style.display = "block";
@@ -400,7 +395,6 @@ class CompanyPerfil extends Component {
   }
 
   changePerfilCompanyInside(){
-    console.log("foi por aqui")
     document.getElementById("btnPerfilCompany").style.backgroundColor =
       "rgba(96, 96, 96, 0.7)";
     document.getElementById("btnPromotions").style.backgroundColor =

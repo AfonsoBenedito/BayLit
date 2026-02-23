@@ -77,7 +77,6 @@ class SpecificProduct extends Component {
   async displayMarcaVeiculo(){
     let tipoSelecionado = document.getElementById("SpecificProductInputTVeiculo").value;
     let marcasDoTipo = await getPossiveisVeiculo(tipoSelecionado);
-    console.log(marcasDoTipo);
     let listaMarcas = marcasDoTipo.marca;
     let listaMarcasADD = [];
     for (let marca in listaMarcas){
@@ -107,13 +106,11 @@ class SpecificProduct extends Component {
     let addSpecificProductInput = document.getElementById("addSpecificProductInput");
 
     let addSpecificProductForm = document.getElementById("addSpecificProductForm");
-    console.log(specificProductInformationDiv.style.display);
     if (specificProductInformationDiv.style.display==="none"){
       specificProductInformationDiv.style.display="block";
       addSpecificProductForm.style.display="none";
 
     } else {
-      console.log("Entrei");
       specificProductInformationDiv.style.display="none";
       addSpecificProductForm.style.display="block";
       addSpecificProductP.style.display="block";
@@ -144,7 +141,6 @@ class SpecificProduct extends Component {
 
     // Adicionar Inventário
     let data = JSON.parse(localStorage.getItem("baylitInfo"));
-    console.log("AAAA");
     if (data != null) {
       let fornecedorID = data.id;
       let fornecedorToken = data.token; // Token - 1!
@@ -155,7 +151,6 @@ class SpecificProduct extends Component {
       for (let armazem in allArmazens){
         if (allArmazens[armazem].localizacao.local.localidade === armazemSelLocalidade){
           idArmazem = allArmazens[armazem]._id;
-          console.log(idArmazem);
         }
       }
 
@@ -165,10 +160,6 @@ class SpecificProduct extends Component {
       let tipoVeiculo = form.get("SpecificProductInputTVeiculo");
       let marcaVeiculo = form.get("SpecificProductInputMVeiculo");
       let modeloVeiculo = form.get("SpecificProductInputMoVeiculo");
-      console.log(quantidade);
-      console.log(tipoVeiculo);
-      console.log(marcaVeiculo);
-      console.log(modeloVeiculo);
 
 
 

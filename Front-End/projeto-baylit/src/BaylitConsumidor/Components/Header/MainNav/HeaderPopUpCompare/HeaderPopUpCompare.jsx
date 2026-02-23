@@ -84,7 +84,6 @@ class HeaderPopUpCompare extends Component {
           </div>
         );
       }
-      console.log(allProducts)
 
       ReactDOM.render(allProducts, this.myRefProductsCompare.current);
     } else {

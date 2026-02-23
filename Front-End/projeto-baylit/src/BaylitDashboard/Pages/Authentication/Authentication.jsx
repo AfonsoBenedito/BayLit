@@ -33,7 +33,6 @@ class Authentication extends Component {
   }
 
   removeSignUpBtn() {
-    console.log(document.getElementById("navAuthSignUp"));
     if (document.getElementById("navAuthSignUp") != null) {
       document.getElementById("navAuthSignUp").style.display = "none";
       document.getElementById("navAuthSignIn").style.display = "inline-block";

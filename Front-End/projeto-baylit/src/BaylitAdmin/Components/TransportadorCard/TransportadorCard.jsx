@@ -128,11 +128,8 @@ class TransportadorCard extends Component {
       this.state.sedesTransportador != false &&
       this.state.sedesTransportador != undefined
     ) {
-      console.log("entrou sede");
-      console.log(this.state.sedesTransportador.locais);
 
       for (let i = 0; i < this.state.sedesTransportador.locais.length; i++) {
-        console.log("HAHAHAHAHHA");
         let sede = this.state.sedesTransportador.locais[i];
         result.push(
           <div className="moradaTransportadorCard">

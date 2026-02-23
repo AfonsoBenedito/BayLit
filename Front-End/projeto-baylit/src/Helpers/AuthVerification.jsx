@@ -73,7 +73,6 @@ async function AuthVerification() {
         window.location.href = "/"
         
       } else {
-        console.log("Please refresh your browser");
       }
     });
   // return <h1>ola</h1>;
@@ -116,7 +115,6 @@ async function AuthVerificationDashboard(){
 async function AuthVerificationAdmin(){
   let baylitInfo = JSON.parse(localStorage.getItem("baylitInfo"));
 
-  console.log(baylitInfo)
 
   let tiposLogged = ["true"];
 

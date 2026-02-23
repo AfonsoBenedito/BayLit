@@ -48,7 +48,6 @@ class Warehouses extends Component {
         let tamanho = armazensResultado[armazem].tamanho;
         let gasto = armazensResultado[armazem].gasto_diario;
         let armazemId = armazensResultado[armazem]._id;
-        console.log(armazemId);
         listOfArmazens.push(
           <WarehouseCard
             armazemId={armazemId}
@@ -163,11 +162,8 @@ class Warehouses extends Component {
 
     if (data != null) {
       let fornecedorToken = data.token;
-      console.log(fornecedorToken);
-      console.log(idArmazem);
       
       let a = await deleteArmazem(fornecedorToken, idArmazem);
-      console.log(a);
       // window.location.href = "/dashboard/Warehouses";
     }
   }

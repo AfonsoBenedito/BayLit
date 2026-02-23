@@ -162,10 +162,8 @@ class SpecificProductPage extends Component {
       );
       let preco = form.get("specificProductFormPreco");
       let produtosResultados = await getProduto(this.state.productId);
-      console.log(produtosResultados);
       let subcategoria = produtosResultados.subcategoria;
       let atributos = await getAtributoBySubcategoria(subcategoria);
-      console.log(atributos);
       if (atributos != false) {
         let result = [];
         for (let atributoP in atributos) {
@@ -177,11 +175,8 @@ class SpecificProductPage extends Component {
           let atributoList = await getAtributo(atributoID);
           let atributoNome = atributoList.nome;
           let atributoValor = form.get(atributoNome);
-          console.log(atributoID);
-          console.log(atributoValor);
           let resultEste = { atributoID, atributoValor };
           result.push(resultEste);
-          console.log(resultEste);
         }
       
 

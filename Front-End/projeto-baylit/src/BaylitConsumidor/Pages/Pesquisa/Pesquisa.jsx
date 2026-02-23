@@ -18,7 +18,6 @@ class Pesquisa extends Component {
 
     let nomePesquisa = this.props.params[0].get("nome")
 
-    console.log(nomePesquisa)
 
     if (nomePesquisa){
       nomePesquisa = nomePesquisa.replaceAll("_", " ");
@@ -31,7 +30,6 @@ class Pesquisa extends Component {
       numeroResultados: 0
     };
 
-    console.log(nomePesquisa)
 
     this.refInputSearch = React.createRef()
     this.refResultadosPesquisa = React.createRef()

@@ -54,7 +54,6 @@ class ProductPopUpImage extends Component {
   };
 
   async adicionarFotografia(){
-    console.log("Adicionar Fotografia")
 
     let [inputFiles] = document.getElementById('addImgProduto').files
 
@@ -68,7 +67,6 @@ class ProductPopUpImage extends Component {
 
       novasFotosAtuais.push(url)
       fotosAdicionar.push({inputFiles, url})
-      console.log(fotosAdicionar)
     }
 
     this.createFotografias()
@@ -137,10 +135,8 @@ class ProductPopUpImage extends Component {
 
       let res = await alterarProduto(info.token, this.state.idProduto, null, null, fotosAdicionar, this.state.fotografiasRemover)
 
-      console.log(res)
       window.location.href = "/Dashboard/Products/" + this.state.idProduto
     } else {
-      console.log("Nada a mudar")
     }
 
     

@@ -29,7 +29,6 @@ class ShopCategory extends Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props.params);
     let { categoryId, subcategoryId } = this.props.params;
 
     this.state = {
@@ -135,7 +134,7 @@ class ShopCategory extends Component {
       let tempHref = "/Shop/" + this.state.categoryId + "/" + subcategoria._id;
       let tempDisplay = (
         <a className="toLink" href={tempHref}>
-          <div class="blockCategoryImageSC"><img src={subcategoria.fotografia} alt="" loading="lazy" /></div>
+          <div class="blockCategoryImageSC"><img src={subcategoria.fotografia} alt="" /></div>
           <h6>{subcategoria.nome}</h6>
         </a>
       );
@@ -151,29 +150,27 @@ class ShopCategory extends Component {
       this.state.categoryId
     );
 
-    let filtrosNome = [];
-
-    let filtros = {};
-
-    let atributosSubcategoria = [];
-
-    for (let i = 0; i < subcategorias.length; i++) {
-      let subcategoria = subcategorias[i];
-
-      for (let k = 0; k < subcategoria.atributos.length; k++) {
-        let atributo = await getAtributo(subcategoria.atributos[k]);
-
-        // console.log(atributo)
-
-        if (!filtrosNome.includes(atributo.nome)) {
-          //Criar Filtro
-          filtros[atributo.nome] = atributo.valores;
-
-          filtrosNome.push(atributo.nome);
-
-          atributosSubcategoria.push(atributo);
+    // Collect unique attribute IDs across all subcategories
+    let uniqueAttrIds = [];
+    for (let sub of subcategorias) {
+      for (let attrId of sub.atributos) {
+        if (!uniqueAttrIds.includes(attrId)) {
+          uniqueAttrIds.push(attrId);
         }
       }
+    }
+
+    // Fetch all attributes in parallel
+    let atributosSubcategoria = await Promise.all(
+      uniqueAttrIds.map((id) => getAtributo(id))
+    );
+    atributosSubcategoria = atributosSubcategoria.filter(Boolean);
+
+    let filtros = {};
+    let filtrosNome = [];
+    for (let atributo of atributosSubcategoria) {
+      filtros[atributo.nome] = atributo.valores;
+      filtrosNome.push(atributo.nome);
     }
 
     this.setState({
@@ -182,7 +179,6 @@ class ShopCategory extends Component {
     });
 
     this.startStorageFiltros();
-    // console.log(filtros)
 
     ReactDOM.render(
       <form id="filtrosForms">
@@ -196,7 +192,6 @@ class ShopCategory extends Component {
   }
 
   async verificarFiltros() {
-    console.log("ehehehhehe");
     let filtrosStorage = JSON.parse(
       sessionStorage.getItem("baylitFiltros")
     ).filtros;
@@ -239,7 +234,8 @@ class ShopCategory extends Component {
     let produtosAppend = [];
 
     for (let i = 0; i < produtos.length; i++) {
-      let subcategoria = await getSubCategoria(produtos[i].subcategoria);
+      // subcategoriaObj is already included in the API response — no extra fetch needed
+      let subcategoria = produtos[i].subcategoriaObj || {};
 
       let produtoTemp = (
         <Product
@@ -266,18 +262,16 @@ class ShopCategory extends Component {
   }
 
   async displayFiltrosSubcategoria() {
+    // Fetch all attributes in parallel
+    let atributosSubcategoria = await Promise.all(
+      this.state.subcategoriaAtributos.map((id) => getAtributo(id))
+    );
+    atributosSubcategoria = atributosSubcategoria.filter(Boolean);
+
     let filtros = {};
     let filtrosNome = [];
-
-    let atributosSubcategoria = [];
-
-    for (let i = 0; i < this.state.subcategoriaAtributos.length; i++) {
-      let atributo = await getAtributo(this.state.subcategoriaAtributos[i]);
-
-      atributosSubcategoria.push(atributo);
-
+    for (let atributo of atributosSubcategoria) {
       filtros[atributo.nome] = atributo.valores;
-
       filtrosNome.push(atributo.nome);
     }
 
@@ -366,7 +360,8 @@ class ShopCategory extends Component {
     let produtosAppend = [];
 
     for (let i = 0; i < produtos.length; i++) {
-      let subcategoria = await getSubCategoria(produtos[i].subcategoria);
+      // subcategoriaObj is already included in the API response — no extra fetch needed
+      let subcategoria = produtos[i].subcategoriaObj || {};
 
       let produtoTemp = (
         <Product

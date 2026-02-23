@@ -7,7 +7,6 @@ async function adicionarSede(id_transportador, token, morada, codigo_postal, loc
 
   let sede = await adicionarLocal(id_transportador, token, "sede", morada, codigo_postal, localidade, pais)
 
-  console.log(sede);
   return sede
 }
 
@@ -85,7 +84,6 @@ async function adicionarMeioTransporte(id_transportador, token, marca, modelo, t
     )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
         if (data.code == 200){
             result = data.data
         }
@@ -112,7 +110,6 @@ async function apagarMeioTransporte(token, id_meio_transporte){
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(200);
       if (data.code == 200) {
         result = data.data;
       }
@@ -166,7 +163,6 @@ async function adicionarCondutor(id_transportador, token, nome, idade){
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = data.data;
       }

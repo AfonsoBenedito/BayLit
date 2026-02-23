@@ -29,16 +29,16 @@ async function RegistoFornecedor(
     .then((response) => response.json())
     .then((data) => {
       if (data.code == 201) {
-        // localStorage.clear();
+        localStorage.clear();
 
-        // let toStorage = {
-        //   token: data.data.auth_token,
-        //   id: data.data.user.id,
-        //   logged: "true",
-        //   tipo: data.data.user.tipo,
-        // };
+        let toStorage = {
+          token: data.data.auth_token,
+          id: data.data.user.id,
+          logged: "true",
+          tipo: data.data.user.tipo,
+        };
 
-        // localStorage.setItem("baylitInfo", JSON.stringify(toStorage));
+        localStorage.setItem("baylitInfo", JSON.stringify(toStorage));
 
         result = true;
       } else {
@@ -78,16 +78,16 @@ async function RegistoTransportador(
     .then((response) => response.json())
     .then((data) => {
       if (data.code == 201) {
-        // localStorage.clear();
+        localStorage.clear();
 
-        // let toStorage = {
-        //   token: data.data.auth_token,
-        //   id: data.data.user.id,
-        //   logged: "true",
-        //   tipo: data.data.user.tipo,
-        // };
+        let toStorage = {
+          token: data.data.auth_token,
+          id: data.data.user.id,
+          logged: "true",
+          tipo: data.data.user.tipo,
+        };
 
-        // localStorage.setItem("baylitInfo", JSON.stringify(toStorage));
+        localStorage.setItem("baylitInfo", JSON.stringify(toStorage));
 
         result = true;
       } else {
@@ -118,7 +118,6 @@ async function Login(email, password) {
           data.data.user.tipo != "Fornecedor" &&
           data.data.user.tipo != "Transportador"
         ) {
-          console.log("Não é aqui o login de consumidor");
         } else {
           localStorage.clear('baylitInfo');
 
@@ -161,7 +160,6 @@ async function LoginAdmin(nome, password){
         if (
           data.data.user.tipo != "Administrador"
         ) {
-          console.log("Aqui é o Login de Administrador");
         } else {
           localStorage.clear();
 
@@ -192,9 +190,6 @@ async function AutenticarGoogle(id_nao_autenticado, token, email_utilizador_goog
   let user = await getUtilizadorByEmail(email_utilizador_google, "Consumidor")
 
   if (user != false){
-    console.log(id_nao_autenticado)
-    console.log(user._id)
-    console.log(token)
 
     await fetch("http://localhost:8080" + "/auth/google/carrinho", {
       method: "POST",
@@ -209,7 +204,6 @@ async function AutenticarGoogle(id_nao_autenticado, token, email_utilizador_goog
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         if (data.code == 200 || data.code == 201) {
           
           toStorage = {
@@ -224,12 +218,10 @@ async function AutenticarGoogle(id_nao_autenticado, token, email_utilizador_goog
           window.location.href = "/Shop"
 
         } else {
-          console.log("Erro ao autenticar Carrinho")
         }
       });
 
   } else {
-    console.log("Erro a buscar Utilizador")
   }
 
 }

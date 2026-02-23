@@ -40,7 +40,6 @@ class Condutores extends Component {
         let nome = condutoresResultado[condutor].nome;
         let idade = condutoresResultado[condutor].idade;
         let condutorId = condutoresResultado[condutor]._id;
-        console.log(condutorId);
 
         listOfCondutores.push(
         <CondutoresCard
@@ -129,7 +128,6 @@ class Condutores extends Component {
 
   async deleteCondutorDefinitivo(){
     let data = JSON.parse(localStorage.getItem("baylitInfo"));
-    console.log(this.state.condutorId);
 
     if (data != null) {
       let id_transportador = data.id;

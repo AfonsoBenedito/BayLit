@@ -28,7 +28,6 @@ class AppAmin extends Component {
       case "url":
         let estadoPath = window.location.pathname.split("/");
         let nameEstadoPath = estadoPath[estadoPath.length - 1];
-        console.log(nameEstadoPath);
         btnChange = nameEstadoPath;
         break;
       case "consumidores":
@@ -48,7 +47,6 @@ class AppAmin extends Component {
         break;
     }
 
-    console.log(btnChange);
 
     if (btnChange === "consumidores") {
       this.myRefConsumidores.current.style.border = "1px solid black";

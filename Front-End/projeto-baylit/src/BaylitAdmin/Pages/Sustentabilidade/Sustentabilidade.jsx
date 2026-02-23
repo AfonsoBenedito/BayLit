@@ -46,7 +46,6 @@ class Sustentabilidade extends Component {
     let token = baylitInfo.token;
     let dados = await getGraphsAdministrador(token);
     dados = dados.relatorio;
-    console.log(dados);
 
     let grafico1new = [
       ["Tipo", "Quantidade"],

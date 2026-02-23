@@ -33,7 +33,6 @@ class Servicos extends Component {
         let newData = data.replace("T", " ").substring(0, 16);
         let distancia = transportesResultado[transporte].distancia;
         let emissao = transportesResultado[transporte].emissao;
-        console.log(data);
         let consumo = transportesResultado[transporte].consumo;
         let estado = transportesResultado[transporte].estado;
         listaToAdd.push(<SingularServicos orderId={orderId} meio_transporte={meio_transporte} data={newData} distancia = {distancia} emissao={emissao} consumo={consumo} estado={estado}></SingularServicos>)

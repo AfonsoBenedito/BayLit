@@ -19,7 +19,6 @@ class ProductsDisplayer extends Component {
     let result = [];
 
     let produtos = await getProdutosByFornecedor(info.id)
-    console.log(produtos)
 
     for (let i = 0; i < produtos.length; i++) {
 

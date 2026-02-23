@@ -85,7 +85,6 @@ class ShowInventario extends Component {
 
         let veiculosModelo = await getPossiveisVeiculo(this.refTipoTransporte.current.value, marcas[0],null)
 
-        console.log(veiculosModelo)
 
         let modelos = veiculosModelo.modelo
         for (let i = 0; i < modelos.length; i++){
@@ -97,9 +96,6 @@ class ShowInventario extends Component {
 
         let veiculosModelo = await getPossiveisVeiculo(this.refTipoTransporte.current.value, this.refMarcaTransporte.current.value,null)
 
-        console.log(this.refTipoTransporte.current.value)
-        console.log(this.refMarcaTransporte.current.value)
-        console.log(veiculosModelo)
 
         let modelos = veiculosModelo.modelo
         for (let i = 0; i < modelos.length; i++){
@@ -138,11 +134,9 @@ class ShowInventario extends Component {
 
       let add = await adicionarInventario(info.token,armazem,idEspecifico,quantidade, null, {marca,modelo,tipo},desperdicio)
 
-      console.log(add)
       if(add != false){
         window.location.reload()
       } else {
-        console.log("Erro ao adicionar inventario")
       }
 
     }

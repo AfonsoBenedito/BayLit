@@ -49,7 +49,6 @@ class SingularOrder extends Component {
     let atributos = produtoEspecifico.especificidade;
     for (let atributo in atributos){
       let valor = atributos[atributo].valor;
-      console.log(valor);
       listaToAdd.push(<p className="atributoSingularOrder">{valor}</p>);
     }
 

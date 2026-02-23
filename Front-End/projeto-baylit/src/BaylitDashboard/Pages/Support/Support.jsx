@@ -10,7 +10,6 @@ class Support extends Component {
     var answer = document.getElementById(
       "faqsQuestionAnswer" + click.target.id.charAt(15)
     );
-    console.log(click.target.id);
     if (answer.style.display === "block") {
       answer.style.display = "none";
     } else {

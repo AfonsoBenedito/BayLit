@@ -55,17 +55,13 @@ class Transportes extends Component {
 
   async addDisplaySedes(){
     let data = JSON.parse(localStorage.getItem("baylitInfo"));
-    console.log("ASHUDHASU")
     if (data != null) {
       let id_transportador = data.id;
       let token = data.token;
       let listaSedes = await getSedesByTransportador(id_transportador, token);
       let listaSedesAdd = []
-      console.log(listaSedes);
       for (let sede in listaSedes.locais){
-        console.log(listaSedes.locais[sede]);
         let nomeSede = listaSedes.locais[sede].localidade;
-        console.log(nomeSede);
         listaSedesAdd.push(<option
           className="optionColor"
           value={listaSedes.locais[sede]._id}
@@ -93,14 +89,12 @@ class Transportes extends Component {
   async displayMarcaVeiculo(){
     let tipoSelecionado = document.getElementById("SpecificProductInputTVeiculo").value;
     let marcasDoTipo = await getPossiveisVeiculo(tipoSelecionado);
-    console.log(marcasDoTipo);
     let listaMarcas = marcasDoTipo.marca;
     let listaMarcasADD = [];
     for (let marca in listaMarcas){
       let marcaNome = listaMarcas[marca];
       listaMarcasADD.push(<option className="VeiculoOptionColor" value={marcaNome}> {marcaNome} </option>);
     }
-    console.log(listaMarcasADD);
     ReactDOM.render(listaMarcasADD, this.refMarcaVeiculo.current)
   }
 
@@ -181,9 +175,6 @@ class Transportes extends Component {
       let marcaVeiculo = form.get("SpecificProductInputMVeiculo");
       let modeloVeiculo = form.get("SpecificProductInputMoVeiculo");
       let id_sede = form.get("TransporteInputSede");
-      console.log(tipoVeiculo);
-      console.log(marcaVeiculo);
-      console.log(modeloVeiculo);
 
       let res = await adicionarMeioTransporte(
         id_transportador,
@@ -193,7 +184,6 @@ class Transportes extends Component {
         tipoVeiculo,
         id_sede
       );
-      console.log(res);
 
       if (res != false) {
         document.getElementById("transporteInfo").innerHTML =

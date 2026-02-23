@@ -37,7 +37,6 @@ class ProductInserir extends Component {
       dadosDetalhes: value
     })
 
-    console.log(this.state.dadosDetalhes)
 
   }
 
@@ -47,7 +46,6 @@ class ProductInserir extends Component {
       dadosProducao: value
     })
 
-    console.log(this.state.dadosProducao)
 
   }
 
@@ -57,7 +55,6 @@ class ProductInserir extends Component {
       dadosLocal: value
     })
 
-    console.log(this.state.dadosLocal)
   }
 
   getDadosDetalhes(){

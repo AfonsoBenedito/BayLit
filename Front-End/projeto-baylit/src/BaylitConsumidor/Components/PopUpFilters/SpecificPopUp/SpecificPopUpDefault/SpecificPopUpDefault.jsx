@@ -43,7 +43,6 @@ class SpecificPopUpDefault extends Component {
   }
 
   changeInfoStorage(e) {
-    console.log(e)
     let elemento = e.nativeEvent.srcElement;
 
     let name = elemento.name;

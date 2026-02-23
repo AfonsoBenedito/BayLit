@@ -154,7 +154,6 @@ class Sustainability extends Component {
       let fornecedorID = baylitInfo.id;
       dados = await getGraphsFornecedor(fornecedorID, filtro, token);
       if (dados.lenght === 0) {
-        console.log("dados vêm vazios , não conseguimos dar display");
       }
     }
 

@@ -57,7 +57,6 @@ class ProductInserirDetalhes extends Component {
   adicionarFotografia(){
 
    
-    console.log("Adicionar Fotografia")
 
     let [inputFiles] = document.getElementById('addImgProdutoInserir').files
 
@@ -84,7 +83,6 @@ class ProductInserirDetalhes extends Component {
   }
 
   removerFotografia(fotoRemover){
-    console.log("oi")
 
     let removeu = false
     for (let i = 0; i < this.state.fotografiasDisplay.length && removeu == false; i++){
@@ -193,7 +191,6 @@ class ProductInserirDetalhes extends Component {
       this.setState({
         redirect: true
       })
-      console.log("Valido")
 
     }
   }

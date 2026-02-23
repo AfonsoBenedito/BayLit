@@ -29,15 +29,12 @@ class BlockSeguranca extends Component {
         let res = await mudarPasswordConsumidor(info.id, info.token, passAtual, passNova)
 
         if (res){
-          console.log("Trocou")
         } else {
-          console.log("Erro: " + res)
         }
 
       }
 
     }else {
-      console.log("Erro tem preencher todos os campos")
     }
 
   }
@@ -55,9 +52,7 @@ class BlockSeguranca extends Component {
         let res = await apagarContaUtilizador(info.id, info.token)
 
         if (res){
-          console.log("Conta Apagada")
         } else {
-          console.log("Erro a apagar conta")
         }
 
       }

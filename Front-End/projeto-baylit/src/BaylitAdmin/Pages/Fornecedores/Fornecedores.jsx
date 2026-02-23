@@ -24,7 +24,6 @@ class Fornecedores extends Component {
   }
 
   showNaoBloqueados() {
-    console.log("Nao bloqueados");
 
     let allBloqueados = document.getElementsByClassName("fornecedorBloqueado");
     for (let i = 0; i < allBloqueados.length; i++) {
@@ -40,7 +39,6 @@ class Fornecedores extends Component {
   }
 
   showBloqueados() {
-    console.log("Bloqueados");
 
     let allBloqueados = document.getElementsByClassName("fornecedorBloqueado");
     for (let i = 0; i < allBloqueados.length; i++) {
@@ -50,15 +48,12 @@ class Fornecedores extends Component {
     let allNaoBloqueados = document.getElementsByClassName(
       "fornecedorNaoBloqueado"
     );
-    console.log(allBloqueados);
-    console.log(allNaoBloqueados);
     for (let i = 0; i < allNaoBloqueados.length; i++) {
       allNaoBloqueados[i].style.display = "none";
     }
   }
 
   showAll() {
-    console.log("Todos");
 
     let allBloqueados = document.getElementsByClassName("fornecedorBloqueado");
     for (let i = 0; i < allBloqueados.length; i++) {
@@ -90,7 +85,6 @@ class Fornecedores extends Component {
           info.token
         );
 
-        console.log(armazensFornecedor);
 
         let emailFornecedor = respostaFornecedores[i].email; // Obrigatorio
         let nifFornecedor = respostaFornecedores[i].nif; //Fica em branco e opcional de preencher

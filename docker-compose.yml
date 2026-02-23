@@ -1,72 +1,30 @@
-services:
-  mongodb:
-    image: mongo:6.0
-    container_name: baylit-mongodb
-    restart: unless-stopped
-    ports:
-      - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: admin123
-      MONGO_INITDB_DATABASE: Baylit
-    volumes:
-      - mongodb_data:/data/db
-      - ./Back-End/db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-    networks:
-      - baylit-network
-    healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
+# Cloud Run single-container setup
+# Previously: mongodb + backend + frontend (3 services)
+# Now: single Go binary with embedded SQLite + React
 
-  backend:
+services:
+  baylit:
     build:
-      context: ./Back-End
+      context: .
       dockerfile: Dockerfile
-    container_name: baylit-backend
-    restart: unless-stopped
+      args:
+        REACT_APP_API_URL: /api
     ports:
       - "8080:8080"
     environment:
-      - NODE_ENV=production
-      - MONGODB_URI=mongodb://admin:admin123@mongodb:27017/Baylit?authSource=admin
-      - TOKEN_SECRET=baylit-docker-secret-key-change-in-production
-    depends_on:
-      mongodb:
-        condition: service_healthy
+      - PORT=8080
+      - DATABASE_PATH=/data/baylit.db
+      - TOKEN_SECRET=${TOKEN_SECRET:-local-dev-secret-change-in-prod}
+      - GIN_MODE=release
     volumes:
-      - ./Back-End/uploads:/app/uploads
-      - ./Back-End/images:/app/images
-      - ./Back-End/Fotografias:/app/Fotografias
-    networks:
-      - baylit-network
+      - baylit_data:/data   # persistent locally; omit in Cloud Run for ephemeral
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/health"]
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/health"]
       interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 60s
-
-  frontend:
-    build:
-      context: ./Front-End/projeto-baylit
-      dockerfile: Dockerfile
-    container_name: baylit-frontend
+      timeout: 3s
+      retries: 3
+      start_period: 10s
     restart: unless-stopped
-    ports:
-      - "3000:80"
-    depends_on:
-      backend:
-        condition: service_healthy
-    networks:
-      - baylit-network
-
-networks:
-  baylit-network:
-    driver: bridge
 
 volumes:
-  mongodb_data:
-
+  baylit_data:

@@ -31,7 +31,6 @@ class Register extends Component {
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
     if (info.tipo != "NaoAutenticado") {
-      console.log("Já está autenticado");
     } else {
       let formData = new FormData(document.getElementById("form_register"));
 
@@ -49,7 +48,6 @@ class Register extends Component {
         );
         mensagemCamposTodos.style.display = "none";
 
-        console.log("Passwords Erradas");
       } else {
         await fetch(apiInfo.apiLink + "/auth/register/consumidor", {
           method: "POST",
@@ -63,26 +61,16 @@ class Register extends Component {
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log(data);
 
             if (data.code == 201) {
-              let mensagemSucesso = document.getElementById(
-                "mensagemFeedbackSignUpCE"
-              );
-              mensagemSucesso.style.display = "block";
-
-              let mensagemCamposTodos = document.getElementById(
-                "mensagemFeedbackSignUpCT"
-              );
-              mensagemCamposTodos.style.display = "none";
-              let mensagemErro = document.getElementById(
-                "mensagemFeedbackSignUpIC"
-              );
-              mensagemErro.style.display = "none";
-              //Display Confirme o email
-              console.log("Tem que confirmar o email");
-
-              // window.location.href = "/";
+              localStorage.clear();
+              localStorage.setItem("baylitInfo", JSON.stringify({
+                token: data.data.auth_token,
+                id: data.data.user.id,
+                logged: "true",
+                tipo: data.data.user.tipo,
+              }));
+              window.location.href = "/Shop";
             } else {
               let mensagemCamposTodos = document.getElementById(
                 "mensagemFeedbackSignUpCT"
@@ -98,7 +86,6 @@ class Register extends Component {
               );
               mensagemErro.style.display = "none";
 
-              console.log("Erro no Registo");
             }
           });
       }

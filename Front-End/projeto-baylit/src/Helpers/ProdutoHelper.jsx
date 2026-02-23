@@ -25,25 +25,24 @@ async function getProduto(id){
 }
 
 async function adicionarPrecoAoResultUnico(result){
+  // The Go API already includes especificos inline — extract price without an extra round-trip
+  if (result && result.especificos && result.especificos.length > 0) {
+    result['preco'] = result.especificos[0].preco;
+    return result;
+  }
 
+  // Fallback: fetch separately (e.g. when especificos not included in response)
   await fetch(
     apiInfo.apiLink + "/produto/especifico?produto=" + result._id
   ).then((response) => response.json())
   .then((data) => {
-
-    
     if (data.code == 200){
       if (data.data.especificos.length > 0){
-        let especificoPreco = data.data.especificos[0].preco
-
-        result['preco'] = especificoPreco
-
+        result['preco'] = data.data.especificos[0].preco;
       } else {
         result = false
       }
-      
     }
-    
   })
 
   return result
@@ -73,7 +72,6 @@ async function getProdutoEspecificoByProduto(id_produto){
       )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
           if(data.code == 200){
             result = data.data.especificos
           }
@@ -238,6 +236,7 @@ async function getLocalById(id_utilizador, token, id_local){
 
 function adicionarProdutoCompare(id_produto){
 
+  if (!sessionStorage.getItem('baylitCompare')) sessionStorage.setItem('baylitCompare', JSON.stringify({compareList:[]}))
   let compareList = JSON.parse(sessionStorage.getItem('baylitCompare')).compareList
 
   let index = compareList.indexOf(id_produto)
@@ -258,6 +257,7 @@ function adicionarProdutoCompare(id_produto){
 
 function removeProdutoCompare(id_produto){
 
+  if (!sessionStorage.getItem('baylitCompare')) sessionStorage.setItem('baylitCompare', JSON.stringify({compareList:[]}))
   let compareList = JSON.parse(sessionStorage.getItem('baylitCompare')).compareList
 
   let index = compareList.indexOf(id_produto)
@@ -276,6 +276,7 @@ function removeProdutoCompare(id_produto){
 
 function verificarCompare(id_produto){
 
+  if (!sessionStorage.getItem('baylitCompare')) sessionStorage.setItem('baylitCompare', JSON.stringify({compareList:[]}))
   let compareList = JSON.parse(sessionStorage.getItem('baylitCompare')).compareList
 
   let index = compareList.indexOf(id_produto)
@@ -453,12 +454,10 @@ async function alterarProduto(token, id_produto, nome, informacao_adicional, fot
 
   if (fotografias != null && fotografias != []){
     for (let i = 0; i < fotografias.length; i++){
-      console.log(fotografias[i])
       form.append('fotografias', fotografias[i])
     }
   }
   
-  console.log(form.get('fotografias'))
 
   await fetch (
     apiInfo.apiLink + "/produto",
@@ -471,7 +470,6 @@ async function alterarProduto(token, id_produto, nome, informacao_adicional, fot
     }
     ).then((response) => response.json())
     .then((data) => {
-      console.log(data)
       if (data.code == 200){
         result = data.data
       }

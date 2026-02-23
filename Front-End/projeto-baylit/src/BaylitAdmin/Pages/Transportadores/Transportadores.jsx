@@ -24,7 +24,6 @@ class Transportadores extends Component {
   }
 
   showNaoBloqueados() {
-    console.log("Nao bloqueados");
 
     let allBloqueados = document.getElementsByClassName(
       "transportadorBloqueado"
@@ -42,7 +41,6 @@ class Transportadores extends Component {
   }
 
   showBloqueados() {
-    console.log("Bloqueados");
 
     let allBloqueados = document.getElementsByClassName(
       "transportadorBloqueado"
@@ -54,15 +52,12 @@ class Transportadores extends Component {
     let allNaoBloqueados = document.getElementsByClassName(
       "transportadorNaoBloqueado"
     );
-    console.log(allBloqueados);
-    console.log(allNaoBloqueados);
     for (let i = 0; i < allNaoBloqueados.length; i++) {
       allNaoBloqueados[i].style.display = "none";
     }
   }
 
   showAll() {
-    console.log("Todos");
 
     let allBloqueados = document.getElementsByClassName(
       "transportadorBloqueado"
@@ -96,8 +91,6 @@ class Transportadores extends Component {
           info.token
         );
 
-        console.log("sedes");
-        console.log(sedesTransportador);
 
         let emailTransportador = respostaTransportadores[i].email; // Obrigatorio
         let nifTransportador = respostaTransportadores[i].nif; //Fica em branco e opcional de preencher

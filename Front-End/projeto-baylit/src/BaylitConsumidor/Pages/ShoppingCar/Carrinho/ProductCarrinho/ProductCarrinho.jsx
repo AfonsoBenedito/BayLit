@@ -37,8 +37,6 @@ class ProductStepOne extends Component {
       idSpecific: this.props.idSpecific,
     };
 
-    console.log("props")
-    console.log(this.props.quantidade)
     this.setQuantidadeDefault = this.setQuantidadeDefault.bind(this);
 
     this.displayCompare = this.displayCompare.bind(this);
@@ -51,7 +49,6 @@ class ProductStepOne extends Component {
 
   openSelectQnt() {
     // console.log("eheheh");
-    console.log(this.myRefSelectQnt.current);
     this.myRefSelectQnt.current.focus();
   }
 
@@ -131,7 +128,6 @@ class ProductStepOne extends Component {
         );
       }
 
-      console.log(pertence);
     }
 
     ReactDOM.render(htmlFavorito, this.refFavorito.current);
@@ -143,7 +139,6 @@ class ProductStepOne extends Component {
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
     if (info.tipo != "Consumidor"){
-      console.log("TEM DE SER CONSUMIDOR PARA TER FAVORITOS")
 
     } else {
 
@@ -166,7 +161,6 @@ class ProductStepOne extends Component {
     let info = JSON.parse(localStorage.getItem("baylitInfo"));
 
     if (info.tipo != "Consumidor"){
-      console.log("TEM DE SER CONSUMIDOR PARA TER FAVORITOS")
 
     } else {
 
@@ -218,7 +212,6 @@ class ProductStepOne extends Component {
       this.state.idSpecific
     );
 
-    console.log(res);
 
     if (res != false) {
       window.location.href = "/ShoppingCar";

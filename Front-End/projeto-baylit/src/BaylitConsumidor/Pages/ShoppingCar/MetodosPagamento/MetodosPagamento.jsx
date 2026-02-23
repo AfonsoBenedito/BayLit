@@ -31,7 +31,6 @@ class MetodosPagamento extends Component {
   }
 
   async pagar() {
-    console.log("e pois");
 
     await fetch(apiInfo.apiLink + "/utilizador/checkout-stripe", {
       method: "POST",
@@ -44,7 +43,6 @@ class MetodosPagamento extends Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.url);
 
         window.location.href = data.url;
       });

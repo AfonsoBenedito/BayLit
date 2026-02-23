@@ -29,11 +29,9 @@ async function getUserById(id, tipo) {
           //console.log(data)
           result = data.data[0];
         } else {
-          console.log("BAD ID");
         }
       });
   } else {
-    console.log("Esse tipo de utilizador não é possivel procurar");
     return false;
   }
 
@@ -68,11 +66,9 @@ async function getUtilizadorByEmail(email, tipo) {
           //console.log(data)
           result = data.data[0];
         } else {
-          console.log("BAD ID");
         }
       });
   } else {
-    console.log("Esse tipo de utilizador não é possivel procurar");
     return false;
   }
 
@@ -97,6 +93,36 @@ async function getUserFavoriteUsers(id, token) {
     });
 
   return result;
+}
+
+// Module-level cache for favorite product IDs — avoids re-fetching on every Product card mount
+let _favIdsCache = null;
+let _favIdsCacheUid = null;
+
+function invalidateFavoritesCache() {
+  _favIdsCache = null;
+  _favIdsCacheUid = null;
+}
+
+// Returns the raw array of favorite product IDs for a user (cached per page load).
+async function getFavoriteIds(id, token) {
+  if (_favIdsCache !== null && _favIdsCacheUid === id) {
+    return _favIdsCache;
+  }
+  let ids = [];
+  await fetch(
+    apiInfo.apiLink + "/utilizador/favoritos/produto?utilizador=" + id,
+    { headers: { Authorization: "Bearer " + token } }
+  )
+    .then((r) => r.json())
+    .then((data) => {
+      if (data.code === 200 && data.data && data.data.favoritos) {
+        ids = data.data.favoritos;
+      }
+    });
+  _favIdsCache = ids;
+  _favIdsCacheUid = id;
+  return ids;
 }
 
 async function getUserFavoriteProducts(id, token) {
@@ -143,9 +169,9 @@ async function adicionarUserFavoriteProduct(id, token, id_produto) {
   })
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
       if (data.code == 200) {
         result = true;
+        invalidateFavoritesCache();
       }
     });
 
@@ -167,7 +193,6 @@ async function getUsersShoppingCartCadeia(id_utilizador, token) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = data.data.cadeia;
       }
@@ -191,9 +216,9 @@ async function removerUserFavoriteProduct(id, token, id_produto) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = true;
+        invalidateFavoritesCache();
       }
     });
 
@@ -250,7 +275,6 @@ async function adicionarProdutoAoCarrinho(
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = true;
       }
@@ -267,7 +291,6 @@ async function getFornecedor(id) {
       if (data.code == 200) {
         result = data.data[0];
       } else {
-        console.log("BAD ID");
       }
     });
 
@@ -282,7 +305,6 @@ async function getTransportador(id) {
       if (data.code == 200) {
         result = data.data[0];
       } else {
-        console.log("BAD ID");
       }
     });
 
@@ -298,7 +320,6 @@ async function getAllConsumidores() {
       if (data.code == 200) {
         result = data.data;
       } else {
-        console.log("BAD ID");
       }
     });
 
@@ -314,7 +335,6 @@ async function getAllFornecedores() {
       if (data.code == 200) {
         result = data.data;
       } else {
-        console.log("BAD ID");
       }
     });
 
@@ -327,11 +347,9 @@ async function getAllTransportadores() {
   await fetch(apiInfo.apiLink + "/utilizador/transportador")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.data);
       if (data.code == 200) {
         result = data.data;
       } else {
-        console.log("BAD ID");
       }
     });
 
@@ -438,7 +456,6 @@ async function mudarDadosFornecedor(id_utilizador, token, nome,morada,nif,telemo
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
       // window.location.reload();
       if (data.code == 200) {
         result = true;
@@ -486,7 +503,6 @@ async function deleteLocalUtilizador(id_utilizador, token, id_local) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = true;
       } else {
@@ -513,7 +529,6 @@ async function adminDeleteLocal(token, id_local){
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = true;
       } else {
@@ -610,7 +625,6 @@ async function mudarPasswordConsumidor(
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = true;
       } else {
@@ -643,7 +657,6 @@ async function mudarPasswordTransportador(
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = true;
       } else {
@@ -676,7 +689,6 @@ async function mudarPasswordFornecedor(
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = true;
       } else {
@@ -702,7 +714,6 @@ async function apagarContaUtilizador(id_utilizador, token) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = true;
       } else {
@@ -777,8 +788,6 @@ async function getNotificacoesUtilizador(id_utilizador, token) {
 async function alterarVistaNotificacoes(id_utilizador, token, notificacoes) {
   let result = false;
 
-  console.log(notificacoes);
-  console.log(id_utilizador);
 
   await fetch(apiInfo.apiLink + "/utilizador/notificacoes", {
     method: "PUT",
@@ -793,7 +802,6 @@ async function alterarVistaNotificacoes(id_utilizador, token, notificacoes) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code == 200) {
         result = true;
       }
@@ -806,6 +814,8 @@ export {
   getUserById,
   getUserFavoriteUsers,
   getUserFavoriteProducts,
+  getFavoriteIds,
+  invalidateFavoritesCache,
   adicionarUserFavoriteProduct,
   getUsersShoppingCart,
   adicionarProdutoAoCarrinho,

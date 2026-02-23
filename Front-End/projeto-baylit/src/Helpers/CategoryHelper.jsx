@@ -56,7 +56,6 @@ async function getSubCategoria(id) {
         }
       });
   } catch (error) {
-    console.error("Error fetching subcategoria:", error);
   }
 
   return result;
@@ -76,7 +75,6 @@ async function getAtributo(id) {
         }
       });
   } catch (error) {
-    console.error("Error fetching atributo:", error);
   }
 
   return result;

@@ -23,7 +23,6 @@ class ProductInserirPopUpPoluicao extends Component {
 
     let tipos = await getTiposPoluicao()
 
-    console.log(tipos)
 
     let resultTipos = []
 

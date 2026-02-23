@@ -36,7 +36,6 @@ class WarehouseProducts extends Component {
       armazemId: this.props.params.idArmazem,
       deleteId: null
     };
-    console.log(this.state.armazemId);
 
     this.refProduto = React.createRef();
     this.refCategorias = React.createRef();
@@ -98,23 +97,19 @@ class WarehouseProducts extends Component {
     let armazem = await getArmazemById(fornecedorID, token, id_armazem);
     let inventario = armazem[0].inventario;
 
-    console.log(inventario);
     //MUDAR PARA await getProdutosByArmazém(armazemID);
     if (inventario != false) {
       let listOfProducts = [];
       for (let produto in inventario) {
-        console.log(inventario[produto]);
         let quantidade = inventario[produto].quantidade;
         let produtoEspecificoId = inventario[produto].produto;
         let produtoEspecifico = await getProdutoEspecifico(produtoEspecificoId);
 
-        console.log(produtoEspecifico);
         if(produtoEspecifico){
           let especificidade = produtoEspecifico.especificidade;
           let produtoId = produtoEspecifico.produto;
           let produtoGeral = await getProduto(produtoId);
           let foto = produtoGeral.fotografia;
-          console.log(produtoGeral);
           listOfProducts.push(
             <WarehouseProductsCard
               especificidade = {especificidade}
