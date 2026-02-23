@@ -1,19 +1,23 @@
-.PHONY: run-docker stop-docker run-go stop-go \
+.PHONY: run-docker stop-docker build-static run-go stop-go \
         lint lint-go lint-frontend \
         build-check build-check-go build-check-frontend
 
 # ── Docker ────────────────────────────────────────────────────────────────────
 
 run-docker:
-	docker compose up --build -d
+	docker compose up --build
 
 stop-docker:
 	docker compose down
 
 # ── Go (local) ────────────────────────────────────────────────────────────────
 
-run-go:
-	cd api-go && DATABASE_PATH=./baylit.db go run .
+build-static:
+	cd Front-End/projeto-baylit && REACT_APP_API_URL=/api npm run build
+	cp -r Front-End/projeto-baylit/build/. api-go/static/
+
+run-go: build-static
+	cd api-go && DATABASE_PATH=./baylit.db TOKEN_SECRET=dev-secret go run .
 
 stop-go:
 	@pkill -f "go run ." 2>/dev/null || pkill -f "baylit" 2>/dev/null || echo "No Go process found"

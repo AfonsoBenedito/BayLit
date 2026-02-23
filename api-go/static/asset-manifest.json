@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eb7516eb.css",
+    "main.js": "/static/js/main.eb8fac9f.js",
+    "static/media/welcomeImage.png": "/static/media/welcomeImage.5f36e7cb8798ff73136e.png",
+    "static/media/sustainability.jpg": "/static/media/sustainability.4ea423ec1f324817d0a2.jpg",
+    "static/media/paragraph2.jpg": "/static/media/paragraph2.17449cf640b3a4cd4d1d.jpg",
+    "static/media/transportHome.jpg": "/static/media/transportHome.e1d155e14a21e01b024d.jpg",
+    "static/media/teamBaylit.png": "/static/media/teamBaylit.76ce99b02464ec20a697.png",
+    "static/media/productHome.jpg": "/static/media/productHome.6e08f276c3ef8edfbe9e.jpg",
+    "static/media/Renato3D.png": "/static/media/Renato3D.9b3d666dbc4026b3ce59.png",
+    "static/media/Telles3D.png": "/static/media/Telles3D.6ced3db3ee598edb48ef.png",
+    "static/media/teamBaylitSobreNos.jpg": "/static/media/teamBaylitSobreNos.dc58f1c410bfff66c43a.jpg",
+    "static/media/logo3D_baylit_white.png": "/static/media/logo3D_baylit_white.c3e939593327dea96622.png",
+    "static/media/Tomas3D.png": "/static/media/Tomas3D.0fbaaf1c1b473d1db0cc.png",
+    "static/media/Tiago3D.png": "/static/media/Tiago3D.4d84425b908b887c2324.png",
+    "static/media/paragraph1.jpg": "/static/media/paragraph1.c593a95fdaac74ab1982.jpg",
+    "static/media/Afonsinho3D.png": "/static/media/Afonsinho3D.0ae9a3395975dd6bb7a9.png",
+    "static/media/Ventura3D.png": "/static/media/Ventura3D.5f2e69cf8c4cb27d8d58.png",
+    "static/media/car_baylit.png": "/static/media/car_baylit.d50aafddc5176f29a57c.png",
+    "static/media/backgroundAjuda.jpg": "/static/media/backgroundAjuda.eaa111c7ff6fb6b3bc0f.jpg",
+    "static/media/productImage.png": "/static/media/productImage.e3579897b999cfc4a1f3.png",
+    "static/media/logo_baylit_white.png": "/static/media/logo_baylit_white.cd847fae19ad01575612.png",
+    "static/media/Termos_Utilização_Baylit.pdf": "/static/media/Termos_Utilização_Baylit.b1eb5b39b63932f51339.pdf",
+    "static/media/word_baylit_black.svg": "/static/media/word_baylit_black.84398431491393bcfe4aa5447cfc1ac1.svg",
+    "static/media/logo_baylit_black.svg": "/static/media/logo_baylit_black.5ba3fdc73b50480166f96566d98d9155.svg",
+    "static/media/googleLogo.png": "/static/media/googleLogo.0590aaf0fe36e23dcc8c.png",
+    "static/media/SadSmile.png": "/static/media/SadSmile.9bd2c4526653d2870446.png",
+    "static/media/word_baylit_white.png": "/static/media/word_baylit_white.e26eec5f5dbecb27e854.png",
+    "static/media/SadSmileWhite.png": "/static/media/SadSmileWhite.0fe8366847db4d8b4085.png",
+    "index.html": "/index.html",
+    "main.eb7516eb.css.map": "/static/css/main.eb7516eb.css.map",
+    "main.eb8fac9f.js.map": "/static/js/main.eb8fac9f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb7516eb.css",
+    "static/js/main.eb8fac9f.js"
+  ]
+}

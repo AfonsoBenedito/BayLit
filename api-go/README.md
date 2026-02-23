@@ -156,7 +156,7 @@ GET  /*  →  embedded index.html
 From the project root:
 
 ```bash
-make run-docker        # docker compose up --build -d
+make run-docker        # build image + stream logs
 
 open http://localhost:8080
 ```
@@ -166,21 +166,19 @@ The database is seeded on first boot — no manual init step needed.
 ### Without Docker (Go directly)
 
 ```bash
-# Build the React frontend first
+make run-go   # builds React, copies static files, then starts Go server
+```
+
+Or manually:
+
+```bash
 cd Front-End/projeto-baylit
 npm ci
 REACT_APP_API_URL=/api npm run build
 cp -r build/ ../../api-go/static/
 
-# Run the Go server
 cd ../../api-go
 DATABASE_PATH=./baylit.db TOKEN_SECRET=dev-secret go run .
-```
-
-Or use the Makefile shortcut:
-
-```bash
-make run-go
 ```
 
 ### Endpoints

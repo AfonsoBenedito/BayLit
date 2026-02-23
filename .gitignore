@@ -20,6 +20,8 @@ api-go/baylit
 
 # SQLite databases
 *.db
+*.db-shm
+*.db-wal
 
 # Environment & credentials
 .env

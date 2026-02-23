@@ -118,9 +118,10 @@ No manual database initialisation required. The container seeds all categories, 
 
 | Command | Description |
 |---|---|
-| `make run-docker` | Build and start the container |
+| `make run-docker` | Build and start the container (logs streamed) |
 | `make stop-docker` | Stop and remove the container |
-| `make run-go` | Run the Go backend locally without Docker |
+| `make build-static` | Build React and copy into `api-go/static/` |
+| `make run-go` | Build React + start Go server locally (full local dev) |
 | `make lint` | Run `go vet` + ESLint |
 | `make build-check` | Verify both Go and React builds succeed |
 
