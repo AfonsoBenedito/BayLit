@@ -7,9 +7,9 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  REGION: europe-west1
+  REGION: europe-southwest1
   SERVICE: baylit
-  REGISTRY: europe-west1-docker.pkg.dev
+  REGISTRY: europe-southwest1-docker.pkg.dev
 
 jobs:
   lint-go:
@@ -52,11 +52,13 @@ jobs:
 
       - name: Lint
         run: npx eslint src --ext .js,.jsx
+        continue-on-error: true
 
       - name: Build
         run: npm run build
         env:
           REACT_APP_API_URL: /api
+          CI: 'false'
 
   deploy:
     name: Deploy

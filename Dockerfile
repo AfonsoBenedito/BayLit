@@ -4,8 +4,6 @@ WORKDIR /app
 COPY Front-End/projeto-baylit/package*.json ./
 RUN npm ci --prefer-offline
 COPY Front-End/projeto-baylit/ ./
-# Copy category/product images so they're available at /images/... in the built app
-COPY Back-End/images/ ./public/images/
 ARG REACT_APP_API_URL=/api
 ENV REACT_APP_API_URL=$REACT_APP_API_URL
 RUN npm run build

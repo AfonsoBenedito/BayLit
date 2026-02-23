@@ -245,7 +245,7 @@ gcloud services enable run.googleapis.com artifactregistry.googleapis.com secret
 
 # Create Artifact Registry repo
 gcloud artifacts repositories create baylit \
-  --repository-format=docker --location=europe-west1
+  --repository-format=docker --location=europe-southwest1
 
 # Create JWT secret
 echo -n "$(openssl rand -base64 32)" | gcloud secrets create baylit-token-secret --data-file=-
@@ -277,7 +277,7 @@ Add these two secrets in **Settings → Secrets and variables → Actions**:
 ### Verify Deployment
 
 ```bash
-SERVICE_URL=$(gcloud run services describe baylit --region=europe-west1 --format="value(status.url)")
+SERVICE_URL=$(gcloud run services describe baylit --region=europe-southwest1 --format="value(status.url)")
 
 curl "${SERVICE_URL}/health"
 curl "${SERVICE_URL}/api/categoria"
@@ -290,7 +290,7 @@ curl -X POST "${SERVICE_URL}/api/auth/login" \
 
 | Setting | Value |
 |---|---|
-| Region | `europe-west1` |
+| Region | `europe-southwest1` |
 | Memory | `256Mi` |
 | CPU | `1` |
 | Min instances | `0` (scale to zero) |
