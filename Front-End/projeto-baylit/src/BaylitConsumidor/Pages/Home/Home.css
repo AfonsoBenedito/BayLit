@@ -34,7 +34,7 @@
   display: flex;
   width: 100%;
   height: fit-content;
-  justify-content: start;
+  justify-content: flex-start;
   /* background-color: pink; */
   margin-top: 25px;
 }

@@ -6,6 +6,7 @@ RUN npm ci --prefer-offline
 COPY Front-End/projeto-baylit/ ./
 ARG REACT_APP_API_URL=/api
 ENV REACT_APP_API_URL=$REACT_APP_API_URL
+ENV DISABLE_ESLINT_PLUGIN=true
 RUN npm run build
 
 # Stage 2: Build Go binary
