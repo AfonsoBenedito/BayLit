@@ -189,10 +189,10 @@ All three sub-apps share a set of API helpers in `src/Helpers/` that abstract co
 From the project root:
 
 ```bash
-docker-compose up -d
+make run-docker
 ```
 
-The frontend will be available at **http://localhost:3000**, served by Nginx.
+The frontend is embedded in the Go binary and served at **http://localhost:8080** (no separate Nginx container).
 
 ### Development Server
 

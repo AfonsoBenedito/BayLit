@@ -4,16 +4,18 @@
 
 # BayLit
 
-### The Green E-Commerce Platform
+### The Green E-Commerce Platform &nbsp;·&nbsp; Cloud Run Edition
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg?style=for-the-badge)](LICENSE)
-[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Go](https://img.shields.io/badge/Go-1.24-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
 [![React](https://img.shields.io/badge/React-17-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-6.0-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Express](https://img.shields.io/badge/Express-4.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-3-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org/)
+[![Cloud Run](https://img.shields.io/badge/Cloud%20Run-Deployed-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://cloud.google.com/run)
+[![Docker](https://img.shields.io/badge/Docker-~25MB%20image-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-[About](#-about) &nbsp;·&nbsp; [Goals](#-goals) &nbsp;·&nbsp; [Features](#-features) &nbsp;·&nbsp; [Tech Stack](#-tech-stack) &nbsp;·&nbsp; [Getting Started](#-getting-started) &nbsp;·&nbsp; [Architecture](#-architecture) &nbsp;·&nbsp; [API Docs](#-api-documentation) &nbsp;·&nbsp; [Team](#-team) &nbsp;·&nbsp; [Contributing](#-contributing)
+> **Branch:** `for-cloud-run` &nbsp;·&nbsp; Single-container deployment for Google Cloud Run
+
+[About](#-about) &nbsp;·&nbsp; [What Changed](#-what-changed) &nbsp;·&nbsp; [Features](#-features) &nbsp;·&nbsp; [Tech Stack](#-tech-stack) &nbsp;·&nbsp; [Getting Started](#-getting-started) &nbsp;·&nbsp; [Architecture](#-architecture) &nbsp;·&nbsp; [Deploy](#-deploy-to-cloud-run) &nbsp;·&nbsp; [Team](#-team)
 
 </div>
 
@@ -21,36 +23,42 @@
 
 ## 🌱 About
 
-**BayLit** is an eco-conscious e-commerce platform that empowers consumers to make environmentally informed purchasing decisions. Think Amazon or eBay — but with a green twist.
-
-Every product listing on BayLit includes detailed sustainability data covering **production resources**, **transportation emissions**, and **storage costs**. Shoppers get the full picture before they buy, and businesses are incentivised to clean up their supply chains.
+**BayLit** is an eco-conscious e-commerce platform that empowers consumers to make environmentally informed purchasing decisions. Every product listing includes detailed sustainability data — production resources, transportation emissions, and storage costs — so shoppers get the full environmental picture before they buy.
 
 > *"Shop smarter. Shop greener."*
 
+This branch (`for-cloud-run`) reimplements the server stack as a **single Go binary** with an embedded SQLite database and embedded React build, optimised for Google Cloud Run's scale-to-zero model.
+
 ---
 
-## 🎯 Goals
+## ⚡ What Changed
 
-BayLit was built around three core principles:
+This branch replaces the original 3-container MERN stack with a single, self-contained container:
 
-| | Goal | Description |
-|:---:|---|---|
-| 🔍 | **Transparency** | Surface the real environmental cost of every product — resources consumed, pollution generated during production, transport, and storage |
-| 💡 | **Empowerment** | Give consumers the data they need to make the most ecologically sound choice at the moment of purchase |
-| 📈 | **Incentive** | Drive businesses to reduce their emissions by making sustainability a direct competitive advantage on the platform |
+| | `main` (MERN) | `for-cloud-run` (this branch) |
+|:---:|:---:|:---:|
+| **Backend** | Node.js + Express | Go 1.24 + Gin |
+| **Database** | MongoDB (external) | SQLite (embedded) |
+| **Frontend** | Separate container (Nginx) | Embedded in Go binary |
+| **Containers** | 3 | **1** |
+| **Cold start** | ~5–10 s | **~100 ms** |
+| **Image size** | ~300 MB | **~25 MB** |
+| **Memory** | 512 MB+ | **256 MB** |
+| **DB init** | Manual (`init-all.js`) | **Automatic at boot** |
 
 ---
 
 ## ✨ Features
 
-- 🛒 &nbsp;**Full e-commerce experience** — Browse, search, filter, and purchase products across multiple categories
-- 🌍 &nbsp;**Sustainability scores** — Each product displays its environmental footprint in clear, digestible metrics
-- ⚖️ &nbsp;**Side-by-side comparison** — Compare products including their eco metrics before deciding
-- 👤 &nbsp;**User accounts** — Full profile management with order history and preferences
+- 🛒 &nbsp;**Full e-commerce experience** — Browse, search, filter, and purchase across multiple categories
+- 🌍 &nbsp;**Sustainability scores** — Each product displays its full environmental footprint in digestible metrics
+- ⚖️ &nbsp;**Side-by-side comparison** — Compare products on eco metrics before deciding
+- 👤 &nbsp;**User accounts** — Profile management, order history, and saved favourites
 - 🔒 &nbsp;**Secure authentication** — JWT-based auth with bcrypt password hashing
-- 💳 &nbsp;**Integrated payments** — Stripe-powered checkout flow
-- 📊 &nbsp;**Admin dashboard** — Data visualizations and platform analytics via Google Charts
-- 🐳 &nbsp;**Docker ready** — Fully containerized setup for quick local development
+- 💳 &nbsp;**Checkout flow** — Complete order flow with transport selection and payment
+- 📊 &nbsp;**Admin & supplier dashboards** — Platform analytics and sustainability reporting
+- 🌱 &nbsp;**Supply chain tracking** — Full production → storage → transport data per product
+- ⚡ &nbsp;**Instant cold start** — ~100 ms from zero to serving, enabling true scale-to-zero on Cloud Run
 
 ---
 
@@ -58,51 +66,11 @@ BayLit was built around three core principles:
 
 | Layer | Technology |
 |---|---|
-| **Frontend** | React 17 · React Router v6 · Bootstrap 5 · Bootstrap Icons · Axios |
-| **Backend** | Node.js · Express 4 · JWT · Bcrypt · Multer · Nodemailer |
-| **Database** | MongoDB 6 · Mongoose ODM |
-| **Payments** | Stripe |
-| **DevOps** | Docker · Docker Compose · Nginx |
-| **Testing** | Jest |
-| **API Spec** | OpenAPI / Swagger |
-
----
-
-## 🏗 Architecture
-
-BayLit follows a clean **three-layer architecture** on the backend, fully decoupled from the React frontend via a RESTful API.
-
-![System Architecture](https://user-images.githubusercontent.com/78313327/161817899-e45ce96e-e413-4fac-b284-293d81cceb9c.jpg)
-
-### Backend Layers
-
-| Layer | Location | Description |
-|---|---|---|
-| **API Layer** | `Back-End/api/` | ExpressJS routes, request validation, and OpenAPI specification |
-| **Logic Layer** | `Back-End/handlers/` | Business logic distributed across feature-specific handlers |
-| **Data Layer** | `Back-End/gateway/` + `models/` | Mongoose models and gateways that abstract all database access |
-
-### Repository Structure
-
-```
-BayLit/
-├── Front-End/
-│   └── projeto-baylit/
-│       ├── src/
-│       │   ├── BaylitConsumidor/    # Consumer-facing pages & components
-│       │   ├── BaylitAdmin/         # Admin dashboard
-│       │   └── BaylitDashboard/     # Analytics dashboard
-│       └── public/
-│           └── favicon.ico
-├── Back-End/
-│   ├── api/                         # Express routes & OpenAPI spec
-│   ├── handlers/                    # Business logic layer
-│   ├── gateway/                     # Data access abstraction
-│   ├── models/                      # Mongoose schemas
-│   └── db/                          # Database initialization scripts
-├── docker-compose.yml
-└── Scripts/
-```
+| **Frontend** | React 17 · React Router v6 · Bootstrap 5 · Bootstrap Icons |
+| **Backend** | Go 1.24 · Gin · JWT (`golang-jwt/jwt`) · bcrypt · UUID |
+| **Database** | SQLite 3 via `modernc.org/sqlite` — pure Go, no CGO required |
+| **Serving** | React build + static assets embedded via `go:embed` |
+| **DevOps** | Docker · Docker Compose · GitHub Actions · Google Cloud Run · Artifact Registry |
 
 ---
 
@@ -112,79 +80,115 @@ BayLit/
 
 - [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/)
 
-### Quick Start
+### Run locally
 
 ```bash
-# 1. Clone the repository
+# 1. Clone and switch to this branch
 git clone <repository-url>
 cd BayLit
+git checkout for-cloud-run
 
-# 2. Start all services — MongoDB, Backend API, and Frontend
-docker-compose up -d
+# 2. Build and start — DB is seeded automatically on first boot
+make run-docker
 
-# 3. Initialize the database (categories, subcategories, attributes, products)
-docker-compose exec backend node db/init-all.js
+# 3. Open the app
+open http://localhost:8080
 ```
 
-Once running, access the application at:
+No manual database initialisation required. The container seeds all categories, products, and test accounts on first startup.
 
-| Service | URL |
+### Endpoints
+
+| | URL |
 |---|---|
-| 🖥️ Frontend | http://localhost:3000 |
-| ⚙️ Backend API | http://localhost:8080 |
-| 🗄️ MongoDB | `localhost:27017` |
+| 🖥️ React SPA | http://localhost:8080 |
+| ⚙️ REST API | http://localhost:8080/api |
+| ❤️ Health | http://localhost:8080/health |
 
-### Default Credentials
+### Test accounts
 
-| Service | Username | Password |
+| Role | Email | Password |
 |---|---|---|
-| MongoDB | `admin` | `admin123` |
-| Admin User | `admin` | `admin123` |
+| 👤 Admin | `admin@baylit.com` | `badPwd2.` |
+| 🏪 Fornecedor | `ecotech@baylit.com` | `Fornecedor1!` |
+| 🏪 Fornecedor | `verdenatura@baylit.com` | `Fornecedor2!` |
+| 🚚 Transportador | `velocidade@baylit.com` | `Transport1!` |
 
-> ⚠️ **Production note:** Change all default credentials before deploying.
+### Makefile commands
 
-### Useful Commands
+| Command | Description |
+|---|---|
+| `make run-docker` | Build and start the container |
+| `make stop-docker` | Stop and remove the container |
+| `make run-go` | Run the Go backend locally without Docker |
+| `make lint` | Run `go vet` + ESLint |
+| `make build-check` | Verify both Go and React builds succeed |
 
-```bash
-# View live logs from all services
-docker-compose logs -f
-
-# Rebuild containers after code changes
-docker-compose up -d --build
-
-# Stop all services
-docker-compose down
-
-# Reset everything, including the database
-docker-compose down -v
-```
-
-<details>
-<summary>Manual database initialization</summary>
-
-If products don't appear after startup, you can initialize each layer separately:
-
-```bash
-# Initialize admin user
-docker-compose exec backend node db/init-db.js
-
-# Initialize categories with images
-docker-compose exec backend node db/init-categories.js
-
-# Initialize mock products
-docker-compose exec backend node db/init-products.js
-```
-
-> After `docker compose down -v`, the database is wiped. Re-run `init-all.js` to repopulate.
-</details>
+> For local dev, Docker setup, API reference, and Cloud Run deployment see [api-go/README.md](api-go/README.md).
 
 ---
 
-## 📖 API Documentation
+## 🏗 Architecture
 
-The full REST API specification is available on SwaggerHub:
+### Single container
 
-**[📋 View API Documentation →](https://app.swaggerhub.com/apis-docs/tiaguu/bay-lit_api/2.0.0#/)**
+```
+Cloud Run Container  (~25 MB image · 256 MB memory · ~100 ms cold start)
+├── /baylit              ← Go binary
+│   ├── Gin HTTP router  — all API routes + SPA fallback
+│   ├── JWT middleware   — Bearer token auth (120 min expiry)
+│   └── go:embed static  — React build + images baked into binary
+└── /tmp/baylit.db       ← SQLite file (auto-seeded on first boot)
+```
+
+### Multi-stage Dockerfile
+
+```
+Stage 1 · node:20-alpine      → npm run build   → React /build
+Stage 2 · golang:1.24-alpine  → go build        → /baylit binary (CGO_ENABLED=0)
+Stage 3 · alpine:3.19         → binary only     → ~25 MB final image
+```
+
+### Repository structure
+
+```
+BayLit/
+├── api-go/                       # Go backend
+│   ├── main.go                   # Gin app, routes, startup
+│   ├── db/
+│   │   ├── database.go           # SQLite init, migrations, PRAGMA
+│   │   ├── schema.sql            # CREATE TABLE statements
+│   │   └── seed.go               # Mock data (auto-seeded at boot)
+│   ├── handlers/                 # Route handlers per domain
+│   ├── middleware/               # JWT + CORS
+│   └── static/                  # Embedded React build + images
+├── Front-End/
+│   └── projeto-baylit/           # React app (unchanged from main)
+├── Dockerfile                    # Multi-stage build
+├── docker-compose.yml            # Single-service local dev
+├── Makefile
+└── .github/
+    └── workflows/
+        ├── ci.yml                # Lint + build checks (PRs)
+        └── deploy-cloudrun.yml   # Auto-deploy on push to this branch
+```
+
+---
+
+## ☁️ Deploy to Cloud Run
+
+Pushing to this branch triggers the GitHub Actions pipeline automatically:
+
+```
+push → for-cloud-run
+         │
+         ├── lint-go        (go vet + CGO_ENABLED=0 go build)
+         ├── lint-frontend  (eslint + npm run build)
+         │
+         └── deploy         (docker build → Artifact Registry → gcloud run deploy)
+```
+
+Full GCP setup instructions, required secrets, and environment variable reference are in **[api-go/README.md](api-go/README.md)**.
 
 ---
 
@@ -200,17 +204,6 @@ BayLit was developed as a **Bachelor's Final Project** by 6 students from the In
 | Renato Ramires |
 | Tiago Teodoro |
 | Tomás Ndlate |
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! To get involved:
-
-1. Browse the [open issues](../../issues) and pick one to work on
-2. Fork the repository and create your feature branch
-3. Implement your fix or feature
-4. Open a **Pull Request** — the team will review and deliberate on whether to merge it
 
 ---
 
