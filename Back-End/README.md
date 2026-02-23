@@ -190,15 +190,33 @@ Transactional emails are generated from templates in `handlers/MailGenerator/`:
 
 ### With Docker (Recommended)
 
-From the project root:
+From the project root, start all three services (MongoDB, backend, frontend):
 
 ```bash
-docker-compose up -d
+make run-docker
 ```
 
-The backend will be available at **http://localhost:8080**.
+Then seed the database on first run:
 
-### Manually
+```bash
+# All at once (recommended)
+docker compose exec backend node db/init-all.js
+
+# Or step by step
+docker compose exec backend node db/init-db.js          # admin user
+docker compose exec backend node db/init-categories.js  # categories + attributes
+docker compose exec backend node db/init-products.js    # mock products
+```
+
+| Service | URL |
+|---|---|
+| Backend API | http://localhost:8080 |
+| Frontend | http://localhost:3000 |
+| MongoDB | `localhost:27017` |
+
+> After `docker compose down -v` the database volume is wiped — re-run `init-all.js` to repopulate.
+
+### Manually (without Docker)
 
 ```bash
 # Install dependencies
@@ -208,7 +226,7 @@ npm install
 npm start
 ```
 
-> Requires a running MongoDB instance. Set the `MONGODB_URI` environment variable accordingly.
+> Requires a running MongoDB instance. Set `MONGODB_URI` accordingly.
 
 ### Environment Variables
 
@@ -217,6 +235,27 @@ npm start
 | `MONGODB_URI` | MongoDB connection string | `mongodb://admin:admin123@mongodb:27017/Baylit?authSource=admin` |
 | `TOKEN_SECRET` | JWT signing secret | `baylit-docker-secret-key-change-in-production` |
 | `NODE_ENV` | Environment (`production` / `development`) | `production` |
+
+### Default Credentials
+
+| Account | Username / Email | Password |
+|---|---|---|
+| MongoDB | `admin` | `admin123` |
+| Admin user | `admin` | `admin123` |
+
+> ⚠️ Change all default credentials before any production deployment.
+
+### Replaced External Services
+
+The Docker setup substitutes all external cloud services so the project runs without any cloud accounts:
+
+| External service | Replacement |
+|---|---|
+| MongoDB Atlas | Local MongoDB container |
+| AWS S3 file storage | Local filesystem (`Back-End/uploads/`) |
+| AWS SES email | Console log — check `docker compose logs -f backend` |
+| Google OAuth | Disabled (routes return 503) |
+| Stripe payments | Mocked checkout flow |
 
 ---
 

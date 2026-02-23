@@ -46,11 +46,12 @@ BayLit was built around three core principles:
 - 🛒 &nbsp;**Full e-commerce experience** — Browse, search, filter, and purchase products across multiple categories
 - 🌍 &nbsp;**Sustainability scores** — Each product displays its environmental footprint in clear, digestible metrics
 - ⚖️ &nbsp;**Side-by-side comparison** — Compare products including their eco metrics before deciding
-- 👤 &nbsp;**User accounts** — Full profile management with order history and preferences
+- 👤 &nbsp;**User accounts** — Full profile management with order history and saved favourites
 - 🔒 &nbsp;**Secure authentication** — JWT-based auth with bcrypt password hashing
 - 💳 &nbsp;**Integrated payments** — Stripe-powered checkout flow
-- 📊 &nbsp;**Admin dashboard** — Data visualizations and platform analytics via Google Charts
-- 🐳 &nbsp;**Docker ready** — Fully containerized setup for quick local development
+- 📊 &nbsp;**Admin dashboard** — Data visualisations and platform analytics via Google Charts
+- 🌱 &nbsp;**Supply chain tracking** — Full production → storage → transport data per product
+- 🐳 &nbsp;**Docker ready** — Fully containerised setup, up and running in two commands
 
 ---
 
@@ -68,44 +69,6 @@ BayLit was built around three core principles:
 
 ---
 
-## 🏗 Architecture
-
-BayLit follows a clean **three-layer architecture** on the backend, fully decoupled from the React frontend via a RESTful API.
-
-![System Architecture](https://user-images.githubusercontent.com/78313327/161817899-e45ce96e-e413-4fac-b284-293d81cceb9c.jpg)
-
-### Backend Layers
-
-| Layer | Location | Description |
-|---|---|---|
-| **API Layer** | `Back-End/api/` | ExpressJS routes, request validation, and OpenAPI specification |
-| **Logic Layer** | `Back-End/handlers/` | Business logic distributed across feature-specific handlers |
-| **Data Layer** | `Back-End/gateway/` + `models/` | Mongoose models and gateways that abstract all database access |
-
-### Repository Structure
-
-```
-BayLit/
-├── Front-End/
-│   └── projeto-baylit/
-│       ├── src/
-│       │   ├── BaylitConsumidor/    # Consumer-facing pages & components
-│       │   ├── BaylitAdmin/         # Admin dashboard
-│       │   └── BaylitDashboard/     # Analytics dashboard
-│       └── public/
-│           └── favicon.ico
-├── Back-End/
-│   ├── api/                         # Express routes & OpenAPI spec
-│   ├── handlers/                    # Business logic layer
-│   ├── gateway/                     # Data access abstraction
-│   ├── models/                      # Mongoose schemas
-│   └── db/                          # Database initialization scripts
-├── docker-compose.yml
-└── Scripts/
-```
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -120,10 +83,10 @@ git clone <repository-url>
 cd BayLit
 
 # 2. Start all services — MongoDB, Backend API, and Frontend
-docker-compose up -d
+make run-docker
 
-# 3. Initialize the database (categories, subcategories, attributes, products)
-docker-compose exec backend node db/init-all.js
+# 3. Seed the database (categories, products, admin user)
+docker compose exec backend node db/init-all.js
 ```
 
 Once running, access the application at:
@@ -136,47 +99,95 @@ Once running, access the application at:
 
 ### Default Credentials
 
-| Service | Username | Password |
+| Account | Username / Email | Password |
 |---|---|---|
 | MongoDB | `admin` | `admin123` |
-| Admin User | `admin` | `admin123` |
+| Admin user | `admin` | `admin123` |
 
-> ⚠️ **Production note:** Change all default credentials before deploying.
+> ⚠️ Change all default credentials before any production deployment.
 
-### Useful Commands
+### Makefile commands
+
+| Command | Description |
+|---|---|
+| `make run-docker` | Build and start all containers |
+| `make stop-docker` | Stop and remove all containers |
+| `make run-backend` | Start the Node.js backend locally |
+| `make run-frontend` | Start the React dev server locally |
+| `make lint` | Run ESLint on the frontend |
+| `make build-check` | Verify the React production build succeeds |
+
+### Other useful commands
 
 ```bash
 # View live logs from all services
-docker-compose logs -f
+docker compose logs -f
 
 # Rebuild containers after code changes
-docker-compose up -d --build
-
-# Stop all services
-docker-compose down
+docker compose up --build -d
 
 # Reset everything, including the database
-docker-compose down -v
+docker compose down -v
 ```
 
 <details>
-<summary>Manual database initialization</summary>
+<summary>Manual database initialisation (step by step)</summary>
 
-If products don't appear after startup, you can initialize each layer separately:
+If products don't appear after startup, you can initialise each layer separately:
 
 ```bash
-# Initialize admin user
-docker-compose exec backend node db/init-db.js
+# Admin user
+docker compose exec backend node db/init-db.js
 
-# Initialize categories with images
-docker-compose exec backend node db/init-categories.js
+# Categories, subcategories, and attributes
+docker compose exec backend node db/init-categories.js
 
-# Initialize mock products
-docker-compose exec backend node db/init-products.js
+# Mock products
+docker compose exec backend node db/init-products.js
 ```
 
 > After `docker compose down -v`, the database is wiped. Re-run `init-all.js` to repopulate.
+
 </details>
+
+> For backend setup, API reference, and Docker details see [Back-End/README.md](Back-End/README.md).
+
+---
+
+## 🏗 Architecture
+
+BayLit follows a clean **three-layer architecture** on the backend, fully decoupled from the React frontend via a RESTful API.
+
+### Backend Layers
+
+| Layer | Location | Description |
+|---|---|---|
+| **API Layer** | `Back-End/api/` | Express routes, request validation, and OpenAPI specification |
+| **Logic Layer** | `Back-End/handlers/` | Business logic distributed across feature-specific handlers |
+| **Data Layer** | `Back-End/gateway/` + `models/` | Mongoose models and gateways that abstract all database access |
+
+### Repository Structure
+
+```
+BayLit/
+├── Front-End/
+│   └── projeto-baylit/
+│       ├── src/
+│       │   ├── BaylitConsumidor/    # Consumer-facing pages & components
+│       │   ├── BaylitAdmin/         # Admin dashboard
+│       │   └── BaylitDashboard/     # Supplier analytics dashboard
+│       └── public/
+│           └── favicon.ico
+├── Back-End/
+│   ├── api/                         # Express routes & OpenAPI spec
+│   ├── handlers/                    # Business logic layer
+│   ├── gateway/                     # Data access abstraction
+│   ├── models/                      # Mongoose schemas
+│   └── db/                          # Database initialisation scripts
+├── docker-compose.yml
+├── Makefile
+└── Scripts/
+```
 
 ---
 
